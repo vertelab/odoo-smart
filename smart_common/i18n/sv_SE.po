@@ -19,6 +19,7 @@ msgstr "Om oss"
 
 #. module: smart_common
 #: view:website:smart_common.smartbudgetcashbox
+#, fuzzy
 msgid "BUDGET"
 msgstr "BUDGET"
 
