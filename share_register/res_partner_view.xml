@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="view_partner_inherit_form">
+            <field name="name">view.partner.form.inherit</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="website" position="before">
+<!--                    <field name="birthdate" attrs="{'invisible':[('is_company','=',True)]}"/>-->
+<!--                    <field name="birth_date" attrs="{'invisible':[('is_company','=',True)]}"/>-->
+                </field>
+<!--                <field name="website" position="after">-->
+                <field name="title" position="after">
+<!--				 <page string='Sales & Purchases' position="after">                 -->
+
+<!--				<page string="Display Shares">-->
+<!--                        <group>        -->
+                    <field name="block_ids" /> 
+                    <field name="share_ids" />
+<!--                        </group>        -->
+<!--				 </page>-->
+
+                </field>
+            </field>
+        </record>
+
+
+
+
+<!--
+        <record model="ir.ui.view" id="view_partner_inherit_filter">
+            <field name="name">view.partner.filter.inherit</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="supplier" position="after">
+                   <filter string="Shares" name="share_ids" domain="[(self, 'in' ,'share_ids')]" help="Shares" opecksrator="child_of" />
+                   <filter string="Block of shares" name="block_ids" domain="[(self,'in','block_ids')]" help="Blocks" operator="child_of" />
+                </field>
+            </field>
+        </record>
+-->
+
+<!--
+        <record model="ir.ui.view" id="partner_view_buttons">
+            <field name="name">partner.view.buttons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action" 
+                        class="oe_stat_button"
+                        id="block_button"
+                        icon="fa-pencil-square-o"
+                        name="%(account.action_share_tree)d" 
+                        attrs="{'invisible': [('customer', '=', False)]}" 
+                        context="{'search_default_partner_id': active_id,'default_partner_id': active_id}" groups="account.group_account_invoice">
+                        <div><strong><field name="share_amount" widget="monetary"/></strong><br/>Shares</div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+-->
+<!--
+        <record id="action_share_tree" model="ir.actions.act_window">
+            <field name="name">Shares</field>
+            <field name="res_model">share.share</field>
+            <field name="context">{'search_default_partner_id': [active_id], 'default_partner_id': active_id}</field>
+            <field name="view_id" ref="account.view_move_line_tree"/>
+        </record>
+-->
+
+
+    </data>
+</openerp>

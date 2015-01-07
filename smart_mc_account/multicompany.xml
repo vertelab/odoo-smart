@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+    
+
+    <record id="account.account_move_comp_rule" model="ir.rule">
+<!--        <field name="id">27</field>-->
+        <field name="name">Account Entry</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.account_move_line_comp_rule" model="ir.rule">
+<!--        <field name="id">26</field>-->
+        <field name="name">Entry lines</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.journal_period_comp_rule" model="ir.rule">
+<!--        <field name="id">28</field>-->
+        <field name="name">Journal Period</field>
+        <field name="model_id" ref="account.model_account_journal_period"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+
+    <record id="account.journal_comp_rule" model="ir.rule">
+<!--        <field name="id">29</field>-->
+        <field name="name">Journal multi-company</field>
+        <field name="model_id" ref="account.model_account_journal"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.analytic_journal_comp_rule" model="ir.rule">
+<!--        <field name="id">30</field>-->
+        <field name="name">Analytic journal multi-company</field>
+        <field name="model_id" ref="account.model_account_analytic_journal"/>
+        <field name="global" eval="True"/>
+<!--        ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]-->
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+
+
+
+<!--        <field name="id">17</field>-->
+<!--        <field name="name">Analytic multi company rule</field>-->
+<!--        ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]-->
+<!--        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>-->
+
+
+
+    <record id="account.period_comp_rule" model="ir.rule">
+<!--        <field name="id">31</field>-->
+        <field name="name">Period multi-company</field>
+        <field name="model_id" ref="account.model_account_period"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force"></field>
+    </record>
+
+    <record id="account.fiscal_year_comp_rule" model="ir.rule">
+<!--        <field name="id">32</field>-->
+        <field name="name">Fiscal year multi-company</field>
+        <field name="model_id" ref="account.model_account_fiscalyear"/>
+        <field name="global" eval="True"/>
+<!--        <field name="domain_force">[('company_id','in',[company.id for company in user.company_ids])]</field>  -->
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>  
+    </record>
+
+    <record id="account.account_comp_rule" model="ir.rule">
+<!--        <field name="id">33</field>-->
+        <field name="name">Account multi-company</field>
+        <field name="model_id" ref="account.model_account_account"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+
+    <record id="account.invoice_comp_rule" model="ir.rule">
+<!--        <field name="id">36</field>-->
+        <field name="name">Invoice multi-company</field>
+        <field name="model_id" ref="account.model_account_invoice"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.invoice_analysis_comp_rule" model="ir.rule">
+<!--        <field name="id">37</field>-->
+        <field name="name">Invoice Analysis multi-company</field>
+        <field name="model_id" ref="account.model_account_invoice_report"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.entry_analysis_comp_rule" model="ir.rule">
+<!--        <field name="id">38</field>-->
+        <field name="name">Entries Analysis multi-company</field>
+        <field name="model_id" ref="account.model_account_entries_report"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.account_fiscal_position_comp_rule" model="ir.rule">
+        <field name="name">Account fiscal Mapping company rule</field>
+        <field name="model_id" ref="account.model_account_fiscal_position"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.account_model_comp_rule" model="ir.rule">
+        <field name="name">Account model company rule</field>
+        <field name="model_id" ref="account.model_account_model"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record id="account.account_subscription_line_comp_rule" model="ir.rule">
+        <field name="name">Account subscription line company rule</field>
+        <field name="model_id" ref="account.model_account_subscription_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('subscription_id.model_id.company_id','=',False),('subscription_id.model_id.company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record model="ir.rule" id="account.account_invoice_line_comp_rule">
+        <field name="name">Invoice Line company rule</field>
+        <field name="model_id" ref="account.model_account_invoice_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record model="ir.rule" id="account.account_bank_statement_comp_rule">
+        <field name="name">Account bank statement company rule</field>
+        <field name="model_id" ref="account.model_account_bank_statement"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+    <record model="ir.rule" id="account.account_bank_statement_line_comp_rule">
+        <field name="name">Account bank statement line company rule</field>
+        <field name="model_id" ref="account.model_account_bank_statement_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+    </record>
+
+
+
+    <record id="account.tax_comp_rule" model="ir.rule">
+        <field name="name">Tax multi-company</field>
+        <field name="model_id" ref="account.model_account_tax"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field> 
+    </record>
+
+    <record id="account.tax_code_comp_rule" model="ir.rule">
+        <field name="name">Tax code multi-company</field>
+        <field name="model_id" ref="account.model_account_tax_code"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>  
+    </record>
+
+
+
+</data>
+</openerp>

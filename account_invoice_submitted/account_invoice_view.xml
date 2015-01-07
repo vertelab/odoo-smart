@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Invoices -->
+
+        <record id="invoice_form_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='invoice_open']" position="before">
+                        <button name="invoice_submitted" states="draft" string="Submit" class="oe_highlight" groups="base.group_user"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        
+        
+        
+        <record id="invoice_form_inherit2" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit2</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//label[@string='Draft Invoice ']" position="after">
+                            <label string="Submitted Invoice" attrs="{'invisible': ['|',('state','not in',('submitted',)), ('type','&lt;&gt;','out_invoice')]}"/>
+                            <label string="Kalle" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+
+        <record id="invoice_form_inherit3" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit3</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='invoice_open']" position="replace">
+                        <button name="invoice_open" states="submitted" string="Validate" class="oe_highlight" groups="account.group_account_manager"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="invoice_form_inherit4" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit4</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='state']" position="replace">
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,submitted,open,paid" statusbar_colors='{"submitted":"green","proforma":"blue","proforma2":"blue"}'/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="invoice_form_inherit5" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit5</field>
+            <field name="model">account.invoice</field>
+            <field name="sequence" eval="1"/>            
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='invoice_cancel']" position="replace">
+                        <button name="invoice_cancel" states="draft,submitted,proforma2,open" string="Cancel Invoice" groups="base.group_no_one"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>        
+        
+        
+        <record id="invoice_form_inherit5" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit5</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='action_cancel_draft']" position="replace">
+                        <button name="action_cancel_draft" states="cancel" string="Reset to Draft" type="object" groups="account.group_account_manager"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>    
+        
+        <record id="invoice_form_inherit6" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit6</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">        
+                <button name="invoice_cancel" position="after">
+                        <button name="action_cancel_submitted" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice"/>                    
+                </button>
+            </field>
+        </record>
+            
+        <record id="invoice_tree_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.tree.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">                
+                <data>
+                    <xpath expr="//tree[@string='Invoice']" position="replace">
+                        <tree colors="green:state =='submitted';blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'" string="Invoice">
+                            <field name="partner_id" groups="base.group_user"/>
+                            <field name="commercial_partner_id" invisible="1"/>
+                            <field name="date_invoice"/>
+                            <field name="number"/>
+                            <field name="reference" invisible="1"/>
+                            <field name="name" invisible="1"/>
+                            <field name="journal_id" invisible="1"/>
+                            <field name="period_id" invisible="1" groups="account.group_account_user"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            <field name="user_id" string="Responsible"/>
+                            <field name="date_due"/>
+                            <field name="origin"/>
+                            <field name="currency_id" groups="base.group_multi_currency"/>
+                            <field name="residual" sum="Residual Amount"/>
+                            <field name="amount_untaxed" sum="Untaxed Amount"/>
+                            <field name="amount_total" sum="Total Amount"/>
+                            <field name="state"/>
+                        </tree>
+                    </xpath>
+                </data>
+            </field>
+        </record>        
+
+
+
+    </data>
+</openerp>

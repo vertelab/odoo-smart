@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="smartbudgetcashbox" inherit_id="smart_common.layout" name="Smart Cash" customize_show="True" >
+        <xpath expr="//div[@id='cash']" position="inside">
+
+               Start CashBudget Box
+					<div id="smartbudgetcashbox" >
+	                    <table id="table-widget-budget" style="width: 160px;" >
+					        <tr>
+					          <td style="text-align: right;">
+			    		<t t-if="not cash_menu == 'active'"><a href="/cash/list">CASH</a></t>
+			    		<t t-if="cash_menu == 'active'"><a href="/cash/list"><strong>CASH</strong></a></t> 
+					          <a class="tip" data-toogle="tooltip" data-placement="top" title="Cash is what you have on your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
+					          					          
+					          <td></td>
+					          <td style="text-align: right;"><a href="/cash/list"><span t-field="user_id.company_id.smart_cash" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+					          </td>
+					        </tr>
+					      
+					      <tbody>
+					        <tr>
+					          <td style="text-align: right;">
+			    		<t t-if="not budget_menu == 'active'"><a href="/budget/list">BUDGET</a></t>
+			    		<t t-if="budget_menu == 'active'"><a href="/budget/list"><strong>BUDGET</strong></a></t> 
+				          
+					          <a class="tip" data-toogle="tooltip" data-placement="bottom" title="Budget is what is planned to come in to your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
+					          <td></td>
+					          <td style="text-align: right;"><a href="/budget/list"><span t-field="user_id.company_id.smart_budget" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+<!--					          <t t-esc="user_id.company_id.smart_budget"/>-->
+<!--					          <t t-esc="formatLang(line['smart_budget'], dp='Account', currency_obj=res_company.currency_id)"/> -->
+<!--							<span t-esc="formatLang(data['smart_budget']['smart_budget'], date=False)"/>-->
+<!--							<strong t-esc="formatLang(tot['tot_perc'], digits=2)"/>-->
+
+					          </td>
+					        </tr>
+					      </tbody>
+					      
+					    </table>
+				    </div>
+<!--			   End CashBudget Box-->
+     </xpath>
+
+</template>
+
+
+<template name="Cash and Budget list" id="list">
+    <t t-call="smart_common.layout">
+
+	    <div class="content span10">
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+	          <div class="panelsheet">
+
+				<div class="tabbable">
+			
+
+					<div class="tab-content">
+			    
+			    		
+			
+				            	<header class="panelsheet-header clearfix">
+				              <div class="title">
+      	              	<t t-if="cash_menu == 'active'">
+								    <h1>Your current "cash"</h1>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+							    	<h1>Your current "budget"</h1>
+			    		</t>
+				              </div>
+				            </header>        
+
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+ 
+
+		 
+			     <t t-call="smart_cash.order_list"/>
+ 
+			     <t t-call="smart_cash.expense_list"/>
+                  
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+			
+
+
+
+
+
+</div>
+<!--End tab coentent-->
+
+  				
+  				
+  				</div>
+<!--end tabbable-->
+
+   
+<!--                 </t>-->
+
+
+
+          </div><!-- /panelsheet -->
+                 
+          </div>
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+
+	</t>        
+</template>
+
+
+
+<template name="Cash Budget List content" id="order_list">
+                <h2>Orders (excl VAT)</h2>
+                              
+                <table class="table table-striped" >
+      	          <thead>
+
+
+      	            <tr>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Description</span></th>
+      	              <th><span class="muted">Client</span></th>
+					  <th><span class="muted">Type </span></th>
+      	              <th><span class="muted" style="text-align: right;">Amount</span></th>
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="sale_orders" t-as="o">
+                            <tr>  
+                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.description"/> </strong> (<t t-raw="o.name"/>)</a></td>
+                              <td><t t-raw="o.partner_id.display_name"/></td>
+ 			 				  <td class="cell" align="right">
+									<t t-if="o.partner_id.is_company"> <span class="muted"> Organisation </span></t>
+
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="o.partner_id.parent_id.is_company"> <span class="muted"> Contact person </span></t></t>
+									
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="not o.partner_id.parent_id.is_company"><span class="muted"> Individual </span></t></t>
+								</td>
+								<td class="cell" style="text-align: right;">
+								<span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+								</td>
+
+                             <td class="cell">
+			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Sent to Client</span></t>
+			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
+                             </td>
+
+                            </tr>
+                      </t>
+
+                   <tr>
+      	              <td></td>
+      	              <td></td>
+      	              <td style="text-align: right;">Sum Orders</td>
+                      					
+      	              <td style="text-align: right;"> = 
+      	              	<t t-if="cash_menu == 'active'">
+      	              <span t-field="res_user.company_id.sale_order_sum_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+      	              <span t-field="res_user.company_id.sale_order_sum_budget" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+			    		</t>
+      	              </td>
+					  <td></td>
+      	            </tr>
+
+	 	            <tr>
+      	              <td colspan="2"></td>
+<!--      	              <td></td>-->
+      	              <td style="text-align: right;">  
+      	              	<t t-if="cash_menu == 'active'">
+      	              		SMart's Share Cash
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+      	              		SMart's Share Budget
+			    		</t>
+	  	              </td>
+	  	              
+      	              <td style="text-align: right;">   
+      	              	<t t-if="cash_menu == 'active'">
+						<span t-field="res_user.company_id.smart_amount_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+						<span t-field="res_user.company_id.smart_amount_budget" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+			    		</t>
+      	            </td>
+				</tr>
+				<tr>
+		   <td></td>
+      	              <td></td>
+      	              <td style="text-align: right;">  
+      	              	<t t-if="cash_menu == 'active'">
+      	              		The Activitiy's Share  Cash
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+      	              		The Activitiy's Share Budget
+			    		</t>
+	  	              </td>
+	  	              
+      	              <td style="text-align: right;">   
+      	              	<t t-if="cash_menu == 'active'">
+						<span t-field="res_user.company_id.activity_amount_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+						<span t-field="res_user.company_id.activity_amount_budget" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
+			    		</t>
+      	              </td>
+      	            </tr>
+
+      	          </tbody>
+      	          
+      	        </table>
+                
+
+
+</template>
+
+
+
+<template name="Cash Budget List content" id="expense_list">
+
+
+    
+<!--Start Expneses-->
+
+                <h2>Expenses (incl VAT)</h2>
+
+   <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Description</span></th>
+      	              <th><span class="muted">Recipient </span></th>
+       	              <th><span class="muted">Date</span></th>
+      	              <th><span class="muted" style="text-align: right;">Amount</span></th>
+      	              <th><span class="muted">Status</span></th>
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="expenses" t-as="e">
+                            <tr>  
+                              <td><a  t-att-href="'/expense/%s' % e.id"><strong><t t-raw="e.name"/> </strong> <small>(<t t-raw="e.id"/>)</small></a></td>
+                              <td><t t-raw="e.user_id.name"/></td>
+                              <td><t t-raw="e.date"/></td>
+							  <td class="cell" style="text-align: right;">
+							  <span t-field="e.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/>
+
+							  </td>
+
+                             <td class="cell">
+							<t t-if="e.state == 'draft'"> <span class="draft">Draft </span> </t>
+			   				<t t-if="e.state == 'confirm'"> <span class="sent">Sumbitted</span> </t>
+   			    			<t t-if="e.state == 'accepted'"> <span class="approved">Approved</span> </t>
+   			    			<t t-if="e.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
+                             </td>
+
+                            </tr>
+                      </t>
+                    <tr>
+       	              <td></td>
+       	              <td></td>
+      	              <td class="cell" style="text-align: right;">Sum Expenses</td>
+      	              <td class="cell" style="text-align: right;">
+      	              	<t t-if="cash_menu == 'active'">
+      	                 <t t-esc="user_id.company_id.expense_sum_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+      	                 <t t-esc="user_id.company_id.expense_sum_budget"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
+			    		</t>
+      	              </td>
+      	              <td><span class="muted"></span></td>
+      	            </tr>
+
+                    <tr>
+       	              <td></td>
+       	              <td></td>
+       	              <td></td>
+       	              <td></td>
+       	              <td></td>
+                    </tr>
+
+
+                    <tr>
+       	              <td></td>
+       	              <td></td>
+     	              
+      	              <td class="cell" style="text-align: right;">
+      	              	<t t-if="cash_menu == 'active'">
+      	              		Total Cash
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+	      	              	Total Budget
+			    		</t>
+	  	              </td>
+      	              <td class="cell" style="text-align: right;">
+      	              	<t t-if="cash_menu == 'active'">
+<!--      	                 <t t-esc="user_id.company_id.smart_amount_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>-->
+      	                 <t t-esc="user_id.company_id.smart_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
+      	              	</t>
+			    		<t t-if="budget_menu == 'active'">
+<!--      	                 <t t-esc="user_id.company_id.smart_amount_budget"/> <t t-esc="res_user.company_id.currency_id.symbol"/>-->
+      	                 <t t-esc="user_id.company_id.smart_budget"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
+
+			    		</t>
+      	              </td>
+					  <td></td>
+      	            </tr>
+
+                   
+      	          </tbody>
+      	          
+      	        </table>
+
+                  
+                
+                
+<!-- End Expenses                 -->                
+                
+
+</template>
+
+
+
+
+</data>
+</openerp>

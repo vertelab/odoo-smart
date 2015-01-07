@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_block_document">
+    <t t-call="report.external_layout">
+         <div class="page">
+            <!-- <p t-esc="get_block()"/> -->
+            
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name and Contact Details of Owners</th>
+                        <th class="text-center">Number of Shares</th>
+                        <th class="text-center">Ownership %</th>
+                        <th class="text-center">Block No</th>
+                    </tr>
+                </thead>
+                 <!-- <tfoot style="border-bottom:2px solid black;">
+                    <tr>
+                        <td class="text-left"><b>Total:</b></td>
+                        <td class="text-center"><b><span t-esc="sum(map(lambda a: float(a.block_share_numbers), get_block()))"/></b></td>
+                        <td class="text-center"><b><span t-esc="sum(map(lambda a: float(a.block_share_numbers) / a.number_of_shares*100.00, get_block()))"/><span>%</span></b></td>
+                        <td></td>
+                    </tr>
+                </tfoot> -->
+                <tbody class="invoice_tbody">
+                    <tr t-foreach="get_block()" t-as="b" >
+                        <td>
+                            <div style="display:table;">
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; min-width:100px;">Name</div>
+                                    <div style="display:table-cell;"><div t-field="b.owner_id.name"/></div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; min-width:100px;">Date of Birth </div>
+                                    <div style="display:table-cell;"><div t-esc="b.owner_id.birth_date"/></div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; min-width:100px;">Address </div>
+                                    <div style="display:table-cell;">
+                                        <span t-field="b.owner_id"
+                                                t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true}' style="display:inline;" />
+                                    </div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; min-width:100px;">Email </div>
+                                    <div style="display:table-cell;"><div t-field="b.owner_id.email"/></div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; min-width:100px;">Phone </div>
+                                    <div style="display:table-cell;"><div t-field="b.owner_id.phone"/></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="text-center">
+                            <span t-field="b.block_share_numbers"/>
+                        </td>
+
+                        <td class="text-center">
+                            <span t-esc="float(b.block_share_numbers) / b.number_of_shares*100.00"/><span>%</span>
+                        </td>
+                        
+                        <td class="text-center">
+                            <span t-field="b.name" />
+                        </td>
+                    </tr>
+                    <tr style="border-bottom:2px solid black;">
+                        <td class="text-left"><b>Total:</b></td>
+                        <td class="text-center"><b><span t-esc="sum(map(lambda a: float(a.block_share_numbers), get_block()))"/></b></td>
+                        <td class="text-center"><b><span t-esc="sum(map(lambda a: float(a.block_share_numbers) / a.number_of_shares*100.00, get_block()))"/><span>%</span></b></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+           <!--  <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Total:</th>
+                        <th class="text-right"><span t-esc="sum(map(lambda a: float(a.block_share_numbers), get_block()))"/></th>
+                        <th class="text-left"><span t-esc="sum(map(lambda a: float(a.block_share_numbers) / a.number_of_shares*100.00, get_block()))"/><span>%</span></th>
+                    </tr>
+                </thead>
+            </table> -->
+        </div>
+    </t>
+</template>
+
+<!--<template id="report_block">-->
+<!--            <t t-call="report.html_container">-->
+<!--                <t t-foreach="doc_ids" t-as="doc_id">-->
+<!--                    <t-->
+<!--                        t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'share_register.report_block_document')" />-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </template>-->
+</data>
+</openerp>

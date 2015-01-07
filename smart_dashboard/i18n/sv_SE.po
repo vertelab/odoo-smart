@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smart_dashboard
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-21 09:40+0000\n"
+"PO-Revision-Date: 2014-11-03 09:57+0100\n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.9\n"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Date"
+msgstr "Datum"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "From"
+msgstr "Från"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Message"
+msgstr "Meddelande"
+
+#. module: smart_dashboard
+#: view:website:smart_common.smartmenu
+msgid "My Dashboard"
+msgstr "Min anslagstavla"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Recent activity"
+msgstr "Senaste händelser"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Subject"
+msgstr "Rubrik"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Type"
+msgstr "Typ"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_website
+msgid "Website"
+msgstr "Webbsida"
+
+#, fuzzy
+#~ msgid "Change the price"
+#~ msgstr "Change the price"
+
+#, fuzzy
+#~ msgid "Choose name"
+#~ msgstr "Choose name"
+
+#, fuzzy
+#~ msgid "Click <em>Continue</em> to create the product."
+#~ msgstr "Click <em>Continue</em> to create the product."
+
+#, fuzzy
+#~ msgid "Click here to add a new product."
+#~ msgstr "Click here to add a new product."
+
+#, fuzzy
+#~ msgid "Click here to set an image describing your product."
+#~ msgstr "Click here to set an image describing your product."
+
+#, fuzzy
+#~ msgid "Click on save to add the image to the product decsription."
+#~ msgstr "Click on save to add the image to the product decsription."
+
+#, fuzzy
+#~ msgid "Click to publish your product so your customers can see it."
+#~ msgstr "Click to publish your product so your customers can see it."
+
+#, fuzzy
+#~ msgid "Close Tutorial"
+#~ msgstr "Close Tutorial"
+
+#, fuzzy
+#~ msgid "Congratulations"
+#~ msgstr "Congratulations"
+
+#, fuzzy
+#~ msgid "Congratulations! You just created and published your first product."
+#~ msgstr "Congratulations! You just created and published your first product."
+
+#, fuzzy
+#~ msgid "Continue"
+#~ msgstr "Continue"
+
+#, fuzzy
+#~ msgid "Create Product"
+#~ msgstr "Create Product"
+
+#, fuzzy
+#~ msgid "Create a new product"
+#~ msgstr "Create a new product"
+
+#, fuzzy
+#~ msgid "Create a product"
+#~ msgstr "Create Product"
+
+#, fuzzy
+#~ msgid "Create your first product"
+#~ msgstr "Create your first product"
+
+#, fuzzy
+#~ msgid "Describe the Product"
+#~ msgstr "Describe the Product"
+
+#, fuzzy
+#~ msgid "Drag & Drop a block"
+#~ msgstr "Drag & Drop a block"
+
+#, fuzzy
+#~ msgid "Drag the 'Big Picture' block and drop it in your page."
+#~ msgstr "Drag the 'Big Picture' block and drop it in your page."
+
+#, fuzzy
+#~ msgid "Edit the price of this product by clicking on the amount."
+#~ msgstr "Edit the price of this product by clicking on the amount."
+
+#, fuzzy
+#~ msgid "Enter a name for your new product then click 'Continue'."
+#~ msgstr "Enter a name for your new product then click 'Continue'."
+
+#, fuzzy
+#~ msgid ""
+#~ "Insert blocks like text-image, or gallery to fully describe the product."
+#~ msgstr ""
+#~ "Insert blocks like text-image, or gallery to fully describe the product."
+
+#, fuzzy
+#~ msgid "Let's select an ipad image."
+#~ msgstr "Let's select an ipad image."
+
+#, fuzzy
+#~ msgid "New Product"
+#~ msgstr "New Product"
+
+#, fuzzy
+#~ msgid "New product created"
+#~ msgstr "New product created"
+
+#, fuzzy
+#~ msgid "Once you click on save, your product is updated."
+#~ msgstr "Once you click on save, your product is updated."
+
+#, fuzzy
+#~ msgid "Publish your product"
+#~ msgstr "Publish your product"
+
+#, fuzzy
+#~ msgid "Save this Image"
+#~ msgstr "Save this Image"
+
+#, fuzzy
+#~ msgid "Save your modifications"
+#~ msgstr "Save your modifications"
+
+#, fuzzy
+#~ msgid ""
+#~ "Select 'New Product' to create it and manage its properties to boost your "
+#~ "sales."
+#~ msgstr ""
+#~ "Select 'New Product' to create it and manage its properties to boost your "
+#~ "sales."
+
+#, fuzzy
+#~ msgid "Select an Image"
+#~ msgstr "Select an Image"
+
+#, fuzzy
+#~ msgid "Skip It"
+#~ msgstr "Skip It"
+
+#, fuzzy
+#~ msgid "Start Tutorial"
+#~ msgstr "Start Tutorial"
+
+#, fuzzy
+#~ msgid "This page contains all the information related to the new product."
+#~ msgstr "This page contains all the information related to the new product."
+
+#, fuzzy
+#~ msgid "Update image"
+#~ msgstr "Update image"
+
+#, fuzzy
+#~ msgid "Welcome to your shop"
+#~ msgstr "Welcome to your shop"
+
+#, fuzzy
+#~ msgid ""
+#~ "You successfully installed the e-commerce. This guide will help you to "
+#~ "create your product and promote your sales."
+#~ msgstr ""
+#~ "You successfully installed the e-commerce. This guide will help you to "
+#~ "create your product and promote your sales."

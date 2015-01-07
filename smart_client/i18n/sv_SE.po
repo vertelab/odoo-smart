@@ -1,0 +1,450 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_client\n"
+"Language: sv_SE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_activity
+#: view:website:smart_client.client_individual view:website:smart_client.list
+msgid "Name"
+msgstr "Namn"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_website
+msgid "Website"
+msgstr "Webbsida"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "+32 123..."
+msgstr "+46 123..."
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "Add a new client"
+msgstr "Lägg till en ny uppdragsgivare"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Address"
+msgstr "Adress"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Addresss"
+msgstr "Adress"
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "Adress"
+msgstr "Adress"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "An Individual client"
+msgstr "En individ"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:53
+msgid "Change the price"
+msgstr "Ändra priset"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:33
+msgid "Choose name"
+msgstr "Välj namn"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "City"
+msgstr "Stad"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:41
+msgid "Click <em>Continue</em> to create the product."
+msgstr "Klicka på <em> Fortsätt </ em> för att skapa produkten."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:19
+msgid "Click here to add a new product."
+msgstr "Klicka här för att lägga till en ny produkt."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:62
+msgid "Click here to set an image describing your product."
+msgstr "Klicka här för att ställa in en bild som beskriver din produkt."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:75
+msgid "Click on save to add the image to the product decsription."
+msgstr "Klicka på Spara för att lägga till bilden i produkt decsription."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:104
+msgid "Click to publish your product so your customers can see it."
+msgstr "Klicka för att publicera din produkt så att dina kunder kan se det."
+
+#. module: smart_client
+#: view:website:smart_client.list view:website:smart_common.smartmenu
+msgid "Clients"
+msgstr "Uppdragsgivare"
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Clients name..."
+msgstr "Ändra namnet..."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:110
+msgid "Close Tutorial"
+msgstr "Stäng Tutorial"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Company"
+msgstr "Företag"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company name"
+msgstr "Företagsnamn"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company registration number"
+msgstr "Organisationsnummer"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:108
+msgid "Congratulations"
+msgstr "Grattis"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:109
+msgid "Congratulations! You just created and published your first product."
+msgstr "Grattis! Du just skapade och publicerade din första produkt."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:47
+msgid "Continue"
+msgstr "Fortsätta"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+msgid "Country"
+msgstr "Land"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:40
+msgid "Create Product"
+msgstr "Skapa Produkt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:25
+msgid "Create a new product"
+msgstr "Skapar en ny produkt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:8
+msgid "Create a product"
+msgstr "Skapa en produkt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:18
+msgid "Create your first product"
+msgstr "Skapa din första produkt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:81
+msgid "Describe the Product"
+msgstr "Beskriv produkten"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:88
+msgid "Drag & Drop a block"
+msgstr "Dra och släpp ett block"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:89
+msgid "Drag the 'Big Picture' block and drop it in your page."
+msgstr "Dra \"Big Picture\" blocket och släpp den på din sida."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Edit Client Organisation"
+msgstr "Ändra Organisation"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:54
+msgid "Edit the price of this product by clicking on the amount."
+msgstr "Redigera priset på denna produkt, genom att klicka på mängden."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Email"
+msgstr "Epost"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:34
+msgid "Enter a name for your new product then click 'Continue'."
+msgstr ""
+"Skriv in ett namn för din nya produkt och klicka sedan på \"Fortsätt\"."
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Hello world"
+msgstr "Hej världen"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:82
+msgid ""
+"Insert blocks like text-image, or gallery to fully describe the product."
+msgstr ""
+"Infoga block som text-bild, eller galleri till fullo beskriva produkten."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Legal Information"
+msgstr "Legalinformation"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:68
+msgid "Let's select an ipad image."
+msgstr "Låt oss välja en ipad bild."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "New Client Organisation"
+msgstr "Ny Organisation"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "New Individual Client"
+msgstr "Ny Individell uppdragsgivare"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale.editor.js:11
+msgid "New Product"
+msgstr "Ny produkt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:45
+msgid "New product created"
+msgstr "Ny produkt skapad"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:96
+msgid "Once you click on save, your product is updated."
+msgstr "När du klickar på Spara, är din produkt uppdateras."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Optional street info"
+msgstr "En andra adressrad"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Phone and Email"
+msgstr "Telefon och Epost"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Postal code"
+msgstr "Postnr"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:103
+msgid "Publish your product"
+msgstr "Publicera din produkt"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Registered office address"
+msgstr "Officell adress"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Save changes"
+msgstr "Spara ändringar"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:74
+msgid "Save this Image"
+msgstr "Spara denna bild"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:95
+msgid "Save your modifications"
+msgstr "Spara dina ändringar"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:26
+msgid ""
+"Select 'New Product' to create it and manage its properties to boost your "
+"sales."
+msgstr ""
+"Välj \"Ny produkt\" för att skapa den och förvalta fastigheterna för att öka "
+"din försäljning."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:67
+msgid "Select an Image"
+msgstr "Välj en bild"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:13
+msgid "Skip It"
+msgstr "STRUNT I DET"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:13
+msgid "Start Tutorial"
+msgstr "Start Tutorial"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:46
+msgid "This page contains all the information related to the new product."
+msgstr "Denna sida innehåller all information om den nya produkten."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "UnLinked Your organisations id nr"
+msgstr "Organisationsnummer"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:61
+msgid "Update image"
+msgstr "Uppdatera bild"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid ""
+"Use international format, starting with country and city codes: +32 2 123 45 "
+"67"
+msgstr ""
+"Använd internationellt format, starta med lands- och riktnummer: "
+"+46.123456789"
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "VAT number"
+msgstr "Momsnummer"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "VAT registration number"
+msgstr "Momsnummer"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:11
+msgid "Welcome to your shop"
+msgstr "Välkommen till din butik"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:12
+msgid ""
+"You successfully installed the e-commerce. This guide will help you to "
+"create your product and promote your sales."
+msgstr ""
+"Du installerats på e-handel. Denna guide hjälper dig att skapa din produkt "
+"och främja din försäljning."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Your VAT number"
+msgstr "Ditt momsnummer"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your clients name"
+msgstr "Din uppdragsgivares namn"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your street and number"
+msgstr "Din gatuadress"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your town"
+msgstr "Din stad"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "first.last@company.org"
+msgstr "förnamn.efternamn@företag.se"

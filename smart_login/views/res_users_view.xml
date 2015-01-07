@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+<!--         res.users -->
+        
+        <record id="view_users_form_inherit" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+             <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="active" position="after">
+<!--                     <field name="approval"/>-->
+                     <field name="webterms_accepted"/>
+                     </field>                
+                </data>
+
+            </field>
+        </record>
+
+        <!--
+            <record id="view_users_form_mail" model="ir.ui.view">
+            <field name="name">res.users.form.mail</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="active" position="after">
+                        <field name="approved"  on_change="on_change_approved(approved)" />
+                    </field>
+                </data>
+            </field>
+        </record>
+        
+                 <button name="add_hr_employee" string="Add HR Employee" type="object" />
+ <button name="add_activity" string="Add Activity" type="object" />
+        
+-->                       
+        
+
+
+        <record id="view_users_tree_inherit" model="ir.ui.view">
+            <field name="name">res.users.tree</field>
+            <field name="model">res.users</field>
+             <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="login_date" position="after">
+                     <field name="state"/>
+                     <field name="webterms_accepted"/>
+                     </field>
+                </data>
+
+            </field>
+        </record>
+
+<!--
+        <record id="base.view_users_search" model="ir.ui.view">
+            <field name="name">res.users.search</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <search string="Users">
+                    <field name="name" filter_domain="['|', '|', ('name','ilike',self), ('login','ilike',self), ('email','ilike',self)]" string="User"/>
+                    <field name="company_ids" string="Company" groups="base.group_multi_company"/>
+
+                    <filter name="new" string="New" domain="[('state','=','new')]" help="Never connected, newly created users"/>
+                    <filter name="active" string="WebUsers" domain="[('state','=','active')]" help="Active WebUsers"/>
+                    <filter name="approved" string="SmartUser" domain="[('state','=','approved')]" help="Approved"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                    	<filter name="date" string="Latest connection" domain="[]" context="{'group_by':'login_date'}"/>
+                        <filter string="Company" icon="terp-personal" domain="[]"  context="{'group_by':'company_id'}"/>
+
+                        <filter string="Status" icon="terp-stock_effects-object-colorize" domain="[]"  context="{'group_by':'state'}"/>
+                    </group>
+               
+                    
+                    
+                    
+                </search>
+            </field>
+        </record>
+-->
+        
+
+    </data>
+</openerp>

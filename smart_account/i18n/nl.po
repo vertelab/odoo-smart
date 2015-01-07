@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_account\n"
+"Language: nl_NL\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "+32 123..."
+msgstr "+31 123 ..."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "123 456 789"
+msgstr "123 456 789"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account"
+msgstr "Rekening"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number"
+msgstr "Rekeningnummer"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Activity"
+msgstr "Activiteit"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Address"
+msgstr "Adres"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Administrative"
+msgstr "Administratief"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Alice Artist"
+msgstr "Alice Artist"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "BIC/Swift"
+msgstr "BIC / Swift"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bank Account"
+msgstr "Bankrekening"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bankname"
+msgstr "Banknaam"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change everything concerning your administrative info"
+msgstr "Verander alles wat met uw administratieve info"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your Phone number and Address"
+msgstr "Wijzig uw telefoonnummer en adres"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your bank account"
+msgstr "Wijzig uw bankrekening"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your name"
+msgstr "Verander je naam"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "City"
+msgstr "City"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Country"
+msgstr "Land"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_hr_employee
+msgid "Employee"
+msgstr "Werknemer"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "ID Card Number"
+msgstr "Identiteitskaartnummer"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Identity"
+msgstr "Identiteit"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Manage your Account"
+msgstr "Beheer uw account"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Mobile Phone"
+msgstr "Mobiele Telefoon"
+
+#. module: smart_account
+#: view:website:smart_common.smartmenu
+msgid "My Account"
+msgstr "Mijn Account"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Name"
+msgstr "Naam"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Nationality"
+msgstr "Nationaliteit"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "New user"
+msgstr "Nieuwe gebruiker"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Passport Number"
+msgstr "Paspoort nummer"
+
+#. module: smart_account
+#: view:website:smart_common.smartmenu
+msgid "People"
+msgstr "Mensen"
+
+#. module: smart_account
+#: help:hr.employee,withhold_tax:0
+msgid "Percentage tax to withhold"
+msgstr "Procentuele belasting in te houden"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Phone"
+msgstr "Telefoon"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Save changes"
+msgstr "Wijzigingen opslaan"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Social Security Number"
+msgstr "Social Security Number"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Status"
+msgstr "Toestand"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Street"
+msgstr "Straat"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Thanks, your settings have been saved."
+msgstr "Bedankt, hebben de instellingen zijn opgeslagen."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "UnLinked"
+msgstr "Unlinked"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Use international format : +32 123 45 67 89"
+msgstr "Gebruik internationale formaat: +32 123 45 67 89"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Users"
+msgstr "Gebruikers"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_website
+msgid "Website"
+msgstr "Website"
+
+#. module: smart_account
+#: field:hr.employee,withhold_tax:0
+msgid "Withhold Tax"
+msgstr "Achterhouden Tax"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Withholding tax"
+msgstr "Roerende voorheffing"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Name"
+msgstr "Your Name"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your mobile nr"
+msgstr "Uw mobiele nr"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your street and number"
+msgstr "Uw straat en huisnummer"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your town"
+msgstr "Uw stad"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Zip"
+msgstr "Ritssluiting"

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="act_submitted" model="workflow.activity">
+            <field name="wkf_id" ref="account.wkf"/>
+            <field name="name">submitted</field>
+            <field name="action">write({'state':'submitted'})</field>
+            <field name="kind">function</field>
+        </record>
+
+<!--
+        <record id="t4_inherit" model="workflow.transition">
+            <field name="inherit_id" ref="account.t4"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='act_from']" position="replace">
+                        <field name="act_from" ref="act_submitted"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+-->
+
+
+        <record id="t3" model="workflow.transition">
+            <field name="act_from" ref="account.act_draft"/>
+            <field name="act_to" ref="act_submitted"/>
+            <field name="signal">invoice_submitted</field>
+        </record>
+
+
+        <record id="account.t4" model="workflow.transition">
+            <field name="act_from" ref="act_submitted"/>
+            <field name="act_to" ref="account.act_open"/>
+            <field name="signal">invoice_open</field>
+        </record>
+
+        
+        <record id="t9" model="workflow.transition">
+            <field name="act_from" ref="act_submitted"/>
+            <field name="act_to" ref="account.act_cancel"/>
+            <field name="signal">invoice_cancel</field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,12 @@
+id,company_id/id,parent_id/id,street2,street,state_id/id,title/id,zip,website,is_company,email,date,customer,country_id/id,city,birth_date,birthdate
+__export__.res_partner_7,__export__.res_company_3,,,Street 1,,,Zip 1,,TRUE,,,TRUE,base.se,City 1,FALSE,FALSE
+__export__.res_partner_11,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_12,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_14,base.main_company,,,,,,,,TRUE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_13,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_6,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_10,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_8,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_9,base.main_company,,,,,,,,FALSE,,,TRUE,,FALSE,FALSE,FALSE
+__export__.res_partner_16,__export__.res_company_4,,,Rue,,,1234,,TRUE,,,TRUE,base.fr,Ville,FALSE,FALSE
+__export__.res_partner_15,base.main_company,,,,,,,,TRUE,,,TRUE,,FALSE,FALSE,FALSE

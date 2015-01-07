@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_activity\n"
+"Language: it_IT\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "A short and relevant name is best."
+msgstr "Un nome breve e pertinente è la cosa migliore."
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Active"
+msgstr "Attivo"
+
+#. module: smart_activity
+#: view:website:smart_activity.list view:website:smart_common.smartmenu
+msgid "Activities"
+msgstr "Attività"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity_overview
+msgid "Activities name..."
+msgstr "Attività citarne ..."
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Activity name"
+msgstr "Nome Attività"
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Add a new activity"
+msgstr "Aggiungere una nuova attività"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Archived"
+msgstr "Archiviati"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Edit Activity"
+msgstr "Modifica attività"
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Name"
+msgstr "Nome"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Save"
+msgstr "Salva"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Status"
+msgstr "Stato"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_website
+msgid "Website"
+msgstr "Sito web"

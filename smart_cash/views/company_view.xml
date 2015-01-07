@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_company_inherit_form">
+            <field name="name">view.company.form.inherit</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <field name="company_registry" position="after">
+                    <field name="prepayment" />
+                    <field name="prepayment_days" /> 
+                    <field name="smart_share" /> 
+                    <field name="sale_order_sum_cash" /> 
+                    <field name="smart_amount_cash" /> 
+                    <field name="activity_amount_cash" /> 
+                    <field name="expense_sum_cash" /> 
+                    <field name="smart_cash" /> 
+                    <field name="sale_order_sum_budget" /> 
+                    <field name="smart_amount_budget" /> 
+                    <field name="activity_amount_budget" /> 
+                    <field name="expense_sum_budget" />                     
+                    <field name="smart_budget" /> 
+                </field>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_company_inherit_tree">
+            <field name="name">view.company.form.inherit</field>
+            <field name="inherit_id" ref="base.view_company_tree"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="smart_budget" /> 
+                    <field name="smart_cash" /> 
+                    <field name="prepayment" />
+                    <field name="prepayment_days" /> 
+                    <field name="smart_share" /> 
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template name="order list" id="list">
+    <t t-call="smart_common.layout">
+
+	    <div class="content span10">
+      
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+            	<header class="panelsheet-header clearfix">
+              <div class="title">
+                <h1>Orders</h1>
+                <div class="pull-right">
+                  <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
+                </div>
+              </div>
+            </header>
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+              
+<!--              start search box-->
+                
+              <p>
+			   <form class="form-horizontal form-preview"   action="/order/list"  method="POST">   
+                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Type a name, a reference or a date..."/> 
+				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search</button>
+              </form>
+              </p>
+<!--              end search box-->
+              
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Description</span></th>
+      	              <th><span class="muted">Client</span></th>
+					  <th><span class="muted">Type </span></th>
+					  <!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Amount</span></th>
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="sale_orders" t-as="o">
+                            <tr>  
+<!--                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.client_order_ref"/> </strong> (<t t-raw="o.name"/>)</a></td>-->
+                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.description"/> </strong> (<t t-raw="o.name"/>)</a></td>                              <td><t t-raw="o.partner_id.display_name"/></td>
+
+ 			 				  <td class="cell" align="right">
+									<t t-if="o.partner_id.is_company"> <span class="muted"> Organisation </span></t>
+
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="o.partner_id.parent_id.is_company"> <span class="muted"> Contact person </span></t></t>
+									
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="not o.partner_id.parent_id.is_company"><span class="muted"> Individual </span></t></t>
+								</td>
+<!--                              <td><t t-raw="o.partner_id.date"/></td>-->
+								<td class="cell" style="text-align: right;"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></td>
+                             <td class="cell">
+			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Approved by Client</span></t>
+			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>			    			
+ (<t t-raw="o.state"/>)
+                             </td>
+
+                             <td t-if="o.state == 'draft'" class="cell-primary"><a  t-att-href="'/order/%s/cancel' % o.id" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return true;'><i class="icon-trash icon-red"></i></a></td>
+                             
+                             
+                            </tr>
+                      </t>
+      	          </tbody>
+      	          
+      	        </table>
+
+
+<hr/>      	          
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Invoiced to the client</span></th>
+      	              <th><span class="muted">VAT</span></th>
+					  <th><span class="muted">Billing </span></th>
+      	              <th><span class="muted">SMart share </span></th>
+      	              <th><span class="muted">Budget for the activity</span></th>
+      	            </tr>
+      	          </thead>
+      	          <tbody>
+                            <tr>
+ 			 				  <td class="cell" align="right">Invoiced to the client: 
+                             </td>
+ 			 				  <td class="cell" align="right">VAT: 
+                             </td>
+ 			 				  <td class="cell" align="right">Billing: 
+                             </td>
+ 			 				  <td class="cell" align="right">(6,5%): 
+                             </td>
+ 			 				  <td class="cell" align="right">Budget for the activity: 
+                             </td>
+                            </tr>                    
+      	          </tbody>
+      	          
+      	        </table>
+                
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+          </div>
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+
+	</t>        
+</template>
+
+
+<template name="order list" id="list_all">
+    <t t-call="smart_common.layout">
+
+	    <div class="content span10">
+      
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+            	<header class="panelsheet-header clearfix">
+              <div class="title">
+                <h1>All Orders</h1>
+                <div class="pull-right">
+                  <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
+                </div>
+              </div>
+            </header>
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+                
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Activity</span></th>
+      	              <th><span class="muted">Description</span></th>
+      	              <th><span class="muted">Client</span></th>
+					  <th><span class="muted">Type </span></th>
+					  <!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Amount</span></th>
+      	              <th><span class="muted">Status</span></th>
+      	              <th><span class="muted"> </span></th>
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="sale_orders" t-as="o">
+                            <tr>  
+                              <td class="cell" valign="right"><t t-raw="o.company_id.name"/></td>
+<!--                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.client_order_ref"/> </strong> (<t t-raw="o.name"/>)</a></td>-->
+                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.description"/> </strong> (<t t-raw="o.name"/>)</a></td>
+                              <td><t t-raw="o.partner_id.display_name"/></td>
+			 				<td class="cell" valign="right">
+									<t t-if="o.partner_id.is_company"> <span class="muted"> Organisation </span></t>
+
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="o.partner_id.parent_id.is_company"> <span class="muted"> Contact person </span></t></t>
+									
+									<t t-if="not o.partner_id.is_company">
+									<t t-if="not o.partner_id.parent_id.is_company"><span class="muted"> Individual </span></t></t>
+
+							</td>
+<!--                              <td><t t-raw="o.partner_id.date"/></td>-->
+							<td class="cell" style="text-align: right;"><t t-raw="o.amount_untaxed"/></td>
+                             <td class="cell">
+			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Approved by Client</span></t>
+			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>	
+
+                             </td>
+                             <td t-if="o.state == 'draft'" class="cell-primary"><a  t-att-href="'/order/%s/cancel' % o.id" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return true;'><i class="icon-trash icon-red"></i></a></td>
+                            </tr>
+                      </t>
+                    
+      	          </tbody>
+      	          
+      	        </table>
+                
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+          </div>
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+
+	</t>        
+</template>
+
+
+
+<template name="Edit Order data" id="edit_order_data">
+    <t t-call="smart_common.layout">
+        
+   	<div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="order.select.client">
+          <div class="panelsheet">
+          
+	            <header class="panelsheet-header clearfix">
+			      <!--	<div class="page-header">-->
+<!--If the order exists-->
+                <t t-if="sale_order and sale_order.id"> 
+<!--			      <h1><t t-esc="sale_order.client_order_ref"/> <small>(<t t-esc="sale_order.name"/>).</small> </h1> -->
+			      <h1><t t-esc="sale_order.description"/> <small>(<t t-esc="sale_order.name"/>).</small> </h1> 
+			      <div class="pull-right">
+			    (<t t-if="sale_order.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="sale_order.state == 'sent'"><span class="sent">Approved by Client</span></t>
+			   	 <t t-if="sale_order.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="sale_order.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="sale_order.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="sale_order.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="sale_order.state == 'cancel'"><span class="sent">Cancelled</span></t>)
+			      </div>
+                </t>
+<!--If it is a new order-->
+                <t t-if="not sale_order"> 
+			      <h1>New Order</h1>
+                </t>
+
+
+			       <!--				Breadcrumbs indicating state of the order-->
+<!--				<ul class="steps pull-right">-->
+<!--		      		 <li class="active"><i class="icon-tag" style="margin-top: 3px;"></i> <strong>Details</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li><i class="icon-briefcase" style="margin-top: 3px;"></i> <strong>Billing</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li><i class="icon-file" style="margin-top: 3px;"></i> <strong>Overview</strong></li>-->
+<!--		      	</ul>	-->
+			     <!--	 </div>-->
+	            </header>
+	            
+	            
+<!--			<legend>-->
+<!--    	  	  <strong>Details</strong><a href="../../order/" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit 1</strong></a>-->
+<!--			</legend>      -->
+	             
+   <form class="form-horizontal form-preview"  t-attf-action="#{form_action}"  method="POST">   
+	
+		<div class="well">
+		
+			<div class="control-group description">
+              <label class="control-label">Description</label>
+
+              <div class="controls">
+                <t t-if="sale_order and sale_order.id"> 
+<!--                    <input type="text" id="qty" size="5" name="client_order_ref" align="right" placeholder="Name your order!" t-attf-value="#{sale_order.client_order_ref}"/>-->
+                    <input type="text" id="qty" size="5" name="description" align="right" placeholder="Name your order!" t-attf-value="#{sale_order.description}"/>
+                </t>
+                <t t-if="not sale_order"> 
+<!--                    <input type="text" size="5" name="client_order_ref"  placeholder="Name your order!" />-->
+                    <input type="text" size="5" name="description"  placeholder="Name your order!" />
+                </t>
+
+                <t t-if="not sale_order"> 
+				<p class="help-block">A brief description that will be referenced to your invoice.</p>
+				</t>
+
+              </div>
+            </div>
+		
+		
+		
+  			<div class="control-group contact">
+              <label class="control-label">Contact</label>
+
+              <div class="controls">
+<!--If the Order is in Draft, then it is possible to change client-->
+               <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
+				 <select name="partner_id" >
+<!--                    <t t-if="sale_order and sale_order.state in ['draft']">-->
+<!--                        <option t-att-value="sale_order.partner_id.id" t-att-selected="sale_order.partner_id== sale_order.partner_id.id"><t t-esc="sale_order.partner_id.display_name"/>1</option>-->
+<!--	            	</t>-->
+    	                <option>- My clients -</option>
+                    <t t-foreach="clients_local" t-as="c">
+    	                <option t-att-value="c.id" t-att-selected="c.id== c.id"><t t-esc="c.display_name"/></option>
+					</t>
+    	                <option>- All clients -</option>
+                    <t t-foreach="clients_global" t-as="c">
+    	                <option t-att-value="c.id" t-att-selected="c.id== c.id"><t t-esc="c.display_name"/></option>
+					</t>
+
+				 </select> 
+<!--If the Order is in Submitted, then the client is only displayed -->
+                <t t-if="sale_order and sale_order.state not in ['draft']">
+                        <div t-esc="sale_order.partner_id.display_name"/>
+				 </t> 
+			  </t>
+<!--If the Order is in Draft, then it is possible to change client-->
+               <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
+					<a t-att-href="'/client/new/'" class="btn btn-small"><i class="icon-plus"></i> <strong>New Client</strong></a>
+				</t>
+              </div>
+            </div>
+
+
+            <div class="control-group project">
+              <label class="control-label" for="input-invoiceDate">Project</label>
+              <div class="controls">
+
+               <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
+				<select name="project_id" >
+<!--                <t t-if="sale_order and sale_order.project_id"> -->
+<!--                    <option t-attf-value="#{sale_order.project_id.id}" t-att-selected="sale_order.project_id.id == sale_order.project_id.id"><t t-esc="sale_order.project_id.name"/>3</option> -->
+<!--                    <option t-att-value="sale_order.project_id.id"><t t-esc="sale_order.project_id.name"/></option>-->
+<!--                </t>-->
+                 <t t-foreach="projects" t-as="p">
+				  <option t-att-value="p.id" t-att-selected="p.id == p.id"><t t-esc="p.name"/></option>
+				</t>
+				 </select> 
+                </t>
+                <t t-if="sale_order and sale_order.state not in ['draft']">
+                        <div t-esc="sale_order.project_id.display_name"/>
+				 </t> 
+               <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
+                    <a t-att-href="'/project/new/'" class="btn btn-small"><i class="icon-plus"></i> <strong>New Project</strong></a>
+				</t>
+              </div>
+            </div>
+
+       </div>
+       <!-- end div well -->
+           
+				       
+	     
+	     
+     			<div class="tools ">
+                        <t t-if="error"> 
+                              <strong t-value="#{error}"/>
+                        </t>
+
+
+     					<ul>
+     					<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Next</button>
+     					
+<!--		                <t t-if="sale_order and sale_order.id"> -->
+<!--				  			  <a  t-if="sale_order.state in ['draft']" t-att-href="'/order/%s/cancel/' % sale_order.id" class="btn btn-large btn-danger"> <strong>Delete</strong></a>-->
+<!--		                </t>-->
+		                
+		                <t t-if="not sale_order"> 
+				  			  <a  t-att-href="'/order/list/'" class="btn btn-large btn-danger"> <strong>Cancel</strong></a>
+		                </t>
+
+						</ul>
+
+				</div>
+            
+
+            
+            </form>
+   
+	     
+			<!--/panelsheet-content-->
+
+
+<!-- </div> -->
+
+
+          </div>
+          <!-- /panelsheet -->
+                 
+        </div>
+        <!-- /order.edit -->
+        
+        
+                <!-- ** CURRENT VIEW CONTENT ** -->
+        
+     </div>
+     <!-- /content span 10 -->
+</t>        
+</template>
+
+
+
+<template name="order edit lines" id="edit_lines">
+    <t t-call="smart_common.layout">
+        
+   	<div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="order.edit">
+          <div class="panelsheet">
+          
+	            <header class="panelsheet-header clearfix">
+			      <!--<div class="page-header">-->
+<!--			     	<h1><t t-raw="sale_order.client_order_ref"/> <small><t t-esc="sale_order.name"/></small>-->
+			     	<h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/></small>
+					<div class="pull-right">
+							<small>(<t t-if="sale_order.state == 'draft'"><span class="draft">Draft </span></t>
+			   				<t t-if="sale_order.state == 'open'"><span class="sent">Submitted</span></t>
+   			    			<t t-if="sale_order.state == 'manual'"><span class="approved">Approved</span></t>
+   			    			<t t-if="sale_order.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			    			<t t-if="sale_order.state == 'done'"><span class="paid">Paid</span></t>)</small>
+					</div>
+			      </h1>
+			    
+			       <!--				Breadcrumbs indicating state of the order-->
+<!--				<ul class="steps pull-right">-->
+<!--		      		 <li><i class="icon-tag" style="margin-top: 3px;"></i> <strong>Details</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li class="active"><i class="icon-briefcase" style="margin-top: 3px;"></i> <strong>Billing</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li><i class="icon-file" style="margin-top: 3px;"></i> <strong>Overview</strong></li>-->
+<!--		      	</ul>	-->
+
+
+
+
+			      <!--</div>-->
+	            </header>
+	            
+			<UL>
+			<legend>
+    	  	  <strong>Details</strong>
+ 			</legend>
+             <div class="control-group client and contact">
+              
+              <div class="controls">
+					<table width="100%" border="0">
+						
+<!--Start Organisation-->
+						<t t-if="sale_order.partner_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="80%"><strong><t t-esc="sale_order.partner_id.name"/></strong></td>				
+
+						</tr>
+						
+						</t>
+						
+<!--End Organisation -->
+
+<!--Start Contact Person at an Organisation-->
+						<t t-if="not sale_order.partner_id.is_company"><t t-if="sale_order.partner_id.parent_id.is_company">
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong><t t-esc="sale_order.partner_id.parent_id.name"/></strong></td>				
+
+						</tr>
+						
+						
+					<tr>
+              			<td width="20%"><label class="control-label">Contact </label></td>
+		            	<td width="80%"><strong><t t-esc="sale_order.partner_id.name"/></strong></td>				
+
+		            	</tr>
+						
+						
+					</t> 
+				</t>
+<!--			nopadding	-->
+						
+<!--End Contact Person at an Organisation-->
+					
+					
+<!--Start Individual-->
+		            	<t t-if="not sale_order.partner_id.is_company"><t t-if="not sale_order.partner_id.parent_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="80%"><strong><t t-esc="sale_order.partner_id.name"/></strong></td>				
+
+						</tr>
+						</t></t>
+						
+<!--End Individual -->
+						
+						
+<!--Start project 						-->
+						<tr>
+	              			<td width="20%"><label class="control-label">Project</label></td>
+			            	<td width="80%"><strong><t t-esc="sale_order.project_id.name"/></strong></td>				
+						</tr>
+						
+<!--end project 						-->
+					</table>
+              </div>
+            </div>
+            
+	       </UL>      
+
+   <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">              
+	     
+<!-- Order -->
+			  <ul>
+
+			  </ul>
+			  <div class="well" style="margin-top: -10px;">
+			  
+			  	<legend>
+			    <strong>Billing</strong>
+			  </legend>
+
+  				<table id="billed-items" class="table" style="margin: -0px 0;">
+      	          <thead>
+      	            <tr>
+     	              <td colspan="2" class="order_nopadding"><span class="muted">Description</span></td>
+      	              <th><span class="muted">VAT</span></th>
+      	              <th><span class="muted">Price</span></th>
+					  <th><span class="muted">Action</span></th>
+      	            </tr>
+      	          </thead>
+
+
+                  <tbody>
+                  
+                        <t t-set="line_index" t-value="0"/>
+                      <t t-foreach="sale_order.order_line" t-as="o">
+                            <tr>  
+                              
+
+                              <td colspan="2"><input type="text" t-att-name="'line_name_%s' % o_index" placeholder="Name" t-attf-value="#{o.name}"/><input type="hidden" t-att-name="'line_id_%s' % o_index" t-attf-value="#{o.id}"/></td>
+
+                                <td style="width: 20px;"> <!-- TAX -->
+                                 <select t-att-name="'line_tax_%s' % o_index" >
+                                    <t t-if="sale_order and o and o.tax_id">
+                                       <option t-attf-value="#{o.tax_id[0].id}" t-att-selected="o.tax_id[0].id == o.tax_id[0].id"><t t-esc="o.tax_id[0].name"/></option> 
+                                       <option t-att-selected="o.tax_id[0]" t-att-value="o.tax_id[0].id"><t t-esc="o.tax_id[0].name"/></option>
+                                    </t>
+<!--                                    <t t-foreach="account_tax" t-as="t">-->
+<!--                                        <option t-attf-value="#{t.id}" t-att-selected="o.tax_id[0].id == o.tax_id[0].id"><t t-esc="t.name"/></option>-->
+<!--                                    </t>-->
+                                 </select> 
+                                 </td>
+
+                              <td><input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/></td>
+                              <td><a  t-att-href="'/order/%s/line/%s/delete' % (sale_order.id,o.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a></td>
+                            </tr>
+
+
+                      </t>
+
+                        <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
+			               <tr>
+                              <td colspan="2"><input type="text" id="name" name="line_name_new" placeholder="Name" /></td>
+<!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
+<!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
+                                <td style="width: 20px;"> <!-- TAX -->
+                                 <select name="line_tax_new" >
+                                    <t t-foreach="account_tax" t-as="t">
+                                        <option t-att-value="t.id"><t t-esc="t.name"/></option>
+                                    </t>
+                                 </select> 
+                                 </td>
+
+                              <td><input type="text" id="price" size="10" name="line_price_new" align="right" placeholder="Order line price" /></td>
+                              <td><button type="submit" class="btn btn-success">Save</button></td>
+                            </tr>
+                        </form>
+      	          </tbody>
+                </table>
+
+			</div>	     
+	     	     
+					<div class="tools ">
+<!--	    			  <ul><button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Next</button></ul>-->
+<!--Fredrik lägg till Save "om det finns order-rader". 	    			  -->
+	    			  <ul><button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Next</button></ul>
+  					</div>
+   
+   </form>
+   
+
+<!--    Context <span t-esc="context"/>-->
+			<!--/panelsheet-content-->
+
+
+<!-- </div> -->
+
+
+          </div>
+          <!-- /panelsheet -->
+                 
+        </div>
+        <!-- /order.edit -->
+        
+        
+                <!-- ** CURRENT VIEW CONTENT ** -->
+        
+     </div>
+     <!-- /content span 10 -->
+</t>        
+</template>
+
+
+
+<template name="order overview" id="order">
+    <t t-call="smart_common.layout">
+        
+   	<div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="order.edit">
+          <div class="panelsheet">
+          
+          
+          
+<!--Start Status icons-->
+<!--        <div class="status draft draft"></div>-->
+<!--        <div class="status sent pp_sent"></div>-->
+<!--        <div class="status pending pp_pending"></div>-->
+<!--        <div class="status approved pp_approved"></div>-->
+<!--        <div class="status invoiced pp_invoiced"></div>-->
+<!--        <div class="status paid pp_paid"></div>-->
+<!--        <div class="status review pp_review"></div>-->
+        
+        <!-- Progress bar -->
+<!--        <div class="row-fluid pp_not_draft_and_not_review">-->
+<!--          <br/>-->
+<!--          <div class="progress progress-timeline">-->
+<!--            <div class="bar" style="width: 0%;">-->
+<!--              <span class="bar-label label-left">New order</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info pp_sent_or_pending_or_invoiced_or_paid_or_approved" style="width: 0%;">-->
+<!--              <span class="bar-label label-left">New order</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info active bar-info bar-striped pp_sent" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Sent to client for signature</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info pp_pending_or_invoiced_or_paid_or_approved" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Signed by client</span>-->
+<!--            </div>-->
+<!--            <div class="bar active pp__not_sent_and_not_pending_and_not_invoiced_and_not_paid_and_not_approved" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Sent to client for signature</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info active bar-info bar-striped pp_pending" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Pending approval from advisor</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info active bar-info pp_approved_or_invoiced_or_paid" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Approved</span>-->
+<!--            </div>-->
+<!--            <div class="bar pp_not_pending_and_not_invoiced_and_not_paid_and_not_approved" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Pending approval from advisor</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info active bar-striped pp_invoiced" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Invoice 1 of 3 sent to client</span>-->
+<!--            </div>-->
+<!--            <div class="bar pp_not_invoiced_and_not_paid" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Invoice 0 of 3 sent to client</span>-->
+<!--            </div>-->
+<!--            <div class="bar bar-info pp_not_invoiced_and_paid" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Invoice 3 of 3 sent to client</span>-->
+<!--            </div>-->
+<!--            <div class="bar pp_not_paid" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Invoice 0 of 3 is paid</span>-->
+<!--            </div>-->
+<!--            <div class="bar active bar-info pp_paid" style="width: 25%;">-->
+<!--              <span class="bar-label label-right">Invoice 3 of 3 is paid</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+        <!-- / Progress bar -->
+<!--End Status icons-->
+          
+          
+	            <header class="panelsheet-header clearfix">
+			      <!--<div class="page-header">-->
+<!--			      <h1><t t-raw="sale_order.client_order_ref"/> <small><t t-esc="sale_order.name"/>.</small>-->
+			      <h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/>.</small>
+			      </h1>
+			      <div class="pull-right"><small>
+			    (<t t-if="sale_order.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="sale_order.state == 'sent'"><span class="sent">Approved by Client</span></t>
+			   	 <t t-if="sale_order.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="sale_order.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="sale_order.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="sale_order.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="sale_order.state == 'cancel'"><span class="sent">Cancelled</span></t>)
+			      </small>
+			      </div>
+			      
+			       <!--				Breadcrumbs indicating state of the order-->
+<!--				<ul class="steps pull-right">-->
+<!--		      		 <li><i class="icon-tag" style="margin-top: 3px;"></i> <strong>Details</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li><i class="icon-briefcase" style="margin-top: 3px;"></i> <strong>Billing</strong><span><i class="icon-chevron-right"></i></span></li>-->
+<!--		      		 <li class="active"><i class="icon-file" style="margin-top: 3px;"></i> <strong>Overview</strong></li>-->
+<!--		      	</ul>	-->
+
+
+			     <!-- </div>-->
+	            </header>
+	            
+    
+	             
+             
+	<div class="well">
+	
+			<legend>
+	   	  	  <strong>Details </strong> <a t-if="sale_order.state in ['draft']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>
+			</legend>  	
+	
+	
+      	    
+<!--      	  <form class="form-horizontal form-preview">   -->
+
+
+            <div class="control-group client and contact">
+              
+              <div class="controls">
+					<table width="100%" border="0">
+<!--						<tr>-->
+<!--	              			<td width="20%"><label class="control-label">Description</label></td>-->
+<!--							<td width="30%" colspan="2"><t t-esc="sale_order.client_order_ref"/></td>-->
+<!--						</tr>-->
+
+
+<!--Start Organisation-->
+						<t t-if="sale_order.partner_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><t t-esc="sale_order.partner_id.zip"/> <t t-esc="sale_order.partner_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"></td>
+		            	<td width="30%"></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+						
+						</t>
+						
+<!--End Organisation -->
+
+<!--Start Contact Person at an Organisation-->
+						<t t-if="not sale_order.partner_id.is_company"><t t-if="sale_order.partner_id.parent_id.is_company">
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.parent_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.parent_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.parent_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><t t-esc="sale_order.partner_id.parent_id.zip"/> <t t-esc="sale_order.partner_id.parent_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"><label class="control-label">Contact </label></td>
+		            	<td width="30%"><strong><t t-esc="sale_order.partner_id.name"/></strong></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>																				
+						<td>Mobile: <t t-esc="sale_order.partner_id.mobile"/></td>
+						</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+						
+				</t> </t>
+						
+<!--End Contact Person at an Organisation-->
+					
+					
+<!--Start Individual-->
+		            	<t t-if="not sale_order.partner_id.is_company"><t t-if="not sale_order.partner_id.parent_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><t t-esc="sale_order.partner_id.zip"/> <t t-esc="sale_order.partner_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"></td>
+		            	<td width="30%"></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>																				
+						<td>Mobile: <t t-esc="sale_order.partner_id.mobile"/></td>
+						</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+
+						
+						</t></t>
+						
+<!--End Individual -->
+						
+						
+						
+						
+						<tr>
+	              			<td width="20%"><label class="control-label">Project</label></td>
+							<td width="30%"><strong><t t-esc="sale_order.project_id.name"/></strong></td>
+			            	<td width="50%"></td>
+						</tr>
+					</table>
+              </div>
+            </div>
+            
+    
+
+       </div>
+       <!-- end div well -->
+           
+	
+	     
+<!-- Order -->
+
+			  
+			  <div class="well " style="margin-top: -10px;">
+			  
+			  <legend>
+			    <strong>Billing </strong>
+<!--			    <a href="../../order/edit_lines" class="btn btn-small "><i class="icon-pencil"></i> <strong>Edit Order lines</strong></a> + -->
+     	  	  <strong>Details</strong> <a t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>
+
+			  </legend>
+
+  				<table id="billed-items" class="table" style="margin: -20px 0;">
+      	          <thead>
+      	            <tr>
+      	              <th colspan="2"><span class="muted">Description</span></th>
+<!--      	              <th><span class="muted"></span></th>-->
+      	              <th class="cell" style="text-align: right;"><span class="muted">Price</span></th>
+      	            </tr>
+      	          </thead>
+
+
+                  <tbody>
+                      <t t-foreach="sale_order.order_line" t-as="o">
+                            <tr>  
+				              <td colspan="2" class="cell-primary"><t t-raw="o.name"/></td>
+<!--                              <td align="right"><t t-esc="o.tax_id.name"/></td>-->
+                              <td class="cell" style="text-align: right;"><t t-esc="o.price_subtotal"/></td>
+                            </tr>
+                      </t>
+                      
+                            <tr>  
+                             <td class="cell" style="text-align: right;"></td>
+                             <td class="cell" style="text-align: right;"><strong>Excl VAT</strong></td>
+                             <td class="cell" style="text-align: right;"><strong><t t-esc="sale_order.amount_untaxed"/></strong></td>
+                            </tr>
+                            <tr>  
+                             <td class="cell" style="text-align: right;"></td>
+                             <td class="cell" style="text-align: right;">VAT</td>
+                             <td class="cell" style="text-align: right;"><strong><t t-esc="sale_order.amount_tax"/></strong></td>
+                            </tr>
+                             <tr>  
+
+                              <td align="right"></td>
+                              <td class="cell" style="text-align: right;"><strong>Total</strong></td>
+                              <td class="cell" style="text-align: right;"><strong><t t-esc="sale_order.amount_total"/></strong></td>
+                            </tr>
+
+      	          </tbody>
+                </table>
+
+			</div>	     
+	     
+         <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
+
+    			<div class="tools ">
+	    			  <ul>
+
+<!--	    			  <button type="submit" t-if="sale_order.state in ['draft']" class="btn btn-danger" name="delete"> <span class="glyphicon glyphicon-trash"></span> Delete</button>-->
+
+
+<!--	    			  <button type="submit" t-if="sale_order.state in ['draft']" class="btn btn-success" name="order_confirm" value="True"><span class="glyphicon glyphicon-ok-sign"></span>   	  -->
+
+	    			  <button type="submit" t-if="sale_order.state in ['draft']" class="btn btn-success" name="quotation_sent" value="True"><span class="glyphicon glyphicon-ok-sign"></span> Approved by my Client</button>
+	    			  <button type="submit" t-if="sale_order.state in ['sent']" class="btn btn-success" name="order_confirm" value="True"><span class="glyphicon glyphicon-ok-sign"></span> Submit to Advisor</button>
+            <div groups="base.group_sale_manager">
+	    			  <button type="submit" t-if="sale_order.state in ['manual']" class="btn btn-warning" name="manual_invoice" value="True"><span class="glyphicon glyphicon-print"></span> Create Invoice</button>
+ 	    			  <button type="submit" t-if="sale_order.state in ['progress']"  class="btn btn-success" name="subflow.paid" value="True"><span class="glyphicon glyphicon-euro"></span> Mark as paid</button>
+			</div>
+  	    			  <button type="submit" t-if="sale_order.state in ['draft' or 'sent' or 'manual']" class="btn btn-danger" name="cancel" value="True"><span class="glyphicon glyphicon-remove"></span> Cancel order</button>
+					  </ul>
+				</div>
+   
+	     </form>
+			<!--/panelsheet-content-->
+
+
+<!-- </div> -->
+
+
+          </div>
+          <!-- /panelsheet -->
+                 
+        </div>
+        <!-- /order.edit -->
+        
+        
+                <!-- ** CURRENT VIEW CONTENT ** -->
+        
+     </div>
+     <!-- /content span 10 -->
+</t>        
+</template>
+
+
+
+</data>
+</openerp>

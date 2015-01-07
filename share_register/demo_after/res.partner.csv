@@ -1,0 +1,3 @@
+"id","company_id/id","street2","street","state_id/id","title/id","zip","website","is_company","email","date","customer","country_id/id","city","birth_date","birthdate","property_account_payable/id","property_account_receivable/id","name","notify_email","parent_id/id"
+"__export__.res_partner_10","base.main_company","","","","","","","False","","","True","","","","","__export__.account_account_13","__export__.account_account_8","Gustaf Eiffel","All Messages",""
+"__export__.res_partner_16","__export__.res_company_4","","Rue","","","1234","","True","","","True","base.fr","Ville","","","__export__.account_account_13","__export__.account_account_8","Multi Agile Sarl","All Messages",""

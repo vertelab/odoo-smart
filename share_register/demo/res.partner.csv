@@ -1,0 +1,13 @@
+id,name,comment,street,street2,zip,city,country_id/id,phone,mobile,email,website,title/id
+__export__.res_partner_11,Alexandra Dumas,Comment2,Street 2,Street 2.1,Zip 2,City 2,base.be,Phone2,Mobile2,email2,http://w.2,base.res_partner_title_madam
+__export__.res_partner_9,Maria Larsson,Comment7,Street 7,Street 2.2,Zip 7,City 7,base.ch,Phone7,Mobile7,email7,http://w.7,base.res_partner_title_madam
+__export__.res_partner_7,Acme Inc,Comment1,Street 1,Street 2.3,Zip 1,City 1,base.se,Phone1,Mobile1,email1,http://w.1,base.res_partner_title_mister
+__export__.res_partner_6,Fredrik,Comment5,Street 5,Street 2.4,Zip 5,City 5,base.au,Phone5,Mobile5,email5,http://w.5,base.res_partner_title_mister
+__export__.res_partner_8,Kalle Andersson,Comment6,Street 6,Street 2.5,Zip 6,City 6,base.es,Phone6,Mobile6,email6,http://w.6,base.res_partner_title_mister
+__export__.res_partner_14,Bröderna Edstrand AB,Comment3,Street 3,Street 2.6,Zip 3,City 3,base.no,Phone3,Mobile3,email3,http://w.3,base.res_partner_title_pvt_ltd
+__export__.res_partner_13,Clas Ohlsson,Comment4,Street 4,Street 2.7,Zip 4,City 4,base.us,Phone4,Mobile4,email4,http://w.4,base.res_partner_title_pvt_ltd
+__export__.res_partner_15,Soros Inc,Comment8,Street 8,Street 2.8,Zip 8,City 8,base.gr,Phone8,Mobile8,email8,http://w.8,base.res_partner_title_pvt_ltd
+__export__.res_partner_12,Arvid Nordkvist,Comment10,Street 10,Street 2.10,Zip 10,City 10,base.se,Phone10,Mobile10,email8,http://w.10,base.res_partner_title_mister
+__export__.res_partner_10,Gustaf Eiffel,Comment11,Street 11,Street 2.11,Zip 11,City 11,base.se,Phone11,Mobile11,email8,http://w.11,base.res_partner_title_mister
+__export__.res_partner_16,Multi Agile Sarl,Comment12,Rue,Street 2.12,1234,Ville,base.fr,Phone12,Mobile12,email8,http://w.12,base.res_partner_title_pvt_ltd
+

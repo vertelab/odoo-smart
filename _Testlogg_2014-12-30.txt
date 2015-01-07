@@ -1,0 +1,112 @@
+****Done
+
+Password reminder  (activate and make sure it sends emails)
+
+Change the logic of the New Expense-Save-button to "save" + "add new expense-line"
+
+In an expense-note. 
+- Add two amounts_ VATincl and VATexcl. 
+
+New module:
+ Add a member of the activity
+
+
+Done after demo:
+Add a label "Add member" to Activity - add member
+Add complete list of products
+Add a "member-role"-column to members list
+
+______________________________________________________________________
+
+****Show stoppers
+
+
+Add the SMartShare to the database
+
+
+Notes.
+Password reminder work for fredrik@arvas.se but not juj@smartbe.be
+
+
+
+
+Activity onwer should be able to "give away" the admin of the Activity. 
+Member of an activity can create draft -orders, and expense. 
+Admin can submit to SMart
+
+
+Expense-note.
+Recipient: only members of the activity.
+
+
+
+______________________________________________________________________
+
+****Need to fix: 
+
+
+In an expense-note. 
+- if the amount is higher than maxVAT-rate: Show warning, and accept.
+
+Expenes: The date-format needs to have a message if wrong.
+
+
+Edit expense line
+
+In accounts: 
+- Add a list of bank accounts, with a selected one. 
+(this gives a way of detecting fraud).
+
+
+Users want a time-out-in the session, to be shorter unless "a remember me"-button is clicked. or so.
+Julek, was not allowed to log in, when he tried first. Then tried with admin/admin = ok, then tried again with juj@smartbe.be/julek and was allowed. :-(
+
+
+
+
+---------------------------------
+
+Hide black odoo-bar for users
+
+Lägg in användarens land i "Create new client smart_client / main / rad 80
+
+
+Error message when "not allowed to delete a client"
+
+
+FA: Kolla logiken i signaler på expenses.
+Fa: Advisor role test
+
+
+Send email to Client with order info.
+
+User rights for messages on Dashboard (det fungerade inte att bara lägga in den vanliga smart mc-koden
+
+Translate 
+- translation, link to online system.
+translation "login-messages"
+
+Add document-upload to expense-module
+
+Lasse/Anders: Apply national settings date-formats. 
+
+
+Lasse For Client - the main div is not fixed to page-height
+Lasse Width for input-fields in forms, still not working.
+
+
+
+______________________________________________________________________
+
+****Nice to fix*******
+- Make "webbterms_accepted" searchable
+
+SMartSe: Orders - I start a new order and click add new project, am then directed to creating a project page and loose any data submitted in the new order (it is not saved)
+
+SMartSe: Clients - when adding a contact person the whole page of the new client is saved and I am directed to the list of clients. The button implies I will just add the contact person row and can continue to edit the client.
+  is_company-checkbox for Org.client
+
+Disable ability to create orders on advisor-accounts
+
+Paused: Work-flow should rather be: Select client, then select contact-person based on this client. 
+Paused: Add an invoice-email-addres on client contact person that is different from the persons email-address

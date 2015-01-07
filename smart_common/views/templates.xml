@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+
+
+<!--<template name="Main layout" id="website.layout">&lt;!DOCTYPE html&gt; -->
+
+
+
+<template name="SMart Main layout" id="layout">
+    <t t-call="website.layout">
+                    <div id="activityname"  style="position: absolute;top:80px;left: 30px; width: 500px;"/>
+                    <div id="cash" style="position: absolute; top: 90px;  left: 880px;"/>
+                    <t t-call="smart_common.smartmenu"/>   
+                    <!-- Vertel -->
+                    
+                    <t t-raw="0"/>
+    </t>
+ </template>
+
+
+
+
+<template id="googlekey">
+            <t t-if="website and website.google_analytics_key">
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                    ga('create', _.str.trim('<t t-esc="website.google_analytics_key"/>'), 'auto');
+                    ga('send','pageview');
+                </script>
+            </t>
+
+</template>
+
+
+
+
+<!--
+<template id="activityimagename">
+	Start Activity Name and Image
+					<div style="position: absolute;top:40px;left: 30px; width: 500px;">
+					        <img src="/smart_common/static/src/img/smart_order.png" style="border-radius: 50% black; width: 65px; max-width: 65px; float: left; margin: 0px 15px 0px 0px;"/>
+				    		<h1  ><a class="activity-name" href="/dashboard"><t t-if="res_company" t-raw="res_company.name" />'s Activity (old)</a></h1>
+				    </div>
+    	end Activity Name and Image
+</template>-->
+
+
+
+<template id="activityname" inherit_id="smart_common.layout" name="SMart Activity" customize_show="True" >
+
+        <xpath expr="//div[@id='activityname']" position="inside">
+    
+					<div>
+<!--						<t t-if="hr_employee.user_id == true">-->
+<!--				    		<h1><a class="activity-name" href="/dashboard"><t t-if="user_id" t-raw="user_id.company_id.name" groups="base.group_sale_salesman"/>'s Activity</a></h1>-->
+<!--A way to debug the curernt user-->
+<!--<span t-esc="res_user.company_id"/> -->
+<!--<span t-esc="res_user.name"/>-->
+
+<!--						</t>				    -->
+					</div>
+
+     </xpath>
+  	    	
+</template>
+
+
+
+
+
+
+<template id="smartmenu">
+    <div class="layout-left-nav">
+      
+      <div class="column-nav">
+        <nav id="app-nav">
+		  <ul id="nav_menu" class="nav nav-tabs nav-stacked">
+    	    <li  t-attf-class="#{dashboard_menu}"><a t-attf-href="/dashboard"><i class="glyphicon glyphicon-inbox"></i> <b>My Dashboard</b></a></li>
+			<hr/>
+            <li t-attf-class="#{activity_menu}" groups="base.group_sale_salesman"><a t-attf-href="/activity"><i class="glyphicon glyphicon-tag"></i> <b> Activity</b></a></li>
+
+            <li t-attf-class="#{project_menu}" groups="base.group_sale_salesman"><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b> Project</b></a></li>
+<!--            <li t-attf-class="#{project_all_menu}" groups="base.group_sale_manager"><a t-attf-href="/project/list/all"><i class="glyphicon glyphicon-tag"></i><i class="glyphicon glyphicon-tag"></i> <b>All Projects *</b></a></li>-->
+
+            <li t-attf-class="#{client_menu}" groups="base.group_sale_salesman"><a t-attf-href="/client/list"><i class="glyphicon glyphicon-book"></i> <b>Clients</b></a></li>
+<!--            <li t-attf-class="#{client_all_menu}" groups="base.group_sale_manager"><a t-attf-href="/client/list/all"><i class="glyphicon glyphicon-book"></i><i class="glyphicon glyphicon-book"></i> <b>All Clients *</b></a></li>-->
+            <li t-attf-class="#{order_menu}" groups="base.group_sale_salesman"><a t-attf-href="/order/list"><i class="glyphicon glyphicon-briefcase"></i> <b>Orders</b></a></li>
+<!--            <li t-attf-class="#{order_all_menu}" groups="base.group_sale_manager"><a t-attf-href="/order/list/all"><i class="glyphicon glyphicon-briefcase"></i><i class="glyphicon glyphicon-briefcase"></i> <b>All Orders *</b></a></li>-->
+            <li t-attf-class="#{expense_all_menu}" groups="base.group_sale_salesman"><a t-attf-href="/expense/list"><i class="glyphicon glyphicon-euro"></i> <b>Expenses</b></a></li>
+<!--            <li t-attf-class="#{order_all_menu}" groups="base.group_sale_manager"><a t-attf-href="/expense/list/all"><i class="glyphicon glyphicon-euro"></i><i class="glyphicon glyphicon-euro"></i> <b>All Expenses *</b></a></li>-->
+
+<!--	        <li t-attf-class="#{documents_menu}" groups="base.group_sale_salesman"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b> Documents</b></a></li>-->
+			<hr/>
+	        <li t-attf-class="#{account_menu}" groups="base.group_sale_salesman"><a t-attf-href="/account"><i class="glyphicon glyphicon-user"></i> <b>My Account</b></a></li>
+<!--    	    <li t-attf-class="#{account_all_menu}" groups="base.group_sale_manager"><a t-attf-href="/account/list"><i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-user"></i> <b>All Accounts *</b></a></li>-->
+			<hr/>
+		    <li t-attf-class="#{salarysimulator_menu}"><a t-attf-href="/salary/simulator/"><i class="glyphicon glyphicon-pencil"></i> <b>Salary Simulator</b></a></li>
+	
+<!--		    <li class=""><a href="../salaries"><i class="glyphicon glyphicon-leaf"></i> Salaries</a></li>  -->
+<!--		    <li class=""><a href="../../expenses"><i class="glyphicon glyphicon-plane"></i> Expenses</a></li>-->
+		  </ul>
+		</nav>
+		</div>
+      </div>
+</template>
+
+  
+
+
+
+<template id="smartfooter">
+    <xpath expr="//div[@id='footer']" position="replace">
+               <div id="footer_container">
+                    <footer id="masterfooter" role="contentinfo" class="container">
+							<div class="row">
+							  <div class="span8">
+								  <a href="http://smart-eu.org/">©  SMartEu 2014-Today</a> | <a href="http://smart-eu.org/">Home</a>  |  <a href="http://smart-eu.org/about/">About us</a>  |  <a href="http://smart-eu.org/projects-page/">What we do</a>  |  <a href="http://smart-eu.org/blog/">News</a>   |  <a href="http://smart-eu.org/contact/">Contact us</a> 
+							  </div>
+							  <div class="span4">
+							<p class="footer-branding"><a class="powered-by-smart" href="http://smartbe.be/fr">SMart</a></p>
+								  </div>
+							</div>
+					</footer>
+              </div>
+     </xpath>
+
+    <xpath expr="//div[@id='footer_container']" position="replace">
+               <div id="footer_container">
+                    <footer id="masterfooter" role="contentinfo" class="container">
+							<div class="row">
+							  <div class="span8">
+								  <a href="http://smart-eu.org/">©  SMartEu 2013->Today</a> | <a href="http://smart-eu.org/">Home</a>  |  <a href="http://smart-eu.org/about/">About us</a>  |  <a href="http://smart-eu.org/projects-page/">What we do</a>  |  <a href="http://smart-eu.org/blog/">News</a>   |  <a href="http://smart-eu.org/contact/">Contact us</a> 
+							  </div>
+							  <div class="span4">
+								<p class="footer-branding"><a class="powered-by-smart" href="http://smartbe.be/fr">SMart</a></p>
+							  </div>
+							</div>
+					</footer>
+              </div>
+     </xpath>
+</template>
+
+
+<template id="smartfooter_default" inherit_id="website.layout" customize_show="True" name="Smart Footer">
+  <!--  <xpath expr="//div[@id='footer']" position="replace"> -->
+        
+  <xpath expr="//footer" position="replace"> 
+        <footer>
+        <div class="oe_structure" id="footer">
+            <section data-snippet-id='three-columns' class="mt16 mb16">
+                <div class="container mt16 mb8">
+                        <footer style="border-top: 1px solid #29200E;color: #6f695d;font-size: 11px;font-weight:500;line-height: 36px; margin-bottom: 100px;margin-top: 12px;">
+							  <div class="pull-right col-sm-4">
+								<p class="footer-branding"><a class="powered-by-smart"  style="background: url('/smart_common/static/ui/img/masterfooter-smart.png') no-repeat scroll center center transparent;" href="http://smartbe.be/fr">SMart</a></p>
+							  </div>
+							  <div class="pull-left col-sm-8">
+								  <a href="http://smart-eu.org/">© SMartEu 2015-Today</a> | <a href="http://smart-eu.org/">Home</a>  |  <a href="http://smart-eu.org/about/">About SMart</a>  |  <a href="http://smart-eu.org/projects-page/">What we do</a>  |  <a href="/legal/webpolicy" target="_blank">Webterms</a>   |  <a href="http://smart-eu.org/blog/">News</a>   |  <a href="http://smart-eu.org/contact/">Contact us</a> 
+							  </div>
+                        </footer>
+                </div>
+            </section>
+        </div>
+        </footer>
+
+    </xpath>
+</template>
+
+<template id="layout_footer_copyright"  name="Footer Copyright">
+    <div>Hello World</div>
+</template>
+
+<!--This is in use 2014-12-->
+<template id="smartbar_default" inherit_id="website.layout" customize_show="True" name="Smartbar">
+
+    <xpath expr="//header" position="replace">
+
+    <header>
+    	<div id="smartbar" data-version="1.0.0">
+        
+	  <div class="container fluid">
+	  
+	    <!-- # Region portal home
+	    Link should point to your regional portal home
+	    -->
+	    <a class="brand" href="../dashboard">SMart</a>
+	    
+	    <!-- # Region selector -->
+
+<!--	    Original -->
+     <t t-if="res_company.country_id.code == 'ES'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-de">De</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+<!--	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>-->
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+
+<!--	    SMartDe -->
+     <t t-if="res_company.country_id.code == 'ES'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-de">De</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+<!--	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>-->
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+
+
+<!--	    SMartEu -->
+     <t t-if="res_company.country_id.code == 'EU'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-eu">Eu</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+<!--	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>-->
+	        <li><a href="http://demo-de.smarteu.net"><i class="iconflag-de"></i> Deutschland</a></li>
+<!--	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>-->
+	        <li><a href="http://demo-ib.smarteu.net"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://demo-nl.smarteu.net"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://demo-se.smarteu.net"><i class="iconflag-sw"></i> Sverige</a></li>
+<!--	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>-->
+<!--	        <li class="divider"></li>-->
+<!--	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>-->
+	      </ul>
+	    </span>
+	  </t>
+
+	    
+<!--	    SMartIb -->
+     <t t-if="res_company.country_id.code == 'ES'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-ib">Ib</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+<!--	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>-->
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+<!--	    SMartSe -->
+     <t t-if="res_company.country_id.code == 'SE'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-sw">Sw</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+<!--	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>-->
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>	    
+	    
+	    
+	    <!-- # Top-level services navigation 
+	    * Do not use as navigation inside a website, only between your different websites and apps if applicable
+	    * All websites from the same region should have the same top-level navigation
+	    * Add a class "active" on the <li> of the current site
+	    -->
+	    <ul class="menu">
+	      <!-- Link to your regional portal home -->
+	<!--      <li class="divider"><a href="/">Home</a></li> -->
+	        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+	            <t t-call="website.submenu"/>
+	        </t>
+	
+	      <!-- Link to your other platforms -->
+	<!--      <li class="active"><a href="#">Tools</a></li> -->
+	    </ul>
+	    
+	
+	    <ul id="smartbar-user" class="right">
+
+
+	    
+<!--	    Start Login Selector -->
+	    
+	      <li class="dropdown">
+            <t t-if="user_id.active == True">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-original-title=""><span t-esc="user_id.name"/><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                      <li><a href="/account" data-original-title="">Manage my account</a></li>
+<!--                      <li><a href="/web" role="menuitem">Backoffice</a></li>-->
+<!--Du får förklara var man ställer in menuitem så att vanliga användare inte ser den här menyn.-->
+                      <li><a href="/web" groups="base.group_hr_manager">Backoffice</a></li>
+                      <li><img src="/smart_common/static/ui/img/faux-column.png" width="75px"/></li>
+                      <li class="divider"></li>
+                      <li><a href="/web/session/logout?redirect=/" data-original-title="">Logout</a></li>
+                    </ul>
+            </t>
+            <t t-if="not user_id.active == True">
+                    <a href="/web/login" ><span>Sign in</span></a>
+            </t>
+	      </li>
+
+	    </ul>
+<!--		End Login Selector-->
+<!--
+                        <div class="collapse navbar-collapse navbar-top-collapse">
+                                <ul class="nav navbar-nav navbar-right" id="top_menu">
+                                    <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                <span t-esc="user_id.name"/>
+                                                <b class="caret"/>
+                                        </a>
+                                        <ul class="dropdown-menu js_usermenu" role="menu">
+                                            <li><a href="/account" role="menuitem">My Account</a></li>
+                                            <li><a href="/web" role="menuitem">Backoffice</a></li>
+                                            <li class="divider"/>
+                                            <li><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+-->
+
+
+
+
+	    
+	  </div>
+	</div>
+    </header>
+
+
+    </xpath>
+
+</template>
+
+<!--
+<template id="layout_logo_show" inherit_id="website.layout" customize_show="True" name="Hide Logo">
+    <xpath expr="//header//a[@class='navbar-brand']" position="replace">
+     <div/>
+    </xpath>
+</template>
+-->
+
+
+<template id="css" inherit_id="website.layout" name="CSS and Javascript" customize_show="True" >
+    <xpath expr="//head" position="inside">
+	  <!-- styles -->
+      <link href="/smart_common/static/ui/smartstrap/css/smartstrap.css" rel="stylesheet"/>   <!-- förstör  modal overlays t ex content/edit menu -->
+	  <link href="/smart_common/static/ui/smartstrap/css/smartbar.css" rel="stylesheet"/>
+	  <link href="/smart_common/static/ui/css/app.css" rel="stylesheet"/> 
+	  <link href="/smart_expense/static/ui/css/expenses.css" rel="stylesheet"/> 
+<!--
+  	  <link href="/smart_common/static/ui/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+-->
+<!--	  <link href="/smart_common/static/ui/css/app.css" rel="stylesheet"/>  -->
+	  
+	  <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
+	
+	
+	   <!-- Styles -->  
+	<!--  <link href="http://tools.smart-eu.org/ui/css/bootstrap-modal.css" rel="stylesheet"/>  -->
+	<!--  <link href="/css/bootstrap.css" rel="stylesheet"/> -->
+
+	
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+		
+		<!-- Import SMartStrap JS -->
+<!--		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-transition.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-alert.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-modal.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-dropdown.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-scrollspy.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-tab.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-tooltip.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-popover.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-button.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-collapse.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-carousel.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-typeahead.js"></script>
+		<script src="/smart_common/static/ui/smartstrap/js/bootstrap-affix.js"></script>
+		
+		<script src="/smart_common/static/ui/smartstrap/js/smart-slidingpanels.js"></script>
+		
+		<script src="/smart_common/static/ui/js/libs/polypage/polypage.jquery.js"></script>
+		<script src="/smart_common/static/ui/js/libs/polypage/events.polypage.jquery.js"></script>
+		<script src="/smart_common/static/ui/js/libs/polypage/keyboard.polypage.jquery.js"></script>
+		<script src="/smart_common/static/ui/js/libs/polypage/gui.polypage.jquery.js"></script>
+		<script src="/smart_common/static/ui/js/libs/polypage/cookie.polypage.jquery.js"></script>
+		
+		<script src="/smart_common/static/ui/js/app.js"></script>
+		
+		<script src="/smart_common/static/ui/js/views/onboarding.js"></script>
+		
+		<script src="/smart_common/static/ui/js/views/purchase-orders.js"></script>
+		<script src="/smart_common/static/ui/js/views/clients.js"></script>
+		<script src="/smart_common/static/ui/js/views/expenses.js"></script>
+		<script src="/smart_common/static/ui/js/views/salaries.js"></script>
+		<script src="/smart_common/static/ui/js/views/members.js"></script>
+		
+	-->	
+		<!-- Import Bootstrap JS -->
+<!--	  <script type="text/javascript" src="/smart_common/static/ui/bootstrap/js/jquery-1.11.1.min.js"></script>
+	  <script type="text/javascript" src="/smart_common/static/ui/bootstrap/js/bootstrap.min.js"></script> -->
+<!--	  <script type="text/javascript" src="/smart_common/static/ui/bootstrap/js/bootstrap-tooltip.js"></script>-->
+	
+  
+    </xpath>
+</template>
+
+
+
+
+</data>
+</openerp>

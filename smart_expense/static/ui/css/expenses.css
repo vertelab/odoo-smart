@@ -1,0 +1,109 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#expense-type-list li a {
+  position: relative;
+}
+#expense-type-list li a:hover {
+  background: #e0f5fe !important;
+}
+#expense-type-list li a .list-header {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  margin-top: -12px;
+}
+#expense-type-list li a .list-footer {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -12px;
+}
+#expense-type-list li a .list-body h4 {
+  padding: 0 50px;
+}
+#expense-type-list li a .list-body p {
+  padding: 0 50px;
+  font-size: 14px;
+  font-weight: normal;
+}
+#expense-recurring-list li {
+  font-size: 80%;
+}
+#expense-recurring-list li a {
+  position: relative;
+}
+#expense-recurring-list li a:hover {
+  background: #e0f5fe !important;
+}
+#expense-recurring-list li a .list-header {
+  width: 40%;
+  float: left;
+  margin: 0;
+}
+#expense-recurring-list li a .list-type {
+  width: 25%;
+  float: left;
+  margin-top: 2px;
+}
+#expense-recurring-list li a .list-type .label {
+  font-size: 10px !important;
+}
+#expense-recurring-list li a .list-amount {
+  width: 20%;
+  text-align: right;
+}
+#expense-recurring-list li a .list-footer {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  margin-top: -12px;
+}
+.table-datepicker {
+  width: 340px;
+}
+.table-datepicker .calendar-days td {
+  text-align: center;
+  width: 50px;
+  background: #f5f5f5;
+  color: #999999;
+  cursor: pointer;
+}
+.table-datepicker .calendar-days td.empty {
+  cursor: default;
+}
+.table-datepicker .calendar-days td.active {
+  color: #333333 !important;
+  background: #ffffff;
+}
+.table-datepicker .calendar-days td.selected {
+  background: #049cdb;
+  color: #ffffff !important;
+}
+.summe td {
+  text-align: right;
+}

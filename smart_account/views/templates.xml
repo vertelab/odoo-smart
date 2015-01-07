@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+
+<!--To do in this file-->
+<!--form-->
+<!--addresslines-->
+<!--hide-->
+<!--identification id-->
+
+<template name="My Account" id="my_account">
+    <t t-call="smart_common.layout">
+        
+	<div class="content span10">
+      
+        <div id="Users account view">
+          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+                <h1>Manage your Account</h1>
+              </div>
+            </header>
+      
+<!-- start content -->
+            <div class="panelsheet-content">
+              
+<!--              <section class="panelsheet-section">-->
+    
+			
+<!--	Start tabbable-->
+				<div class="tabbable">
+  				  <ul class="nav nav-tabs">
+  				    <li class="active"><a href="#tab-account" data-toggle="tab">Account</a></li>
+<!--  				    <li class=""><a href="#tab-password" data-toggle="tab">Password</a></li>-->
+
+<!--Hide this tab if the Employee is not created-->
+				<t t-if="res_user.employee_ids">
+					<li><a href="#tab-address" data-toggle="tab">Address</a></li>
+  				    <li><a href="#tab-administrative" data-toggle="tab">Administrative</a></li>
+  				</t>    
+
+  				    <li><a href="#tab-bank" data-toggle="tab">Bank Account</a></li>
+  				  </ul>
+  				  
+  				
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>			
+
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                      			
+  		<div class="tab-content">
+
+
+  				    <!-- start Tab Account -->
+				<div class="tab-pane active" id="tab-account">
+
+            		<ul>
+            		 	<header>
+               				<h2 style="margin: 0;">
+               				  <small>Change your name</small><BR/>
+               				</h2>
+						</header>
+					</ul>	
+							
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+
+                        	<div class="control-group">
+	    				        <label class="control-label" for="name">Your Name</label>
+	                            <div class="controls">
+	
+	                            	<input type="text" id="name" name="name" placeholder="Alice Artist" t-attf-value="#{res_user.partner_id.name}"/>
+	                            </div>
+                            </div>
+                            
+                            <div class="control-group">
+    				        <label class="control-label" for="country">Your Preferred Language</label>
+	    				        <div class="controls">
+	                                 <select name="lang">
+	                                    <t t-foreach="res_lang" t-as="l">
+	                                        <option t-attf-value="#{l.code}" t-att-selected="res_user.lang == l.code"><t t-esc="l.name"/></option> 
+	                                    </t>
+	                                </select>
+	    				        </div>
+	    				      </div>
+                            
+                            
+                           
+                            
+
+  				<div class="pp_confirmation alert alert-success" style="display: none;">
+  					<button class="close" data-dismiss="alert"></button>
+  				  Thanks, your settings have been saved.
+  				</div>
+  				
+
+
+							<hr/>
+  					
+  							<div class="control-group">
+
+					  		  <div class="controls">
+					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+					  		  </div>
+
+					    	</div>
+						</form>	
+						
+	
+				</div>
+				    <!-- end Tab Account -->
+
+
+
+
+<!--				  	start Tab Password -->
+<!--				 <div class="tab-pane" id="tab-password">-->
+				 
+<!--            			   	<header>-->
+<!--               				<h2 style="margin: 0;">-->
+<!--               				  <small>Change your password or recover your current one</small><BR/>-->
+<!--               				</h2>-->
+<!--						</header>-->
+
+
+<!--						<form class="form-horizontal" action="#confirmation" method="post">-->
+		
+<!--				      	<div class="control-group">-->
+<!--				            <label class="control-label" for="currentPassword">Current Password</label>-->
+<!--	                        <div class="controls">-->
+<!--	                        	<input type="password" id="currentPassword" name="currentPassword" placeholder="UnLinked Type your password here" />-->
+<!--       stryk                     	<input type="password" id="password.user" name="currentPassword" placeholder="Type your password here" t-attf-value="#{user_ids.password.user}"/>-->
+<!--	                        </div>-->
+<!--                        </div>-->
+
+<!--				      	<div class="control-group">-->
+<!--			                <label class="control-label" for="currentPassword">Verify new password</label>-->
+<!--	                        <div class="controls">-->
+<!--	                        	<input type="password" id="newPasswordConfirmation" name="newPasswordConfirmation" placeholder="UnLinked Type it once again" />-->
+<!--       stryk                     	<input type="password" id="password.user" name="newPasswordConfirmation" placeholder="Type it once again" t-attf-value="#{user_ids.password.user}"/>-->
+<!--	                        </div>-->
+<!--						</div>-->
+
+       
+
+<!--							<hr/>-->
+  					
+<!--  							<div class="control-group">-->
+<!--					  		  <div class="controls">-->
+<!--					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>-->
+<!--					  		  </div>-->
+<!--					    	</div>-->
+<!--						</form>	-->
+			
+<!--			Odoo kod-->
+			
+<!--			 <div class="oe_website_login_container">-->
+                
+<!--Odoos password reset-form.-->
+<!--                <form class="oe_reset_password_form" role="form" method="post">-->
+
+                    
+
+                    
+<!--                        <div class="form-group field-login">-->
+<!--                            <label for="login" class="control-label" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/t[2]/div[1]/label[1]">Your Email</label>-->
+<!--                            <input type="text" name="login" id="login" class="form-control" autofocus="autofocus" required="required" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/t[2]/div[1]/input[1]"/>-->
+<!--                        </div>-->
+                    
+
+                    
+<!--                    <input type="hidden" name="redirect" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/input[1]"/>-->
+<!--                    <input type="hidden" name="token" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/input[2]"/>-->
+<!--                    <div class="clearfix oe_login_buttons">-->
+<!--                        <a href="/web/login" class="btn btn-link pull-right" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/div[1]/a[1]">Back to Login</a>-->
+<!--                        <button type="submit" class="btn btn-primary pull-left" data-oe-id="298" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/form[1]/div[1]/button[1]">Reset password</button>-->
+<!--                    </div>-->
+
+<!--                </form>-->
+
+<!--            </div>-->
+            
+<!--			Odoo kod-->
+			
+			
+			
+					
+<!--				</div>-->
+				<!--  	end Tab Password -->		
+
+				<t t-if="res_user.employee_ids">
+
+					<!-- start tab Address -->
+				<div class="tab-pane" id="tab-address">
+						<ul>
+            		 	<header>
+               				<h2 style="margin: 0;">
+               				  <small>Change your Phone number and Address</small><BR/>
+               				</h2>
+						</header>
+						</ul>
+							
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+                          
+  				        <div class="control-group">
+  				          <label class="control-label" for="phone">Mobile Phone</label>
+  				          <div class="controls">
+                           	<input type="text" id="mobile" name="mobile" placeholder="Your mobile nr" t-attf-value="#{res_user.partner_id.mobile}"/>
+  				            <span class="help-block">Use international format : +32 123 45 67 89</span>
+  				          </div>
+  				        </div>
+
+  				        <div class="control-group">
+  				          <label class="control-label" for="phone">Phone</label>
+  				          <div class="controls">
+                           	<input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_user.partner_id.phone}"/>
+  				            <span class="help-block">Use international format : +32 123 45 67 89</span>
+  				          </div>
+  				        </div>
+
+					<ul>
+  				        <legend>Address</legend>
+<!--  				        <legend>Legal address</legend>-->
+					</ul>
+  				        
+    				      <div class="control-group">
+    				        <label class="control-label" for="address">Street</label>
+    				        <div class="controls">
+                           	<input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_user.partner_id.street}"/>
+    				        </div>
+    				      </div>
+
+    				      <div class="control-group">
+    				        <label class="control-label" for="zip">Zip</label>
+    				        <div class="controls">
+                           	<input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_user.partner_id.zip}"/>
+    				        </div>
+    				      </div>
+    				      
+    				      <div class="control-group">
+    				        <label class="control-label" for="city">City</label>
+    				        <div class="controls">
+                           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.city}"/>
+    				        </div>
+    				      </div>
+    				      
+    				      <div class="control-group">
+    				        <label class="control-label" for="country">Country</label>
+    				        <div class="controls">
+<!--kasta-->
+<!--							<t t-esc="res_user.employee_ids"/>-->
+<!--							<t t-esc="res_user.partner_id"/>-->
+<!--							<t t-esc="res_user.partner_id.country_id"/>-->
+<!--							<t t-esc="res_user.partner_id.country_id.id"/>-->
+<!--							<t t-esc="res_user.partner_id.country_id.name"/>-->
+
+
+                                 <select name="country_id">
+                                    <t t-foreach="res_country" t-as="c">
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.partner_id.country_id.id == c.id"><t t-esc="c.name"/></option> 
+<!--                                        <option t-attf-value="#{c.id}" ><t t-esc="c.name"/></option> -->
+	                                    </t>
+	                                </select>
+<!--                           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.country_id.id}"/>-->
+
+    				        </div>
+    				      </div>
+
+
+
+
+<!--    				      <legend>Postal address</legend>-->
+
+<!--							<ul><ul><ul><ul><p>(Will come later)</p></ul></ul></ul></ul>-->
+
+<!--    				      <div class="control-group">-->
+<!--    				        <div class="controls">-->
+<!--    				          <label class="checkbox">-->
+<!--    				            <input class="check-select-address" checked="checked" type="checkbox"/> (_UnLinked_) Same as legal address.  -->
+<!--    				          </label>-->
+<!--    				        </div>-->
+
+
+
+
+							<hr/>
+  					
+  							<div class="control-group">
+
+					  		  <div class="controls">
+					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+					  		  </div>
+
+					    	</div>
+
+						</form>	
+						
+	
+				</div>
+				    <!-- end Tab Account -->
+
+
+</t>
+
+<!--Hide this tab if the Employee is not created-->
+<t t-if="res_user.employee_ids">
+					<!-- start Tab Administrative -->
+	
+<!--				 <div  groups="base.group_hr_user" class="tab-pane" id="tab-administrative">-->
+				 <div class="tab-pane" id="tab-administrative">
+						<ul>
+            			   	<header>
+               				<h2 style="margin: 0;">
+               				  <small>Change everything concerning your administrative info</small><BR/>
+               				   				</h2>
+						</header>
+						</ul>
+
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+<!-- 					<form class="form-horizontal" action="#confirmation" method="post">-->
+		        
+  				            <div class="control-group">
+	  				          <label class="control-label" for="wtx">Withholding tax </label>
+  					          <div class="controls">
+					            <div class="input-append">
+    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/><span class="add-on"><big>%</big></span>
+  				    	        </div>
+  				        	  </div>
+	  				        </div>
+
+						<ul>  		
+  				        <legend>Identity</legend>
+						</ul>  		  				          				        
+  					        <div class="control-group">
+  					          <label class="control-label" for="otherid">Social Security Number</label>
+  					          <div class="controls">
+								<input id="otherid" name="otherid" t-attf-value="#{res_user.employee_ids[0].otherid}" type="text"/>
+  				    	      </div>
+  				        	</div>
+  				        
+
+
+<!--							<t t-esc="hr_country_id.employee_ids"/>-->
+<!--							<t t-esc="res_user.employee_ids[0].country_id.id"/>-->
+<!--							<t t-esc="res_user.employee_ids[0].country_id.name"/>-->
+<!--							<t t-esc="hr_country_id.employee_ids"/>-->
+<!--							<t t-esc="hr_country_id.employee_ids"/>-->
+<!--							<t t-esc="hr_country_id.employee_ids"/>-->
+
+
+<!--                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.partner_id.country_id.id == c.id"><t t-esc="c.name"/></option> -->
+<!--                                        <option t-attf-value="#{c.id}" ><t t-esc="c.name"/></option> -->
+
+<!--                           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.country_id.id}"/>-->
+
+
+
+
+			        
+	  				        <div class="control-group nationality">
+  					          <label class="control-label" for="nationality">Nationality</label>
+  					          <div class="controls">
+                                  
+
+                                 <select name="hr_country_id">
+                                    <t t-foreach="res_country" t-as="c">
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.employee_ids[0].country_id.id == c.id"><t t-esc="c.name"/></option> 
+                                    </t>
+                                </select>
+
+  					          </div>
+  					        </div>
+  				        
+
+    					        <div class="control-group">
+    					          <label class="control-label" for="identification_id">ID Card Number</label>
+    					          <div class="controls">
+<!--                                  <input type="text" id="otherid" name="identification_id" placeholder="Identification ID" t-attf-value="#{hr.employee.otherid}"/>-->
+    					            <input id="identification_id" name="identification_id" t-attf-value="#{res_user.employee_ids[0].identification_id}" type="text"/>
+    					          </div>
+    				    	    </div>
+
+  				        
+  					          <div class="control-group">
+  					            <div class="control-group">
+  					              <label class="control-label" for="passport_id">Passport Number</label>
+  					              <div class="controls">
+<!--                               	  <input type="text" id="snn" name="passport_id" placeholder="Passport nr" t-attf-value="#{hr.employee.passport_id}"/>-->
+  				    	            <input id="passport_id" name="passport_id" t-attf-value="#{res_user.employee_ids[0].passport_id}" type="text"/> 
+  				        	      </div>
+  				            	</div>
+  					          </div>
+
+
+							<hr/>
+  					
+  							<div class="control-group">
+					  		  <div class="controls">
+					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+					  		  </div>
+					    	</div>
+			    	
+					</form>
+				
+
+										
+				</div>
+					<!-- end Tab Administrative -->
+</t>														
+
+					
+	
+					<!-- start Tab Bank -->
+				 <div class="tab-pane" id="tab-bank">
+						<ul>  		
+            			   	<header>
+               				<h2 style="margin: 0;">
+               				  <small>Change your bank account</small><br/>
+               				</h2>
+						</header>
+						</ul>  								
+
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+  				        
+  				        <!-- Select bank account type -->
+  				        
+<!--  				        <div class="control-group">-->
+<!--  				          <label class="control-label">Bank account</label>-->
+<!--  				        	<div class="controls">-->
+<!--  				            	<label class="radio inline"><input name="bankAccount" id="bankAccountNational" value="national" selected="" onclick="$('body').trigger('pp_setState', { International: false });" checked="checked" type="radio"/> National</label>-->
+<!--  				            	<label class="radio inline"><input name="bankAccount" id="bankAccountInternational" value="international" onclick="$('body').trigger('pp_setState', { International: true });" type="radio"/> International</label><br/>-->
+<!--  				          </div>-->
+<!--  				        </div>-->
+
+<!--				          <div class="control-group">-->
+<!--  				          	<label class="control-label">Account Type</label>-->
+<!--  				          	<div class="controls">-->
+<!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].acc_number}"  t-if="res_user.company_id.bank_ids" /></t>-->
+<!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789"  t-if="not res_user.company_id.bank_ids" /></t>-->
+<!--  				    	            <input type="text" id="smart_bank_account_type" name="smart_bank_account_type" t-attf-value="#{res_user.partner_id.smart_bank_account_type}" /> -->
+<!--  				            </div>-->
+<!--  				          </div>-->
+
+
+
+  				        
+  				        <div id="bankDetailsNational" class="not_International" style="padding-left: 0px; padding-bottom: 0px;">			    
+  				          
+  				          
+  				          <!-- Bankname -->
+  				          <div class="control-group">
+  				          	<label class="control-label">Bankname</label>
+                            
+                            <div class="controls">
+<!--                                 <select name="bank">-->
+<!--                                    <t t-foreach="res_bank" t-as="b">-->
+<!--                                        <t t-if="res_user.company_id.bank_ids">     <option t-attf-value="#{b.id}"   t-attf-selection="res_user.company_id.bank_ids[0].bank.id == b.id"><t t-esc="b.name"/></option> </t>-->
+<!--                                        <t t-if="not res_user.company_id.bank_ids"> <option t-attf-value="#{b.id}"><t t-esc="b.name"/></option> </t>-->
+<!--                                    </t>-->
+<!--                                </select>-->
+  				    	            <input id="smart_bank_name" name="smart_bank_name" t-attf-value="#{res_user.partner_id.smart_bank_name}" type="text"/> 
+    				        </div>
+  				          </div>
+
+
+  				    
+  				          <!-- Account -->
+  				          <div  class="control-group">
+  				          	<label class="control-label">Account Number</label>
+  				          	<div class="controls">
+<!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].acc_number}"  t-if="res_user.company_id.bank_ids" /></t>-->
+<!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789"  t-if="not res_user.company_id.bank_ids" /></t>-->
+  				    	            <input id="smart_bank_acc_no" name="smart_bank_acc_no" t-attf-value="#{res_user.partner_id.smart_bank_acc_no}" type="text"/> 
+  				            </div>
+  				          </div>
+  				          
+		  				</div>
+		  				  
+  				        <div id="bankDetailsNational" class="International" style="padding-left: 0px; padding-bottom: 0px;">			      				          
+
+						<ul>  		  				        
+               				<h2 style="margin: 0;">
+               				  <small><br/>
+               				  If the bank is in an other country</small><br/>
+               				</h2>
+						</ul>  		                    
+                    
+  				          
+  				          <!-- Account -->
+  				          <div class="control-group">
+  				          	<label class="control-label">Account number/ IBAN</label>
+  				          	<div class="controls">
+<!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank" name="iban" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].iban}" t-if="res_user.company_id.bank_ids"/></t>-->
+<!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank" name="iban" placeholder="123 456 789" t-if="not res_user.company_id.bank_ids"/></t>-->
+  				    	            <input id="smart_bank_acc_iban" name="smart_bank_acc_iban" t-attf-value="#{res_user.partner_id.smart_bank_acc_iban}" type="text"/> 
+  				            </div>
+  				          </div>
+  				          
+  				          <!-- Account -->
+  				          <div class="control-group">
+  				          	<label class="control-label">BIC/Swift</label>
+  				          	<div class="controls">
+<!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank" name="bank_bic" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].bank_bic}" t-if="res_user.company_id.bank_ids"/></t>-->
+<!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank" name="bank_bic" placeholder="123 456 789" t-if="not res_user.company_id.bank_ids"/></t>-->
+  				    	            <input id="smart_bank_acc_bic" name="smart_bank_acc_bic" t-attf-value="#{res_user.partner_id.smart_bank_acc_bic}" type="text"/> 
+  				            </div>
+  				          </div>
+  				          
+  				         </div> 
+  				          
+ 				          
+							<hr/>
+  					
+  							<div class="control-group">
+					  		  <div class="controls">
+					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+					  		  </div>
+					  		</div>  
+		  				  
+		  				   				 
+  						 </form>	
+						
+						
+					
+				</div>
+					<!-- end Tab Bank -->
+
+ 				
+  				
+
+  				  
+  				</div> 
+  				<!-- end content -->
+  				
+  				</div> 
+  				<!-- end tabbable -->
+<!--			  </section>	-->
+            
+	    	</div>
+<!--	    End panelsheet-content	-->
+
+			</div>
+<!--    end content span10 -->
+		</div>
+<!--		End Users account view-->
+
+</div> 
+<!--	end content span10        -->
+	</t>        
+</template>
+
+
+
+<template name="User list" id="list">
+    <t t-call="smart_common.layout">
+        
+
+   	    <div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="users-list">
+          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+                <h1>Users</h1>
+                <div class="pull-right">
+                  <a href="/smart/signup" class="btn btn-large btn-primary"><i class="icon-plus"></i> New user</a>
+                </div>
+              </div>
+            </header>
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+                
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Name</span></th>
+      	              <th><span class="muted">Activity</span></th>
+      	              <th><span class="muted">ID</span></th>
+<!--      	              <th><span class="muted">Active since</span></th>-->
+      	              <th><span class="muted">Status</span></th>
+      	              <th><span class="muted"> </span></th>
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="res_users" t-as="u">
+                            <tr>  
+                              <td class="cell-primary"><a  t-att-href="'/account/%s' % u.id"><t t-raw="u.name"/></a></td>
+                              <td><t t-raw="u.company_id.name"/></td>
+                              <td><t t-raw="u.id"/></td>
+<!--                              <td><t t-raw="u.date"/>date</td>-->
+<!--                              [[ formatLang(o.date_start,date=True) ]]-->
+                              <td><t t-raw="u.state"/></td>
+<!--  Anders                          <td class="cell-primary"><a  t-att-href="'/order/delete/%s' % tr_order.id"><a href="#" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return false;'/><i class="icon-trash icon-white"></i></a></td>-->
+                             <td class="cell-primary"><a  t-att-href="'/user/%s/inactivate' % u.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>
+                            </tr>
+                      </t>
+                    
+      	          </tbody>
+      	          
+      	        </table>
+                
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+        </div><!-- #users-list -->
+        
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+        </div>
+</t>        
+</template>
+
+
+
+
+
+
+</data>
+</openerp>

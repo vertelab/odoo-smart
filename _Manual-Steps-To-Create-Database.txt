@@ -1,0 +1,153 @@
+Create new database
+- xx_database and xx_demo
+
+- Install "Accounting & Finance" module (local currency and CoA)
+- Create Default Search filter for Apps: "smart"
+
+- Change name of Company
+- Add country to company
+- add fredrik.arvas@smart-eu.org to admin-email
+
+- Load Languages (Spanish)
+
+
+- Activate Settings -> Sign up
+- Activate Settings -> Password reminder
+- Check emailing 
+
+- Install Project
+- Install Knowledge
+- Install SMart Common
+- Install SMart Dashboard (Before Login)
+- Install SMart Login
+- Install SMart Activity
+- Install SMart Project
+- Install SMart Account
+- Install SMart Client
+- Install SMart Order
+- Install SMart Expense
+- Install SMart SMart Budget and Cash
+- Install SMart Salary Simulator
+- Install SMart Multicompany Base
+- Install SMart Multicompany Account
+- Install SMart Multicompany HR 
+- Install SMart Multicompany HR Expense
+- Install SMart Multicompany products
+
+X - Install SMart Alias
+
+- Change name of Admin
+- add technical
+- Add multi company
+- analytical account
+- Contact Creation
+
+- add email: fredrik.arvas@smart-eu.org
+- add homepage
+
+
+Add products
+
+Create Template User
+- add home country
+	
+- Create Template Activity
+- re-link Template-user
+
+- Link home address (Employees -> Home address)
+- Add VAT-rates to website (Accounting -> Configuration -> Taxes -> Taxes -> Formview: "Active Web")
+
+Add products (Sales -> Configuration -> Product Categories 
+\odoo-smart\smart_expense\data\product.category_2014-12-09.csv
+:Windows
+:Semicolon
+
+
+
+- Change settings on Template Company: 
+  - add Parent company: "SMartAB"
+  - Add country Same as Company-country
+
+- Add Launchpad-page
+<t name="Homepage" priority="29" t-name="website.homepage">
+  <t t-call="website.layout">
+    <div id="wrap" class="oe_structure oe_empty"> 
+<section class="jumbotron mt16 mb16"><div class="container"><h1>Welcome to SMart</h1><p/><p>We will set up your account and send you an email, usually within the day. </p><p>If you want you can test our tool with a demo-account: </p><p>Userid: demo, password: demo</p><p>While you wait. </p><p><span style="color: inherit;">Or give us a call: 0123-321 123 654</span> or <a class="btn btn-primary btn-lg" href="/page/website.contactus">Contact us </a></p><p/>
+
+<p>If you have a been confirmed by us -> <a class="btn btn-primary btn-lg" href="/dashboard">Continue to Dashboard</a> </p>
+
+<p>Welcome again!</p>
+</div></section>
+
+</div>
+  </t>
+</t>
+
+- Add custom menues
+Change Home -> Launchpad for Page /page/homepage/
+Projects -> URL: /project/list
+Clients -> URL: /client/list
+Order	/order/list
+Expnese 	/expense/list
+My Account	/account
+Budget -> /budget/list
+Cash	-> /cash/list
+
+
+Done.
+
+
+
+
+
+
+
+X - Settings -> Security -> Record rules, for every record in smart_mc*/multicpmany.xml 
+a) Advanced search for "model" (search object res.company ) 
+b) copy domain
+
+Replace: ['|',('id','=',[user.company_id.parent_id.id])
+With: 
+['|',('id','=',[user.company_id.parent_id.id]),('id','in',[company.id for company in user.company_ids])]
+
+
+c)  hr.expense id=86 (85)
+
+Replace
+['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]
+with:
+['|',('id','=',[user.company_id.parent_id.id]),('id','in',[company.id for company in user.company_ids])]
+
+Replace: 
+[('employee_id.user_id','=',user.id)]
+with: 
+['|',('id','=',[user.company_id.parent_id.id]),('id','in',[company.id for company in user.company_ids])]
+
+
+d)
+Product id=22
+ ['|',('company_id','=',user.company_id.id),('company_id','=',False)]
+['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]
+
+e)
+mail = id 19
+['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]
+[('partner_id', '=', user.partner_id.id)]
+
+
+Rights for CRUD
+
+
+
+
+
+
+Domain-liniknng
+
+
+    # Vertel
+    if len(d) == 2:  # eu,at,se,de etc
+        r = "%s_database" % d # be.smart-eu.org/be.smarteu.net => be_database
+    if len(d) == 7: # demo-xx
+        r = "%s_demo" % d[-2:] # demo-be.smart-eu.org/demo-be.smarteu.net => be_database
+#  else: demo.smart-eu.org -> database-listing

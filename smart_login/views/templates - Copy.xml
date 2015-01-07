@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <template id="web.login" name="Login">
+            <t t-call="web.login_layout">
+                <form class="oe_login_form" role="form" t-attf-action="/web/login{{ '?debug' if debug else '' }}" method="post" onsubmit="this.action = this.action + location.hash">
+
+                    <t t-call="web.database_select"/>
+
+                    <div class="form-group field-login">
+                        <label for="login" class="control-label">Email</label>
+                        <input type="text" name="login" t-att-value="login" id="login" class="form-control" required="required" autofocus="autofocus"/>
+                    </div>
+
+                    <div class="form-group field-password">
+                        <label for="password" class="control-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" required="required" t-att-autofocus="'autofocus' if login else None"/>
+                    </div>
+
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>
+
+                    <!--<input type="hidden" name="redirect" t-att-value="redirect"/>  -->
+                    <input type="hidden" name="redirect" value="/"/>
+                    <div class="clearfix oe_login_buttons">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+
+                </form>
+            </t>
+        </template>
+
+
+        <template id="auth_signup.fields" name="Auth Signup/ResetPassword form fields">
+            <t t-call="web.database_select"/>
+
+            <div class="form-group field-login">
+                <label for="login" class="control-label">Your Email</label>
+                <input type="text" name="login" t-att-value="login" id="login" class="form-control" autofocus="autofocus"
+                    required="required" t-att-readonly="'readonly' if only_passwords else None"/>
+            </div>
+
+            <div class="form-group field-name">
+                <label for="name" class="control-label">Your Name</label>
+                <input type="text" name="name" t-att-value="name" id="name" class="form-control" placeholder="e.g. John Doe"
+                    required="required" t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+            </div>
+
+            <div class="form-group field-password">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" name="password" id="password" class="form-control"
+                    required="required" t-att-autofocus="'autofocus' if only_passwords else None"/>
+            </div>
+
+            <div class="form-group field-confirm_password">
+                <label for="confirm_password" class="control-label">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" class="form-control" required="required"/>
+            </div>
+        </template>
+
+        <template id="auth_signup.signup" name="Sign up login">
+            <t t-call="web.login_layout">
+                <form class="oe_signup_form" role="form" method="post" t-if="not message">
+
+                    <t t-call="auth_signup.fields"/>
+
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+<!--                    <input type="hidden" name="redirect" t-att-value="redirect"/>-->
+                    <input type="hidden" name="redirect" value="/"/>
+                    <input type="hidden" name="token" t-att-value="token"/>
+                    <div class="clearfix oe_login_buttons">
+                        <a t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link pull-right">Back to Login</a>
+                        <button type="submit" class="btn btn-primary pull-left">Sign up</button>
+                    </div>
+
+                </form>
+            </t>
+        </template>
+ 
+
+             
+<template id="webterms_accepted" inherit_id="smart_dashboard.dashboard" name="Web Terms Accepted" customize_show="True" >
+<!-- # This code is inserted into Dashboard to get users to confirm our webterms.-->
+        <xpath expr="//div[@id='webterms_accepted']" position="replace">
+			<div>                        
+	    		<t t-if="not res_user.webterms_accepted">
+
+	    		<BR/>
+	    		<BR/>
+	   			You have not yet accepted <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> <BR/>
+		
+				By clicking here, <a  t-att-href="'/add_activity/'" class="btn btn-small btn-success"> <strong>I Accept</strong></a> <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> 
+								<BR/>
+	    		<BR/>
+	    		<BR/>
+	    		<BR/>
+	    		<BR/>
+																
+	    		<BR/>
+				
+				</t>
+	
+	
+
+	   			<t t-if="res_user.webterms_accepted">
+
+            <div class="panelsheet-content">
+<!--            <div class="panelsheet-content">-->
+
+<BR/>
+         		<p>This is where you control your work. <BR/>
+				Let's start by adding a <a href="/project/new"><strong>Project</strong></a> to group your work, then a <a href="/client/new"><strong>Client</strong></a>.<BR/>
+         		After that you are set to define your first <a href="/order/new"><strong>Order</strong></a>.<BR/>
+				Any questions?<BR/>
+				Give us a <a href="/page/contactus"><strong>call</strong></a>!<BR/>
+				</p>
+			</div>
+			
+  			
+				</t>
+			</div>
+     </xpath>
+</template>        
+        
+
+       
+<template id="legal_at" name="Webbpolicy English">
+         
+    <article>
+      <div class="row">
+          <div class="span7">
+          <header class="page-leader" id="overview"><h1>Webbpolicy AT</h1></header>
+	          <div class="styled">
+					<h1>1. General information</h1>
+			  </div>
+          </div>
+        </div>
+     
+    </article>
+  
+</template>
+
+
+       
+<template id="legal_be" name="Webbpolicy English">
+         
+    <article>
+      <div class="row">
+          <div class="span7">
+          <header class="page-leader" id="overview"><h1>Web policy</h1></header>
+	          <div class="styled">
+
+				<h1>1. General information</h1>
+				<p>This website was created and is managed by the BVBA SMartBE with registered office in Rue Emile Féron 70, 1060 Bruxelles.</p>
+				<p>This website and the information it contains may be used on the condition that the terms and conditions of use hereafter are fully complied with. By using this website you, hereafter referred to as "the user", are deemed to have accepted the terms and conditions.</p>
+				<p>The information that the user finds on this website or that is provided to the user via this website is of a general nature and can consequently not be considered as meeting the user"s personal requirements or particular conditions.</p>
+				<p>The BVBA SMartBE reserves the right to change the information on this website at any time and at its own discretion without prior notice.</p>
+				<p>The BVBA SMartBE makes every effort to ensure that the information contained on this website is complete, correct, accurate and up to date. However the BVBA SMartBE cannot be held liable for any faults or inadequacies or any loss or damage that you suffer as a result of using the information provided. Should the information provided contain errors or should information that the user could normally expect to find on our website be lacking, the BVBA SMartBE commits itself to put this straight within the shortest possible delay as soon as it was informed of such inadequacies. We therefore invite you to e-mail any remarks or suggestions to our webmaster.</p>
+				<h1>2. Third-party promotions and publicity</h1>
+				<p>This website uses banners to display promotions for products and services provided by third parties. By clicking on these banners the user is directed to a third-party website. The BVBA SMartBE accepts no liability for the content of the publicity and the conditions applying to the promotions offered by third parties. These are the responsibility of such third parties. If the user wishes to respond to the offer, or intends in any way to conclude any transactions with such a third party, or has complaints with regard to such promotions or publicity, the user always has to contact the third party.</p>
+				<h1>3. Disruptions – Compatibility</h1>
+				<p>The BVBA SMartBE does the best it can to make sure that there are no disruptions in the availability of this website, and disclaims any liability for any loss or damage the user may suffer as a consequence of these disruptions.</p>
+				<p>The BVBA SMartBE does not guarantee that the files contained on the website are compatible with the user"s infrastructure. The user should see to it that they have the appropriate IT hardware and software, including security software (e.g. firewall, anti-virus software etc.).</p>
+				<h1>4. Intellectual property rights</h1>
+				<p>The user of this website expressly accepts that the information and data provided remain the property of the BVBA SMartBE or its partners, as mentioned on the website. All texts, drawings, photographs, images, data, trade and domain names, brands, logos and other elements are protected by intellectual property rights. The user may not reproduce and/or distribute them to the public without the prior and express written consent of the BVBA SMartBE, unless this is not required under the provisions of the copyright laws and neighbouring legislation. The user e.g. has the right to download information from this website and to reproduce it for private use. The user also has the right to distribute it within the family circle, free of charge.</p>
+				<p>Where the BVBA SMartBE gives users the possibility of having their own contributions or images put on the website, the user may not send in any works that are protected by intellectual property rights, unless he(she) owns these rights or has obtained the required permissions from the owner of the intellectual property rights to have these works published on the website. By having his(her) works or images published on the website, the user expressly gives the BVBA SMartBE the right to publish these works and images on its website without any compensation. The user shall in any case indemnify The BVBA SMartBE against any claims from third parties.</p>
+				<h1>5. Links to third-party websites</h1>
+				<p>This website contains links to websites operated by third parties. These links were solely put on the website for the information of the user. The BVBA SMartBE cannot guarantee the reliability, accuracy or quality of the contents of such websites and consequently disclaims all liability. A link to a third-party website does not imply that The BVBA SMartBE has concluded a cooperation agreement with such third party or that The BVBA SMartBE approves of the information supplied on such websites.</p>
+				<h1>6. Unauthorized use of the website</h1>
+				<p>The users of this website agree that they will not:</p>
+				<ol>
+				<li>wrongfully or unlawfully use the information on this website;</li>
+				<li>use the website in any way that may damage or alter it, disrupt its availability or affect its efficiency in any way;</li>
+				<li>use the website for transmitting or posting computer viruses, unlawful or wrongfully obtained material, or material that is in any way inappropriate, including but not limited to libellous, obscene or intimidating material;</li>
+				<li>use the website in any way that violates the rights of a natural person, a legal person or association, including but not limited to privacy rights and intellectual property rights;</li>
+				<li>use the website for posting or transmitting material for promotional or publicity ends.</li>
+				</ol>
+				<p>The BVBA SMartBE reserves the right to declare the user in default and/or start legal proceedings against the user if its interests or the interests of a third party are harmed as a result of the violation of the above provisions or any other action by the user.</p>
+				<h1>7. Cookies</h1>
+				<p>Sometimes this website will use so-called "cookies". A cookie is a bit of information that we write to the hard drive of your computer. Each time you visit our website this information is sent back to the website manager. We only use this information to verify your identity so that you do not have to enter your user name and password on each visit. Users can set up their browser to warn them each time a cookie is created or to prevent the creation of cookies.</p>
+				<p>Our website uses Ad servers (e.g. DoubleClick) to place the adverts you see on our web pages. This partner uses cookies to serve these ads to you.</p>
+				<h1>8. Personal data</h1>
+				<p>The user is free to use this website to consult information about our organisation and services without having to provide any personal details. Only to participate in contests or for the use of specific services on this website does the user have to provide personal details. Whenever the user provides personal details, The BVBA SMartBE will treat these in conformity with the policy below and the legal obligation with regard to the processing of personal data.</p>
+				<p>Personal data is stored in a secure environment that is not accessible to the public. The information will only be processed for internal purposes. The BVBA SMartBE uses the collected data to enter into contact with the user and to be able to provide him(her) with an optimal service. The data is kept no longer than necessary for providing or using the requested service. As a rule The BVBA SMartBE does not pass on any of this data to third parties except to meet legal obligations or in case it is expressly requested to do so by the legal authorities or the police. In the exceptional case that The BVBA SMartBE shares personal information with organisations or companies it works with, this will be explicitly mentioned or the user"s express consent will be asked. By providing their personal details the users give The BVBA SMartBE their express permission to process these details for the afore-mentioned purposes.</p>
+				<p>The user has the right to verify the information The BVBA SMartBE has collected and to correct it if necessary. Moreover the user can request that their personal data be removed from the files of The BVBA SMartBE via this page.</p>
+				<h1>9. Passwords</h1>
+				<p>Sometimes the user needs a password to view certain sections of the website. In such cases it is strictly forbidden to access these sections without a password. If the user received such a password, this password shall be kept secret and confidential. Every use made of our services after valid identification with your password will be deemed to have been made by you. If the security of the website is at risk, The BVBA SMartBE has the right to cancel the user"s password.</p>
+				<h1>10. Liability</h1>
+				<p>With the exception of proven intentional fault or gross negligence and proven causal connection to any damage ensuing from it, The BVBA SMartBE cannot be held liable for any damage that may result from the use of this website or any information provided on it or accessed via this website (e.g. by the links the website provides).</p>
+				<p>Neither can The BVBA SMartBE be held liable for any damage resulting from technical shortcomings, disruptions of access to this website or any harmful interferences with the user"s system or software.</p>
+				<p>The BVBA SMartBE cannot be held liable for any damage caused by viruses, bugs, Trojan horses etc. should these occur on the website in spite of all the precautions that were taken.</p>
+				<p>The hosting, colocation or other internet services provided by The BVBA SMartBE shall not be used for illegal activities. The buyer will indemnify The BVBA SMartBE for all damage and costs caused by illegal activities. The activities of the client can neither be the cause of other illegal activities. Illegal pornographic, copyright protected material or anything out of order in regard to good moral shall not be hosted in our network.</p>
+				<h1>11. Applicable legislation</h1>
+				<p>This website is governed by Belgian law. Disputes arising in connection with this website shall be subject to the exclusive jurisdiction of the Belgian courts.</p>
+			           	
+				
+			  </div>
+          </div>
+      </div>
+      
+    </article>
+  
+</template>
+
+
+       
+<template id="legal_de" name="Web policy English">
+         
+    <article>
+      <div class="row">
+          <div class="span7">
+          <header class="page-leader" id="overview"><h1>Web policy De</h1></header>
+	          <div class="styled">
+
+					<h1>1. General information</h1>
+					   	
+				
+			  </div>
+          </div>
+        </div>
+      
+    </article>
+  
+</template>
+
+
+       
+<template id="legal_es" name="Web policy English">
+         
+    <article>
+      <div class="row">
+          <div class="span7">
+          <header class="page-leader" id="overview"><h1>Web policy Es</h1></header>
+	          <div class="styled">
+
+					<h1>1. General information</h1>
+					   	
+				
+			  </div>
+          </div>
+        </div>
+      
+    </article>
+  
+</template>
+
+  
+        
+<template id="legal_nl" name="Web policy Dutch">
+         
+    <article>
+      <div class="row">
+        <div class="span8">
+          
+        </div>
+      </div>
+      <div class="row">
+              
+        <div class="span7">
+          <header class="page-leader" id="overview">
+            <h1>Web policy NL</h1>
+                      </header>
+          <div class="styled">
+            <h1>1. Allmän information</h1>
+			</div>
+          </div>
+        </div>
+      
+    </article>
+  
+</template>
+
+       
+<template id="legal_se" name="Web policy English">
+         
+    <article>
+      <div class="row">
+          <div class="span7">
+          <header class="page-leader" id="overview"><h1>Web policy</h1></header>
+	          <div class="styled">
+            	<h1>1. General information</h1>
+				<p>This website was created and is managed by the SMartSe AB during name change with org.nr 556891-3106 with registered office in Nytorgsgatan 15, 116 22 Stockholm, here after called "SMartSe".</p>
+				<p>This website and the information it contains may be used on the condition that the terms and conditions of use hereafter are fully complied with. By using this website you, hereafter referred to as "the user", are deemed to have accepted the terms and conditions.</p>
+				<p>The information that the user finds on this website or that is provided to the user via this website is of a general nature and can consequently not be considered as meeting the user’s personal requirements or particular conditions.</p>
+				<p>The SMartSe reserves the right to change the information on this website at any time and at its own discretion without prior notice.</p>
+				<p>The SMartSe makes every effort to ensure that the information contained on this website is complete, correct, accurate and up to date. However the SMartSe cannot be held liable for any faults or inadequacies or any loss or damage that you suffer as a result of using the information provided. Should the information provided contain errors or should information that the user could normally expect to find on our website be lacking, the SMartSe commits itself to put this straight within the shortest possible delay as soon as it was informed of such inadequacies. We therefore invite you to e-mail any remarks or suggestions to our webmaster.</p>
+				<h1>2. Third-party promotions and publicity</h1>
+				<p>This website uses banners to display promotions for products and services provided by third parties. By clicking on these banners the user is directed to a third-party website. The SMartSe accepts no liability for the content of the publicity and the conditions applying to the promotions offered by third parties. These are the responsibility of such third parties. If the user wishes to respond to the offer, or intends in any way to conclude any transactions with such a third party, or has complaints with regard to such promotions or publicity, the user always has to contact the third party.</p>
+				<h1>3. Disruptions – Compatibility</h1>
+				<p>The SMartSe does the best it can to make sure that there are no disruptions in the availability of this website, and disclaims any liability for any loss or damage the user may suffer as a consequence of these disruptions.</p>
+				<p>The SMartSe does not guarantee that the files contained on the website are compatible with the user’s infrastructure. The user should see to it that they have the appropriate IT hardware and software, including security software (e.g. firewall, anti-virus software etc.).</p>
+				<h1>4. Intellectual property rights</h1>
+				<p>The user of this website expressly accepts that the information and data provided remain the property of the SMartSe or its partners, as mentioned on the website. All texts, drawings, photographs, images, data, trade and domain names, brands, logos and other elements are protected by intellectual property rights. The user may not reproduce and/or distribute them to the public without the prior and expressed written consent of the SMartSe, unless this is not required under the provisions of the copyright laws and neighbouring legislation. The user e.g. has the right to download information from this website and to reproduce it for private use. The user also has the right to distribute it within the family circle, free of charge.</p>
+				<p>Where the SMartSe gives users the possibility of having their own contributions or images put on the website, the user may not send in any works that are protected by intellectual property rights, unless he(she) owns these rights or has obtained the required permissions from the owner of the intellectual property rights to have these works published on the website. By having his(her) works or images published on the website, the user expressly gives the SMartSe the right to publish these works and images on its website without any compensation. The user shall in any case indemnify The SMartSe against any claims from third parties.</p>
+				<h1>5. Links to third-party websites</h1>
+				<p>This website contains links to websites operated by third parties. These links were solely put on the website for the information of the user. The SMartSe cannot guarantee the reliability, accuracy or quality of the contents of such websites and consequently disclaims all liability. A link to a third-party website does not imply that The SMartSe has concluded a cooperation agreement with such third party or that The SMartSe approves of the information supplied on such websites.</p>
+				<h1>6. Unauthorized use of the website</h1>
+				<p>The users of this website agree that they will not:</p>
+				<ol>
+				<li>wrongfully or unlawfully use the information on this website;</li>
+				<li>use the website in any way that may damage or alter it, disrupt its availability or affect its efficiency in any way;</li>
+				<li>use the website for transmitting or posting computer viruses, unlawful or wrongfully obtained material, or material that is in any way inappropriate, including but not limited to libellous, obscene or intimidating material;</li>
+				<li>use the website in any way that violates the rights of a natural person, a legal person or association, including but not limited to privacy rights and intellectual property rights;</li>
+				<li>use the website for posting or transmitting material for promotional or publicity ends.</li>
+				</ol>
+				<p>The SMartSe reserves the right to declare the user in default and/or start legal proceedings against the user if its interests or the interests of a third party are harmed as a result of the violation of the above provisions or any other action by the user.</p>
+				<h1>7. Cookies</h1>
+				<p>Sometimes this website will use so-called "cookies". A cookie is a bit of information that we write to the hard drive of your computer. Each time you visit our website this information is sent back to the website manager. We only use this information to verify your identity so that you do not have to enter your user name and password on each visit. Users can set up their browser to warn them each time a cookie is created or to prevent the creation of cookies.</p>
+				<p>Our website uses Ad servers (e.g. DoubleClick) to place the adverts you see on our web pages. This partner uses cookies to serve these ads to you.</p>
+				<h1>8. Personal data</h1>
+				<p>SMartSe AB is responsible for personal information and comply with the Personal Data Act (1998:204).</p>
+				<p>The user is free to use this Web site for information about our organization and services without leaving any personal information.</p>
+				<p>The personal information that you may now or later records of SMartSe such as name, social security number, phone number, home address, bank account number, rate, email address and password to SMartSe website will SMartSe to store in its data systems and process.</p>
+				<p>SMartSe intend to treat your Personal Information in order to pursue and manage issues related to the contract with you, and agreements with clients and to SMartSE to send you information and newsletters to you. SMartSe may also in its marketing may process personal data and photographs which later acquired by you.</p>
+				<p>Your personal information will also be transferred to, stored and otherwise treated as above of personal data assistants on behalf of SMartSe. SMartSe Through an agreement with these companies ensured that the same stringent safety when handling personal data resulting from the Personal Data Act will be met, and that treatment will only be in accordance with instructions from SMartSe.</p>
+				<p>You have under 26 § Personal Data Act, the right to free, once per calendar year, upon written request addressed to the undersigned SMartSe, be told what personal information about you that SMartSe treats and how they are treated. You also have the right, under § 28 Data Protection Act request correction of the personal data that SmartSe deal about you.</p>
+				<p>By accepting these terms and conditions you agree to SMartSe process personal information about you in accordance with the above.</p>
+				<h1>9. Passwords</h1>
+				<p>Sometimes the user needs a password to view certain sections of the website. In such cases it is strictly forbidden to access these sections without a password. If the user received such a password, this password shall be kept secret and confidential. Every use made of our services after valid identification with your password will be deemed to have been made by you. If the security of the website is at risk, The SMartSe has the right to cancel the user’s password.</p>
+				<h1>10. Liability</h1>
+				<p>With the exception of proven intentional fault or gross negligence and proven causal connection to any damage ensuing from it, The SMartSe cannot be held liable for any damage that may result from the use of this website or any information provided on it or accessed via this website (e.g. by the links the website provides).</p>
+				<p>Neither can The SMartSe be held liable for any damage resulting from technical shortcomings, disruptions of access to this website or any harmful interferences with the user’s system or software.</p>
+				<p>The SMartSe cannot be held liable for any damage caused by viruses, bugs, Trojan horses etc. should these occur on the website in spite of all the precautions that were taken.</p>
+				<p>The hosting, colocation or other internet services provided by The SMartSe shall not be used for illegal activities. The buyer will indemnify The SMartSe for all damage and costs caused by illegal activities. The activities of the client can neither be the cause of other illegal activities. Illegal pornographic, copyright protected material or anything out of order in regard to good moral shall not be hosted in our network.</p>
+				<h1>11. Applicable legislation</h1>
+				<p>This website is governed by Swedish law. Disputes arising in connection with this website shall be subject to the exclusive jurisdiction of the Swedish courts.</p>          
+
+			</div>
+          </div>
+        </div>
+      
+    </article>
+  
+</template>
+
+ 
+
+</data>
+</openerp>

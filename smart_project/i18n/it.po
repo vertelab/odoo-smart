@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"Project-Id-Version: smart_project\n"
+"Language: it_IT\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "A short and relevant name is best."
+msgstr "Un nome breve e pertinente è la cosa migliore."
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Active"
+msgstr "Attivo"
+
+#. module: smart_project
+#: view:website:smart_project.list
+msgid "Add a new project"
+msgstr "Aggiungi un nuovo progetto"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Archived"
+msgstr "Archiviati"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Edit Project"
+msgstr "Modifica del progetto"
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Hello world"
+msgstr "Ciao mondo"
+
+#. module: smart_project
+#: view:website:smart_project.list
+msgid "Name"
+msgstr "Nome"
+
+#. module: smart_project
+#: model:ir.model,name:smart_project.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Project name"
+msgstr "Nome del progetto"
+
+#. module: smart_project
+#: view:website:smart_common.smartmenu view:website:smart_project.list
+msgid "Projects"
+msgstr "Progetti"
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Projects name..."
+msgstr "Progetti nome ..."
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Save"
+msgstr "Salva"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Status"
+msgstr "Stato"
+
+#. module: smart_project
+#: model:ir.model,name:smart_project.model_website
+msgid "Website"
+msgstr "Sito web"

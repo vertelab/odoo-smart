@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template name="Activity list" id="list">
+    <t t-call="smart_common.layout">
+
+	    
+	    <div class="content span10">
+      
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+	            <header class="panelsheet-header clearfix">
+	             <div class="title">
+	                <h1>Activities</h1>
+	                <div class="pull-right">
+	                  <a href="/activity" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new activity</a>
+	                </div>
+	              </div>
+	            </header>
+<!--Listar en rad av Company_id:n		      -->
+<!--              <div t-raw="res_user.company_ids"></div>-->
+	            <div class="panelsheet-content">
+	              
+	              <section class="panelsheet-section">
+	                
+	                <table class="table table-striped" >
+		  	          <thead>
+		  	            <tr>
+		   	              <th><span class="muted">Name</span></th>
+		  	              <th><span class="muted"> </span></th>  	              
+		  	            </tr>
+		  	          </thead>
+	
+	  	          <tbody>
+
+	     	     		<t t-foreach="res_user.company_ids" t-as="a">
+	     	     		     <tr>
+								<td><a t-att-href="'/activity/%s' % a.id"><strong><t t-raw="a.name"/></strong></a></td>
+		                       <td><a  t-att-href="'/activity/%s/delete' % a.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
+							</tr>
+						</t>      
+	  	          </tbody>
+	  	          
+	  	   	          
+	  	        </table>
+		          
+		          </section>
+		      
+	  	     
+	  	    </div> 
+			  
+		    </div>
+	        </div>
+<!--		</div>        -->
+	</t>        
+</template>
+
+
+
+
+<template name="Activity form" id="activity">
+
+
+    <t t-call="smart_common.layout">
+ 
+ 
+	<div class="content span10">
+      
+        <div id="Activity form view">
+          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+                <h1>Manage your Activity</h1>
+              </div>
+            </header>
+      
+<!-- start content -->
+            <div class="panelsheet-content">
+              
+<!--              <section class="panelsheet-section">-->
+    
+			
+<!--	Start tabbable-->
+				<div class="tabbable">
+
+				
+				
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>
+
+
+
+<!--start nav tabs  				-->				
+  				  <ul id="nav-tabs" class="nav nav-tabs">
+						<li class="active"><a href="#tab-members" data-toggle="tab">Members in this Activity</a></li>
+						<li><a href="#tab-settings" data-toggle="tab" >Settings for the Activity</a></li>
+  				  </ul>
+<!--end nav tabs  				-->
+  				
+                      			
+  		<div class="tab-content">
+      
+
+
+			
+			  	 <!-- start Tab members -->
+							<div class="tab-pane active" id="tab-members">
+
+<!--				            	<header class="panelsheet-header clearfix">-->
+<!--				              <div class="title">-->
+<!--								    <h1>Members in this Activity</h1>-->
+<!--				              </div>-->
+<!--				            </header>      -->
+
+<!--            <div class="panelsheet-content">-->
+<!--              -->
+<!--              <section class="panelsheet-section">-->
+ 
+
+<!--content-->
+
+<ul>						
+             <h2>Members in this activity</h2>
+	                <table class="table table-striped" >
+		  	          <thead>
+		  	            <tr>
+		   	              <th><span class="muted">Name</span></th>
+		  	              <th><span class="muted"> </span></th>  	              
+		  	            </tr>
+		  	          </thead>
+	
+	  	          <tbody>
+
+	     	     		<t t-foreach="members" t-as="m">
+                            <tr>
+								<td>
+                                    <strong><t t-raw="m.name"/></strong><t t-if="m.company_id.id == res_company.id">, admin</t> 
+								</td>
+		                       <td>
+                                    <t t-if="not m.company_id.id == res_company.id"> <a  t-att-href="'/activity/%s/member/%s/make_admin' % (res_company.id,m.id)" valign="top" border="1" class="btn btn btn-success"><i class="glyphicon glyphicon-user"></i> Make Admin</a></t>
+		                       </td>                       
+		                       <td>
+                                    <a  t-att-href="'/activity/%s/member/%s/delete' % (res_company.id,m.id)" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i> </a>
+		                       </td>                       
+
+							</tr>
+						</t>
+
+
+	  	          </tbody>
+  	   	          
+	  	        </table>
+
+             <h2>Add Members to the activity</h2>
+	                <table class="table" >
+	
+	  	          <tbody>
+
+
+                        <tr>
+                        <td colspan="2">
+                        <form class="form-horizontal" t-attf-action="#{form_post}" method="post">                        
+                                <select name="user_id">
+                                    <t t-foreach="res_users" t-as="u">
+                                        <option t-attf-value="#{u.id}"><t t-esc="u.name"/> (<t t-esc="u.login"/>)</option> 
+                                    </t>
+                                </select> 
+                        
+<!--                              <div class="form-actions">-->
+                                         <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+<!--                              </div>                                      -->
+                        </form>
+                        </td>
+                        </tr>
+
+	  	          </tbody>
+  	   	          
+	  	        </table>
+
+</ul>
+                
+                
+                 
+<!--              </section>-->
+<!--              -->
+<!--            </div>-->
+            <!--/panelsheet-content-->
+
+			
+				
+							</div>
+					<!-- emd Tab members -->
+
+
+				<div class="tab-pane" id="tab-settings">
+
+ <!--content-->
+
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+                
+    				  <div class="control-group">
+    				    <label class="control-label"><strong>Activity name</strong></label>
+    				    <div class="controls">
+    				      <div class="input">
+    				        <input type="text" class="input-xlarge inline" name="name" placeholder="Your activitys new name" t-attf-value="#{res_company.name}"/>
+    				        <p class="help-block">A short and relevant name is best.</p>
+    				      </div>
+    				    </div>
+    				  </div>
+    				  
+<!--    				  <div class="control-group">-->
+<!--    				    <label class="control-label"><strong>Status</strong></label>-->
+<!--    				    <div class="controls">-->
+<!--    				      <label class="radio inline">-->
+<!--    				        <input type="radio" name="activity-status" id="activity-status" value="active" />Active</label>-->
+<!--    				      <label class="radio inline">-->
+<!--    				        <input type="radio" name="activity-status" id="activity-status" value="archived"/>Archived</label>-->
+<!--    				    </div>-->
+<!--    				  </div>-->                
+
+
+
+                
+              <div class="form-actions">
+     					<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+                <a href="" class="btn btn-link"><strong>Cancel</strong></a>
+              </div>              
+              
+            
+						</form>              
+
+                
+                
+                 
+<!--              </section>-->
+<!--              -->
+<!--            </div>-->
+<!--            /panelsheet-content-->
+				
+							</div>
+					<!-- emd Tab settings -->
+
+ 
+              
+            </div>
+<!--            /panelsheet-content-->
+
+
+
+				
+						</div>
+					<!-- emd Tab activites -->
+
+
+  				</div>
+<!--end tabbable-->
+
+
+      		  
+<!--      		</section>-->
+				
+<!--            </div>-->
+<!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+        </div><!-- #purchase-orders-list -->
+        
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+        </div>
+</t>        
+</template>
+
+
+<template name="Is not used mall for tabbed" id="x_mall tabb">
+<!--template tabbed content-->
+
+				<div class="tabbable">
+				
+  				  <ul class="nav nav-tabs">
+						<li class="active"><a href="#tab-notes" data-toggle="tab" >Notes</a></li>
+      	              	 <li><a href="#tab-budget" data-toggle="tab">Budget</a></li>
+      	              	 <li><a href="#tab-cash" data-toggle="tab">Cash</a></li>
+  				  </ul>
+
+<!--end nav tabs  				-->
+
+			  	<!-- start Tab notes -->
+					<div class="tab-content">
+			    
+			    			<div class="tab-pane" id="tab-notes">
+			            		<ul>
+									<p><strong>To do on this view</strong> </p>
+									<p>Reverse order: last first. </p>
+								</ul>	
+							</div>
+			
+				<!-- end Tab notes -->
+			
+			  	 <!-- start Tab Cash -->
+							<div class="tab-pane" id="tab-cash">
+
+				            	<header class="panelsheet-header clearfix">
+				              <div class="title">
+								    <h1>Your current "cash"</h1>
+				              </div>
+				            </header>      
+
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+ 
+
+<!--content-->
+                
+                 
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+			
+				
+							</div>
+							
+					<!-- emd Tab Cash -->
+
+
+
+	  	 <!-- start Tab Budget -->
+							<div class="tab-pane" id="tab-budget">
+
+				            	<header class="panelsheet-header clearfix">
+				              <div class="title">
+							    	<h1>Your current "budget"</h1>
+				              </div>
+				            </header>      
+
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+ 
+<!--content-->
+            
+                
+              </section>
+              
+            </div><!--/panelsheet-content-->
+
+
+
+				
+							</div>
+							
+					<!-- emd Tab Bduget -->
+
+
+
+			</div>
+	<!--End tab content-->
+	
+	
+
+  				
+  				</div>
+<!--end tabbable-->
+
+
+<!--end tabbed content-->
+</template>
+  				
+
+
+</data>
+</openerp>

@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_login\n"
+"Language: nl_NL\n"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "Back to Login"
+msgstr "Terug naar Inloggen"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Belgium"
+msgstr "België"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "Confirm Password"
+msgstr "Wachtwoord bevestigen"
+
+#. module: smart_login
+#: view:website:smart_login.login_layout
+msgid "Create an Account"
+msgstr "Maak een account"
+
+#. module: smart_login
+#: view:website:smart_login.database_select view:website:smart_login.xlogin
+msgid "Database"
+msgstr "Database"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Deutschland"
+msgstr "Deutschland"
+
+#. module: smart_login
+#: view:website:smart_login.login view:website:smart_login.xlogin
+msgid "Email"
+msgstr "E-mail"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "France"
+msgstr "Frankrijk"
+
+#. module: smart_login
+#: view:website:smart_login.webclient_bootstrap
+msgid "Hello World"
+msgstr "Hello World"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Home"
+msgstr "Thuis"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Iberia"
+msgstr "Iberia"
+
+#. module: smart_login
+#: view:website:smart_login.login view:website:smart_login.xlogin
+msgid "Log in"
+msgstr "Log in"
+
+#. module: smart_login
+#: view:website:smart_login.xlogin
+msgid "Login"
+msgstr "Login"
+
+#. module: smart_login
+#: view:website:smart_login.login_layout
+msgid "Login to my account"
+msgstr "Log in op mijn account"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Nederland"
+msgstr "Nederland"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_login
+#: view:website:smart_login.login view:website:smart_login.signup
+#: view:website:smart_login.xlogin
+msgid "Password"
+msgstr "Wachtwoord"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "Register an Account"
+msgstr "Registreer een account"
+
+#. module: smart_login
+#: view:website:smart_login.xlogin
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#. module: smart_login
+#: view:website:smart_login.layout view:website:smart_login.smartbar_X
+msgid "SMart"
+msgstr "SMart"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "SMart Europe"
+msgstr "SMart Europa"
+
+#. module: smart_login
+#: view:website:smart_login.signup view:website:smart_login.xlogin
+msgid "Sign up"
+msgstr "Registreren"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Sverige"
+msgstr "Sverige"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_website
+msgid "Website"
+msgstr "Website"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "Your Email"
+msgstr "Uw e-mail"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "Your Name"
+msgstr "Your Name"
+
+#. module: smart_login
+#: view:website:smart_login.signup
+msgid "e.g. Liza Artist"
+msgstr "bijv. Liza Artist"
+
+#. module: smart_login
+#: view:website:smart_login.xlogin
+msgid "fredrik21"
+msgstr "fredrik21"
+
+#. module: smart_login
+#: view:website:smart_login.smartbar_X
+msgid "Österreich"
+msgstr "Österreich"
+

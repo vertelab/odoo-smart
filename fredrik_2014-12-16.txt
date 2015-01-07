@@ -1,0 +1,173 @@
+
+fredrik@stage:~$ 
+nano /etc/bash.odoo
+
+
+
+
+http://runbot.odoo.com/runbot
+
+http://odoo-80.readthedocs.org/en/latest/reference/orm.html
+
+
+## glesys server
+sudo service odoo-server restart
+
+## smart server
+sudo service odoo restart; sudo service apache2 restart
+
+
+#Check user settings 
+ls -l
+
+Change user settings
+sudo /etc/cron.hourly/odoo-smart
+
+
+Ändra filrättigheter
+sudo /etc/cron.hourly/chown_odoo
+sudo /etc/cron.hourly/odoo-smart
+
+
+## Synca till prod-servern
+demo-sync
+
+
+## Manual Upgrade
+
+source /etc/bash.odoo
+odoo [tabb] [tabb]
+odoo.py      odoorestart  odootail     odooupd      odooupdm
+
+
+
+
+sudo service odoo stop
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database aw01 --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database de_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database nl_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo01 --update smart_expense  --stop-after-init"
+
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database aw01 --init smart_mc_hr_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database de_demo --init smart_mc_hr_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --init smart_mc_hr_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database nl_demo --init smart_mc_hr_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo --init smart_mc_hr_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo01 --init smart_mc_hr_expense  --stop-after-init"
+
+
+sudo service odoo start; sudo service apache2 restart
+
+
+
+
+smart_mc_hr_expense
+smart_mc_product
+
+
+one:
+sudo service odoo stop; sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo01 --update smart_expense  --stop-after-init"; sudo service odoo start; sudo service apache2 restart
+
+Several, after each other
+sudo service odoo stop
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database de_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database eu_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo --update smart_expense  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database eu_demo --update smart_cash  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --update smart_cash  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo --update smart_cash  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database eu_demo --update smart_dashboard  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --update smart_dashboard  --stop-after-init"
+sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database se_demo --update smart_dashboard  --stop-after-init"
+sudo service odoo start; sudo service apache2 restart
+
+
+sudo service odoo stop; sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database de_demo --update smart_account,smart_activity,smart_cash,smart_client,smart_common,smart_dashboard,smart_expense,smart_login,smart_mc,smart_mc_account,smart_mc_hr,smart_order,smart_project,smart_salary_simulator  --stop-after-init"; sudo service odoo start
+
+Installera ny
+sudo service odoo stop; sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --init smart_documents  --stop-after-init"; sudo service odoo start
+sudo service odoo stop; sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database ib_demo --init project  --stop-after-init"; sudo service odoo start
+
+Installera alla SMartmoduler i ny db
+sudo service odoo stop; sudo su odoo -c "odoo.py -c /etc/odoo/openerp-server.conf --database d_demo --init project,smart_common,smart_mc,smart_mc_account,smart_mc_hr,smart_order,smart_expense,smart_activity,smart_project,smart_account,smart_client,smart_dashboard,smart_login,smart_cash,smart_salary_simulator  --stop-after-init"; sudo service odoo start
+
+
+
+
+
+
+## Visa loggfilen
+tail -f /var/log/odoo/odoo-server.log
+
+## Byta lösenord för en användare
+passwd fredrik
+
+
+## Backup URL
+cd /var/backups/smart/
+
+/var/backups/smart/20141202-11/tree/usr/share
+
+Disk usage
+du -sh .
+df -sh .
+
+du disk useage
+df disk free
+
+h = userfriendly
+s = summary
+. = current directy down
+
+## Döp om backuper 
+sudo mv 20141205-09  bkup_20141205
+
+
+## Radera backuper
+cd /var/backups/smart/ 
+sudo mv 20141205-09  bkup_20141205
+sudo -s rm -r *-0[1-2]
+sudo -s rm -r 2014120?-03
+
+
+
+
+## Find 
+. = current dir
+-type f = type file
+-exec grep = sök- programmet
+user = sökordet
+{} =söksträngen
+\; = slut på exec
+-print = skriv ut
+| pipa till
+more = för att kunna kunna bläddra i 
+find . -name *.xml -type f -exec grep user {} \; -print|more
+
+
+ cd /usr/share/odoo-addons/addons/
+ grep widget website*/views/template*
+
+
+## Kolla vilka processer som finns
+ps -ef  
+
+
+
+nohup & commando
+
+## titta på server status
+top = ger belastning
+
+
+## hack för att lista rätt domän
+
+/usr/lib/python2.7/dist-packages/openerp/http.py
+
+:q!    if len(d) == 2:  # eu,at,se,de etc
+        r = "%s_database" % d # be.smart-eu.org/be.smarteu.net => be_database
+    if len(d) == 7: # demo-xx
+        r = "%s_demo" % d # demo-be.smart-eu.org/demo-be.smarteu.net => be_database

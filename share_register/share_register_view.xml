@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!--share.share-->
+
+        <record id="share_form" model="ir.ui.view">
+            <field name="name">share.share.form</field>
+            <field name="model">share.share</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+                <header>
+                    <button name="action_invoice_sent" type="object" string="Send by Email" class="oe_highlight" groups="base.group_user"/>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}'/>
+                </header>
+                <sheet string="Share">
+                    <h1>
+                        <label string="Share" attrs="{'invisible': [('state','in',('kalle',))]}"/>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
+                    <group>
+                        <group>        
+                            <field name="name" />
+                            <field name="state" />
+                            <field name="share_emption" />   
+                            <field name="share_class" />   
+                            <field name="block_id" />
+                            <field name="nominal_value" />                            
+                            <field name="purchase_price" />                            
+                        </group>
+                        <group>
+                            <field name="company_id" />                            
+                            <field name="date_issued" />
+                            <field name="seller_id" />
+                            <field name="owner_id" />
+                            <field name="share_beneficiary" />                            
+
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="company_id" />-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                        </group>-->
+                    </group>
+                    <notebook colspan="4">
+<!--                        <page string="Share block">-->
+<!--                            <tree>-->
+<!--                            <field name="share_block" cols="4"/>                            -->
+<!--                            </tree>-->
+<!--                        </page>-->
+                        <page string="Comments">
+                            <field name="comment" cols="4"/>                            
+                        </page>
+
+                        <page string="Part Owners">
+                            <field name="partowner_ids">
+                                <form string="Part Owners" >
+                                <field name="partowner_id"/>
+                                <field name="partowner_percent"/>                                
+                                </form>
+<!--                                <tree string="Part Owners" editable="bottom">-->
+<!--                                <field name="partowner_id"/>-->
+<!--                                <field name="partowner_percent"/>                                -->
+<!--                                </tree>-->
+                           </field>
+                        </page>
+                        <page string="Stakeholders">
+                            <field name="share_stakeholder" cols="4"/>                            
+                        </page>
+
+<!--                        <page string="Beneficiary">-->
+<!--                            <field name="share_beneficiarys">-->
+<!--                                <form string="Share Beneficiary" >-->
+<!--                                <field name="owner_id"/>-->
+<!--                                <field name="email"/>-->
+<!--                                </form>-->
+<!--                                <tree string="Share Beneficiary" editable="bottom">-->
+<!--                                <field name="owner_id"/>-->
+<!--                                <field name="email"/>-->
+<!--                                </tree>-->
+<!--                           </field>                            -->
+<!--                        </page>-->
+
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+ 
+        
+        <record id="share_tree" model="ir.ui.view">
+            <field name="name">share.share.tree</field>
+            <field name="model">share.share</field>
+            <field name="arch" type="xml">
+                <tree string="Share">
+        
+                    <field name="name" />
+                    <field name="block_id" />
+                    <field name="owner_id" />
+                    <field name="share_beneficiary" />                        
+                    <field name="state" />
+                    <field name="date_issued" />
+                    <field name="company_id" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_share_filter" model="ir.ui.view">
+            <field name="name">share.share.select</field>
+            <field name="model">share.share</field>
+            <field name="arch" type="xml">
+                <search string="Search Share">
+                    <field name="name" string="Share" filter_domain="['|','|',('name','ilike',self),  ('owner_id', 'child_of', self), ('seller_id','child_of',self)]"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]" help="Draft Invoices"/>
+                    <separator/>
+                    <field name="owner_id" operator="child_of"/>
+                    <field name="seller_id" operator="child_of"/>
+                    <field name="block_id" operator="child_of"/>
+                    <field name="comment" operator="ilike"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                    	<filter name="group_by_owner_id" string="Owner" context="{'group_by':'owner_id'}"/>
+                    	<filter name="group_by_seller_id" string="Seller" context="{'group_by':'seller_id'}"/>
+                        <filter string="Block" context="{'group_by':'block_id'}"/>
+                        <filter string="Status" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Date" context="{'group_by':'date_issued'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+
+        <record id="action_share_tree" model="ir.actions.act_window">
+            <field name="name">Shares</field>
+            <field name="res_model">share.share</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field eval="False" name="view_id"/>
+            <field name="search_view_id" ref="view_share_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new share.
+              </p><p>
+                You can control the shares ...
+              </p>
+            </field>
+        </record>
+ 
+        <menuitem action="action_share_tree" id="menu_action_share_tree" parent="base.menu_res_company_global"/>
+
+
+
+<!-- share.block -->
+
+        <record id="share_block_form" model="ir.ui.view">
+            <field name="name">share.block.form</field>
+            <field name="model">share.block</field>
+            <field name="arch" type="xml">
+                <form string="Block">
+                <header>
+                    <button name="action_invoice_sent" type="object" string="Send by Email" class="oe_highlight" groups="base.group_user"/>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}'/>
+                </header>
+                <sheet string="Block">
+                    <h1>
+                        <label string="Block" attrs="{'invisible': [('state','in',('kalle',))]}"/>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
+                    <group>
+                        <group>        
+                            <field name="name" />
+                            <field name="block_share_numbers" />                            
+                            <field name="date_issued" />
+                            <field name="share_class" />   
+                            <field name="state" />
+                            <field name="certificate_issued" />
+                            <field name="emption" />   
+                        </group>
+                        <group>
+<!--                            <field name="number_of_shares"/>-->
+<!--                            <field name="share_blocks_amount" />-->
+                            <field name="company_id" />
+                            <field name="owner_id" />
+                            <field name="beneficiary" />                        
+                            <field name="nominal_value" />                            
+                            <field name="purchase_price" />                            
+
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="company_id" />-->
+<!--                        </group>-->
+                        <group>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Shares">
+                            <tree>
+<!--                                
+                            <field name="name" /> 
+                            <field name="date_issued" />
+                            <field name="share_class" />
+                            <field name="share_emption" /> -->
+                            <field name="share_ids" cols="4"/>                            
+                            </tree>
+                        </page>
+
+                        <page string="Part Owners">
+                            <field name="partowner_ids">
+                                <form string="Part Owners" >
+                                <field name="partowner_id"/>
+                                <field name="partowner_percent"/>                                
+                                </form>
+                                <tree string="Part Owners" editable="bottom">
+                                <field name="partowner_id"/>
+                                <field name="partowner_percent"/>                                
+                                </tree>
+                           </field>
+                        </page>
+                        <page string="Stakeholders">
+<!--                            <field name="stakeholder">-->
+<!--                                <form string="Stakeholders" >-->
+<!--                                <field name="name"/>-->
+<!--                                <field name="phone"/>                               -->
+<!--                                <field name="email"/>                                -->
+<!--                                </form>-->
+<!--                                <tree string="Stakeholders" editable="bottom">-->
+<!--                                <field name="name"/>-->
+<!--                                <field name="phone"/>                               -->
+<!--                                <field name="email"/>                                 -->
+<!--                                </tree>-->
+<!--                           </field>-->
+                            <field name="stakeholder" cols="4"/>                            
+                        </page>
+                        <page string="Comments">
+                            <field name="comment" cols="4"/>                            
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="share_block_tree" model="ir.ui.view">
+            <field name="name">share.block.tree</field>
+            <field name="model">share.block</field>
+            <field name="arch" type="xml">
+                <tree string="Block">
+        
+                    <field name="name" />
+                    <field name="block_share_numbers" />                            
+                    <field name="state" />
+                    <field name="date_issued" />
+                    <field name="owner_id" />
+                    <field name="beneficiary" />                        
+                    <field name="partowner_ids" />
+                    <field name="stakeholder" />                        
+                    <field name="company_id" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_share_block_filter" model="ir.ui.view">
+            <field name="name">share.block.select</field>
+            <field name="model">share.block</field>
+            <field name="arch" type="xml">
+                <search string="Search Share">
+                    <field name="name" string="Share" filter_domain="['|','|',('name','ilike',self),  ('owner_id', 'child_of', self), ('seller_id','child_of',self)]"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]" help="Draft Invoices"/>
+                    <separator/>
+                    <field name="owner_id" operator="child_of"/>
+                    <field name="comment" operator="ilike"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                    	<filter name="group_by_owner_id" string="Owner" context="{'group_by':'owner_id'}"/>
+                        <filter string="Status" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Date" context="{'group_by':'date_create'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+
+        <record id="action_share_block_tree" model="ir.actions.act_window">
+            <field name="name">Blocks</field>
+            <field name="res_model">share.block</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="search_view_id" ref="view_share_block_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new share.
+              </p><p>
+                You can control the shares ...
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="action_share_block_tree" id="menu_action_share_block_tree" parent="base.menu_res_company_global"/>
+
+<!--FA önskmål-->
+<!--I Blocks-> Form: Hämta data från den första Share-posten för: Owner, Stakeholder, Partowner, Beneficiary-->
+<!--I Blocks-> Form: Share Trewview: Visa Certno. Type, status, -->
+
+
+<!-- share.partowner-->
+<!--
+       <record id="share_partownerform" model="ir.ui.view">
+            <field name="name">share.partowner.form</field>
+            <field name="model">share.partowner</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+                <header>
+                    <button name="action_invoice_sent" type="object" string="Send by Email" class="oe_highlight" groups="base.group_user"/>
+                </header>
+                <sheet string="Share">
+                    <h1>
+                        <label string="Share" attrs="{'invisible': [('state','in',('kalle',))]}"/>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
+                    <group>
+                        <group>        
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="partowner_id" />
+                            <field name="partowner_percent" />   
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+ -->
+<!--        -->
+<!--        <record id="share_partowner_tree" model="ir.ui.view">-->
+<!--            <field name="name">share.partowner.tree</field>-->
+<!--            <field name="model">share.partowner</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Part Owner">-->
+<!--                    <field name="name" />-->
+<!--                    <field name="owner_id" />-->
+<!--                    <field name="owner_part_percent" />-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--
+        <record id="view_partowner_filter" model="ir.ui.view">
+            <field name="name">share.partowner.select</field>
+            <field name="model">share.partowner</field>
+            <field name="arch" type="xml">
+                <search string="Search Share">
+                    <separator/>
+	                    <field name="owner_id" operator="child_of"/>
+                    <separator/>
+               </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_partowner_tree" model="ir.actions.act_window">
+            <field name="name">Part Owners</field>
+            <field name="res_model">share.partowner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field eval="False" name="view_id"/>
+            <field name="search_view_id" ref="view_share_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new share.
+              </p><p>
+                You can control the shares ...
+              </p>
+            </field>
+        </record>
+-->
+<!--        <menuitem action="action_partowner_tree" id="menu_action_partowner_tree" parent="base.menu_res_company_global"/>-->
+
+
+
+
+
+
+    </data>
+</openerp>

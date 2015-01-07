@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+<!--                      Partner                        -->
+        <record id="res_partner_alexandradumas" model="res.partner">
+            <field name="name">Maria Larsson</field>
+            <field name="street">Street 7</field>
+            <field name="street2">Street 2.2</field>
+            <field name="zip">Zip 7</field>
+            <field name="city">City 7</field>
+            <field name="country_id/id">base.ch</field>
+            <field name="phone">Phone7</field>
+            <field name="mobile">Mobile7</field>
+            <field name="email">email7</field>
+            <field name="website">http://w.7</field>
+            <field name="comment">Comment7</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_alexandradumas" model="res.company">
+            <field name="partner_id" ref="res_partner_alexandradumas"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Maria Larsson</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_marialarsson" model="res.partner">
+            <field name="name">Acme Inc</field>
+            <field name="street">Street 1</field>
+            <field name="street2">Street 2.3</field>
+            <field name="zip">Zip 1</field>
+            <field name="city">City 1</field>
+            <field name="country_id/id">base.se</field>
+            <field name="phone">Phone1</field>
+            <field name="mobile">Mobile1</field>
+            <field name="email">email1</field>
+            <field name="website">http://w.1</field>
+            <field name="comment">Comment1</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_marialarsson" model="res.company">
+            <field name="partner_id" ref="res_partner_marialarsson"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Acme Inc</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_acmeinc" model="res.partner">
+            <field name="name">Fredrik</field>
+            <field name="street">Street 5</field>
+            <field name="street2">Street 2.4</field>
+            <field name="zip">Zip 5</field>
+            <field name="city">City 5</field>
+            <field name="country_id/id">base.au</field>
+            <field name="phone">Phone5</field>
+            <field name="mobile">Mobile5</field>
+            <field name="email">email5</field>
+            <field name="website">http://w.5</field>
+            <field name="comment">Comment5</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_acmeinc" model="res.company">
+            <field name="partner_id" ref="res_partner_acmeinc"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Fredrik</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_fredrik" model="res.partner">
+            <field name="name">Kalle Andersson</field>
+            <field name="street">Street 6</field>
+            <field name="street2">Street 2.5</field>
+            <field name="zip">Zip 6</field>
+            <field name="city">City 6</field>
+            <field name="country_id/id">base.es</field>
+            <field name="phone">Phone6</field>
+            <field name="mobile">Mobile6</field>
+            <field name="email">email6</field>
+            <field name="website">http://w.6</field>
+            <field name="comment">Comment6</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_fredrik" model="res.company">
+            <field name="partner_id" ref="res_partner_fredrik"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Kalle Andersson</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_kalleandersson" model="res.partner">
+            <field name="name">Bröderna Edstrand AB</field>
+            <field name="street">Street 3</field>
+            <field name="street2">Street 2.6</field>
+            <field name="zip">Zip 3</field>
+            <field name="city">City 3</field>
+            <field name="country_id/id">base.no</field>
+            <field name="phone">Phone3</field>
+            <field name="mobile">Mobile3</field>
+            <field name="email">email3</field>
+            <field name="website">http://w.3</field>
+            <field name="comment">Comment3</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_kalleandersson" model="res.company">
+            <field name="partner_id" ref="res_partner_kalleandersson"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Bröderna Edstrand AB</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_brdernaedstrandab" model="res.partner">
+            <field name="name">Clas Ohlsson</field>
+            <field name="street">Street 4</field>
+            <field name="street2">Street 2.7</field>
+            <field name="zip">Zip 4</field>
+            <field name="city">City 4</field>
+            <field name="country_id/id">base.us</field>
+            <field name="phone">Phone4</field>
+            <field name="mobile">Mobile4</field>
+            <field name="email">email4</field>
+            <field name="website">http://w.4</field>
+            <field name="comment">Comment4</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_brdernaedstrandab" model="res.company">
+            <field name="partner_id" ref="res_partner_brdernaedstrandab"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Clas Ohlsson</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_clasohlsson" model="res.partner">
+            <field name="name">Soros Inc</field>
+            <field name="street">Street 8</field>
+            <field name="street2">Street 2.8</field>
+            <field name="zip">Zip 8</field>
+            <field name="city">City 8</field>
+            <field name="country_id/id">base.gr</field>
+            <field name="phone">Phone8</field>
+            <field name="mobile">Mobile8</field>
+            <field name="email">email8</field>
+            <field name="website">http://w.8</field>
+            <field name="comment">Comment8</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_clasohlsson" model="res.company">
+            <field name="partner_id" ref="res_partner_clasohlsson"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Soros Inc</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_sorosinc" model="res.partner">
+            <field name="name">Arvid Nordkvist</field>
+            <field name="street">Street 10</field>
+            <field name="street2">Street 2.10</field>
+            <field name="zip">Zip 10</field>
+            <field name="city">City 10</field>
+            <field name="country_id/id">base.se</field>
+            <field name="phone">Phone10</field>
+            <field name="mobile">Mobile10</field>
+            <field name="email">email8</field>
+            <field name="website">http://w.10</field>
+            <field name="comment">Comment10</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_sorosinc" model="res.company">
+            <field name="partner_id" ref="res_partner_sorosinc"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Arvid Nordkvist</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_arvidnordkvist" model="res.partner">
+            <field name="name">Gustaf Eiffel</field>
+            <field name="street">Street 11</field>
+            <field name="street2">Street 2.11</field>
+            <field name="zip">Zip 11</field>
+            <field name="city">City 11</field>
+            <field name="country_id/id">base.se</field>
+            <field name="phone">Phone11</field>
+            <field name="mobile">Mobile11</field>
+            <field name="email">email8</field>
+            <field name="website">http://w.11</field>
+            <field name="comment">Comment11</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_arvidnordkvist" model="res.company">
+            <field name="partner_id" ref="res_partner_arvidnordkvist"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Gustaf Eiffel</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_gustafeiffel" model="res.partner">
+            <field name="name">Multi Agile Sarl</field>
+            <field name="street">Rue</field>
+            <field name="street2">Street 2.12</field>
+            <field name="zip">1234</field>
+            <field name="city">Ville</field>
+            <field name="country_id/id">base.fr</field>
+            <field name="phone">Phone12</field>
+            <field name="mobile">Mobile12</field>
+            <field name="email">email8</field>
+            <field name="website">http://w.12</field>
+            <field name="comment">Comment12</field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_gustafeiffel" model="res.company">
+            <field name="partner_id" ref="res_partner_gustafeiffel"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name">Multi Agile Sarl</field>
+        </record>
+<!--                      Partner                        -->
+        <record id="res_partner_multiagilesarl" model="res.partner">
+            <field name="name"></field>
+            <field name="street"></field>
+            <field name="street2"></field>
+            <field name="zip"></field>
+            <field name="city"></field>
+            <field name="country_id/id"></field>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="email"></field>
+            <field name="website"></field>
+            <field name="comment"></field>
+        </record>
+<!--                      Company                        -->
+        <record id="res_company_multiagilesarl" model="res.company">
+            <field name="partner_id" ref="res_partner_multiagilesarl"/>
+            <field name="parent_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="name"></field>
+        </record>
+    </data>
+</openerp>

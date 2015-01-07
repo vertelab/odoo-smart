@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+    
+    <!--
+            'company_id','=',False                                          Object has no company_id (global)
+            'company_id','child_of',user.company_id.parent_id.id            Object are a child of users parent company
+            'company_id','in',[company.id for company in user.company_ids]  Object are in allowed companies
+    
+            company_id,'child_of',user.company_id.id  are probably redundant with the parent counterpart, may be its ok with allowed companies    
+    -->
+    
+<!--
+        <record id="base.property_rule" model="ir.rule"> 
+            <field name="name">Property multi-company</field>
+            <field name="model_id" ref="base.model_ir_property"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+
+
+        <record id="base.property_rule" model="ir.rule">
+            <field name="name">Property multi-company</field>
+            <field name="model_id" ref="base.multi_company_default_rule"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+-->
+
+        <record id="base.res_users_rule" model="ir.rule">
+            <field name="name">Multi-company res.users</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','child_of',[user.company_id.parent_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field> 
+            </field> 
+        </record>
+<!--            <field name="domain_force">['|','|',('company_id','child_of',user.company_id.id),('company_id','child_of',user.company_id.parent_id.id),('company_id','in',[company.id for company in user.company_ids])]</field> -->
+<!-- [('company_ids','child_of',[user.company_id.parent_id.id])] -->
+
+        <record id="base.res_partner_rule" model="ir.rule">
+            <field name="name">Multi-company res.partner</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',user.company_id.parent_id.id),('company_id','in',[company.id for company in user.company_ids])]</field> 
+        </record>
+
+        <record id="base.res_company_rule" model="ir.rule">
+            <field name="name">Property multi-company</field>
+            <field name="model_id" ref="base.model_res_company"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('id','=',user.company_id.id),('id','child_of',user.company_id.parent_id.id),('id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+        
+        <!-- ['|','|',('id','=',[user.company_id.id]),('id','child_of',[user.company_id.parent_id.id]),('id','in',[company.id for company in user.company_ids])] -->
+        <!--
+        <record id="base.res_company_rule" model="ir.rule">
+            <field name="name">Property multi-company</field>
+            <field name="model_id" ref="base.model_res_company"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('id','=',[user.company_id.parent_id.id]),('id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+        -->
+        
+        
+<!--
+        <record id="base.property_rule_user" model="ir.rule">
+            <field name="name">Property multi-company</field>
+            <field name="model_id" ref="base.res_users_rule"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+-->
+
+ 
+
+</data>
+</openerp>

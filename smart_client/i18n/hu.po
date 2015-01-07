@@ -1,0 +1,450 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_client\n"
+"Language: hu_HU\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_activity
+#: view:website:smart_client.client_individual view:website:smart_client.list
+msgid "Name"
+msgstr "Név"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_website
+msgid "Website"
+msgstr "Weboldal"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "+32 123..."
+msgstr "+32 123 ..."
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "Add a new client"
+msgstr "Új ügyfél"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Address"
+msgstr "Cím"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Addresss"
+msgstr "Addresss"
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "Adress"
+msgstr "Cím"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "An Individual client"
+msgstr "Egyéni ügyfél"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:53
+msgid "Change the price"
+msgstr "Változás az ár"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:33
+msgid "Choose name"
+msgstr "Válassz nevet"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "City"
+msgstr "City"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:41
+msgid "Click <em>Continue</em> to create the product."
+msgstr "Kattintson a <em> Tovább </ em>, hogy megteremtse a termék."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:19
+msgid "Click here to add a new product."
+msgstr "Kattintson ide, hogy egy új termék."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:62
+msgid "Click here to set an image describing your product."
+msgstr "Kattintson ide, hogy egy képet leírja a terméket."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:75
+msgid "Click on save to add the image to the product decsription."
+msgstr "Kattintson a Mentés adni a képet, hogy a termék decsription."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:104
+msgid "Click to publish your product so your customers can see it."
+msgstr "Kattintson, hogy tegye közzé a terméket, így a vásárlók láthatja."
+
+#. module: smart_client
+#: view:website:smart_client.list view:website:smart_common.smartmenu
+msgid "Clients"
+msgstr "Ügyfeleink"
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Clients name..."
+msgstr "Ügyfeleink név ..."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:110
+msgid "Close Tutorial"
+msgstr "Bezárás Tutorial"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Company"
+msgstr "Vállalat"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company name"
+msgstr "Cég neve"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company registration number"
+msgstr "Cégjegyzékszám"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:108
+msgid "Congratulations"
+msgstr "Gratulálok"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:109
+msgid "Congratulations! You just created and published your first product."
+msgstr "Gratulálunk! Csak létre, és megjelent az első termék."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:47
+msgid "Continue"
+msgstr "Folytatódik"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+msgid "Country"
+msgstr "Ország"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:40
+msgid "Create Product"
+msgstr "Készítse termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:25
+msgid "Create a new product"
+msgstr "Hozzon létre egy új termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:8
+msgid "Create a product"
+msgstr "Hozzon létre egy termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:18
+msgid "Create your first product"
+msgstr "Hozza létre az első termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:81
+msgid "Describe the Product"
+msgstr "Mutassa be a termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:88
+msgid "Drag & Drop a block"
+msgstr "Drag & drop blokk"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:89
+msgid "Drag the 'Big Picture' block and drop it in your page."
+msgstr "Húzza a \"Big Picture\" blokkot, és dobja el az oldaladon."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Edit Client Organisation"
+msgstr "Szerkesztés Ügyfél szervezet"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:54
+msgid "Edit the price of this product by clicking on the amount."
+msgstr "Szerkesztése az ár a termék kattintva az összeget."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Email"
+msgstr "E-mail"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:34
+msgid "Enter a name for your new product then click 'Continue'."
+msgstr "Adjon meg egy nevet az új terméket, akkor kattintson a \"Folytatás\"."
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Hello world"
+msgstr "Helló világ"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:82
+msgid ""
+"Insert blocks like text-image, or gallery to fully describe the product."
+msgstr ""
+"Helyezze blokkok, mint a szöveg-kép, vagy galéria, hogy teljes mértékben a "
+"termék leírása."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Legal Information"
+msgstr "Jogi információk"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:68
+msgid "Let's select an ipad image."
+msgstr "Nézzünk ki egy ipad képet."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Mobile"
+msgstr "Mozgó"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "New Client Organisation"
+msgstr "Új ügyfél szervezet"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "New Individual Client"
+msgstr "Új egyéni ügyfél"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale.editor.js:11
+msgid "New Product"
+msgstr "Új termék"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:45
+msgid "New product created"
+msgstr "Új termék teremtett"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:96
+msgid "Once you click on save, your product is updated."
+msgstr "Ha rákattint a mentés, a terméket frissül."
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Optional street info"
+msgstr "Választható utca info"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Phone and Email"
+msgstr "Telefon és e-mail"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Postal code"
+msgstr "Irányítószám"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:103
+msgid "Publish your product"
+msgstr "Közzététele a terméket"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Registered office address"
+msgstr "Székhely címe"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Save changes"
+msgstr "Változások mentése"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:74
+msgid "Save this Image"
+msgstr "A kép mentése"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:95
+msgid "Save your modifications"
+msgstr "Mentse a módosításokat"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:26
+msgid ""
+"Select 'New Product' to create it and manage its properties to boost your "
+"sales."
+msgstr ""
+"Válassza az \"Új termék\" létrehozása, és kezeli a tulajdonságait, hogy "
+"növeljék az értékesítés."
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:67
+msgid "Select an Image"
+msgstr "Válasszon egy kép"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:13
+msgid "Skip It"
+msgstr "Kihagyom"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:13
+msgid "Start Tutorial"
+msgstr "Indítás Tutorial"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:46
+msgid "This page contains all the information related to the new product."
+msgstr "Ez az oldal tartalmazza a vonatkozó információkat az új termék."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "UnLinked Your organisations id nr"
+msgstr "A kapcsolt szervezetek id nr"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:61
+msgid "Update image"
+msgstr "Frissítés kép"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid ""
+"Use international format, starting with country and city codes: +32 2 123 45 "
+"67"
+msgstr ""
+"Használja nemzetközi formátum, kezdve az ország és a város kódok: +32 2 123 "
+"45 67"
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "VAT number"
+msgstr "Adószám"
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "VAT registration number"
+msgstr "HÉA-nyilvántartási szám"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:11
+msgid "Welcome to your shop"
+msgstr "Üdvözöljük a bolt"
+
+#. module: smart_client
+#. openerp-web
+#: code:addons/smart_client/static/src/js/website_sale_tour_shop.js:12
+msgid ""
+"You successfully installed the e-commerce. This guide will help you to "
+"create your product and promote your sales."
+msgstr ""
+"Sikeresen telepítette az e-kereskedelem. Ez az útmutató segít létrehozni a "
+"terméket, és támogassák az értékesítés."
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Your VAT number"
+msgstr "Ön Adószám"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your clients name"
+msgstr "Az ügyfelek neve"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your street and number"
+msgstr "Az utca és házszám"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your town"
+msgstr "A város"
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "first.last@company.org"
+msgstr "first.last@company.org"

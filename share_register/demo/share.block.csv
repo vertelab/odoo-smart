@@ -1,0 +1,9 @@
+id,company_id/id,owner_id/id,partowner_ids/id,name,certificate_issued,beneficiary/id,comment,stakeholder/id
+__export__.share_block_9,__export__.res_company_4,__export__.res_partner_9,,M03,FALSE,,,
+__export__.share_block_8,__export__.res_company_4,__export__.res_partner_9,,M02,FALSE,,,
+__export__.share_block_7,__export__.res_company_4,__export__.res_partner_11,,M01,FALSE,,,
+__export__.share_block_6,__export__.res_company_3,__export__.res_partner_13,,Ac_03,TRUE,,,
+__export__.share_block_5,__export__.res_company_3,__export__.res_partner_11,,Ac_02,TRUE,,,
+__export__.share_block_3,__export__.res_company_3,__export__.res_partner_12,,Ac_01,TRUE,,,
+__export__.share_block_2,base.main_company,__export__.res_partner_15,,2,FALSE,,,
+__export__.share_block_1,base.main_company,__export__.res_partner_6,,1,FALSE,,,

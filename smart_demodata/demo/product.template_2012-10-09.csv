@@ -1,0 +1,18 @@
+id;default_code;name;hr_expense_ok;categ_id/id;type;product_variant_ids/id;lst_price;uom_po_id/id;uom_id/id;expense_template_id/id
+;plane;Airplane;TRUE;;Consumable;;0;;;smart_expense.expense_line_public_transport
+;bike;Bike;TRUE;;Consumable;;1.5;;;smart_expense.expense_line_car
+;tcar;Car;TRUE;;Consumable;;18.5;;;smart_expense.expense_line_car
+;train;Train;TRUE;;Consumable;;18.5;;;smart_expense.expense_receipt
+;Office;Office supplies;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;food;Food;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;hotel;Hotel;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;meal;Meals;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;perDiem;Per Diem;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;ownE;Own Equipment;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;ownM;Own Material;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;rentO;Office;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;rentS;Studio;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;internet;Internet;TRUE;;Service;;1;;;smart_expense.expense_receipt
+;phone;Telephone;TRUE;;Service;;1;;;smart_expense.expense_receipt
+;other;Other costs;TRUE;;Consumable;;1;;;smart_expense.expense_receipt
+;ownpay;Your own pay;TRUE;;Service;;1;;;smart_expense.expense_invoice

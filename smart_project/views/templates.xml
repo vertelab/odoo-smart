@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template name="Project list" id="list">
+    <t t-call="smart_common.layout">
+
+	    
+	    <div class="content span10">
+      
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+	            <header class="panelsheet-header clearfix">
+	             <div class="title">
+	                <h1>Projects</h1>
+	                <div class="pull-right">
+	                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new project</a>
+	                </div>
+	              </div>
+	            </header>
+		      
+	            <div class="panelsheet-content">
+	              
+	              <section class="panelsheet-section">
+	                
+	                <table class="table table-striped" >
+		  	          <thead>
+		  	            <tr>
+		   	              <th><span class="muted">Name</span></th>
+		  	              <th><span class="muted"> </span></th>  	              
+		  	            </tr>
+		  	          </thead>
+	
+	  	          <tbody>
+	     	     		<t t-foreach="projects" t-as="p">
+	                       <tr>
+							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.name"/></strong></a></td>
+	                       <td><a  t-att-href="'/project/%s/delete' % p.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
+							</tr>
+						</t>      
+	  	          </tbody>
+	  	          
+	  	   	          
+	  	        </table>
+		          
+		          </section>
+		      
+	  	     
+	  	    </div> 
+			  
+		    </div>
+	        </div>
+	</t>        
+</template>
+
+
+
+<template name="Project list all" id="list_all">
+    <t t-call="smart_common.layout">
+
+	    
+	    <div class="content span10">
+      
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+	            <header class="panelsheet-header clearfix">
+	             <div class="title">
+	                <h1>All Projects</h1>
+	                <div class="pull-right">
+	                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new project</a>
+	                </div>
+	              </div>
+	            </header>
+		      
+	            <div class="panelsheet-content">
+	              
+	              <section class="panelsheet-section">
+	                
+	                <table class="table table-striped" >
+		  	          <thead>
+		  	            <tr>
+		   	              <th><span class="muted">Activity</span></th>
+		   	              <th><span class="muted">Name</span></th>
+		  	              <th><span class="muted"> </span></th>  	              
+		  	            </tr>
+		  	          </thead>
+	
+	  	          <tbody>
+	     	     		<t t-foreach="projects" t-as="p">
+	                       <tr>
+							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.company_id.name"/></strong></a></td>
+							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.name"/></strong></a></td>
+	                       <td><a  t-att-href="'/project/%s/delete' % p.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
+							</tr>
+						</t>      
+	  	          </tbody>
+	  	          
+	  	   	          
+	  	        </table>
+		          
+		          </section>
+		      
+	  	     
+	  	    </div> 
+			  
+		    </div>
+	        </div>
+	</t>        
+</template>
+
+
+
+
+<template name="Project form" id="project">
+
+
+    <t t-call="smart_common.layout">
+        
+
+   	    <div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="purchase-orders-list">
+          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+	        	<h1>Edit Project</h1>
+<!--                <div class="pull-right">
+                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>
+                    <t t-if="not res_partner"> New Project </t>
+                  </a>
+
+                </div> -->
+              </div>
+            </header>
+            		
+		
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>
+            
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+                
+			 	    
+			  	    
+						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+					
+      				  
+    				  <div class="control-group">
+    				    <label class="control-label"><strong>Project name</strong></label>
+    				    <div class="controls">
+    				      <div class="input">
+
+    				        <input type="text" class="input-xlarge inline" name="name" placeholder="Your projects new name" t-attf-value="#{project.name}"/>
+
+    				        <p class="help-block">A short and relevant name is best.</p>
+    				      </div>
+    				    </div>
+    				  </div>
+    				  
+<!--    				  <div class="control-group">-->
+<!--    				    <label class="control-label"><strong>Status</strong></label>-->
+<!--    				    <div class="controls">-->
+<!--    				      <label class="radio inline">-->
+<!--    				      <input type="radio" t-attf-checked="project.active == True" name="active"/>Active</label>-->
+<!--    				      <label class="radio inline">-->
+<!--    				      <input type="radio" t-attf-checked="project.active == False" name="active"/>Archived</label>-->
+<!---->
+<!--                                    -->
+<!--    				    </div>-->
+<!--    				  </div>-->
+
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>			
+
+    				      
+              <div class="form-actions">
+                  
+					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+                <a href="/" class="btn btn-link"><strong>Cancel</strong></a>
+              </div>              
+              
+      		  </form>
+      		  
+      		</section>
+				
+<!--				POST: <div t-value="post"/>-->
+				
+            </div><!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+        </div><!-- #purchase-orders-list -->
+        
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+        </div>
+</t>        
+</template>
+
+
+
+
+
+<template name="Project Overview" id="project_overview">
+      <t t-call="smart_common.layout">
+        
+
+   	    <div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="Project_Overview">
+          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+	        	<h1>Projects name...</h1>
+              </div>
+            </header>
+            <div class="panelsheet-content">
+              
+              <section class="panelsheet-section">
+
+Hello world
+			    
+		     </section>
+              
+              
+            </div><!--/panelsheet-content-->
+
+          </div><!-- /panelsheet -->
+                 
+        </div><!-- #purchase-orders-list -->
+        
+        <!-- ** / CURRENT VIEW CONTENT ** -->
+        </div>
+	</t>        
+</template>
+
+
+
+</data>
+</openerp>

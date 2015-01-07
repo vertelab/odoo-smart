@@ -1,0 +1,11 @@
+id;name;type;parent_id/id
+product_category_all;All;Normal;
+product_category_expenses;Expenses;Normal;product_category_all
+product_category_other_expen;Other Expenses;Normal;product_category_expenses
+product_category_pers_material;Personal Material;Normal;product_category_expenses
+product_category_fixed_costs;Fixed;Normal;product_category_expenses
+product_category_meal_hotel;Meal and Hotel;Normal;product_category_expenses
+product_category_travel;Travel;Normal;product_category_expenses
+product_category_office_supplies;Office Supplies;Normal;product_category_expenses
+product_category_rent;Rent;Normal;product_category_expenses
+product_category_sales;Saleable;Normal;product_category_all

@@ -1,0 +1,4 @@
+'2014-12-31' does not seem to be a valid datetime for field 'Date' at row 2
+Use the format '2012-12-31 23:59:59'
+
+Related partner = Parent_is

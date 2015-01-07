@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_account\n"
+"Language: fr_FR\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "+32 123..."
+msgstr "+33 123 ..."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "123 456 789"
+msgstr "123 456 789"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number"
+msgstr "Numéro de compte"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Activity"
+msgstr "Activité"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Address"
+msgstr "Adresse"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Administrative"
+msgstr "Administratif"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Alice Artist"
+msgstr "Alice Artiste"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "BIC/Swift"
+msgstr "BIC / Swift"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bank Account"
+msgstr "Compte bancaire"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bankname"
+msgstr "Bankname"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change everything concerning your administrative info"
+msgstr "Changer tout ce qui concerne vos informations administratives"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your Phone number and Address"
+msgstr "Changez votre numéro de téléphone et adresse"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your bank account"
+msgstr "Changez votre compte bancaire"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your name"
+msgstr "Changer votre nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "City"
+msgstr "Ville"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Country"
+msgstr "Pays"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "ID Card Number"
+msgstr "ID Numéro de la carte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Identity"
+msgstr "Identité"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Manage your Account"
+msgstr "Gérer votre compte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Mobile Phone"
+msgstr "Téléphone mobile"
+
+#. module: smart_account
+#: view:website:smart_common.smartmenu
+msgid "My Account"
+msgstr "Mon compte"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Name"
+msgstr "Nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Nationality"
+msgstr "Nationalité"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "New user"
+msgstr "Nouvel utilisateur"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Passport Number"
+msgstr "Numéro de passeport"
+
+#. module: smart_account
+#: view:website:smart_common.smartmenu
+msgid "People"
+msgstr "Personnes"
+
+#. module: smart_account
+#: help:hr.employee,withhold_tax:0
+msgid "Percentage tax to withhold"
+msgstr "impôt en pourcentage à retenir"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Social Security Number"
+msgstr "Numéro de sécurité sociale"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Status"
+msgstr "Statut"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Street"
+msgstr "Rue"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Thanks, your settings have been saved."
+msgstr "Merci, vos paramètres ont été enregistrés."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "UnLinked"
+msgstr "UNLINKED"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Use international format : +32 123 45 67 89"
+msgstr "Utilisez le format international: +32 123 45 67 89"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_website
+msgid "Website"
+msgstr "Site Web"
+
+#. module: smart_account
+#: field:hr.employee,withhold_tax:0
+msgid "Withhold Tax"
+msgstr "Retenir l'impôt"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Withholding tax"
+msgstr "Retenue à la source"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Name"
+msgstr "Votre nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your mobile nr"
+msgstr "Votre nr mobiles"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your street and number"
+msgstr "Votre rue et numéro"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your town"
+msgstr "Votre ville"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Zip"
+msgstr "Fermeture éclair"

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="hr_employee_view_form2" model="ir.ui.view">
+            <field name="name">hr.employee.view.form2</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <data>
+<!--
+                    <xpath expr="//group[@name='active_group']" position="before">
+                        <group string="Contract">
+                            <field name="medic_exam" string="Medical Exam"/>
+                            <field name="vehicle"/>
+                            <field name="vehicle_distance"/>
+                        </group>
+                    </xpath>
+-->
+                    <field name="passport_id" position="after">
+                        <field name="withhold_tax"/>
+                    </field>
+
+                </data>
+            </field>
+        </record>
+        
+        
+
+    </data>
+</openerp>

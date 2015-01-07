@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<!-- SMartAt-->
+
+<template name="Documents At" id="documents_at">
+    <t t-call="website.layout">
+        
+        
+    <div class="span2 column-primary-nav">
+    </div>
+  
+    <div class="content span10">
+            
+	        <div class="page-header">
+	    		<h1>
+				    <header>
+	    				  <strong>Documents</strong>          	  
+	  				</header>
+	      		</h1>
+		      </div>  
+      
+<!-- start content -->
+      <div class="row-fluid">
+    
+<!--   <div class="oe_span6">-->
+<!--            <img class="oe_picture oe_screenshot" src="../../../smart_documents/static/ui/documents/SMartAt/BriefvorlageFusszeile.jpg">-->
+<!--        </div>-->
+
+		<p><img src="../../../smart_documents/static/ui/documents/SMartAt/BriefvorlageFusszeile.jpg" height="80" width="700"/></p>
+<hr/>
+		<p><a href="../../../documents/at">SMartAt's Document page</a></p>
+		<p><a href="../../../documents/ib">SMartIb's Document page</a></p>
+		<p><a href="../../../documents/se">SMartSe's Document page</a></p>
+            
+    	</div>
+    </div>
+    
+<!--  end content -->
+        
+</t>        
+</template>
+
+<!-- /SMartAt-->
+
+
+
+
+
+<!-- SMartIb-->
+
+<template name="Documents IB" id="documents_es">
+    <t t-call="website.layout">
+        
+        
+    <div class="span2 column-primary-nav">
+    </div>
+  
+    <div class="content span10">
+            
+	        <div class="page-header">
+	    		<h1>
+				    <header>
+	    				  <strong>Documents</strong>          	  
+	  				</header>
+	      		</h1>
+		      </div>  
+      
+<!-- start content -->
+      <div class="row-fluid">
+
+		<p><a href="../../../smart_documents/static/ui/documents/SMartIb/actividad_diagram.jpg">Actividad Diagram</a></p>
+<hr/>
+		<p><a href="../../../documents/at">SMartAt's Document page</a></p>
+		<p><a href="../../../documents/ib">SMartIb's Document page</a></p>
+		<p><a href="../../../documents/se">SMartSe's Document page</a></p>
+
+            
+    	</div>
+    </div>
+    
+<!--  end content -->
+        
+</t>        
+</template>
+
+<!-- /SMartIb-->
+
+
+<!-- SMartSe-->
+
+<template name="Documents Se" id="documents_se">
+    <t t-call="website.layout">
+        
+        
+    <div class="span2 column-primary-nav">
+    </div>
+  
+    <div class="content span10">
+            
+	        <div class="page-header">
+	    		<h1>
+				    <header>
+	    				  <strong>Documents</strong>          	  
+	  				</header>
+	      		</h1>
+		      </div>  
+      
+<!-- start content -->
+      <div class="row-fluid">
+
+		<p><a href="../../../smart_documents/static/ui/documents/SMartSe/GuideUtlaggAvdrag2013.pdf">Guide utlägg och avdrag (2013-10-23)</a></p>
+<hr/>
+		<p><a href="../../../documents/at">SMartAt's Document page</a></p>
+		<p><a href="../../../documents/ib">SMartIb's Document page</a></p>
+		<p><a href="../../../documents/se">SMartSe's Document page</a></p>
+    	
+    	</div>
+    </div>
+    
+<!--  end content -->
+        
+</t>        
+</template>
+
+<!-- /SMartSe-->
+
+
+
+
+</data>
+</openerp>

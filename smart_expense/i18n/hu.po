@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_order\n"
+"Language: hu_HU\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "(Debug:"
+msgstr "(Debug:"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "A brief description that will be referenced to your invoice."
+msgstr "A rövid leírást, szükség lesz a számla."
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Action"
+msgstr "Akció"
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Amount"
+msgstr "Összeg"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "Billing"
+msgstr "Számlázás"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Change Client"
+msgstr "Change Client"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.list
+#: view:website:smart_order.order
+msgid "Client"
+msgstr "Ügyfél"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "Contact"
+msgstr "Kapcsolat"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Contact (edit)"
+msgstr "Kapcsolat (edit)"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.list
+msgid "Contact person"
+msgstr "Kapcsolattartó személy"
+
+#. module: smart_order
+#: field:website,currency_id:0
+msgid "Default Currency"
+msgstr "Alapértelmezett pénznem"
+
+#. module: smart_order
+#: field:website,pricelist_id:0
+msgid "Default Pricelist"
+msgstr "Alapértelmezett Árlista"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Delete"
+msgstr "Töröl"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data view:website:smart_order.list
+#: view:website:smart_order.order
+msgid "Description"
+msgstr "Leírás"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "Details"
+msgstr "Részletek"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Edit Order Lines"
+msgstr "Rendelés szerkesztése Lines"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Excl VAT"
+msgstr "Excl áfa"
+
+#. module: smart_order
+#: code:addons/smart_order/controllers/main.py:78
+msgid "Front order"
+msgstr "Első rendelés"
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Individual"
+msgstr "Egyéni"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Individually"
+msgstr "Egyénileg"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Mobile:"
+msgstr "Mobil:"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Name"
+msgstr "Név"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Name your order!"
+msgstr "Nevezze el megrendelését!"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "New Client"
+msgstr "Új ügyfél"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "New Order"
+msgstr "New Order"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "New Project"
+msgstr "Új projekt"
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "New order"
+msgstr "Új megbízás"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Next"
+msgstr "Következő"
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Next1"
+msgstr "Next1"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Order -"
+msgstr "Rendelés -"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Order line price"
+msgstr "Rendelés sorban ár"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Order:"
+msgstr "Rendezés:"
+
+#. module: smart_order
+#: view:website:smart_common.smartmenu view:website:smart_order.list
+msgid "Orders"
+msgstr "Rendelés"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.list
+msgid "Organisation"
+msgstr "Szervezet"
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Fizetési tranzakció"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Phone:"
+msgstr "Telefon:"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "Price"
+msgstr "Ár"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data view:website:smart_order.order
+msgid "Project"
+msgstr "Program"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Qty"
+msgstr "Mennyiség"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "Quantity"
+msgstr "Mennyiség"
+
+#. module: smart_order
+#: field:payment.transaction,sale_order_id:0
+msgid "Sale Order"
+msgstr "Kínál rendelés"
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_sale_order
+msgid "Sales Order"
+msgstr "Vevői rendelés"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Save Line"
+msgstr "Sor mentése"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Send for approval"
+msgstr "Küldés jóváhagyásra"
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Status"
+msgstr "Állapot"
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Total"
+msgstr "Teljes"
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Type"
+msgstr "Típus"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines view:website:smart_order.order
+msgid "VAT"
+msgstr "Áfa"
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_website
+msgid "Website"
+msgstr "Weboldal"
+
+#. module: smart_order
+#: field:payment.transaction,website_message_ids:0
+#: field:sale.order,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website üzenetek"
+
+#. module: smart_order
+#: help:payment.transaction,website_message_ids:0
+#: help:sale.order,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website kommunikáció történelem"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "borde vara tomt:"
+msgstr "borde Vara tomt:"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "vat"
+msgstr "kád"

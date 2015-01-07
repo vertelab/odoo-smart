@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+        <record id="product.product_comp_rule" model="ir.rule">
+            <field name="name">Product multi-company rule</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',[company.id for company in user.company_ids])]</field>
+        </record>
+        
+</data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="action_add_activity" model="ir.actions.server">
+            <field name="name">Add activity to new users</field>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">
+                object.sudo().add_activity()
+                object.sudo().add_hr_employee()
+</field>
+        </record>
+<!--        
+        <record id="menu_action_add_activity" model="ir.values">
+            <field name="name">Add activity to new users</field>
+            <field name="condition">True</field>
+            <field name="key2" value="ir.actions.server"/>
+            <field name="value" eval="'ir.action.server,%s' % ref=action_add_activity'"/>
+        </record>
+-->
+
+    </data>
+</openerp>

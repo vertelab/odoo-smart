@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* smart_common
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-aab3d9f\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-07 12:27+0000\n"
+"PO-Revision-Date: 2015-01-07 12:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "About us"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Activity"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Backoffice"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Belgium"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Clients"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "Contact us"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Deutschland"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Expenses"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "France"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.layout_footer_copyright
+msgid "Hello World"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "Home"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Iberia"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Logout"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Manage my account"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Account"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Dashboard"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Nederland"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "News"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Orders"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Project"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "SMart"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "SMart Europe"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Salary Simulator"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Sign in"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Sverige"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "What we do"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2013->Today"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "©  SMartEu 2014->Today"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2014-Today"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Österreich"
+msgstr ""
+

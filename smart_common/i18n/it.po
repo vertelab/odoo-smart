@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Project-Id-Version: smart_common\n"
+"Language: it_IT\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: smart_common
+#: view:website:smart_common.activityimagename
+msgid "'s Activity"
+msgstr "'S attività"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "About us"
+msgstr "Chi siamo"
+
+#. module: smart_common
+#: view:website:smart_common.smartbudgetcashbox
+msgid "BUDGET"
+msgstr "BILANCIO"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Belgium"
+msgstr "Belgio"
+
+#. module: smart_common
+#: view:website:smart_common.smartbudgetcashbox
+msgid "Budget is what is planned to come in to your SMart Account."
+msgstr ""
+"Il budget è quello che è previsto per venire al tuo account intelligenti."
+
+#. module: smart_common
+#: view:website:smart_common.smartbudgetcashbox
+msgid "CASH"
+msgstr "CASH"
+
+#. module: smart_common
+#: view:website:smart_common.smartbudgetcashbox
+msgid "Cash is what you have on your SMart Account."
+msgstr "Cash è quello che hai sul tuo account intelligente."
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "Contact us"
+msgstr "Contattaci"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Deutschland"
+msgstr "Deutschland"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "France"
+msgstr "Francia"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "Home"
+msgstr "Casa"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Iberia"
+msgstr "Iberia"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Login"
+msgstr "Accesso"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Logout"
+msgstr "Logout"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Manage my account"
+msgstr "Gestire il mio account"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Nederland"
+msgstr "Nederland"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "News"
+msgstr "Notizie"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Odoo Settings"
+msgstr "Impostazioni vudù"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar view:website:smart_common.smartfooter
+msgid "SMart"
+msgstr "Smart"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "SMart Europe"
+msgstr "Smart Europe"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Signup"
+msgstr "Iscriviti"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Sverige"
+msgstr "Sverige"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "What we do"
+msgstr "Cosa facciamo"
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2014"
+msgstr "© SMartEu 2014"
+
+#. module: smart_common
+#: view:website:smart_common.smartbar
+msgid "Österreich"
+msgstr "Österreich"
