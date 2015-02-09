@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="activityname" inherit_id="website_quote.so_quotation" name="SMart Quote Left Menu" customize_show="True" >
+
+
+        <xpath expr="//div[@class='col-md-3']" position="replace">                     
+<!--        <xpath expr="//div[@class='bs-sidebar']" position="replace">-->
+   
+    
+<!--					<div>-->
+<!--This Hides the module website_quote's Left navigation menu -->
+<!--					</div>-->
+
+     </xpath>
+  	    	
+</template>
+
+</data>
+</openerp>

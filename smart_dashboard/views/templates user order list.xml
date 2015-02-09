@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template name="Dashboard" id="dashboard">
+    <t t-call="smart_common.layout">
+	    
+	    <div class="content span10">
+    
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        	      
+	          <div class="panelsheet">
+            <header class="panelsheet-header clearfix">
+              <div class="title">
+			<h1>My Dashboard!</h1><BR/>
+<!--		If the user has more than one order: Display first line, if not, second line.-->
+<!--                <h1  t-if="groups=base.group_sale_salesman">Recent activity</h1>-->
+<!--                <h1 t-if="not group=base.group_sale_salesman"> Welcome to SMart</h1>-->
+              </div>
+            </header>
+
+				<ul class="timeline-dashboard">
+
+<!-- The Dashboard content is delivered from smart_login -->
+			           <div id="webterms_accepted"/> 
+
+				</ul>
+
+
+
+     	
+	<!--Hide this tab if the Employee is not created-->
+				<t t-if="res_user.employee_ids">
+
+					<HR/>
+											
+            <div class="panelsheet-content">
+<!--            <div groups="base.group_sales_manager" class="panelsheet-content">-->
+<!--            <div groups="base.group_erp_manager" class="panelsheet-content">-->
+	         <ul>
+	         <table>
+            <tr><th>My Users</th>
+            <th>Available Clients</th>
+            <th>My Activities</th></tr>
+			<tr><td valign="top">
+<!--For each user -->
+
+ 			 <table class="table table-striped">
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Name</span></th>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="res_users" t-as="u">
+                            <tr>  
+                              <td><a  t-att-href="'/account/%s' % u.id"><t t-raw="u.name"/></a></td>
+<!--			                  <td><span t-field="u.date" t-field-options='{"format": "Y-M-d"}' /></td>-->
+<!--			                  <td><span t-field="u.date"  /></td>-->
+                              <td><t t-raw="u.state"/></td>
+<!--                             <td class="cell-primary">-->
+<!--                             <a  t-att-href="'/user/%s/activate' % u.id" valign="top" border="1" class="btn btn btn-success"><i class="glyphicon glyphicon-ok-sign "></i></a>-->
+<!--                             <a  t-att-href="'/user/%s/inactivate' % u.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a>-->
+<!--                             </td>-->
+                            </tr>
+                      </t>
+                    
+      	          </tbody>
+      	          
+      	        </table>
+
+
+			</td>
+<!-- End For each user-->
+			
+			<td valign="top">
+
+<!--Start for each Client-->
+
+<table class="table table-striped" >
+		  	          <thead>
+		  	            <tr>
+		   	              <th><span class="muted">Name</span></th>
+		  	              <th><span class="muted"> </span></th>  	              
+		  	            </tr>
+		  	          </thead>
+	
+	  	          <tbody>
+	     	     		<t t-foreach="res_partners" t-as="c">
+	                       <tr>
+							<td>
+<!--Display name of Company, Contact person or Individual-->
+				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><t t-raw="c.name"/></a><br/>
+				                       		<t t-raw="c.parent_id.name"/>
+				                       </t>
+				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><t t-raw="c.name"/></a>
+				                       </t>
+	                       </td>
+<!--	                       <td><a  t-att-href="'/client/%s/approve' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       	                       -->
+<!--	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger">-->
+<!--	                       <i class="icon-trash icon-red"></i>-->
+<!--							</a></td>                       -->
+							</tr>
+						</t>      
+
+	  	            
+	  	          </tbody>
+	  	          
+	  	   	          
+	  	        </table>
+			 </td>
+
+
+<!--End for each Client			-->
+
+
+<!-- For each activity-->			
+			<td valign="top">
+			 <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Name</span></th>
+      	              <th><span class="muted"> </span></th>
+      	            </tr>
+      	          </thead>
+			     <tbody>
+					<t t-foreach="res_user.company_ids" t-as="a">
+	     	     		     <tr>
+								<td><a t-att-href="'/activity/%s' % a.id"><t t-raw="a.name"/></a></td>
+<!--		                       <td><a  t-att-href="'/activity/%s/delete' % a.id" valign="top" border="1" class="btn btn btn-danger">-->
+<!--		                       <i class="icon-trash icon-red"></i>-->
+<!--		                       </a></td> -->
+							</tr>
+						</t>      
+             
+      	          </tbody>
+      	          
+      	        </table>
+
+			</td></tr>
+	<!-- End For each activity-->			
+			 </table>
+	
+					<HR/>		
+
+
+			 <table>
+
+			<tr>
+			<th>Active Orders </th>
+			<th>Active Expenses</th>
+			</tr>
+
+<!--Start for each order-->
+			<tr>
+			<td valign="top">
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Description</span></th>
+      	              <th><span class="muted">Client</span></th>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Amount</span></th>
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="sale_orders" t-as="o">
+                            <tr>  
+                              <td><a  t-att-href="'/order/%s' % o.id"><t t-raw="o.description"/> (<t t-raw="o.name"/>)</a></td> 
+	                           <td><t t-raw="o.partner_id.display_name"/></td>
+
+<!-- 			 				  <td class="cell" align="right">-->
+<!--									<t t-if="o.partner_id.is_company"> <span class="muted"> Organisation </span></t>-->
+<!---->
+<!--									<t t-if="not o.partner_id.is_company">-->
+<!--									<t t-if="o.partner_id.parent_id.is_company"> <span class="muted"> Contact person </span></t></t>-->
+<!--									-->
+<!--									<t t-if="not o.partner_id.is_company">-->
+<!--									<t t-if="not o.partner_id.parent_id.is_company"><span class="muted"> Individual </span></t></t>-->
+<!--								</td>-->
+<!--			                  <td><span t-field="o.date" t-field-options='{"format": "Y-M-d"}' /></td>-->
+<!--                              <td><t t-raw="o.date"/></td>-->
+								<td class="cell" style="text-align: right;"><span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></td>
+                             <td class="cell">
+			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Sent to Client</span></t>
+			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>			    			
+ (<t t-raw="o.state"/>)
+                             </td>
+<!--  Anders                          <td class="cell-primary"><a  t-att-href="'/order/delete/%s' % o.id"><a href="#" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return false;'/><i class="icon-trash icon-white"></i></a></td>-->
+<!--                             <td class="cell">-->
+<!--                             <t t-if="o.state == 'draft'"> -->
+<!--                             <span class="draft"><a  t-att-href="'/order/%s/delete' % o.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></span>-->
+<!--                             </t>-->
+<!--                             </td>-->
+
+                            </tr>
+                      </t>
+                    
+      	          </tbody>
+      	          
+      	        </table>
+
+
+			</td>
+<!--End For each order-->
+
+			<td valign="top">
+<!--For each Expense-->
+
+  
+                <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Description</span></th>
+<!--      	              <th groups="base.group_sale_manager"><span class="muted">Activity *</span></th>-->
+<!--      	              <th groups="base.group_sale_manager"><span class="muted">User *</span></th>-->
+      	              <th><span class="muted">Recipient </span></th>
+<!--       	              <th><span class="muted">Date</span></th>-->
+      	              <th class="muted" style="text-align: right;">Amount</th>
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="expenses" t-as="e">
+                            <tr>  
+                              <td><a  t-att-href="'/expense/%s' % e.id"><t t-raw="e.name"/> </a></td>
+<!--                            <a class="tip" data-toogle="tooltip" data-placement="bottom" title="No. "><t t-raw="e.id"/> </a>-->
+<!--                              <td groups="base.group_sale_manager"> *</td>-->
+<!--                              <td groups="base.group_sale_manager"><t t-raw="e.employee_id.name"/> *</td>-->
+                              <td><t t-raw="e.user_id.name"/></td>
+<!--                              <td><t t-raw="e.date"/></td>-->
+								<td class="cell" style="text-align: right;"><span t-field="e.amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></td>
+<!--                              <td class="cell" valign="right"><t t-raw="e.amount"/></td>-->
+                             <td class="cell">
+							<t t-if="e.state == 'draft'"> <span class="draft">Draft </span> </t>
+			   				<t t-if="e.state == 'confirm'"> <span class="sent">Sumbitted (confirm)</span> </t>
+   			    			<t t-if="e.state == 'accepted'"> <span class="approved">Approved</span> </t>
+<!--   			    			<t t-if="e.state == 'progress'"> <span class="invoiced">Invoiced</span> </t>-->
+   			    			<t t-if="e.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
+
+                             </td>
+<!--  Anders                          <td class="cell-primary"><a  t-att-href="'/expense/delete/%s' % o.id"><a href="#" class="btn btn btn-danger" title="Remove Expense" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return false;'/><i class="icon-trash icon-white"></i></a></td>-->
+<!--                             <td class="cell">-->
+<!--                             <t t-if="o.state == 'draft'"> -->
+<!--                             <span class="draft"><a  t-att-href="'/expense/%s/delete' % e.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></span>-->
+<!--                             </t>-->
+<!--                             </td>-->
+
+                            </tr>
+                      </t>
+                    
+      	          </tbody>
+      	          
+      	        </table>
+<!--End for each Expense-->
+
+			</td></tr>
+			</table>
+				</ul>	
+				
+</div>
+
+</t>
+		
+<!--		            <div groups="base.group_erp_manager" class="panelsheet-content">		-->
+<!--		            <div  class="panelsheet-content">		-->
+<!--Message Part 				-->
+
+<!--				<HR/>-->
+					
+<!--				<ul class="timeline-dashboard">-->
+<!--	                <table class="table table-striped">-->
+<!--		  	        	  <thead>-->
+<!--		  	          	  	<tr>-->
+<!--		   	              <th><span class="muted">From</span></th>-->
+<!--		  	              <th><span class="muted">Date</span></th>-->
+<!--		  	              <th><span class="muted">Type</span></th>-->
+<!--#						  <th><span class="muted">Subject</span></th>-->
+<!--		  	              <th><span class="muted">Message</span></th>-->
+<!--		  	          		  </tr>-->
+<!--		  	        	  </thead>-->
+
+
+<!--				   	  <tbody>-->
+<!--#	     	     		<t t-foreach="mail_message" t-as="m">  -->
+<!--	     	     		<t t-foreach="mail_message" groups="base.group_sale_salesman" t-as="m">  -->
+<!--#	     	     		<t t-foreach="mail_message" groups="base.group_hr_manager" t-as="m">-->
+<!--#	     	     		<t t-foreach="mail_message" groups="groups=base.group_erp_manager" t-as="m">-->
+<!--	                       <tr>-->
+<!--							<td><t t-esc="m.author_id.name"/></td>-->
+<!--			                <td><span t-field="m.date" t-field-options='{"format": "Y-M-d"}' /></td>-->
+<!--#							<td><t t-esc="m.date"/></td>-->
+<!--							<td><t t-esc="m.type"/></td>-->
+<!--#							<td><t t-esc="m.subject"/></td>-->
+<!--							<td ><t t-esc="m.description"/></td>-->
+<!--							</tr>-->
+<!--						</t>      -->
+<!--  	       		 	  </tbody>-->
+<!--	  	          </table>-->
+<!---->
+<!--			</ul>-->
+<!--	    	</div>-->
+<!--#	    End panelsheet-content	Group sales manager-->
+
+
+
+
+
+
+			</div>
+<!--    end panelsheet -->
+
+</div> 
+<!--	end content span10        -->
+	</t>        
+</template>
+
+
+
+
+
+</data>
+</openerp>
+
+
