@@ -3,136 +3,163 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_common\n"
-"Language: nl_NL\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: smart_common
-#: view:website:smart_common.activityimagename
-msgid "'s Activity"
-msgstr "'S Activity"
+"Language: nl\n"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "About us"
 msgstr "Over ons"
 
 #. module: smart_common
-#: view:website:smart_common.smartbudgetcashbox
-msgid "BUDGET"
-msgstr "BUDGET"
-
-#. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Belgium"
 msgstr "België"
 
 #. module: smart_common
-#: view:website:smart_common.smartbudgetcashbox
-msgid "Budget is what is planned to come in to your SMart Account."
-msgstr "Budget is wat is de bedoeling om te komen tot uw SMart Account."
-
-#. module: smart_common
-#: view:website:smart_common.smartbudgetcashbox
-msgid "CASH"
-msgstr "CASH"
-
-#. module: smart_common
-#: view:website:smart_common.smartbudgetcashbox
-msgid "Cash is what you have on your SMart Account."
-msgstr "Cash is wat je op je SMart Account."
-
-#. module: smart_common
 #: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Deutschland"
 msgstr "Deutschland"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "France"
 msgstr "Frankrijk"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "Home"
 msgstr "Thuis"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Iberia"
 msgstr "Iberia"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
-msgid "Login"
-msgstr "Login"
-
-#. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Logout"
 msgstr "Afmelden"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Manage my account"
 msgstr "Mijn account beheren"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Nederland"
 msgstr "Nederland"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "News"
 msgstr "Nieuws"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
-msgid "Odoo Settings"
-msgstr "ODOO Instellingen"
-
-#. module: smart_common
-#: view:website:smart_common.smartbar view:website:smart_common.smartfooter
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "SMart"
 msgstr "SMart"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "SMart Europe"
 msgstr "SMart Europa"
 
 #. module: smart_common
-#: view:website:smart_common.smartbar
-msgid "Signup"
-msgstr "Inschrijven"
-
-#. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Sverige"
 msgstr "Sverige"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
+#: view:website:website.layout
 msgid "What we do"
 msgstr "Wat wij doen"
 
 #. module: smart_common
-#: view:website:smart_common.smartfooter
-msgid "©  SMartEu 2014"
-msgstr "© SMartEu 2014"
-
-#. module: smart_common
-#: view:website:smart_common.smartbar
+#: view:website:website.layout
 msgid "Österreich"
 msgstr "Österreich"
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Activity"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Backoffice"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Clients"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Expenses"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.layout_footer_copyright
+msgid "Hello World"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Account"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Dashboard"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Orders"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Project"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Salary Simulator"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Sign in"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2013->Today"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "©  SMartEu 2014->Today"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2014-Today"
+msgstr ""
+
