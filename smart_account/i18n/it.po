@@ -3,33 +3,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_account\n"
-"Language: it_IT\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
+"Language: it\n"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "+32 123..."
-msgstr "+39 123 ..."
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "123 456 789"
-msgstr "123 456 789"
+msgstr "+32 123 ..."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account"
-msgstr "Conto"
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "Account number"
-msgstr "Numero di conto / cliente"
+msgstr "Conto 321"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -102,7 +88,7 @@ msgid "Employee"
 msgstr "Dipendente"
 
 #. module: smart_account
-#: view:website:smart_account.my_account
+#: field:res.partner,smart_bank_acc_iban:0
 msgid "IBAN"
 msgstr "IBAN"
 
@@ -125,11 +111,6 @@ msgstr "Gestisci il tuo account"
 #: view:website:smart_account.my_account
 msgid "Mobile Phone"
 msgstr "Telefono cellulare"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "My Account"
-msgstr "Il mio conto"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -155,11 +136,6 @@ msgstr "Partner"
 #: view:website:smart_account.my_account
 msgid "Passport Number"
 msgstr "Numero di passaporto"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "People"
-msgstr "Persone"
 
 #. module: smart_account
 #: help:hr.employee,withhold_tax:0
@@ -195,11 +171,6 @@ msgstr "Strada"
 #: view:website:smart_account.my_account
 msgid "Thanks, your settings have been saved."
 msgstr "Grazie, le impostazioni sono state salvate."
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "UnLinked"
-msgstr "Non collegato"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -250,3 +221,44 @@ msgstr "Il tuo paese"
 #: view:website:smart_account.my_account
 msgid "Zip"
 msgstr "Chiusura"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_no:0
+msgid "Account No"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account Number"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number/ IBAN"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_bic:0
+msgid "BIC / SWIFT"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_account_type:0
+msgid "Bank Account Type"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_name:0
+msgid "Bank name"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If the bank is in an other country"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Preferred Language"
+msgstr ""
+
