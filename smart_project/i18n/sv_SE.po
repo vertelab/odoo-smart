@@ -1,21 +1,11 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* smart_project
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-21 10:02+0000\n"
-"PO-Revision-Date: 2014-10-21 12:02+0100\n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
-"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_project\n"
+"Language: sv\n"
 
 #. module: smart_project
 #: view:website:smart_project.project
@@ -91,3 +81,4 @@ msgstr "Status"
 #: model:ir.model,name:smart_project.model_website
 msgid "Website"
 msgstr "Webbsida"
+
