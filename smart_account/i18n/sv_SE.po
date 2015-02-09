@@ -1,20 +1,11 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* smart_account
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: smart_account\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-21 08:31+0000\n"
-"PO-Revision-Date: 2014-11-03 09:47+0100\n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
-"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_account\n"
+"Language: sv\n"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -23,18 +14,8 @@ msgstr "+46 123..."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
-msgid "123 456 789"
-msgstr "123 456 789"
-
-#. module: smart_account
-#: view:website:smart_account.my_account
 msgid "Account"
-msgstr "Konto"
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "Account number"
-msgstr "Kontonummer"
+msgstr "Konto 258"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -107,7 +88,7 @@ msgid "Employee"
 msgstr "Anställd"
 
 #. module: smart_account
-#: view:website:smart_account.my_account
+#: field:res.partner,smart_bank_acc_iban:0
 msgid "IBAN"
 msgstr "IBAN"
 
@@ -130,11 +111,6 @@ msgstr "Administrera ditt konto (Se)"
 #: view:website:smart_account.my_account
 msgid "Mobile Phone"
 msgstr "Mobiltelefon"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "My Account"
-msgstr "Mitt konto"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -160,11 +136,6 @@ msgstr "Partner"
 #: view:website:smart_account.my_account
 msgid "Passport Number"
 msgstr "Passnummer"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "People"
-msgstr "Personer"
 
 #. module: smart_account
 #: help:hr.employee,withhold_tax:0
@@ -200,11 +171,6 @@ msgstr "Gata"
 #: view:website:smart_account.my_account
 msgid "Thanks, your settings have been saved."
 msgstr "Tack, dina ändringar är sparade."
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "UnLinked"
-msgstr "Olänkad"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -256,5 +222,43 @@ msgstr "Din stad"
 msgid "Zip"
 msgstr "Postnr"
 
-#~ msgid "Change the price"
-#~ msgstr "Ändra priset"
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_no:0
+msgid "Account No"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account Number"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number/ IBAN"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_bic:0
+msgid "BIC / SWIFT"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_account_type:0
+msgid "Bank Account Type"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_name:0
+msgid "Bank name"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If the bank is in an other country"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Preferred Language"
+msgstr ""
+
