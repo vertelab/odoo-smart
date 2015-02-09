@@ -3,34 +3,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_account\n"
-"Language: nl_NL\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "+32 123..."
-msgstr "+31 123 ..."
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "123 456 789"
-msgstr "123 456 789"
+msgstr "+32 123 ..."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account"
-msgstr "Rekening"
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "Account number"
-msgstr "Rekeningnummer"
+msgstr "konto 154"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -103,7 +88,7 @@ msgid "Employee"
 msgstr "Werknemer"
 
 #. module: smart_account
-#: view:website:smart_account.my_account
+#: field:res.partner,smart_bank_acc_iban:0
 msgid "IBAN"
 msgstr "IBAN"
 
@@ -126,11 +111,6 @@ msgstr "Beheer uw account"
 #: view:website:smart_account.my_account
 msgid "Mobile Phone"
 msgstr "Mobiele Telefoon"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "My Account"
-msgstr "Mijn Account"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -156,11 +136,6 @@ msgstr "Partner"
 #: view:website:smart_account.my_account
 msgid "Passport Number"
 msgstr "Paspoort nummer"
-
-#. module: smart_account
-#: view:website:smart_common.smartmenu
-msgid "People"
-msgstr "Mensen"
 
 #. module: smart_account
 #: help:hr.employee,withhold_tax:0
@@ -196,11 +171,6 @@ msgstr "Straat"
 #: view:website:smart_account.my_account
 msgid "Thanks, your settings have been saved."
 msgstr "Bedankt, hebben de instellingen zijn opgeslagen."
-
-#. module: smart_account
-#: view:website:smart_account.my_account
-msgid "UnLinked"
-msgstr "Unlinked"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -250,4 +220,45 @@ msgstr "Uw stad"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Zip"
-msgstr "Ritssluiting"
+msgstr "Postcode"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_no:0
+msgid "Account No"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account Number"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number/ IBAN"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_bic:0
+msgid "BIC / SWIFT"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_account_type:0
+msgid "Bank Account Type"
+msgstr ""
+
+#. module: smart_account
+#: field:res.partner,smart_bank_name:0
+msgid "Bank name"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If the bank is in an other country"
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Preferred Language"
+msgstr ""
+
