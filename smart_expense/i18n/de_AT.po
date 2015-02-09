@@ -1,1 +1,417 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_expense\n"
+"Language: de-at\n"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "A brief description that will be referenced to your expense note."
+msgstr "Eine kurze Beschreibung, die zu Ihren Lasten Hinweis verwiesen wird."
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Add a new Expense note"
+msgstr "Fügen Sie einen neuen Kostennote"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Add expense line"
+msgstr "Fügen Aufwands"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Address"
+msgstr "Anschrift"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "All purchases of material for the management of the activity."
+msgstr "Alle Käufe von Material für die Verwaltung der Maßnahmen."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.list
+msgid "Amount"
+msgstr "Höhe"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Anything that fall in these other categories."
+msgstr "Alles, was in anderen Kategorien fallen."
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Approved"
+msgstr "Genehmigt"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Back to Expense list"
+msgstr "Zurück zur Aufwendungen"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Briefly explain why this expense is related to your activity."
+msgstr "Erklären Sie kurz, warum dieser Aufwand, um Ihre Aktivität."
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Budget"
+msgstr "Haushalt"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Cancel"
+msgstr "Stornieren"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Cancelled"
+msgstr "Abgesagt"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "City"
+msgstr "City"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "Date"
+msgstr "Datum"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Date (of purchase)"
+msgstr "Datum (des Kaufs)"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: smart_expense
+#: field:hr.expense.line,distance:0
+msgid "Distance, km"
+msgstr "Entfernung, km"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_hr_expense_expense
+msgid "Expense"
+msgstr "Ausgabe"
+
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_hr_expense_line
+msgid "Expense Line"
+msgstr "Expense Linie"
+
+#. module: smart_expense
+#: field:product.template,expense_template_id:0
+msgid "Expense Template"
+msgstr "Expense Template"
+
+#. module: smart_expense
+#: help:hr.expense.line,amount_untaxed:0
+msgid "Expense amount without tax."
+msgstr "Kostenbetrag ohne Steuer."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Expense line"
+msgstr "Aufwands"
+
+#. module: smart_expense
+#: help:hr.expense.line,amount_tax:0
+msgid "Expense tax."
+msgstr "Expense Steuer."
+
+#. module: smart_expense
+#: view:product.template:smart_expense.product_template_form_view
+#: view:website:smart_expense.list
+msgid "Expenses"
+msgstr "Kosten"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Expenses incurred to travel for the job:"
+msgstr "Aufwendungen für den Job zu reisen:"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Fixed costs"
+msgstr "Fixkosten"
+
+#. module: smart_expense
+#: field:hr.expense.line,starting_point:0
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+msgid "From"
+msgstr "Von"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "If you have costs as part of a contract."
+msgstr "Wenn Sie die Kosten als Teil eines Vertrages."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Justification"
+msgstr "Rechtfertigung"
+
+#. module: smart_expense
+#: field:hr.expense.line,justification:0
+msgid "Justification for this expense"
+msgstr "Begründung für diese Kosten"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Meals and Accommodation"
+msgstr "Verpflegung und Unterkunft"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Name your expense!"
+msgstr "Benennen Sie Ihre Kosten!"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "New"
+msgstr "Neu"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "New expense note"
+msgstr "Neue Kostennote"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Office supplies"
+msgstr "Bürobedarf"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Other"
+msgstr "Andere"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Paid"
+msgstr "Bezahlt"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Personal material"
+msgstr "Persönliche Material"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_receipt
+msgid "Price excluding VAT"
+msgstr "Preis ohne MwSt"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_receipt
+msgid "Price including VAT"
+msgstr "Verkaufspreis inklusive Steuern"
+
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+#: view:website:smart_expense.overview
+msgid "Project"
+msgstr "Projekt"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Recipient"
+msgstr "Empfänger"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Refuse"
+msgstr "Verweigern"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Regular necessary payments for your work etc."
+msgstr "Regelmäßige notwendigen Zahlungen für Ihre Arbeit usw."
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Rent"
+msgstr "Miete"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Reset to Draft"
+msgstr "Zurücksetzen des Entwurfs"
+
+#. module: smart_expense
+#: view:product.template:smart_expense.product_template_form_view
+msgid "Sales"
+msgstr "Vertrieb"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Save"
+msgstr "Speichern"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Select the"
+msgstr "Wählen Sie das"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "Status"
+msgstr "Status"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Submit to Advisor"
+msgstr "Senden, um Advisor"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "Sumbitted"
+msgstr "Sumbitted"
+
+#. module: smart_expense
+#: field:hr.expense.line,amount_tax:0
+msgid "Tax"
+msgstr "Steuer"
+
+#. module: smart_expense
+#: field:hr.expense.expense,amount_tax:0
+msgid "Tax Amount"
+msgstr "Steuerbetrag"
+
+#. module: smart_expense
+#: field:product.template,template_xml:0
+msgid "Template XML"
+msgstr "Template XML"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "The cost of your work space etc."
+msgstr "Die Kosten für Ihren Arbeitsplatz usw."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "Ticket Price excluding VAT"
+msgstr "Ticket-Preis ohne MwSt"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "Ticket Price including VAT"
+msgstr "Ticketpreis inklusive Steuern"
+
+#. module: smart_expense
+#: field:hr.expense.line,to:0
+msgid "To"
+msgstr "Bis"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Travel"
+msgstr "Reise"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Type"
+msgstr "Art"
+
+#. module: smart_expense
+#: field:hr.expense.line,unit_amount_untaxed:0
+msgid "Unit Price without tax"
+msgstr "Einzelpreis ohne Steuer"
+
+#. module: smart_expense
+#: field:hr.expense.line,amount_untaxed:0
+msgid "Untaxed"
+msgstr "Steuerfrei"
+
+#. module: smart_expense
+#: field:hr.expense.expense,amount_untaxed:0
+msgid "Untaxed Amount"
+msgstr "Unversteuerte Betrag"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "User"
+msgstr "Benutzer"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "VAT"
+msgstr "Mehrwertsteuer"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Validate [as Advisor]"
+msgstr "Bestätigen [als Berater]"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "YYYY-MM-DD"
+msgstr "YYYY-MM-DD"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Your own items made available for a daily fee to the activity."
+msgstr "Ihre eigenen Artikel gegen eine tägliche Gebühr zur Tätigkeit zur Verfügung gestellt."
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "type of expense"
+msgstr "Art der Kosten"
+
+#. module: smart_expense
+#: code:addons/smart_expense/controllers/main.py:132
+msgid "Something went wrong with the form (no expense)"
+msgstr ""
+
