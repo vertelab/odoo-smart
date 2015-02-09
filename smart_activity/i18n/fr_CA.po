@@ -1,1 +1,135 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_activity\n"
+"Language: fr-ca\n"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "A short and relevant name is best."
+msgstr "Un nom court et pertinent est le meilleur."
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Activities"
+msgstr "Activités"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Activity name"
+msgstr "Nom de l'activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Add a new activity"
+msgstr "Ajouter une nouvelle activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+#: view:website:smart_activity.list
+msgid "Name"
+msgstr "Nom"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_website
+msgid "Website"
+msgstr "Site Web"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid ", admin"
+msgstr ", Admin"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Add Members to the activity"
+msgstr "Ajouter des membres à l'activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Budget"
+msgstr "Budget"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Cash"
+msgstr "Espèces"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Make Admin"
+msgstr "Assurez Administrateur"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Manage your Activity"
+msgstr "Gérez votre activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this Activity"
+msgstr "Les membres de cette activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this activity"
+msgstr "Membres dans cette activité"
+
+#. module: smart_activity
+#: code:addons/smart_activity/controllers/main.py:80
+msgid "No activity choosen or missing read rights on this activity"
+msgstr "Aucune activité choisie ou manquantes droits de lecture sur cette activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Notes"
+msgstr "Remarques"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Reverse order: last first."
+msgstr "Inverser l'ordre: d'abord dernière."
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Settings for the Activity"
+msgstr "Paramètres de l'activité"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "To do on this view"
+msgstr "Pour faire sur ce point de vue"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Your activitys new name"
+msgstr "Vos activitées nouveau nom"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"budget\""
+msgstr "Votre «budget» actuelle"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"cash\""
+msgstr "Votre \"cash\" actuelle"
+
