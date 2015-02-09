@@ -3,13 +3,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_project\n"
-"Language: it_IT\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
+"Language: it\n"
 
 #. module: smart_project
 #: view:website:smart_project.project
@@ -85,3 +81,4 @@ msgstr "Stato"
 #: model:ir.model,name:smart_project.model_website
 msgid "Website"
 msgstr "Sito web"
+
