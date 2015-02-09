@@ -1,1 +1,264 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_account\n"
+"Language: ca\n"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "+32 123..."
+msgstr "32.123 ..."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Activity"
+msgstr "Activitat 123"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Address"
+msgstr "Direcció"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Administrative"
+msgstr "Administratiu"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Alice Artist"
+msgstr "Alice Artista"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "BIC/Swift"
+msgstr "BIC / Swift"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bank Account"
+msgstr "Compte Bancari"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Bankname"
+msgstr "Bankname"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change everything concerning your administrative info"
+msgstr "Canvieu tot el concernent a la seva informació administrativa"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your Phone number and Address"
+msgstr "Canvieu el seu número de telèfon i adreça"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your bank account"
+msgstr "Canvieu el seu compte bancari"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Change your name"
+msgstr "Canviar el seu nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "City"
+msgstr "Ciutat"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Country"
+msgstr "País"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_hr_employee
+msgid "Employee"
+msgstr "Empleat"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_iban:0
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "ID Card Number"
+msgstr "ID Número de targeta"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Identity"
+msgstr "Identitat"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Manage your Account"
+msgstr "Gestiona el teu compte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Mobile Phone"
+msgstr "Telèfon Mòbil"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Name"
+msgstr "Nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Nationality"
+msgstr "Nacionalitat"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "New user"
+msgstr "Nou usuari"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_res_partner
+msgid "Partner"
+msgstr "Soci"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Passport Number"
+msgstr "Nombre de Passaport"
+
+#. module: smart_account
+#: help:hr.employee,withhold_tax:0
+msgid "Percentage tax to withhold"
+msgstr "Percentatge d'impostos a retenir"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Phone"
+msgstr "Telèfon"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Save changes"
+msgstr "Desa els canvis"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Social Security Number"
+msgstr "Nombre De Segur Social"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Status"
+msgstr "Estat"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Street"
+msgstr "Carrer"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Thanks, your settings have been saved."
+msgstr "Gràcies, el seu ajustaments s'han guardat."
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Use international format : +32 123 45 67 89"
+msgstr "Utilitzeu el format internacional: 32.123 45 67 89"
+
+#. module: smart_account
+#: view:website:smart_account.list
+msgid "Users"
+msgstr "Usuaris"
+
+#. module: smart_account
+#: model:ir.model,name:smart_account.model_website
+msgid "Website"
+msgstr "Lloc web"
+
+#. module: smart_account
+#: field:hr.employee,withhold_tax:0
+msgid "Withhold Tax"
+msgstr "Retenció d'Impostos"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Withholding tax"
+msgstr "Retenció a la font"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Name"
+msgstr "El vostre nom"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your mobile nr"
+msgstr "El seu nr mòbil"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your street and number"
+msgstr "El seu carrer i número"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your town"
+msgstr "La seva ciutat"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Zip"
+msgstr "Cremallera"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_no:0
+msgid "Account No"
+msgstr "Nº de compte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account Number"
+msgstr "Nombre De Compte"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Account number/ IBAN"
+msgstr "Número de compte / IBAN"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_acc_bic:0
+msgid "BIC / SWIFT"
+msgstr "BIC / SWIFT"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_account_type:0
+msgid "Bank Account Type"
+msgstr "Tipus de compte bancari"
+
+#. module: smart_account
+#: field:res.partner,smart_bank_name:0
+msgid "Bank name"
+msgstr "Nom del banc"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If the bank is in an other country"
+msgstr "Si el banc es troba en un altre país"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "Your Preferred Language"
+msgstr "Idioma preferit"
+
