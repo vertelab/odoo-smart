@@ -5,50 +5,131 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_dashboard\n"
-"Language: es_ES\n"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Date"
-msgstr "Fecha"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "From"
-msgstr "Desde"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Message"
-msgstr "Mensaje"
-
-#. module: smart_dashboard
-#: view:website:smart_common.smartmenu
-msgid "My Dashboard"
-msgstr "Mi tablero"
+"Language: es\n"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_partner
 msgid "Partner"
-msgstr "Pareja"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Recent activity"
-msgstr "Actividad reciente"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Subject"
-msgstr "Tema"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Type"
-msgstr "Tipo"
+msgstr "Colaborador"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_website
 msgid "Website"
 msgstr "Sitio web"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Active Expenses"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Active Orders"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Amount"
+msgstr ""
+
+#. module: smart_dashboard
+#: field:res.users,approved:0
+#: view:website:smart_dashboard.dashboard
+msgid "Approved"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Available Clients"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Cancelled"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Client"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Description"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Draft"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Invoiced"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Activities"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Dashboard!"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Users"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Name"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Open"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Paid"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Recipient"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Sent to Client"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Status"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Submitted"
+msgstr ""
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Sumbitted (confirm)"
+msgstr ""
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_users
+msgid "Users"
+msgstr ""
+
+#. module: smart_dashboard
+#: field:res.users,webterms_accepted:0
+msgid "Web Terms Accepted"
+msgstr ""
 
