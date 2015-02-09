@@ -3,286 +3,415 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"Project-Id-Version: smart_order\n"
-"Language: nl_NL\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_expense\n"
+"Language: nl\n"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "(Debug:"
-msgstr "(Debug:"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "A brief description that will be referenced to your expense note."
+msgstr "Een korte beschrijving die zal worden verwezen naar uw kosten noot."
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "A brief description that will be referenced to your invoice."
-msgstr "Een korte beschrijving die zal worden verwezen naar uw factuur."
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Add a new Expense note"
+msgstr "Voeg een nieuwe Expense notitie"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Action"
-msgstr "Actie"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Add expense line"
+msgstr "Voeg koste lijn"
 
-#. module: smart_order
-#: view:website:smart_order.list
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Address"
+msgstr "Adres"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "All purchases of material for the management of the activity."
+msgstr "Alle aankopen van materiaal voor het beheer van de activiteit."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.list
 msgid "Amount"
 msgstr "Bedrag"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
-msgid "Billing"
-msgstr "Billing"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Anything that fall in these other categories."
+msgstr "Even wat die vallen in deze andere categorieën."
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Approved"
+msgstr "Aangenomen"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Back to Expense list"
+msgstr "Terug naar de lijst Expense"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Briefly explain why this expense is related to your activity."
+msgstr "Kort uitleggen waarom deze kosten is gerelateerd aan uw activiteit."
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Budget"
+msgstr "Begroting"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
 msgid "Cancel"
 msgstr "Annuleren"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Change Client"
-msgstr "Change Client"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Cancelled"
+msgstr "Geannuleerde"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.list
-#: view:website:smart_order.order
-msgid "Client"
-msgstr "Klant"
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "City"
+msgstr "City"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
-msgid "Contact"
-msgstr "Contact"
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "Date"
+msgstr "Datum"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "Contact (edit)"
-msgstr "Contact (edit)"
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Date (of purchase)"
+msgstr "Datum (inkoop)"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.list
-msgid "Contact person"
-msgstr "Contactpersoon"
-
-#. module: smart_order
-#: field:website,currency_id:0
-msgid "Default Currency"
-msgstr "Standaard valuta"
-
-#. module: smart_order
-#: field:website,pricelist_id:0
-msgid "Default Pricelist"
-msgstr "Default Prijslijst"
-
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Delete"
-msgstr "Delete"
-
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-#: view:website:smart_order.edit_order_data view:website:smart_order.list
-#: view:website:smart_order.order
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
 msgid "Description"
 msgstr "Beschrijving"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
-msgid "Details"
-msgstr "Details"
+#. module: smart_expense
+#: field:hr.expense.line,distance:0
+msgid "Distance, km"
+msgstr "Afstand, km"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Edit Order Lines"
-msgstr "Bewerk Bestel Lines"
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Draft"
+msgstr "Ontwerp"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Excl VAT"
-msgstr "Excl btw"
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_hr_expense_expense
+msgid "Expense"
+msgstr "Kosten"
 
-#. module: smart_order
-#: code:addons/smart_order/controllers/main.py:78
-msgid "Front order"
-msgstr "Voorste orde"
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_hr_expense_line
+msgid "Expense Line"
+msgstr "Expense Line"
 
-#. module: smart_order
-#: view:website:smart_order.list
-msgid "Individual"
-msgstr "Individu"
+#. module: smart_expense
+#: field:product.template,expense_template_id:0
+msgid "Expense Template"
+msgstr "Expense Template"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Individually"
-msgstr "Individueel"
+#. module: smart_expense
+#: help:hr.expense.line,amount_untaxed:0
+msgid "Expense amount without tax."
+msgstr "Last opgenomen bedrag zonder belasting."
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Mobile:"
-msgstr "Mobiel:"
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Expense line"
+msgstr "Expense lijn"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Name"
-msgstr "Naam"
+#. module: smart_expense
+#: help:hr.expense.line,amount_tax:0
+msgid "Expense tax."
+msgstr "Expense belasting."
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "Name your order!"
-msgstr "Noem uw bestelling!"
+#. module: smart_expense
+#: view:product.template:smart_expense.product_template_form_view
+#: view:website:smart_expense.list
+msgid "Expenses"
+msgstr "Uitgaven"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "New Client"
-msgstr "Nieuwe klant"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Expenses incurred to travel for the job:"
+msgstr "Kosten gemaakt om te reizen voor de baan:"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "New Order"
-msgstr "New Order"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Fixed costs"
+msgstr "Vaste kosten"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "New Project"
-msgstr "Nieuw project"
+#. module: smart_expense
+#: field:hr.expense.line,starting_point:0
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+msgid "From"
+msgstr "Uit"
 
-#. module: smart_order
-#: view:website:smart_order.list
-msgid "New order"
-msgstr "Nieuwe order"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "If you have costs as part of a contract."
+msgstr "Als u kosten als onderdeel van een contract."
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Next"
-msgstr "Volgende"
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Justification"
+msgstr "Rechtvaardiging"
 
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "Next1"
-msgstr "Volgende1"
+#. module: smart_expense
+#: field:hr.expense.line,justification:0
+msgid "Justification for this expense"
+msgstr "Rechtvaardiging voor deze kosten"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Order -"
-msgstr "Bestel -"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Meals and Accommodation"
+msgstr "Maaltijden en overnachtingen"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Order line price"
-msgstr "Orderregel prijs"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Name your expense!"
+msgstr "Noem uw kosten!"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Order:"
-msgstr "Order:"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "New"
+msgstr "Nieuw"
 
-#. module: smart_order
-#: view:website:smart_common.smartmenu view:website:smart_order.list
-msgid "Orders"
-msgstr "Bestellingen"
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "New expense note"
+msgstr "Nieuw koste notitie"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.list
-msgid "Organisation"
-msgstr "Organisatie"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Office supplies"
+msgstr "Kantoor artikelen"
 
-#. module: smart_order
-#: model:ir.model,name:smart_order.model_payment_transaction
-msgid "Payment Transaction"
-msgstr "Betalingstransactie"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Other"
+msgstr "Ander"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Phone:"
-msgstr "Telefoon:"
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Paid"
+msgstr "Betaald"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
-msgid "Price"
-msgstr "Prijs"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Personal material"
+msgstr "Persoonlijk materiaal"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-#: view:website:smart_order.edit_order_data view:website:smart_order.order
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_receipt
+msgid "Price excluding VAT"
+msgstr "Prijs exclusief BTW"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_receipt
+msgid "Price including VAT"
+msgstr "Prijs inclusief BTW"
+
+#. module: smart_expense
+#: model:ir.model,name:smart_expense.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+#: view:website:smart_expense.overview
 msgid "Project"
 msgstr "Project"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Qty"
-msgstr "Aantal"
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Recipient"
+msgstr "Recipiënt"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
-msgid "Quantity"
-msgstr "Hoeveelheid"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Refuse"
+msgstr "Weigeren"
 
-#. module: smart_order
-#: field:payment.transaction,sale_order_id:0
-msgid "Sale Order"
-msgstr "Sale Bestel"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Regular necessary payments for your work etc."
+msgstr "Regelmatige nodig betalingen voor uw werk etc."
 
-#. module: smart_order
-#: model:ir.model,name:smart_order.model_sale_order
-msgid "Sales Order"
-msgstr "Sales Order"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Rent"
+msgstr "Huur"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Save Line"
-msgstr "Save Line"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Reset to Draft"
+msgstr "Reset op het ontwerp"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Send for approval"
-msgstr "Te sturen voor goedkeuring"
+#. module: smart_expense
+#: view:product.template:smart_expense.product_template_form_view
+msgid "Sales"
+msgstr "Sales"
 
-#. module: smart_order
-#: view:website:smart_order.list
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Save"
+msgstr "Opslaan"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Select the"
+msgstr "Selecteer"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
 msgid "Status"
 msgstr "Toestand"
 
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Total"
-msgstr "Totaal"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Submit to Advisor"
+msgstr "Indienen bij Advisor"
 
-#. module: smart_order
-#: view:website:smart_order.list
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "Sumbitted"
+msgstr "Sumbitted"
+
+#. module: smart_expense
+#: field:hr.expense.line,amount_tax:0
+msgid "Tax"
+msgstr "Belasting"
+
+#. module: smart_expense
+#: field:hr.expense.expense,amount_tax:0
+msgid "Tax Amount"
+msgstr "BTW bedrag"
+
+#. module: smart_expense
+#: field:product.template,template_xml:0
+msgid "Template XML"
+msgstr "Sjabloon XML"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "The cost of your work space etc."
+msgstr "De kosten van uw werkruimte, etc."
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "Ticket Price excluding VAT"
+msgstr "Ticket Prijs exclusief BTW"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_public_transport
+msgid "Ticket Price including VAT"
+msgstr "Ticket Prijs inclusief BTW"
+
+#. module: smart_expense
+#: field:hr.expense.line,to:0
+msgid "To"
+msgstr "Naar"
+
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Travel"
+msgstr "Reizen"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
 msgid "Type"
 msgstr "Type"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines view:website:smart_order.order
+#. module: smart_expense
+#: field:hr.expense.line,unit_amount_untaxed:0
+msgid "Unit Price without tax"
+msgstr "Prijs per stuk exclusief BTW"
+
+#. module: smart_expense
+#: field:hr.expense.line,amount_untaxed:0
+msgid "Untaxed"
+msgstr "Onbelast"
+
+#. module: smart_expense
+#: field:hr.expense.expense,amount_untaxed:0
+msgid "Untaxed Amount"
+msgstr "Onbelaste Bedrag"
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
 msgid "VAT"
 msgstr "BTW"
 
-#. module: smart_order
-#: model:ir.model,name:smart_order.model_website
-msgid "Website"
-msgstr "Website"
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Validate [as Advisor]"
+msgstr "Valideren [als adviseur]"
 
-#. module: smart_order
-#: field:payment.transaction,website_message_ids:0
-#: field:sale.order,website_message_ids:0
-msgid "Website Messages"
-msgstr "Website Berichten"
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "YYYY-MM-DD"
+msgstr "YYYY-MM-DD"
 
-#. module: smart_order
-#: help:payment.transaction,website_message_ids:0
-#: help:sale.order,website_message_ids:0
-msgid "Website communication history"
-msgstr "Website communicatie geschiedenis"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "Your own items made available for a daily fee to the activity."
+msgstr "Uw eigen items beschikbaar gesteld voor een dagelijkse vergoeding aan de activiteit."
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "borde vara tomt:"
-msgstr "borde vara tomt:"
+#. module: smart_expense
+#: view:website:smart_expense.category_list
+msgid "type of expense"
+msgstr "type van de kosten"
 
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "vat"
-msgstr "vat"
+#. module: smart_expense
+#: code:addons/smart_expense/controllers/main.py:132
+msgid "Something went wrong with the form (no expense)"
+msgstr ""
+
