@@ -3,34 +3,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_activity\n"
-"Language: hu_HU\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: hu\n"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "A short and relevant name is best."
-msgstr "A rövid és a megfelelő név a legjobb."
+msgstr "Rövid és idevágó név a legjobb."
 
 #. module: smart_activity
-#: view:website:smart_activity.activity
-msgid "Active"
-msgstr "Aktív"
-
-#. module: smart_activity
-#: view:website:smart_activity.list view:website:smart_common.smartmenu
+#: view:website:smart_activity.list
 msgid "Activities"
 msgstr "Tevékenységek"
-
-#. module: smart_activity
-#: view:website:smart_activity.activity_overview
-msgid "Activities name..."
-msgstr "Tevékenységek név ..."
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
@@ -40,12 +25,7 @@ msgstr "Activity neve"
 #. module: smart_activity
 #: view:website:smart_activity.list
 msgid "Add a new activity"
-msgstr "Új tevékenység"
-
-#. module: smart_activity
-#: view:website:smart_activity.activity
-msgid "Archived"
-msgstr "Archivált"
+msgstr "Új tevékenység hozzáadása"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
@@ -54,10 +34,6 @@ msgstr "Mégsem"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
-msgid "Edit Activity"
-msgstr "Tevékenység szerkesztése"
-
-#. module: smart_activity
 #: view:website:smart_activity.list
 msgid "Name"
 msgstr "Név"
@@ -73,11 +49,87 @@ msgid "Save"
 msgstr "Mentés"
 
 #. module: smart_activity
-#: view:website:smart_activity.activity
-msgid "Status"
-msgstr "Állapot"
-
-#. module: smart_activity
 #: model:ir.model,name:smart_activity.model_website
 msgid "Website"
 msgstr "Weboldal"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid ", admin"
+msgstr ", admin"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Add Members to the activity"
+msgstr "Tagok hozzáadása a tevékenységhez"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Budget"
+msgstr "Költségvetés"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Cash"
+msgstr "Készpénz"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Make Admin"
+msgstr "Admin hozzáadása"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Manage your Activity"
+msgstr "Activity kezelése"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this Activity"
+msgstr "Activity tagjai"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this activity"
+msgstr "Tevékenység tagjai"
+
+#. module: smart_activity
+#: code:addons/smart_activity/controllers/main.py:80
+msgid "No activity choosen or missing read rights on this activity"
+msgstr "Nincs kiválasztott tevékenység vagy hiányos adatok"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Notes"
+msgstr "Megjegyzés"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Reverse order: last first."
+msgstr "Fordított sorrend: az utolsót előre."
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Settings for the Activity"
+msgstr "Activity beállításai"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "To do on this view"
+msgstr "Teendők listája"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Your activitys new name"
+msgstr "Tevékenység új neve"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"budget\""
+msgstr "Aktuális költségvetés"
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"cash\""
+msgstr "Aktuális készpénzkeret"
+
