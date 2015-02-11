@@ -5,80 +5,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_project\n"
-"Language: de\n"
+"Language: fr\n"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "A short and relevant name is best."
-msgstr "Eine kurze und aussagekräftigen Namen am besten ist."
+msgstr "Un nom court et pertinent est le meilleur."
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Active"
-msgstr "Aktiv"
+msgstr "Actif"
 
 #. module: smart_project
 #: view:website:smart_project.list
 msgid "Add a new project"
-msgstr "Fügen Sie ein neues Projekt"
+msgstr "Ajouter un nouveau projet"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Archived"
-msgstr "Archivierte"
+msgstr "Archivé"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Cancel"
-msgstr "Stornieren"
+msgstr "Annuler"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Edit Project"
-msgstr "Projektbearbeitung"
+msgstr "Modifier projet"
 
 #. module: smart_project
 #: view:website:smart_project.project_overview
 msgid "Hello world"
-msgstr "Hallo Welt"
+msgstr "Bonjour tout le monde"
 
 #. module: smart_project
 #: view:website:smart_project.list
 msgid "Name"
-msgstr "Name"
+msgstr "Nom"
 
 #. module: smart_project
 #: model:ir.model,name:smart_project.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr "Partenaire"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Project name"
-msgstr "Projektname"
+msgstr "Nom du projet"
 
 #. module: smart_project
 #: view:website:smart_common.smartmenu view:website:smart_project.list
 msgid "Projects"
-msgstr "Projekte"
+msgstr "Projets"
 
 #. module: smart_project
 #: view:website:smart_project.project_overview
 msgid "Projects name..."
-msgstr "Projekte Namen ..."
+msgstr "Projets nom ..."
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Save"
-msgstr "Speichern"
+msgstr "Enregistrer"
 
 #. module: smart_project
 #: view:website:smart_project.project
 msgid "Status"
-msgstr "Status"
+msgstr "Statut"
 
 #. module: smart_project
 #: model:ir.model,name:smart_project.model_website
 msgid "Website"
-msgstr "Webseite"
+msgstr "Site Web"
 
