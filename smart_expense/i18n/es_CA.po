@@ -86,6 +86,7 @@ msgid "City"
 msgstr "Ciutat"
 
 #. module: smart_expense
+#: field:hr.expense.line,line_date_value:0
 #: view:website:smart_expense.list
 msgid "Date"
 msgstr "Data"
@@ -235,13 +236,11 @@ msgstr "Material personal"
 
 #. module: smart_expense
 #: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_receipt
 msgid "Price excluding VAT"
 msgstr "Preu sense IVA"
 
 #. module: smart_expense
 #: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_receipt
 msgid "Price including VAT"
 msgstr "Preu IVA inclòs"
 
@@ -314,11 +313,6 @@ msgid "Submit to Advisor"
 msgstr "Enviar a Assessor"
 
 #. module: smart_expense
-#: view:website:smart_expense.list
-msgid "Sumbitted"
-msgstr "Enviat"
-
-#. module: smart_expense
 #: field:hr.expense.line,amount_tax:0
 msgid "Tax"
 msgstr "Impost"
@@ -389,11 +383,6 @@ msgid "VAT"
 msgstr "IVA"
 
 #. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Validate [as Advisor]"
-msgstr "Validar [com a Assessor]"
-
-#. module: smart_expense
 #: view:website:smart_expense.expense_invoice
 #: view:website:smart_expense.expense_line_public_transport
 #: view:website:smart_expense.expense_receipt
@@ -414,4 +403,48 @@ msgstr "tipus de despesa"
 #: code:addons/smart_expense/controllers/main.py:132
 msgid "Something went wrong with the form (no expense)"
 msgstr "Alguna cosa ha anat malament amb el formulari (no despesa)"
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Amount per km"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Approve"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Distance"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Excl VAT"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Incl VAT"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Pending Approval"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_receipt
+msgid "Price (including VAT)"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Save changes"
+msgstr ""
 
