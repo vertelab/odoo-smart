@@ -15,7 +15,7 @@ msgstr "32 123 ..."
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account"
-msgstr "Compte"
+msgstr "Compte 963"
 
 #. module: smart_account
 #: view:website:smart_account.list
