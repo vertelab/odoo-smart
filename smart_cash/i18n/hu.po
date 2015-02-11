@@ -10,24 +10,24 @@ msgstr ""
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_move
 msgid "Account Entry"
-msgstr ""
+msgstr "Account Entry"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Amount"
-msgstr ""
+msgstr "Összeg"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Approved"
-msgstr ""
+msgstr "Jóváhagyott"
 
 #. module: smart_cash
 #: help:account.invoice,smart_budget:0
 #: help:account.move,smart_budget:0
 msgid "Approved amount."
-msgstr ""
+msgstr "Jóváhagyott összeget."
 
 #. module: smart_cash
 #: help:res.company,activity_amount_budget:0
@@ -40,164 +40,164 @@ msgstr ""
 #: help:res.company,smart_amount_cash:0
 #: help:res.company,smart_budget:0
 msgid "Approved invoiced amount."
-msgstr ""
+msgstr "Jóváhagyta számlázott összeg."
 
 #. module: smart_cash
 #: help:account.move,smart_cash:0
 msgid "Available amount for salary or expenses."
-msgstr ""
+msgstr "Rendelkezésre álló összeg a fizetés vagy a költségeket."
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "BUDGET"
-msgstr ""
+msgstr "BUDGET"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Budget is what is planned to come in to your SMart Account."
-msgstr ""
+msgstr "Költségvetés az, ami a tervek szerint az, hogy a smart Account."
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "CASH"
-msgstr ""
+msgstr "CASH"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Cancelled"
-msgstr ""
+msgstr "Törölt"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Cash is what you have on your SMart Account."
-msgstr ""
+msgstr "Készpénz, mit kell a SmartCard Account."
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Client"
-msgstr ""
+msgstr "Ügyfél"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Cégek"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Contact person"
-msgstr ""
+msgstr "Kapcsolattartó személy"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Date"
-msgstr ""
+msgstr "Dátum"
 
 #. module: smart_cash
 #: help:account.invoice,smart_cash_date:0
 #: help:account.move,smart_cash_date:0
 msgid "Date when this amount is released."
-msgstr ""
+msgstr "Dátum, amikor ez az összeg felszabadul."
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Draft"
-msgstr ""
+msgstr "Vázlat"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Expenses (incl VAT)"
-msgstr ""
+msgstr "Költségek (incl VAT)"
 
 #. module: smart_cash
 #: help:account.invoice,smart_cash:0
 #: help:res.company,smart_cash:0
 msgid "Free invoiced amount for salary or expenses."
-msgstr ""
+msgstr "Ingyenes számlázott összege fizetést vagy egyéb költségekre."
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Individual"
-msgstr ""
+msgstr "Egyéni"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Számla"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Invoiced"
-msgstr ""
+msgstr "Számlázott"
 
 #. module: smart_cash
 #: help:res.company,prepayment_days:0
 msgid "Leadtime in days before invoiced amount becomes smart_cash (global)"
-msgstr ""
+msgstr "Leadtime amikor még nem létezett számlázott összeg lesz smart_cash (globális)"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Open"
-msgstr ""
+msgstr "Nyílt"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Orders (excl VAT)"
-msgstr ""
+msgstr "Megbízások (kivéve ÁFA)"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Organisation"
-msgstr ""
+msgstr "Szervezet"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Paid"
-msgstr ""
+msgstr "Fizetett"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Pending Approval"
-msgstr ""
+msgstr "Jóváhagyás folyamatban"
 
 #. module: smart_cash
 #: field:res.company,prepayment:0
 msgid "Prepayment"
-msgstr ""
+msgstr "Előtörlesztés"
 
 #. module: smart_cash
 #: field:res.company,prepayment_days:0
 msgid "Prepayment Days"
-msgstr ""
+msgstr "Előtörlesztés Napok"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Recipient"
-msgstr ""
+msgstr "Átvevő"
 
 #. module: smart_cash
 #: field:res.company,smart_amount_budget:0
 msgid "SMart Amount budget"
-msgstr ""
+msgstr "A Smart összeg költségvetésben"
 
 #. module: smart_cash
 #: field:res.company,smart_amount_cash:0
 msgid "SMart Amount cash"
-msgstr ""
+msgstr "A Smart összeg készpénzben"
 
 #. module: smart_cash
 #: field:account.invoice,smart_budget:0
 #: field:account.move,smart_budget:0
 #: field:res.company,smart_budget:0
 msgid "SMart Budget"
-msgstr ""
+msgstr "A Smart költségvetés"
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash:0
@@ -205,128 +205,128 @@ msgstr ""
 #: field:account.move,smart_cash:0
 #: field:res.company,smart_cash:0
 msgid "SMart Cash"
-msgstr ""
+msgstr "A Smart Készpénz"
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash_date:0
 #: field:account.move,smart_cash_date:0
 msgid "SMart Cash Release date"
-msgstr ""
+msgstr "A Smart Készpénz Megjelenés dátuma"
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_budget:0
 msgid "SMart Order sum budget"
-msgstr ""
+msgstr "A Smart rendelés összege költségvetés"
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_cash:0
 msgid "SMart Order sum cash"
-msgstr ""
+msgstr "A Smart Order összeget készpénzben"
 
 #. module: smart_cash
 #: help:res.company,prepayment:0
 msgid "SMart User: this virtual company can have prepayment smart_cash, SMart Company: this country applies prepayment"
-msgstr ""
+msgstr "Smart felhasználó: ez a virtuális vállalat van előtörlesztési smart_cash, okos vállalat: ebben az országban érvényes előtörlesztési"
 
 #. module: smart_cash
 #: field:res.company,activity_amount_budget:0
 msgid "SMart activity amount budget"
-msgstr ""
+msgstr "A Smart tevékenység összeget költségvetés"
 
 #. module: smart_cash
 #: field:res.company,activity_amount_cash:0
 msgid "SMart activity amount cash"
-msgstr ""
+msgstr "A Smart tevékenység összeget készpénzben"
 
 #. module: smart_cash
 #: field:res.company,expense_sum_budget:0
 msgid "SMart expense sum budget"
-msgstr ""
+msgstr "A Smart költségén összeget költségvetés"
 
 #. module: smart_cash
 #: field:res.company,expense_sum_cash:0
 msgid "SMart expense sum cash"
-msgstr ""
+msgstr "A Smart költségén összeget készpénzben"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Budget"
-msgstr ""
+msgstr "SMART Megosztás költségvetés"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Cash"
-msgstr ""
+msgstr "SMART Megosztás Készpénz"
 
 #. module: smart_cash
 #: field:res.company,smart_share:0
 msgid "SMarts Share"
-msgstr ""
+msgstr "Ötletekhez Megosztás"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Start CashBudget Box"
-msgstr ""
+msgstr "Kezdje CashBudget Box"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Status"
-msgstr ""
+msgstr "Állapot"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Submitted"
-msgstr ""
+msgstr "Benyújtott"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Sum Expenses"
-msgstr ""
+msgstr "Sum költségek"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Sum Orders"
-msgstr ""
+msgstr "Sum rendelések"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share  Cash"
-msgstr ""
+msgstr "A tevékenység, a Megosztás Készpénz"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share Budget"
-msgstr ""
+msgstr "A tevékenység, a költségvetés Megosztás"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Budget"
-msgstr ""
+msgstr "Teljes költségvetés"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Cash"
-msgstr ""
+msgstr "Összesen Pénztárak"
 
 #. module: smart_cash
 #: view:account.invoice:smart_cash.invoice_tree_inherit
 msgid "Total SMart Cash"
-msgstr ""
+msgstr "Összesen SMart Készpénz"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Type"
-msgstr ""
+msgstr "Típus"
 
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"budget\""
-msgstr ""
+msgstr "A jelenlegi \"költségvetési\""
 
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"cash\""
-msgstr ""
+msgstr "A jelenlegi \"cash\""
 

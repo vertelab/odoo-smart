@@ -86,6 +86,7 @@ msgid "City"
 msgstr "City"
 
 #. module: smart_expense
+#: field:hr.expense.line,line_date_value:0
 #: view:website:smart_expense.list
 msgid "Date"
 msgstr "Datum"
@@ -235,13 +236,11 @@ msgstr "Persoonlijk materiaal"
 
 #. module: smart_expense
 #: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_receipt
 msgid "Price excluding VAT"
 msgstr "Prijs exclusief BTW"
 
 #. module: smart_expense
 #: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_receipt
 msgid "Price including VAT"
 msgstr "Prijs inclusief BTW"
 
@@ -314,11 +313,6 @@ msgid "Submit to Advisor"
 msgstr "Indienen bij Advisor"
 
 #. module: smart_expense
-#: view:website:smart_expense.list
-msgid "Sumbitted"
-msgstr "Sumbitted"
-
-#. module: smart_expense
 #: field:hr.expense.line,amount_tax:0
 msgid "Tax"
 msgstr "Belasting"
@@ -389,11 +383,6 @@ msgid "VAT"
 msgstr "BTW"
 
 #. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Validate [as Advisor]"
-msgstr "Valideren [als adviseur]"
-
-#. module: smart_expense
 #: view:website:smart_expense.expense_invoice
 #: view:website:smart_expense.expense_line_public_transport
 #: view:website:smart_expense.expense_receipt
@@ -413,5 +402,49 @@ msgstr "type van de kosten"
 #. module: smart_expense
 #: code:addons/smart_expense/controllers/main.py:132
 msgid "Something went wrong with the form (no expense)"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Amount per km"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Approve"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_line_car
+msgid "Distance"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Excl VAT"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.overview
+msgid "Incl VAT"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.list
+#: view:website:smart_expense.overview
+msgid "Pending Approval"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_receipt
+msgid "Price (including VAT)"
+msgstr ""
+
+#. module: smart_expense
+#: view:website:smart_expense.expense_invoice
+#: view:website:smart_expense.expense_line_car
+#: view:website:smart_expense.expense_line_public_transport
+#: view:website:smart_expense.expense_receipt
+msgid "Save changes"
 msgstr ""
 

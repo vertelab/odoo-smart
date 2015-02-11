@@ -9,7 +9,6 @@ msgstr ""
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
-#: view:website:website.layout
 msgid "About us"
 msgstr "À propos de nous"
 
@@ -94,11 +93,6 @@ msgid "Österreich"
 msgstr "Österreich"
 
 #. module: smart_common
-#: view:website:smart_common.smartmenu
-msgid "Activity"
-msgstr ""
-
-#. module: smart_common
 #: view:website:website.layout
 msgid "Backoffice"
 msgstr ""
@@ -154,12 +148,127 @@ msgid "©  SMartEu 2013->Today"
 msgstr ""
 
 #. module: smart_common
-#: view:website:website.layout
-msgid "©  SMartEu 2014->Today"
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2014-Today"
 msgstr ""
 
 #. module: smart_common
-#: view:website:smart_common.smartfooter
-msgid "©  SMartEu 2014-Today"
+#: view:website:website.layout
+msgid "About SMart"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Accounts"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Clients"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Expenses"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Orders"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Projects"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Change Theme"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Content"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Customize"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit Menu"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit Top Menu"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "HELP & TUTORIALS"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "HTML Editor"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Help"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Install Apps"
+msgstr ""
+
+#. module: smart_common
+#: view:website:smart_common.layout
+msgid "Logged in as Advisor"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Mobile preview"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "New Page"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Promote"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Promote page on the web"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Website"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "Webterms"
+msgstr ""
+
+#. module: smart_common
+#: view:website:website.layout
+msgid "© SMartEu 2015-Today"
 msgstr ""
 

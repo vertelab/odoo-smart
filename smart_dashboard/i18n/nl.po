@@ -18,109 +18,13 @@ msgid "Website"
 msgstr "Website"
 
 #. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Active Expenses"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Active Orders"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Amount"
-msgstr ""
-
-#. module: smart_dashboard
 #: field:res.users,approved:0
-#: view:website:smart_dashboard.dashboard
 msgid "Approved"
 msgstr ""
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
-msgid "Available Clients"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Cancelled"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Client"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Description"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Draft"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Invoiced"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Activities"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Users"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Name"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Open"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Paid"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Recipient"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Sent to Client"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Status"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Submitted"
-msgstr ""
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Sumbitted (confirm)"
 msgstr ""
 
 #. module: smart_dashboard

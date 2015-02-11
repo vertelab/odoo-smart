@@ -10,24 +10,24 @@ msgstr ""
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_move
 msgid "Account Entry"
-msgstr ""
+msgstr "Entrada Compte"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Amount"
-msgstr ""
+msgstr "Quantitat"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Approved"
-msgstr ""
+msgstr "Aprovat"
 
 #. module: smart_cash
 #: help:account.invoice,smart_budget:0
 #: help:account.move,smart_budget:0
 msgid "Approved amount."
-msgstr ""
+msgstr "Monto aprovat."
 
 #. module: smart_cash
 #: help:res.company,activity_amount_budget:0
@@ -40,164 +40,164 @@ msgstr ""
 #: help:res.company,smart_amount_cash:0
 #: help:res.company,smart_budget:0
 msgid "Approved invoiced amount."
-msgstr ""
+msgstr "Aprovat import facturat."
 
 #. module: smart_cash
 #: help:account.move,smart_cash:0
 msgid "Available amount for salary or expenses."
-msgstr ""
+msgstr "Quantitat disponible per al salari o despeses."
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "BUDGET"
-msgstr ""
+msgstr "PRESSUPOST"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Budget is what is planned to come in to your SMart Account."
-msgstr ""
+msgstr "El pressupost és el que està previst que entri al seu compte de SMART."
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "CASH"
-msgstr ""
+msgstr "EFECTIU"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancel·lat"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Cash is what you have on your SMart Account."
-msgstr ""
+msgstr "Diners en efectiu és el que tens al teu compte de SMART."
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Client"
-msgstr ""
+msgstr "Client"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empreses"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Contact person"
-msgstr ""
+msgstr "Persona de contacte"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #. module: smart_cash
 #: help:account.invoice,smart_cash_date:0
 #: help:account.move,smart_cash_date:0
 msgid "Date when this amount is released."
-msgstr ""
+msgstr "Data en la qual s'allibera aquesta quantitat."
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Draft"
-msgstr ""
+msgstr "Esborrany"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Expenses (incl VAT)"
-msgstr ""
+msgstr "Despeses (IVA inclòs)"
 
 #. module: smart_cash
 #: help:account.invoice,smart_cash:0
 #: help:res.company,smart_cash:0
 msgid "Free invoiced amount for salary or expenses."
-msgstr ""
+msgstr "Import facturat Gratis per salari o despeses."
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Individual"
-msgstr ""
+msgstr "Individual"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Factura"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Invoiced"
-msgstr ""
+msgstr "Facturat"
 
 #. module: smart_cash
 #: help:res.company,prepayment_days:0
 msgid "Leadtime in days before invoiced amount becomes smart_cash (global)"
-msgstr ""
+msgstr "Termini d'obtenció de dies abans import facturat es converteix smart_cash (global)"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Open"
-msgstr ""
+msgstr "Obert"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Orders (excl VAT)"
-msgstr ""
+msgstr "Ordres (sense IVA)"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Organisation"
-msgstr ""
+msgstr "Organització"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Paid"
-msgstr ""
+msgstr "Pagat"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Pending Approval"
-msgstr ""
+msgstr "Pendent d'aprovació"
 
 #. module: smart_cash
 #: field:res.company,prepayment:0
 msgid "Prepayment"
-msgstr ""
+msgstr "Pagament per avançat"
 
 #. module: smart_cash
 #: field:res.company,prepayment_days:0
 msgid "Prepayment Days"
-msgstr ""
+msgstr "Prepagament Dies"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Recipient"
-msgstr ""
+msgstr "Beneficiari"
 
 #. module: smart_cash
 #: field:res.company,smart_amount_budget:0
 msgid "SMart Amount budget"
-msgstr ""
+msgstr "Pressupost Monto SMart"
 
 #. module: smart_cash
 #: field:res.company,smart_amount_cash:0
 msgid "SMart Amount cash"
-msgstr ""
+msgstr "Import efectiu SMart"
 
 #. module: smart_cash
 #: field:account.invoice,smart_budget:0
 #: field:account.move,smart_budget:0
 #: field:res.company,smart_budget:0
 msgid "SMart Budget"
-msgstr ""
+msgstr "SMart Pressupost"
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash:0
@@ -205,128 +205,128 @@ msgstr ""
 #: field:account.move,smart_cash:0
 #: field:res.company,smart_cash:0
 msgid "SMart Cash"
-msgstr ""
+msgstr "SMart Efectiu"
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash_date:0
 #: field:account.move,smart_cash_date:0
 msgid "SMart Cash Release date"
-msgstr ""
+msgstr "SMart data Cash Release"
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_budget:0
 msgid "SMart Order sum budget"
-msgstr ""
+msgstr "Sol·licitar SMart pressupost suma"
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_cash:0
 msgid "SMart Order sum cash"
-msgstr ""
+msgstr "Sol·licitar SMart quantitat en efectiu"
 
 #. module: smart_cash
 #: help:res.company,prepayment:0
 msgid "SMart User: this virtual company can have prepayment smart_cash, SMart Company: this country applies prepayment"
-msgstr ""
+msgstr "Usuari intel·ligent: aquesta empresa virtual pot tenir smart_cash prepagament, SMART Empresa: aquest país s'aplica prepagament"
 
 #. module: smart_cash
 #: field:res.company,activity_amount_budget:0
 msgid "SMart activity amount budget"
-msgstr ""
+msgstr "Activitat SMart pressupost import"
 
 #. module: smart_cash
 #: field:res.company,activity_amount_cash:0
 msgid "SMart activity amount cash"
-msgstr ""
+msgstr "Activitat SMart quantitat en efectiu"
 
 #. module: smart_cash
 #: field:res.company,expense_sum_budget:0
 msgid "SMart expense sum budget"
-msgstr ""
+msgstr "Pressupost suma costa SMart"
 
 #. module: smart_cash
 #: field:res.company,expense_sum_cash:0
 msgid "SMart expense sum cash"
-msgstr ""
+msgstr "Suma costa SMart efectiu"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Budget"
-msgstr ""
+msgstr "Compartir Pressupost de SMART"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Cash"
-msgstr ""
+msgstr "De Smart Share Efectiu"
 
 #. module: smart_cash
 #: field:res.company,smart_share:0
 msgid "SMarts Share"
-msgstr ""
+msgstr "Smarts Compartir"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Start CashBudget Box"
-msgstr ""
+msgstr "Inicia CashBudget Box"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Submitted"
-msgstr ""
+msgstr "Enviat"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Sum Expenses"
-msgstr ""
+msgstr "Despeses Sum"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Sum Orders"
-msgstr ""
+msgstr "Ordres Sum"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share  Cash"
-msgstr ""
+msgstr "Del Activitiy Compartir Efectiu"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share Budget"
-msgstr ""
+msgstr "Compartir Pressupost del Activitiy"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Budget"
-msgstr ""
+msgstr "Pressupost total"
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Cash"
-msgstr ""
+msgstr "Total actius líquids"
 
 #. module: smart_cash
 #: view:account.invoice:smart_cash.invoice_tree_inherit
 msgid "Total SMart Cash"
-msgstr ""
+msgstr "Total SMart Efectiu"
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"budget\""
-msgstr ""
+msgstr "El seu \"pressupost\" actual"
 
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"cash\""
-msgstr ""
+msgstr "El seu actual \"diners en efectiu\""
 
