@@ -18,110 +18,14 @@ msgid "Website"
 msgstr "Weboldal"
 
 #. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Active Expenses"
-msgstr "Aktív költségek"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Active Orders"
-msgstr "Aktív megrendelések"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Amount"
-msgstr "Mennyiség"
-
-#. module: smart_dashboard
 #: field:res.users,approved:0
-#: view:website:smart_dashboard.dashboard
 msgid "Approved"
 msgstr "Jóváhagyott"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
-msgid "Available Clients"
-msgstr "Elérhető ügyfelek"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Cancelled"
-msgstr "Törölt"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Client"
-msgstr "Ügyfél"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Description"
-msgstr "Leírás"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Draft"
-msgstr "Vázlat"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Invoiced"
-msgstr "Számlázott"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Activities"
-msgstr "Saját Activity-k"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
 msgstr "Saját dashboard!"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Users"
-msgstr "Saját felhasználók"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Name"
-msgstr "Név"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Open"
-msgstr "Megnyitás"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Paid"
-msgstr "Kifizetett"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Recipient"
-msgstr "Címzett"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Sent to Client"
-msgstr "Ügyfélnek elküldve"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Status"
-msgstr "Státusz"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Submitted"
-msgstr "Beadott"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "Sumbitted (confirm)"
-msgstr "Beadott (jóváhagyás)"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
