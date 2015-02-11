@@ -204,11 +204,6 @@ msgstr "Ihren Namen"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
-msgid "Your mobile nr"
-msgstr "Das Mobil nr"
-
-#. module: smart_account
-#: view:website:smart_account.my_account
 msgid "Your street and number"
 msgstr "Ihre Straße und Hausnummer"
 
@@ -261,4 +256,29 @@ msgstr "Ist die Bank in einem anderen Land"
 #: view:website:smart_account.my_account
 msgid "Your Preferred Language"
 msgstr "Ihre bevorzugte Sprache"
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If the ID-card-number is different from your Social Security number."
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If you do not have a social security number or a national identification number."
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If you hold a foreign citizenship."
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "If you want us to withhold a different level of tax."
+msgstr ""
+
+#. module: smart_account
+#: view:website:smart_account.my_account
+msgid "This is your national identity number."
+msgstr ""
 
