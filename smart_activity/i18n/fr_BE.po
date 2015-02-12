@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_activity\n"
+"Language: fr-be\n"
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "A short and relevant name is best."
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Activities"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Activity name"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.list
+msgid "Add a new activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Cancel"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+#: view:website:smart_activity.list
+msgid "Name"
+msgstr ""
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Save"
+msgstr ""
+
+#. module: smart_activity
+#: model:ir.model,name:smart_activity.model_website
+msgid "Website"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid ", admin"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Add Members to the activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Budget"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Cash"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Make Admin"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Manage your Activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this Activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Members in this activity"
+msgstr ""
+
+#. module: smart_activity
+#: code:addons/smart_activity/controllers/main.py:80
+msgid "No activity choosen or missing read rights on this activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Notes"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Reverse order: last first."
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Settings for the Activity"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "To do on this view"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.activity
+msgid "Your activitys new name"
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"budget\""
+msgstr ""
+
+#. module: smart_activity
+#: view:website:smart_activity.x_mall tabb
+msgid "Your current \"cash\""
+msgstr ""
+

@@ -5,7 +5,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_login\n"
-"Language: nl-be\n"
+"Language: fr-be\n"
 
 #. module: smart_login
 #: model:ir.model,name:smart_login.model_res_partner

@@ -3,9 +3,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
+"X-Generator: Poedit 1.6.10\n"
 "Project-Id-Version: smart_documents\n"
-"Language: nl\n"
+"Language: nl_NL\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
 
 #. module: smart_documents
 #: view:website:smart_documents.documents_es
@@ -55,4 +59,3 @@ msgstr "SMartSe's Document pagina"
 #: model:ir.model,name:smart_documents.model_website
 msgid "Website"
 msgstr "Website"
-
