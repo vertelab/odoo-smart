@@ -1,1 +1,336 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_client\n"
+"Language: fr-be\n"
+
+#. module: smart_activity
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Name"
+msgstr ""
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: smart_activity
+#: model:ir.model,name:smart_client.model_website
+msgid "Website"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "+32 123..."
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Add a new client"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Address"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Addresss"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Adress"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "An Individual client"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "City"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "Clients"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Clients name..."
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Company"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company name"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Country"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Edit Client Organisation"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Email"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_overview
+msgid "Hello world"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Legal Information"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Mobile"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Optional street info"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Phone"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Phone and Email"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Postal code"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Registered office address"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Save changes"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Use international format, starting with country and city codes: +32 2 123 45 67"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+msgid "VAT number"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "VAT registration number"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Your clients name"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your street and number"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Your town"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "first.last@company.org"
+msgstr ""
+
+#. module: smart_client
+#: code:addons/smart_client/controllers/main.py:80
+msgid "21"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list_all
+msgid "Acitivity"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Add a new Client"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list_all
+msgid "All Clients"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company Phone and Email"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Contact person"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Contact persons"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Individual"
+msgstr ""
+
+#. module: smart_client
+#: code:addons/smart_client/controllers/main.py:78
+msgid "My first client"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Organisation"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Type"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Back"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Comments"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company identity number"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company reference ID"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Company registration and VAT-number"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Edit Contact person"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+msgid "Edit client"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+#: view:website:smart_client.client_overview
+#: view:website:smart_client.list
+#: view:website:smart_client.list_all
+msgid "Here is an explanation text"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Notes"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "SE012345678901"
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "This is the chamber of commerce or government identity number."
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "Use full international VAT-format: SE012345678901."
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_individual
+#: view:website:smart_client.client_organisation
+msgid "Use this field for comments or additional info to SMart."
+msgstr ""
+
+#. module: smart_client
+#: view:website:smart_client.client_organisation
+msgid "VAT-number"
+msgstr ""
+
