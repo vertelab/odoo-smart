@@ -15,7 +15,7 @@ msgstr ""
 #. module: smart_login
 #: model:ir.model,name:smart_login.model_website
 msgid "Website"
-msgstr ""
+msgstr "Site de web"
 
 #. module: smart_login
 #: code:addons/smart_login/models/res_users.py:124
