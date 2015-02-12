@@ -5,12 +5,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_cash\n"
-"Language: fr\n"
+"Language: fr-be\n"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_move
 msgid "Account Entry"
-msgstr "Compte Entrée"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
@@ -27,7 +27,7 @@ msgstr "Approuvé"
 #: help:account.invoice,smart_budget:0
 #: help:account.move,smart_budget:0
 msgid "Approved amount."
-msgstr "Approuvé montant."
+msgstr ""
 
 #. module: smart_cash
 #: help:res.company,activity_amount_budget:0
@@ -40,27 +40,27 @@ msgstr "Approuvé montant."
 #: help:res.company,smart_amount_cash:0
 #: help:res.company,smart_budget:0
 msgid "Approved invoiced amount."
-msgstr "Approuvé montant facturé."
+msgstr ""
 
 #. module: smart_cash
 #: help:account.move,smart_cash:0
 msgid "Available amount for salary or expenses."
-msgstr "Montant disponible pour salaire ou dépenses."
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "BUDGET"
-msgstr "BUDGET"
+msgstr "Budget"
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Budget is what is planned to come in to your SMart Account."
-msgstr "Budget est ce qui est prévu pour venir à votre compte SMart."
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "CASH"
-msgstr "CASH"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
@@ -70,22 +70,22 @@ msgstr "Annulé"
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Cash is what you have on your SMart Account."
-msgstr "CASH est ce que vous avez sur votre compte SMart."
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Client"
-msgstr "Client"
+msgstr ""
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_res_company
 msgid "Companies"
-msgstr "Sociétés"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Contact person"
-msgstr "Personne de contact"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
@@ -96,7 +96,7 @@ msgstr "Date"
 #: help:account.invoice,smart_cash_date:0
 #: help:account.move,smart_cash_date:0
 msgid "Date when this amount is released."
-msgstr "Date à laquelle ce montant est libéré."
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
@@ -113,48 +113,48 @@ msgstr "Ébauche"
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Expenses (incl VAT)"
-msgstr "Dépenses (TTC)"
+msgstr ""
 
 #. module: smart_cash
 #: help:account.invoice,smart_cash:0
 #: help:res.company,smart_cash:0
 msgid "Free invoiced amount for salary or expenses."
-msgstr "Montant facturé Gratuit pour un salaire ou dépenses."
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Individual"
-msgstr "Individuel"
+msgstr ""
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_invoice
 msgid "Invoice"
-msgstr "Facture"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Invoiced"
-msgstr "Facturé"
+msgstr ""
 
 #. module: smart_cash
 #: help:res.company,prepayment_days:0
 msgid "Leadtime in days before invoiced amount becomes smart_cash (global)"
-msgstr "Délai de livraison en jours avant montant facturé devient smart_cash (global)"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Open"
-msgstr "Ouvert"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Orders (excl VAT)"
-msgstr "Les commandes (hors TVA)"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Organisation"
-msgstr "Organisation"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
@@ -165,17 +165,17 @@ msgstr "Payé"
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Pending Approval"
-msgstr "En attente d'approbation"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,prepayment:0
 msgid "Prepayment"
-msgstr "Prépaiement"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,prepayment_days:0
 msgid "Prepayment Days"
-msgstr "Paiement anticipé Jours"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
@@ -185,19 +185,19 @@ msgstr "Destinataire"
 #. module: smart_cash
 #: field:res.company,smart_amount_budget:0
 msgid "SMart Amount budget"
-msgstr "Budget Montant SMart"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,smart_amount_cash:0
 msgid "SMart Amount cash"
-msgstr "SMart trésorerie Montant"
+msgstr ""
 
 #. module: smart_cash
 #: field:account.invoice,smart_budget:0
 #: field:account.move,smart_budget:0
 #: field:res.company,smart_budget:0
 msgid "SMart Budget"
-msgstr "SMart Budget"
+msgstr ""
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash:0
@@ -205,115 +205,115 @@ msgstr "SMart Budget"
 #: field:account.move,smart_cash:0
 #: field:res.company,smart_cash:0
 msgid "SMart Cash"
-msgstr "Fonds intelligent"
+msgstr ""
 
 #. module: smart_cash
 #: field:account.invoice,smart_cash_date:0
 #: field:account.move,smart_cash_date:0
 msgid "SMart Cash Release date"
-msgstr "SMart la date de sortie de trésorerie"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_budget:0
 msgid "SMart Order sum budget"
-msgstr "Smart Order somme budgétaire"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,sale_order_sum_cash:0
 msgid "SMart Order sum cash"
-msgstr "Smart Order somme en espèces"
+msgstr ""
 
 #. module: smart_cash
 #: help:res.company,prepayment:0
 msgid "SMart User: this virtual company can have prepayment smart_cash, SMart Company: this country applies prepayment"
-msgstr "SMart utilisateur: cette société virtuelle peut avoir prépaiement smart_cash, SMart Société: ce pays applique prépaiement"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,activity_amount_budget:0
 msgid "SMart activity amount budget"
-msgstr "Budget de quantité d'activité SMart"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,activity_amount_cash:0
 msgid "SMart activity amount cash"
-msgstr "Activité SMart montant en espèces"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,expense_sum_budget:0
 msgid "SMart expense sum budget"
-msgstr "Budget de somme des dépenses SMart"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,expense_sum_cash:0
 msgid "SMart expense sum cash"
-msgstr "SMart somme des dépenses en espèces"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Budget"
-msgstr "Partager Budget de SMart"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "SMart's Share Cash"
-msgstr "Partager trésorerie de SMart"
+msgstr ""
 
 #. module: smart_cash
 #: field:res.company,smart_share:0
 msgid "SMarts Share"
-msgstr "Smarts Partager"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_common.layout
 msgid "Start CashBudget Box"
-msgstr "Lancer CashBudget Box"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Status"
-msgstr "Statut"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 #: view:website:smart_cash.order_list
 msgid "Submitted"
-msgstr "Soumis"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Sum Expenses"
-msgstr "Frais de Somme"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "Sum Orders"
-msgstr "Somme commandes"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share  Cash"
-msgstr "Le Activitiy Partager trésorerie"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
 msgid "The Activitiy's Share Budget"
-msgstr "Partager Budget de l'Activitiy"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Budget"
-msgstr "Budget total"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.expense_list
 msgid "Total Cash"
-msgstr "Liquidités Total"
+msgstr ""
 
 #. module: smart_cash
 #: view:account.invoice:smart_cash.invoice_tree_inherit
 msgid "Total SMart Cash"
-msgstr "SMart total de trésorerie"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.order_list
@@ -323,10 +323,10 @@ msgstr "Type"
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"budget\""
-msgstr "Votre «budget» actuelle"
+msgstr ""
 
 #. module: smart_cash
 #: view:website:smart_cash.list
 msgid "Your current \"cash\""
-msgstr "Votre \"cash\" actuelle"
+msgstr ""
 
