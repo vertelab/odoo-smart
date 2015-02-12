@@ -70,7 +70,7 @@ msgstr "Ändra ditt bankkonto"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Change your name"
-msgstr "Ändra ditt namn 123"
+msgstr "Ändra ditt namn"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
