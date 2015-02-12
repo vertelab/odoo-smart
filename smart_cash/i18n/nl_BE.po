@@ -5,7 +5,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_cash\n"
-"Language: nl\n"
+"Language: nl-be\n"
 
 #. module: smart_cash
 #: model:ir.model,name:smart_cash.model_account_move
