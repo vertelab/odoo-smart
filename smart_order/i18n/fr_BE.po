@@ -1,1 +1,435 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_order\n"
+"Language: fr-be\n"
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Action"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Amount"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.order
+msgid "Billing"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Cancel"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Client"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.order
+msgid "Contact"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Contact person"
+msgstr ""
+
+#. module: smart_order
+#: field:website,currency_id:0
+msgid "Default Currency"
+msgstr ""
+
+#. module: smart_order
+#: field:website,pricelist_id:0
+msgid "Default Pricelist"
+msgstr ""
+
+#. module: smart_order
+#: field:sale.order,description:0
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Description"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.order
+msgid "Details"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Edit Order Lines"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Excl VAT"
+msgstr ""
+
+#. module: smart_order
+#: code:addons/smart_order/controllers/main.py:228
+msgid "Front order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Individual"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Mobile:"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Name"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Name your order!"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "New Order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "New order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+msgid "Next"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Order line price"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Orders"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Organisation"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Phone:"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.order
+msgid "Price"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.order
+msgid "Project"
+msgstr ""
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Status"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Total"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Type"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.order
+msgid "VAT"
+msgstr ""
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_website
+msgid "Website"
+msgstr ""
+
+#. module: smart_order
+#: field:account.tax,active_web:0
+msgid "Active Web"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list_all
+msgid "Activity"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list_all
+msgid "All Orders"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Cancel order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Cancelled"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Draft"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Edit Order information"
+msgstr ""
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Invoiced"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Open"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Paid"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+msgid "Remove Order"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Search"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Submitted"
+msgstr ""
+
+#. module: smart_order
+#: model:ir.model,name:smart_order.model_account_tax
+msgid "Tax"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "- Clients outside my Activity-"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "- My clients -"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Approve"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "Approved by Client"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "(This order is) Approved by the client"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "- Select a Client -"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "- Select a Project -"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "A brief order name that will be referenced to your invoice."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Add"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.order
+msgid "Back"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.order
+msgid "City:"
+msgstr ""
+
+#. module: smart_order
+#: code:addons/smart_order/controllers/main.py:44
+msgid "Compose Email"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.list
+#: view:website:smart_order.list_all
+#: view:website:smart_order.order
+msgid "Here is an explanation text"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+#: view:website:smart_order.order
+msgid "Notes"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Order description"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list_all
+msgid "Pending Valdiation"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+#: view:website:smart_order.edit_order_data
+msgid "Pending Validation"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Pending validation"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Price in"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Product/Service description"
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.list
+msgid "Search for: Description, Client, date... Reset with empty search."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Select a Project to organize your work. If you want a new project, please go to Projects -> New project before you create your order."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Select the Client if you don't want your contact persons name on the invoice. Select the contact person if you want the invoice to be issued to the client with your contact person as a reference."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "Use this field for comments or additional info to SMart."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_lines
+msgid "Use this field for comments or additional info to SMart. If you would like to send an invoice in an other currency, please the currency here."
+msgstr ""
+
+#. module: smart_order
+#: view:website:smart_order.edit_order_data
+msgid "________________"
+msgstr ""
+
