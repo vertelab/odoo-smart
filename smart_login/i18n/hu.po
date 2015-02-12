@@ -1,1 +1,482 @@
-asdf
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_login\n"
+"Language: hu\n"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_website
+msgid "Website"
+msgstr "Weboldal"
+
+#. module: smart_login
+#: code:addons/smart_login/models/res_users.py:124
+#: code:addons/smart_login/models/res_users.py:127
+#: code:addons/smart_login/models/res_users.py:155
+msgid "%s Activity"
+msgstr "%s Activity"
+
+#. module: smart_login
+#: code:addons/smart_login/models/res_users.py:183
+#: code:addons/smart_login/models/res_users.py:203
+msgid "%s activity"
+msgstr "%s tevékenység"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "1. Allmän information"
+msgstr "1. Általános információ"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "10. Ansvar"
+msgstr "10. Lemondás"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "11.  Tillämplig lagstiftning"
+msgstr "11. Alkalmazandó jog"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "2. Tredje parts kampanjer och PR"
+msgstr "2. Harmadik fél kampányok és PR"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "3. Störningar – Kompatibilitet"
+msgstr "3. Zavarok – kompatibilitás"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "4. Immateriella rättigheter"
+msgstr "4. Szellemi tulajdonjogok"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "5. Länkar till tredje parts webbplatser"
+msgstr "5. Harmadik fél weboldalainak kapcsolatai"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "6. Obehörig användning av webbplatsen"
+msgstr "6. Weboldal jogosulatlan használata"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "7. Kakor"
+msgstr "7. Cookie"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "8. Personuppgifter"
+msgstr "8. Személyes információk"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "9. Lösenord"
+msgstr "9. Jelszó"
+
+#. module: smart_login
+#: model:ir.actions.server,name:smart_login.action_add_activity
+msgid "Add activity to new users"
+msgstr "Tevékenység hozzáadása új felhasználóknak"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "After that you are set to define your first"
+msgstr "Ezután készen áll a az első meghatározására"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Användaren av denna webbplats accepterar uttryckligen att information och data som förblir egendom tillhörande SMartSe eller dess partners som nämns på webbplatsen. Alla texter, teckningar, fotografier, bilder, data, handels- och domännamn, varumärken, logotyper och andra element är skyddade av immateriella rättigheter. Användaren får inte reproducera och / eller distribuera dessa till allmänheten utan föregående och uttryckt skriftliga tillstånd från SMartSe, såvida detta inte krävs enligt bestämmelserna i upphovsrättslagen och angränsande lagstiftning. Användaren har t.ex. rätt att hämta information från denna webbplats och rätt att reproducera den för privat bruk. Användaren har även rätt att distribuera det inom familjekretsen utan kostnad. Där SMartSe ger användarna möjlighet att få sina egna bidrag eller bilder publicerade på hemsidan, kan användaren inte skicka i några verk som skyddas av immateriella rättigheter, om han (hon) äger dessa rättigheter eller har fått erforderliga tillstånd från ägaren av de immateriella rättigheterna för att ha dessa verk publicerade på webbplatsen. Genom att ha hans (hennes) arbeten eller bilder publiceras på webbplatsen, ger användaren uttryckligen SMartSe rätt att publicera dessa verk och bilder på sin webbplats utan någon ersättning. Användaren skall under alla omständigheter ersätta SMartSe för eventuella anspråk från tredje part."
+msgstr "A felhasználó a honlap kifejezetten megállapodnak abban, hogy bármely információ vagy adat tulajdonában marad SMartSe vagy partnerei említette az oldalon. Minden szöveg, rajz, fotó, képek, adatok, a kereskedelem és a domain nevek, védjegyek, logók és más elemek által védett szellemi tulajdonjogokat. Felhasználó nem adja vissza, és / vagy terjesztheti azokat a nyilvánosság számára előzetes kifejezve írásbeli engedélye SMartSe, kivéve, ha szükséges rendelkezései értelmében a szerzői jogi törvény és a kapcsolódó jogszabályok. A felhasználó például Az információhoz való hozzáférés joga erről a weboldalról, és ezt ismételnie magáncélú felhasználásra. A felhasználó is joga van szétosztása a családi körben díjmentesen. Van SMartSe lehetővé teszi a felhasználóknak, hogy saját hozzájárulást vagy képek honlapján közzétett, a felhasználó nem tud küldeni bármilyen munkát védett szellemi tulajdonjogok, ha ő (lány) birtokolja ezeket a jogokat vagy megszerezte szükséges engedélyt a tulajdonos a szellemi tulajdonjogokat ezeket a műveket közzé az oldalon. Azáltal, hogy ő (lány) működik, vagy képeket közzétesszük a honlapon, hogy a felhasználó kifejezetten SMartSe jogot, hogy ezeket a műveket, és a képeket a honlapján minden ellenszolgáltatás nélkül. A felhasználó minden esetben cserélje SMartSe bármilyen harmadik fél állításait."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Användaren är fri att använda denna webbplats för att hämta information om vår organisation och tjänster utan att behöva lämna någon personlig information."
+msgstr "A felhasználó szabadon használja ezt az oldalt a információt a szervezet és a szolgáltatásokat, anélkül, hogy bármilyen személyes információt."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Användarna av denna webbplats är överens om att de inte kommer att:"
+msgstr "Az oldal felhasználói egyetértenek abban, hogy nem fognak:"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Any questions?"
+msgstr "További kérdések?"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "By clicking here,"
+msgstr "Ide kattintva"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Client"
+msgstr "Ügyfél"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Den här websidan är skapad av SMartSe AB u.n.ä. med org.nr 556891-3106, Nytorgsgatan 15, 116 22 Stockholm, nedan kallat “SMartSe”. Denna webbplats och informationen den innehåller kan användas under förutsättning att villkoren för användning nedan iakttas fullt ut. Genom att använda denna webbplats du, nedan kallad “användaren”, anses ha accepterat villkoren. Den information som användaren finner på denna webbplats eller som lämnats till användaren via denna webbplats är av allmän karaktär och kan följaktligen inte anses uppfylla användarens personliga behov eller särskilda villkor. SMartSe förbehåller sig rätten att ändra informationen på denna webbplats när som helst efter eget gottfinnande utan föregående meddelande. SMartSe gör allt för att säkerställa att informationen på denna webbplats är komplett, korrekt, exakt och aktuell. Men SMartSe  inte kan hållas ansvarig för eventuella fel eller brister eller förlust eller skada som du lider som ett resultat av att använda informationen som tillhandahålls. Skulle informationen innehålla fel eller borde innehålla information som användaren normalt kan förvänta sig att hitta på vår hemsida åtar sig SMartSe  sig att åtgärda bristen med minsta möjliga dröjsmål så snart vi har informerats om dessa brister. Vi uppmanar er därför att e-posta eventuella anmärkningar eller förslag till vår webmaster."
+msgstr "Ez a weboldal által létrehozott SMartSe AB Una. A org.nr 556891-3106, Nytorgsgatan 15, 116 22 Stockholm, a továbbiakban: \"SMartSe\". Ez az oldal és a benne foglalt információk is felhasználhatók, feltéve, hogy a felhasználási feltételek alábbiakban teljes mértékben tiszteletben tartják. A weboldal használatával Ön a továbbiakban \"felhasználó\", úgy tekintjük, elfogadta a feltételeket. Az információ, hogy a felhasználó megtalálja a honlapon, vagy amennyiben a felhasználó ezen a honlapon keresztül is általános jellegű, és ezért nem tekinthető, hogy megfeleljen a felhasználó személyes szükségletekre vagy konkrét feltételeket. SMartSe fenntartja magának a jogot, hogy a weboldalon található információk bármikor saját belátása szerint értesítés nélkül. SMartSe mindent megtesz annak érdekében, hogy az oldalon található információk teljes, korrekt, pontos és naprakész. De SMartSe nem vállal felelősséget a hibákért és hiányosságokért vagy minden olyan kárért szenved eredményeként megadott információ felhasználásával. Amennyiben az információkat tartalmazhat hibákat, vagy tartalmaznia kell az információt, hogy a felhasználó általában elvárják, hogy megtalálják honlapunkon vállalja SMartSe kijavításához a lehető legrövidebb határidőn belül, amint megtudtuk e hiányosságok. Ezért kérem, hogy e-mailben véleményét és javaslatait a mi webmaster."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Den personliga information som du nu eller senare registrerar hos SMartSe såsom namn, personnummer, telefonnummer, bostadsadress, bankkontonummer, skattesats, emailadress och lösenord till SMartSe:s webbplats kommer SMartSe att lagra i sitt datasystem och behandla."
+msgstr "A személyes adatokat, amelyeket most vagy később regisztrálnia SMartSe például név, társadalombiztosítási szám, telefonszám, lakcím, bankszámlaszám, mértéke, e-mail címét és jelszavát, hogy SMartSe honlapján lesz SMartSe tárolni a számítógépes rendszer és eljárás."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Denna webbplats använder banners för att visa kampanjer för produkter och tjänster som tillhandahålls av tredje part. Genom att klicka på dessa banners dirgeras användaren om till en tredje parts webbplats. SMartSe ansvarar inte för innehållet i reklam eller de villkor som gäller för kampanjer som erbjuds av tredje part. Dessa tredje parter har ansvaret för sådana erbjudanden. Om användaren vill svara på erbjudanden eller avser att på något sätt genomföra transaktioner med en sådan tredje part eller har klagomål med avseende på sådana kampanjer eller reklam får användaren alltid kontakta tredje part."
+msgstr "Ez a weboldal a bannerek megjelenítésére promóciók termékek és szolgáltatások harmadik fél által nyújtott. Amikor, e bannerek dirgeras felhasználót, ha egy harmadik fél oldalán. SMartSe nem vállal felelősséget a reklám, vagy a szabályok vonatkoznak promóciók által kínált harmadik fél számára. E harmadik felek felelősek az ilyen ajánlatokat. Ha a felhasználó szeretne reagálni ajánlatok, illetve kapcsolódik semmilyen módon tranzakciókat lebonyolítani az ilyen harmadik fél, vagy panaszok tekintetében az ilyen promóciók, vagy nyilvánosság a felhasználó mindig a kapcsolatot a harmadik fél."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Denna webbplats innehåller länkar till webbplatser som drivs av tredje part. Dessa länkar har enbart placerats på hemsidan som information för användaren. SMartSe kan inte garantera tillförlitligheten, riktigheten eller kvaliteten hos innehållet i sådana webbplatser och frånsäger sig därmed allt ansvar. En länk till en webbplats från tredje part innebär inte att det SMartSe har ingått ett samarbetsavtal med sådan tredje part eller att SMartSe godkänner informationen på sådana webbplatser."
+msgstr "Ez az oldal tartalmaz olyan weboldalakra harmadik személyek által üzemeltetett. Ezek a linkek csak weboldalon elhelyezett információkat a felhasználó számára. SMartSe nem tudja garantálni a megbízhatóság, a pontosság és a tartalom minősége az ilyen honlapok és visszautasít minden felelősséget. A linket egy harmadik fél webhely nem jelenti azt, hogy SMartSe kötöttek megállapodást az adott harmadik fél vagy SMartSe jóváhagyja az információt az ilyen oldalakon."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Denna webbplats kommer ibland att använda så kallade “kakor”. En kaka är lite information som vi skriver på hårddisken i din dator. Varje gång du besöker vår webbplats kommer denna information skickas tillbaka till webbsidan. Vi använder endast denna information för att verifiera din identitet, så att du inte behöver ange ditt användarnamn och lösenord vid varje besök. Användare kan ställa in sin webbläsare för att varna varje gång en kaka skapas eller så att skapande av kakor förhindras. Vår webbplats använder även annonsservrar (t.ex. DoubleClick) för att placera annonser som visas på våra webbsidor. Denna partner använder kakor för att visa dessa annonser för dig."
+msgstr "Ez a weboldal néha használja az úgynevezett \"cookie\". A cookie néhány információ, hogy írjuk meg a merevlemezt a számítógép. Minden alkalommal, amikor meglátogatja oldalunkat ezt az információt küldi vissza a weboldalra. Mi kizárólag ezt az információt, igazolnia kell személyazonosságát, így nem kell beírnia a felhasználónevet és a jelszót minden látogatás. A felhasználó beállíthatja a böngészőjét, hogy figyelmeztesse minden egyes cookie jön létre, vagy úgy, hogy létre sütemények megakadályozta. Oldalunk is használ ad szerverek (mint például a DoubleClick) elhelyezni a hirdetéseket, amelyek megjelennek az oldalunkon. Ez a partner cookie-kat használ ezeket a hirdetéseket az Ön számára."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Denna webbplats styrs av svensk lag. Tvister som uppstår i samband med denna webbplats skall omfattas av de svenska domstolarna."
+msgstr "Ezt az oldal a svéd jog alá tartozik. A felmerülő vitás ügyek kapcsán az irányadók a svéd bíróságok."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Dina personuppgifter kommer också att överföras till, lagras och i övrigt behandlas enligt ovan av personuppgiftsbiträden på uppdrag av SMartSe. SMartSe har genom avtal med dessa företag försäkrat sig om att samma stränga krav på säkerhet vid hantering av personuppgifter som följer av personuppgiftslagen kommer att iakttas, samt att behandling endast kommer att ske enligt instruktioner från SMartSe."
+msgstr "Az Ön személyes adatait is fel lehet vinni, tárolni, és egyébként a fentiek szerint kezelve a személyes adatok asszisztensek nevében SMartSe. SMartSe van megállapodások révén ezek a vállalatok megállapítható, hogy ugyanaz a szigorú biztonsági előírásokat, amikor személyes adatok kezelése származó személyes adatokról szóló törvény teljesülni fog, és hogy a kezelés csak akkor végezhető utasítására SMartSe."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Du har enligt 26 § personuppgiftslagen rätt att gratis, en gång per kalenderår, efter skriftligt undertecknad ansökan ställd till SMartSe, få besked om vilka personuppgifter om dig som SMartSe behandlar och hur dessa behandlas. Du har också rätt att enligt 28 § personuppgiftslagen begära rättelse i fråga om personuppgifter som SmartSe behandlar om dig."
+msgstr "Ön a 26. § szerint a személyes adatokról szóló törvény, joga van az ingyenes, naptári évenként egyszer, megírása után aláírt jelentkezési címzett SMartSe, megmondják neki, mit személyes információkat, hogy SMartSe kezeli, és hogyan kezelik őket. Te is a jogot, alatt a 28. § a személyes adatokról szóló törvény kérésére korrekció a személyes adatok SmartSe kapcsolatos Önnek."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Genom att acceptera dessa allmänna villkor samtycker du till att SMartSe behandlar personuppgifter om dig i enlighet med det ovanstående."
+msgstr "Elfogadásával ezeket a feltételeket elfogadja, hogy SMartSe feldolgozza az Ön személyes adatait megfelelően a fenti."
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Give us a"
+msgstr "Adjon"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "I Accept"
+msgstr "Elfogadom"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Ibland behöver användaren ett lösenord för att se alla delar av webbplatsen. I sådana fall är det strängt förbjudet att komma åt dessa avsnitt utan lösenord. Om användaren mottagit ett sådant lösenord ska detta lösenord hållas hemligt och konfidentiellt. Varje användning av våra tjänster efter giltig identifikation med lösenord kommer att anses ha gjorts av dig. Om säkerheten på webbplatsen är i farozonen har SMartSe rätt att häva användarens lösenord."
+msgstr "Előfordul, hogy a felhasználói igényeket egy jelszót, hogy megtekinthesse egyes szakaszain a honlapon. Ilyen esetekben szigorúan tilos elérni ezeket a szakaszokat jelszó nélkül. Ha a felhasználó kaptunk ilyen jelszót, ezt a jelszót titkosan és bizalmasan. Bármilyen igénybe szolgáltatásainkat után érvényes igazolványt a jelszót úgy kell tekinteni, hogy azokat az Ön számára. Ha a biztonság a helyszínen van veszélyben van SMartSe jogot, hogy a felhasználó jelszavát."
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Let's start by adding a"
+msgstr "Kezdjük azzal, hogy hozzáadunk egy"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "Med undantag av uttryckligt uppsåt eller grov vårdslöshet och uttryckligt orsakssamband till skador som följer härav, kan SMartSe inte hållas ansvarig för eventuella skador som kan uppstå till följd av användning av denna webbplats eller någon information som finns på den eller nås via detta webbplats (t.ex. genom länkarna på webbplatsen). Inte heller kan den SMartSe hållas ansvarig för eventuella skador till följd av tekniska brister, störningar för tillgång av denna webbplats eller några skadliga interferenser med användarens system eller programvara. SMartSe kan inte hållas ansvarig för skador som orsakas av virus, buggar, trojaner mm om dessa skulle finnas på hemsidan, trots alla de försiktighetsåtgärder som vidtagits. Serverdrift, samlokalisering av servrar och andra internettjänster som tillhandahålls av SMartSe får inte användas för olagliga aktiviteter. Användaren ska ersätta SMartSe för alla skador och kostnader som är orsakade av olaglig verksamhet. Klientens verksamhet får inte vara orsaken till annan olaglig verksamhet. Olagligt pornografiskt, upphovsrättsskyddat material eller något annat som avviker från god moral ska inte finnas i vårt nätverk."
+msgstr "Kivéve az explicit szándékosság vagy súlyos gondatlanság és explicit ok-okozati kapcsolat a kár származna abból, lehet SMartSe nem tehető felelőssé semmilyen kárért, amely esetleg a honlap használatára vonatkozóan, vagy bármilyen információt tartalmazott vagy azon keresztül elérhető a honlapon (pl. pl. a linkek az oldalon). Egyébként az SMartSe tehető felelőssé semmilyen kárért miatt műszaki hibák, rendellenességek hozzáférés a honlap vagy semmilyen káros zavaró a felhasználó rendszer vagy szoftver. SMartSe nem vonható felelősségre olyan károk miatt a vírusok, hibák, trójai, stb, ha ezek lennének a honlapon, annak ellenére, hogy minden óvintézkedést megtett. Szerver menedzsment, co-location szerverek és egyéb internetes szolgáltatásokat nyújt SMartSe nem használható illegális tevékenységekre. A felhasználónak kell cserélni SMartSe a kárt, költséget okozott az illegális tevékenységet. Az ügyfél üzleti nem lehet az oka a más illegális tevékenység. Tiltott pornográf, szerzői joggal védett anyagok vagy bármit, ami eltér a jó erkölcs nem lehet a hálózatunkba."
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Order"
+msgstr "Rendelés"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "Project"
+msgstr "Projekt"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "SMart's Web Policy."
+msgstr "SMart web policy"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "SMartSe AB är personuppgiftsansvarig och följer personuppgiftslagen (1998:204)."
+msgstr "SMartSe AB felelős a személyes adatokat, és megfelelünk a személyes adatokról szóló törvény (1998: 204)."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "SMartSe avser att behandla dina personuppgifter för att kunna fullfölja och administrera frågor hänförliga till avtal med dig samt avtal med uppdragsgivare och för att SMartSE ska kunna skicka information och nyhetsbrev till dig. SMartSe kan också i sin marknadsföring komma att behandla personuppgifter samt fotografier som senare inhämtas av dig."
+msgstr "SMartSe kívánják Ön személyes adatainak kezelésekor megvalósítása érdekében és megközelíthetővé, hogy szerződést kötött meg, valamint megállapodások az ügyfelekkel és a SMartSE, hogy az elküldött információk és promóciós e-mailek. SMartSe is saját marketing kezelhet személyes adatok és fényképek, amelyek később szedi be Önnek."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "SMartSe förbehåller sig rätten att förklara för användaren i standard- och/eller inleda rättsliga förfaranden mot användaren om dess intressen eller till förmån för en tredje part skadas som en följd av överträdelse av ovanstående bestämmelser eller andra åtgärder av användaren."
+msgstr "SMartSe fenntartja magának a jogot, hogy a felhasználó az alapértelmezett és / vagy bírósági eljárás megindítására a felhasználót, ha az érdekei vagy javára a harmadik személy megsebesült annak következtében megsértik a fenti rendelkezések vagy más felhasználói beavatkozást."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "SMartSe gör sitt bästa för att se till att det inte finns några störningar i tillgängligheten för denna webbplats, och frånsäger sig allt ansvar för förlust eller skada användaren kan lida till följd av dessa störningar. SMartSe garanterar inte att de filer som finns på webbplatsen är kompatibla med användarens infrastruktur. Användaren ska se till att de har rätt IT-hårdvara och programvara, inklusive säkerhetsprogram (t.ex. brandvägg, antivirusprogram etc)."
+msgstr "SMartSe megtesznek annak érdekében, hogy nincsenek fennakadások tapasztalhatók az ezen a honlapon, és kizár minden felelősséget a kárért, Felhasználó kárát ezeknek a betegségeknek. SMartSe nem garantálja, hogy a fájlokat található a honlapon kompatibilis a felhasználó infrastruktúrát. A felhasználó biztosítania kell, hogy rendelkeznek a megfelelő informatikai hardver és szoftver, beleértve a biztonsági szoftverek (pl tűzfal, vírusirtó, stb)."
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "This is where you control your work."
+msgstr "Itt tudja irányítani munkáját"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_res_users
+msgid "Users"
+msgstr "Felhasználók"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+msgid "Webbpolicy AT"
+msgstr "Webbpolicy AT"
+
+#. module: smart_login
+#: view:website:smart_login.legal_be
+msgid "Webbpolicy BE"
+msgstr "Webbpolicy BE"
+
+#. module: smart_login
+#: view:website:smart_login.legal_de
+msgid "Webbpolicy De"
+msgstr "Webbpolicy De"
+
+#. module: smart_login
+#: view:website:smart_login.legal_es
+msgid "Webbpolicy ES"
+msgstr "Webbpolicy ES"
+
+#. module: smart_login
+#: view:website:smart_login.legal_nl
+msgid "Webbpolicy NL"
+msgstr "Webbpolicy NL"
+
+#. module: smart_login
+#: view:website:smart_login.legal_se
+msgid "Webbpolicy Se"
+msgstr "Webbpolicy Se"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "You have not yet accepted"
+msgstr "Még nem fogadta el"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "använda webbplatsen för att publicera eller överföra material för marknadsföring och reklam ändamål."
+msgstr "használja a honlapot elhelyezni vagy továbbítani anyag marketing és reklám célokra."
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "använda webbplatsen för att överföra eller skicka datavirus, olagligt eller felaktigt erhållna materialet, eller material som på något sätt är olämpligt, inklusive men inte begränsat till ärekränkande, obscent eller hotfullt material;"
+msgstr "használja a honlapot átad, vagy számítógépes vírusok, illegálisan vagy jogellenesen megszerzett anyagot, illetve anyag, amely bármilyen módon nem megfelelő, beleértve, de nem kizárólagosan becsületsértő, obszcén vagy fenyegető anyagot;"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "använda webbplatsen på ett sätt som bryter mot de rättigheter en fysisk person, en juridisk person eller en sammanslutning, inklusive men inte begränsat till rätten till privatliv och immateriella rättigheter;"
+msgstr "a honlap használatát oly módon, hogy sérti a jogait természetes személy, jogi személy vagy társulás, beleértve, de nem kizárólagosan a magánélethez való jog és a szellemi tulajdonjogok;"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "använda webbplatsen på ett sätt som kan skada eller förändra den, störa dess tillgänglighet eller påverka dess effektivitet på något sätt;"
+msgstr "használja a honlap olyan módon, amely károsítja vagy módosítja azt, megszakítják a rendelkezésre álló hatással annak hatékonyságát semmilyen módon;"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "call"
+msgstr "Hív"
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "felaktigt eller olagligt använda informationen på denna webbplats,"
+msgstr "visszaélés vagy tiltott felhasználás az oldalon található információk,"
+
+#. module: smart_login
+#: view:website:smart_dashboard.dashboard
+msgid "to group your work, then a"
+msgstr "hogy csoportosítsa munkáit, aztán"
+
