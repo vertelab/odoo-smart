@@ -1,1 +1,84 @@
-be
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_project\n"
+"Language: nl-be\n"
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "A short and relevant name is best."
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Active"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list
+msgid "Add a new project"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Archived"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Cancel"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Edit Project"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Hello world"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list
+msgid "Name"
+msgstr ""
+
+#. module: smart_project
+#: model:ir.model,name:smart_project.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Project name"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_common.smartmenu view:website:smart_project.list
+msgid "Projects"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Projects name..."
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Save"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Status"
+msgstr ""
+
+#. module: smart_project
+#: model:ir.model,name:smart_project.model_website
+msgid "Website"
+msgstr ""
+
