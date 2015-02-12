@@ -5,17 +5,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_login\n"
-"Language: nl-be\n"
+"Language: nl\n"
 
 #. module: smart_login
 #: model:ir.model,name:smart_login.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: smart_login
 #: model:ir.model,name:smart_login.model_website
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #. module: smart_login
 #: code:addons/smart_login/models/res_users.py:124
@@ -193,7 +193,7 @@ msgstr ""
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "Client"
-msgstr ""
+msgstr "Klant"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -323,12 +323,12 @@ msgstr ""
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "Order"
-msgstr ""
+msgstr "Sale Bestel"
 
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "Project"
-msgstr ""
+msgstr "Project"
 
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
@@ -383,7 +383,7 @@ msgstr ""
 #. module: smart_login
 #: model:ir.model,name:smart_login.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Gebruikers"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
