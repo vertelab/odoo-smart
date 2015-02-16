@@ -136,10 +136,10 @@ msgstr "Sumbitted (confirmar)"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr "Traducción contenido ha sido actualizado: 01/01/2015"
+msgstr "Traducción contenido ha sido actualizado: 02/17/2015"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation files was last updated: 2015-01-01"
-msgstr "Los archivos de traducción de la última actualización: 01/01/2015"
+msgstr "Los archivos de traducción de la última actualización: 02/17/2015"
 
