@@ -21,125 +21,125 @@ msgstr "Site Web"
 #: field:res.users,approved:0
 #: view:website:smart_dashboard.dashboard
 msgid "Approved"
-msgstr ""
+msgstr "Approuvé"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
-msgstr ""
+msgstr "Mon tableau de bord!"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #. module: smart_dashboard
 #: field:res.users,webterms_accepted:0
 msgid "Web Terms Accepted"
-msgstr ""
+msgstr "Conditions en ligne sont acceptés"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Expenses"
-msgstr ""
+msgstr "Dépenses actifs"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Orders"
-msgstr ""
+msgstr "Commandes actifs"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Amount"
-msgstr ""
+msgstr "Montant"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Available Clients"
-msgstr ""
+msgstr "Clients disponibles"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Cancelled"
-msgstr ""
+msgstr "Annulé"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Client"
-msgstr ""
+msgstr "Client"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Draft"
-msgstr ""
+msgstr "Ébauche"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Invoiced"
-msgstr ""
+msgstr "Facturé"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Activities"
-msgstr ""
+msgstr "Mes activités"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Users!"
-msgstr ""
+msgstr "Mes utilisateurs!"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Open"
-msgstr ""
+msgstr "Ouvert"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Paid"
-msgstr ""
+msgstr "Payé"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Recipient"
-msgstr ""
+msgstr "Destinataire"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sent to Client"
-msgstr ""
+msgstr "Envoyé au client"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Submitted"
-msgstr ""
+msgstr "Soumis"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sumbitted (confirm)"
-msgstr ""
+msgstr "Sumbitted (confirmer)"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr ""
+msgstr "contenu de traduction a été mise à jour: 02/17/2015"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation files was last updated: 2015-01-01"
-msgstr ""
+msgstr "Les fichiers de traduction a été mis à jour: 02/17/2015"
 
