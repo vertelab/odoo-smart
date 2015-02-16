@@ -19,21 +19,127 @@ msgstr "Sitio web"
 
 #. module: smart_dashboard
 #: field:res.users,approved:0
+#: view:website:smart_dashboard.dashboard
 msgid "Approved"
-msgstr ""
+msgstr "Aprobado"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
-msgstr ""
+msgstr "Mi tablero!"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
 
 #. module: smart_dashboard
 #: field:res.users,webterms_accepted:0
 msgid "Web Terms Accepted"
-msgstr ""
+msgstr "Términos web Aceptadas"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Active Expenses"
+msgstr "Gastos Activo"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Active Orders"
+msgstr "Órdenes activas"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Available Clients"
+msgstr "Clientes disponibles"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Client"
+msgstr "Cliente"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Description"
+msgstr "Descripción"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Invoiced"
+msgstr "Facturado"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Users!"
+msgstr "Mis usuarios!"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Name"
+msgstr "Nombre"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Open"
+msgstr "Abierto"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Recipient"
+msgstr "Beneficiario"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Sent to Client"
+msgstr "Enviado al Cliente"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Status"
+msgstr "Estado"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Sumbitted (confirm)"
+msgstr "Sumbitted (confirmar)"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Translation content was last updated: 2015-01-01"
+msgstr "Traducción contenido ha sido actualizado: 01/01/2015"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "Translation files was last updated: 2015-01-01"
+msgstr "Los archivos de traducción de la última actualización: 01/01/2015"
 
