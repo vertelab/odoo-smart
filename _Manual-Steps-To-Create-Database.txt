@@ -98,6 +98,22 @@ Done.
 
 
 
+Test:
+Languange
+create user from outside. test@arvas.se, test
+Accept Webterms
+Check Tabs on Account, change nationality
+Create project: tEstproject
+Create Client tEstClient
+Create Order tEstOrder, tEstLine VAT1 100
+Create Expense tEstExpense, tEstCost, 50+60
+View Budget
+View Cash
+View Project Budget
+
+
+
+
 
 
 

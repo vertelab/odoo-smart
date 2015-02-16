@@ -1,0 +1,2 @@
+id,name,currency_id/id,country_id/id,email,partner_id/id,parent_id/id
+smart_activity_template,Admin eu_demo Activity,base.EUR,base.be,,smart_template_partner,base.main_company

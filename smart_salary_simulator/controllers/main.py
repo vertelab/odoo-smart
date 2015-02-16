@@ -22,6 +22,7 @@ class website_client(http.Controller):
         values = {
             'salarysimulator_menu': 'active',        
             'context': context,
+            'res_user': res_user,
         }
         return request.website.render("smart_salary_simulator.simulator_%s" %  pool.get('res.users').browse(cr, uid, uid).company_id.country_id.code.lower() , values)
 

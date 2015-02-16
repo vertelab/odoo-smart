@@ -33,14 +33,17 @@
 	<!--Hide this tab if the Employee is not created-->
 				<t t-if="res_user.employee_ids">
 
+
+			
 					<HR/>
+
 											
-            <div class="panelsheet-content">
+<!--            <div class="panelsheet-content">-->
 <!--            <div groups="base.group_sales_manager" class="panelsheet-content">-->
-<!--            <div groups="base.group_erp_manager" class="panelsheet-content">-->
+            <div groups="base.group_erp_manager" class="panelsheet-content">
 	         <ul>
 	         <table>
-            <tr><th>My Users</th>
+            <tr><th>My Users!</th>
             <th>Available Clients</th>
             <th>My Activities</th></tr>
 			<tr><td valign="top">
@@ -282,6 +285,18 @@
 </div>
 
 </t>
+
+
+<!--            <div groups="base.smart_advisor" class="panelsheet-content">-->
+            <div class="panelsheet-content">
+	         <ul>
+<span> 
+Translation content was last updated: 2015-01-01<BR/>
+Translation files was last updated: 2015-01-01<BR/>
+</span>
+	         </ul>
+			</div>		
+		
 		
 <!--		            <div groups="base.group_erp_manager" class="panelsheet-content">		-->
 <!--		            <div  class="panelsheet-content">		-->
@@ -322,8 +337,6 @@
 <!--			</ul>-->
 <!--	    	</div>-->
 <!--#	    End panelsheet-content	Group sales manager-->
-
-
 
 
 

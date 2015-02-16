@@ -38,6 +38,20 @@ class res_company(osv.osv):
         res = {}
         for company in self.browse(cr, uid, ids, context=context):  
             res[company.id] = {
+
+#SMarts Share 	The Percentage SMart keeps on the invoice.
+#SMart Order sum cash 	Sum of Orders in State 'progress','manual','done', line 75
+#SMart Amount cash  SMarts share of the order (in money) for Orders in State progress','manual','done', line 82
+#SMart activity amount cash 	4768.50
+#SMart expense sum cash 	0.00
+#SMart Cash 	4769.00
+#SMart Order sum budget 	5100.00
+#SMart Amount budget 	331.50
+#SMart activity amount budget 	4768.50
+#SMart expense sum budget 	-1225.00
+#SMart Budget 	3544.00 
+
+
                 'smart_cash': 0.0,
                 'smart_budget': 0.0,
                 'sale_order_sum_cash': 0.0, 
@@ -57,7 +71,7 @@ class res_company(osv.osv):
 #                res[company.id]['smart_budget'] =+ move.smart_budget
 
 
-#SMart Cash                
+#SMart Order Cash                
             for order in self.pool.get('sale.order').browse(cr, uid, self.pool.get('sale.order').search(cr,uid,['&',('company_id','=',company.id),('state','in',('progress','manual','done'))],context=context), context=context):
 #            for order in company.order_cash():
 #                res[company.id]['smart_cash'] = res[company.id]['smart_cash'] + order.amount_total 
@@ -67,8 +81,8 @@ class res_company(osv.osv):
             res[company.id]['activity_amount_cash'] =  res[company.id]['sale_order_sum_cash'] * (1 - (company.smart_share / 100))
             res[company.id]['smart_amount_cash']    =  res[company.id]['sale_order_sum_cash'] * (company.smart_share / 100)
 
-#SMart Budget        
-            for order in self.pool.get('sale.order').browse(cr, uid, self.pool.get('sale.order').search(cr,uid,['&',('company_id','=',company.id),('state','in',('sent','waiting_date'))],context=context), context=context):
+#SMart Order Budget        
+            for order in self.pool.get('sale.order').browse(cr, uid, self.pool.get('sale.order').search(cr,uid,['&',('company_id','=',company.id),('state','in',('waiting_date','progress','manual','done'))],context=context), context=context):
 #            for order in company.order_budget():
 #                res[company.id]['smart_budget'] = res[company.id]['smart_budget'] + order.amount_total
                 res[company.id]['smart_budget'] = res[company.id]['smart_budget'] + order.amount_untaxed
@@ -78,18 +92,18 @@ class res_company(osv.osv):
             res[company.id]['activity_amount_budget'] =  res[company.id]['sale_order_sum_budget'] * (1 - (company.smart_share / 100))
 
 
-           #('draft', 'Draft Quotation'),
-            #('sent', 'Quotation Sent'),
-            #('cancel', 'Cancelled'),
-            #('waiting_date', 'Waiting Schedule'),
-            #('progress', 'Sales Order'),
-            #('manual', 'Sale to Invoice'),
-            #('shipping_except', 'Shipping Exception'),
-            #('invoice_except', 'Invoice Exception'),
-            #('done', 'Done'),
+           #('draft', 'Draft Quotation'),               = not counted
+            #('sent', 'Quotation Sent'),                = not counted 
+            #('cancel', 'Cancelled'),                   = not counted 
+            #('waiting_date', 'Waiting Schedule'),      = counted in budget
+            #('progress', 'Sales Order'),               = counted in budget + cash
+            #('manual', 'Sale to Invoice'),             = counted in budget + cash
+            #('shipping_except', 'Shipping Exception'), = counted in budget + cash
+            #('invoice_except', 'Invoice Exception'),   = counted in budget + cash
+            #('done', 'Done'),                          = counted in budget + cash
 
-#SMart Cash
-            for expense in self.pool.get('hr.expense.expense').browse(cr, uid, self.pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',company.id),('state','in',('accepted','done','paid'))],context=context), context=context):
+#SMart Expense Cash
+            for expense in self.pool.get('hr.expense.expense').browse(cr, uid, self.pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',company.id),('state','in',('done','paid'))],context=context), context=context):
                 _logger.warning("This is my expense.amount_untaxed next line")
                 try:                    
                     _logger.warning("This is my expense.amount_untaxed %s (cash)" % (expense.amount_untaxed))
@@ -100,8 +114,8 @@ class res_company(osv.osv):
                     res[company.id]['smart_cash']        -= 666
                     res[company.id]['expense_sum_cash']  -= 666
                     
-#SMart Budget                            
-            for expense in self.pool.get('hr.expense.expense').browse(cr, uid, self.pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',company.id),('state','in',('confirm',))],context=context), context=context):
+#SMart Expense Budget                            
+            for expense in self.pool.get('hr.expense.expense').browse(cr, uid, self.pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',company.id),('state','in',('accepted','confirm','done','paid'))],context=context), context=context):
                 try:                    
                     _logger.warning("This is my expense.amount_untaxed %s (budget)" % (expense.amount_untaxed))
                     res[company.id]['smart_budget']       -= float(expense.amount_untaxed or 0.0)
@@ -113,12 +127,12 @@ class res_company(osv.osv):
 
 
 
-#            ('draft', 'New'),
-#            ('cancelled', 'Refused'),
-#            ('confirm', 'Waiting Approval'),
-#            ('accepted', 'Approved'),
-#            ('done', 'Waiting Payment'),
-#            ('paid', 'Paid'),
+#            ('draft', 'New'),                  = not deducted in budget + cash
+#            ('cancelled', 'Refused'),          = not deducted in budget + cash
+#            ('confirm', 'Waiting Approval'),   = deducted in budget
+#            ('accepted', 'Approved'),          = deducted in budget
+#            ('done', 'Waiting Payment'),       = deducted in budget 
+#            ('paid', 'Paid'),                  = deducted in budget + cash
             
 #Totals
             res[company.id]['smart_cash'] = round(res[company.id]['smart_cash'] - res[company.id]['smart_amount_cash'],0)
@@ -158,16 +172,16 @@ class res_company(osv.osv):
 
     @api.one
     def expense_cash(self):
-        return self.env['hr.expense.expense'].browse(self.env['hr.expense.expense'].search(['&',('company_id','=',self.id),('state','in',('accepted','done','paid'))],context=context), context=context)
+        return self.env['hr.expense.expense'].browse(self.env['hr.expense.expense'].search(['&',('company_id','=',self.id),('state','in',('done','paid'))],context=context), context=context)
     @api.one
     def expense_budget(self):
-        return self.env['hr.expense.expense'].browse(self.env['hr.expense.expense'].search(['&',('company_id','=',self.id),('state','in',('confirm'))],context=context), context=context)
+        return self.env['hr.expense.expense'].browse(self.env['hr.expense.expense'].search(['&',('company_id','=',self.id),('state','in',('accepted','confirm','done','paid'))],context=context), context=context)
     @api.one
     def order_cash(self):
         return self.env['sale.order'].browse(self.env['sale.order'].search(['&',('company_id','=',self.id),('state','in',('progress','manual','done'))],context=context), context=context)
     @api.one
     def order_budget(self):
-        return self.env['sale.order'].browse(self.env['sale.order'].search(['&',('company_id','=',self.id),('state','in',('sent','waiting_date'))],context=context), context=context)
+        return self.env['sale.order'].browse(self.env['sale.order'].search(['&',('company_id','=',self.id),('state','in',('waiting_date','progress','manual','done'))],context=context), context=context)
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

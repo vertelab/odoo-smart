@@ -8,7 +8,6 @@ SMart Dashboard
 ===========
 
 
-
         """,
     'author': 'Vertel AB',
     'depends': ['website','smart_common'],

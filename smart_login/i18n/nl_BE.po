@@ -1,1 +1,43 @@
-asdf
+
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: smart_login\n"
+"Language: nl-be\n"
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: smart_login
+#: model:ir.model,name:smart_login.model_website
+msgid "Website"
+msgstr "website"
+
+#. module: smart_login
+#: code:addons/smart_login/models/res_users.py:124
+#: code:addons/smart_login/models/res_users.py:127
+#: code:addons/smart_login/models/res_users.py:155
+msgid "%s Activity"
+msgstr ""
+
+#. module: smart_login
+#: code:addons/smart_login/models/res_users.py:183
+#: code:addons/smart_login/models/res_users.py:203
+msgid "%s activity"
+msgstr ""
+
+#. module: smart_login
+#: view:website:smart_login.legal_at
+#: view:website:smart_login.legal_be
+#: view:website:smart_login.legal_de
+#: view:website:smart_login.legal_es
+#: view:website:smart_login.legal_nl
+#: view:website:smart_login.legal_se
+msgid "1. Allmän information"
+msgstr ""
+

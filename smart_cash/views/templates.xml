@@ -7,7 +7,7 @@
 
                Start CashBudget Box
 					<div id="smartbudgetcashbox" >
-	                    <table id="table-widget-budget" style="width: 160px;" >
+	                    <table id="table-widget-budget" style="width: 200px;" >
 					        <tr>
 					          <td style="text-align: right;">
 			    		<t t-if="not cash_menu == 'active'"><a href="/cash/list">CASH</a></t>
@@ -15,7 +15,7 @@
 					          <a class="tip" data-toogle="tooltip" data-placement="top" title="Cash is what you have on your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
 					          					          
 					          <td></td>
-					          <td style="text-align: right;"><a href="/cash/list"><span t-field="user_id.company_id.smart_cash" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+					          <td groups="base.group_smart_user" style="text-align: right;"><a href="/cash/list"><span t-field="user_id.company_id.smart_cash" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
 					          </td>
 					        </tr>
 					      
@@ -27,7 +27,7 @@
 				          
 					          <a class="tip" data-toogle="tooltip" data-placement="bottom" title="Budget is what is planned to come in to your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
 					          <td></td>
-					          <td style="text-align: right;"><a href="/budget/list"><span t-field="user_id.company_id.smart_budget" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+					          <td groups="base.group_smart_user" style="text-align: right;"><a href="/budget/list"><span t-field="user_id.company_id.smart_budget" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
 <!--					          <t t-esc="user_id.company_id.smart_budget"/>-->
 <!--					          <t t-esc="formatLang(line['smart_budget'], dp='Account', currency_obj=res_company.currency_id)"/> -->
 <!--							<span t-esc="formatLang(data['smart_budget']['smart_budget'], date=False)"/>-->
@@ -154,12 +154,16 @@
 
                              <td class="cell">
 			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
-			   	 <t t-if="o.state == 'sent'"><span class="sent">Sent to Client</span></t>
+<!--			   	 <t t-if="o.state == 'sent'"><span class="sent">Sent to Client</span></t>-->
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Pending Approval</span></t>
 			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
    			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
    			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
+<!-- Debug-->
+ <BR/>(<t t-raw="o.state"/>)
+
                              </td>
 
                             </tr>
@@ -184,7 +188,7 @@
 	 	            <tr>
       	              <td colspan="2"></td>
 <!--      	              <td></td>-->
-      	              <td style="text-align: right;">  
+      	              <td style="text-align: right;"> 
       	              	<t t-if="cash_menu == 'active'">
       	              		SMart's Share Cash
       	              	</t>
@@ -193,7 +197,7 @@
 			    		</t>
 	  	              </td>
 	  	              
-      	              <td style="text-align: right;">   
+      	              <td style="text-align: right;">   = 
       	              	<t t-if="cash_menu == 'active'">
 						<span t-field="res_user.company_id.smart_amount_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
       	              	</t>
@@ -206,7 +210,7 @@
 		   <td></td>
       	              <td></td>
       	              <td style="text-align: right;">  
-      	              	<t t-if="cash_menu == 'active'">
+      	              	<t t-if="cash_menu == 'active'"> 
       	              		The Activitiy's Share  Cash
       	              	</t>
 			    		<t t-if="budget_menu == 'active'">
@@ -214,7 +218,7 @@
 			    		</t>
 	  	              </td>
 	  	              
-      	              <td style="text-align: right;">   
+      	              <td style="text-align: right;">   = 
       	              	<t t-if="cash_menu == 'active'">
 						<span t-field="res_user.company_id.activity_amount_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>
       	              	</t>
@@ -261,16 +265,19 @@
                               <td><a  t-att-href="'/expense/%s' % e.id"><strong><t t-raw="e.name"/> </strong> <small>(<t t-raw="e.id"/>)</small></a></td>
                               <td><t t-raw="e.user_id.name"/></td>
                               <td><t t-raw="e.date"/></td>
-							  <td class="cell" style="text-align: right;">
+							  <td class="cell" style="text-align: right;"> -
 							  <span t-field="e.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/>
 
 							  </td>
 
                              <td class="cell">
 							<t t-if="e.state == 'draft'"> <span class="draft">Draft </span> </t>
-			   				<t t-if="e.state == 'confirm'"> <span class="sent">Sumbitted</span> </t>
+			   				<t t-if="e.state == 'confirm'"> <span class="sent">Submitted</span> </t>
    			    			<t t-if="e.state == 'accepted'"> <span class="approved">Approved</span> </t>
    			    			<t t-if="e.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
+<!-- Debug-->
+ <BR/>(<t t-raw="e.state"/>)
+
                              </td>
 
                             </tr>
@@ -280,7 +287,7 @@
        	              <td></td>
       	              <td class="cell" style="text-align: right;">Sum Expenses</td>
       	              <td class="cell" style="text-align: right;">
-      	              	<t t-if="cash_menu == 'active'">
+      	              	<t t-if="cash_menu == 'active'"> -
       	                 <t t-esc="user_id.company_id.expense_sum_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
       	              	</t>
 			    		<t t-if="budget_menu == 'active'">
@@ -305,13 +312,13 @@
      	              
       	              <td class="cell" style="text-align: right;">
       	              	<t t-if="cash_menu == 'active'">
-      	              		Total Cash
+      	              		<strong>Total Cash</strong> 
       	              	</t>
 			    		<t t-if="budget_menu == 'active'">
-	      	              	Total Budget
+	      	              	<strong>Total Budget</strong> 
 			    		</t>
 	  	              </td>
-      	              <td class="cell" style="text-align: right;">
+      	              <td class="cell" style="text-align: right;"> = 
       	              	<t t-if="cash_menu == 'active'">
 <!--      	                 <t t-esc="user_id.company_id.smart_amount_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>-->
       	                 <t t-esc="user_id.company_id.smart_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>

@@ -31,7 +31,7 @@ class website_order(http.Controller):
         for o in order_cash:
             order_sum += o.amount_untaxed
 
-        expense_cash = pool.get('hr.expense.expense').browse(cr, uid, pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',res_user.company_id.id),('state','in',('accepted','done','paid'))],context=context), context=context)
+        expense_cash = pool.get('hr.expense.expense').browse(cr, uid, pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',res_user.company_id.id),('state','in',('done','paid'))],context=context), context=context)
 
         expense_sum = 0.0
         for e in expense_cash:
@@ -72,7 +72,7 @@ class website_order(http.Controller):
 #            order_sum += o.amount_total
             order_sum += o.amount_untaxed
 
-        expense_budget = pool.get('hr.expense.expense').browse(cr, uid, pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',res_user.company_id.id),('state','in',('confirm',))],context=context), context=context)
+        expense_budget = pool.get('hr.expense.expense').browse(cr, uid, pool.get('hr.expense.expense').search(cr,uid,['&',('company_id','=',res_user.company_id.id),('state','in',('accepted','confirm',))],context=context), context=context)
 
         expense_sum = 0
         for e in expense_budget:

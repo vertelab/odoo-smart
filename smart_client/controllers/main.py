@@ -76,6 +76,7 @@ class website_client(http.Controller):
         if not partner:
             partner_id = pool.get('res.partner').create(cr,uid,{
                 'name': _('My first client'),
+                'is_company': ('TRUE'),
                 'country_id': _('21'),
 #Anders: Lägg in länk till användarens country_id istället här.
                 
@@ -94,14 +95,14 @@ class website_client(http.Controller):
                     'res_partner': partner,
                     'res_countrys': pool.get('res.country').browse(cr,uid,pool.get('res.country').search(cr,uid,[],context=context),context=context),
                     'res_partners':  clients,
-                    'form_post': '/client/%s' % partner.id,
+                    'form_post': '/client/%s?redirect=%s' % (partner.id,post.get('redirect')),
                 }
 
         if request.httprequest.method == 'POST':
 
     
             partner_data = dict((field_name.replace('hr_',''), post[field_name])
-                for field_name in ['name','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active',] if post.get(field_name))
+                for field_name in ['name','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
             if partner_data:
                 partner.write(partner_data)
 
@@ -118,12 +119,13 @@ class website_client(http.Controller):
 
 
             values['res_partner']= pool.get('res.partner').browse(cr,uid,partner.id)
-            return werkzeug.utils.redirect('/client/list')
+            
 
 ## Return to the form
             if post.get('redirect'):
                 return werkzeug.utils.redirect(post.get('redirect'))
-
+            else:
+                return werkzeug.utils.redirect('/client/list')
         if partner.is_company:
             return request.website.render("smart_client.client_organisation", values)
         else:

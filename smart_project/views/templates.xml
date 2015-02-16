@@ -20,7 +20,13 @@
 	                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new project</a>
 	                </div>
 	              </div>
-	            </header>
+<!--              <div class="panelsheet-header.document">-->
+              <p>
+              <br/>
+              <br/>
+              here is an explanation text</p>
+<!--              </div>-->
+            </header>
 		      
 	            <div class="panelsheet-content">
 	              
@@ -30,6 +36,7 @@
 		  	          <thead>
 		  	            <tr>
 		   	              <th><span class="muted">Name</span></th>
+		   	              <th><span class="muted">Project Budget</span></th>
 		  	              <th><span class="muted"> </span></th>  	              
 		  	            </tr>
 		  	          </thead>
@@ -38,6 +45,7 @@
 	     	     		<t t-foreach="projects" t-as="p">
 	                       <tr>
 							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.name"/></strong></a></td>
+							<td><a t-att-href="'/project/%s/overview' % p.id"><strong>View Budget</strong></a></td>
 	                       <td><a  t-att-href="'/project/%s/delete' % p.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
 							</tr>
 						</t>      
@@ -75,7 +83,13 @@
 	                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new project</a>
 	                </div>
 	              </div>
-	            </header>
+<!--              <div class="panelsheet-header.document">-->
+              <p>
+              <br/>
+              <br/>
+              here is an explanation text</p>
+<!--              </div>-->
+            </header>
 		      
 	            <div class="panelsheet-content">
 	              
@@ -86,6 +100,7 @@
 		  	            <tr>
 		   	              <th><span class="muted">Activity</span></th>
 		   	              <th><span class="muted">Name</span></th>
+		   	              <th><span class="muted">Project Budget</span></th>
 		  	              <th><span class="muted"> </span></th>  	              
 		  	            </tr>
 		  	          </thead>
@@ -95,6 +110,7 @@
 	                       <tr>
 							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.company_id.name"/></strong></a></td>
 							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.name"/></strong></a></td>
+							<td><a t-att-href="'/project/%s/overview' % p.id"><strong>View Budget</strong></a></td>
 	                       <td><a  t-att-href="'/project/%s/delete' % p.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
 							</tr>
 						</t>      
@@ -225,14 +241,222 @@
           <div class="panelsheet">
             <header class="panelsheet-header clearfix">
               <div class="title">
-	        	<h1>Projects name...</h1>
+	        	<h1><t t-raw="project.name"/></h1>
               </div>
             </header>
             <div class="panelsheet-content">
               
               <section class="panelsheet-section">
 
-Hello world
+
+<!--<template name="Cash Budget List content" id="order_list">-->
+                <h2>Planned Income</h2>
+                              
+                <table class="table table-striped" >
+      	          <thead>
+
+
+      	            <tr>
+<!--      	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted">Client</span></th>
+      	              <th><span class="muted">Description</span></th>
+<!--					  <th><span class="muted">Type </span></th>-->
+      	              <th><span class="muted" style="text-align: left;">Planned</span></th>
+      	              <th><span class="muted" style="text-align: left;">Approved</span></th>
+      	              <th><span class="muted">Status</span></th>
+<!--      	              <th><span class="muted"> </span></th>-->
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="sale_order_lines" t-as="o">
+                            <tr>  
+                              <td><t t-raw="o.order_id.partner_id.display_name"/></td>
+<!--                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.order_id.description"/> </strong> (<t t-raw="o.name"/>)</a></td>-->
+                              <td><a  t-att-href="'/order/%s/edit_lines' % (o.order_id.id)"><strong><t t-raw="o.name"/></strong></a></td>
+
+								<td class="cell" style="text-align: left;"><t t-if="o.order_id.state in ['draft','sent','open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>
+								<td class="cell" style="text-align: left;"><t t-if="o.order_id.state in ['open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>
+
+
+                             <td class="cell">
+			    <t t-if="o.order_id.state == 'draft'"><span class="draft">Draft </span></t>
+<!--			   	 <t t-if="o.order_id.state == 'sent'"><span class="sent">Sent to Client</span></t>-->
+			   	 <t t-if="o.order_id.state == 'sent'"><span class="sent">Pending Approval</span></t>
+			   	 <t t-if="o.order_id.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.order_id.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.order_id.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.order_id.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.order_id.state == 'cancel'"><span class="sent">Cancelled</span></t>		
+                             </td>
+
+                            </tr>
+                      </t>
+
+<!--                   <tr>-->
+<!--      	              <td></td>-->
+<!--      	              <td></td>-->
+<!--      	              <td style="text-align: right;">Sum Orders</td>-->
+<!--                      					-->
+<!--      	              <td style="text-align: right;"> = -->
+<!--      	              <span t-field="res_user.company_id.sale_order_sum_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>-->
+<!--      	              </td>-->
+<!--					  <td></td>-->
+<!--      	            </tr>-->
+
+<!--	 	            <tr>-->
+<!--      	              <td colspan="2"></td>-->
+<!--      	              <td></td>-->
+<!--      	              <td style="text-align: right;">  -->
+<!--      	              	<t t-if="cash_menu == 'active'">-->
+<!--      	              		SMart's Share Cash-->
+<!--      	              	</t>-->
+<!--			    		<t t-if="budget_menu == 'active'">-->
+<!--      	              		SMart's Share Budget-->
+<!--			    		</t>-->
+<!--	  	              </td>-->
+	  	              
+<!--      	              <td style="text-align: right;">   = -->
+<!--      	              	<t t-if="cash_menu == 'active'">-->
+<!--						<span t-field="res_user.company_id.smart_amount" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>-->
+<!--      	              	</t>-->
+<!--			    		<t t-if="budget_menu == 'active'">-->
+<!--						<span t-field="res_user.company_id.smart_amount_budget" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>-->
+<!--			    		</t>-->
+<!--      	            </td>-->
+<!--				</tr>-->
+<!--				<tr>-->
+<!--      	              <td></td>-->
+<!--      	              <td style="text-align: right;">  -->
+<!--      	              	<t t-if="cash_menu == 'active'">-->
+<!--      	              		The Activitiy's Share  Cash-->
+<!--      	              	</t>-->
+<!--			    		<t t-if="budget_menu == 'active'">-->
+<!--      	              		The Activitiy's Share Budget-->
+<!--			    		</t>-->
+<!--	  	              </td>-->
+<!--	  	              -->
+<!--      	              <td style="text-align: right;">   = -->
+<!--      	              	<t t-if="cash_menu == 'active'">-->
+<!--						<span t-field="res_user.company_id.activity_amount_cash" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>-->
+<!--      	              	</t>-->
+<!--			    		<t t-if="budget_menu == 'active'">-->
+<!--						<span t-field="res_user.company_id.activity_amount_budget" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/>-->
+<!--			    		</t>-->
+<!--      	              </td>-->
+<!--		   <td></td>-->
+<!--      	            </tr>-->
+
+      	          </tbody>
+      	          
+      	        </table>
+                
+<!--</template>-->
+
+
+
+<!--<template name="Cash Budget List content" id="expense_list">-->
+
+
+    
+<!--Start Expneses-->
+
+                <h2>Planned Expenses</h2>
+
+   <table class="table table-striped" >
+      	          <thead>
+      	            <tr>
+      	              <th><span class="muted">Type</span></th>
+      	              <th><span class="muted">Description</span></th>
+<!--      	              <th><span class="muted">Recipient </span></th>-->
+<!--       	              <th><span class="muted">Date</span></th>-->
+      	              <th><span class="muted" style="text-align: left;">Planned</span></th>
+      	              <th><span class="muted" style="text-align: left;">Approved</span></th>
+      	              <th><span class="muted">Status</span></th>
+
+      	            </tr>
+      	          </thead>
+
+      	          
+      	          <tbody>
+                      <t t-foreach="expense_lines" t-as="e">
+                            <tr>  
+<!--                              <td><a  t-att-href="'/expense/%s' % e.id"><strong><t t-raw="e.expense_id.name"/> </strong> <small>(<t t-raw="e.expense_id.id"/>)</small></a></td>-->
+                            
+<!--                              <td><a  t-att-href="'/expense/%s' % e.id"><strong><t t-raw="e.name"/> </strong> <small>(<t t-raw="e.id"/>)</small></a></td>-->
+                              <td class="cell" style="text-align: left;"><a t-att-href="'/expense/%s/line/%s/edit' % (e.expense_id.id,e.id)"><strong><t t-esc="e.product_id.name"/></strong></a></td>
+                              <td class="cell" style="text-align: left;"><t t-esc="e.name"/></td>
+<!--                              <td><t t-raw="e.expense_id.user_id.name"/></td>-->
+<!--                              <td><t t-raw="e.expense_id.date"/></td>-->
+<!--							  <td class="cell" style="text-align: right;"><span t-field="e.expense_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.expense_id.company_id.currency_id"}'/></td>-->
+<!--							  <td class="cell" style="text-align: right;"><span t-field="e.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.expense_id.company_id.currency_id"}'/></td>-->
+							  <td class="cell" style="text-align: left;"><t t-if="e.expense_id.state in ['draft','sent','confirm','accepted','done'] "><span t-field="e.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.expense_id.company_id.currency_id"}'/></t></td>
+							  <td class="cell" style="text-align: left;"><t t-if="e.expense_id.state in ['confirm','accepted','done'] "><span t-field="e.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.expense_id.company_id.currency_id"}'/></t></td>
+
+
+                             <td class="cell">
+							<t t-if="e.expense_id.state == 'draft'"> <span class="draft">Draft </span> </t>
+			   				<t t-if="e.expense_id.state == 'confirm'"> <span class="sent">Sumbitted</span> </t>
+   			    			<t t-if="e.expense_id.state == 'accepted'"> <span class="approved">Approved</span> </t>
+   			    			<t t-if="e.expense_id.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
+                             </td>
+
+                            </tr>
+                      </t>
+<!--                    <tr>-->
+<!--      	              <td class="cell" style="text-align: right;">Sum Expenses</td>-->
+<!--      	              <td class="cell" style="text-align: right;">-->
+<!--      	              	<t t-if="cash_menu == 'active'">-->
+<!--      	                 <t t-esc="user_id.company_id.expense_sum_cash"/> <t t-esc="res_user.company_id.currency_id.symbol"/>-->
+<!--      	              	</t>-->
+<!--			    		<t t-if="budget_menu == 'active'">-->
+<!--      	                 <t t-esc="user_id.company_id.expense_sum_budget"/> <t t-esc="res_user.company_id.currency_id.symbol"/>-->
+<!--			    		</t>-->
+<!--      	              </td>-->
+<!--      	              <td><span class="muted"></span></td>-->
+<!--       	              <td></td>-->
+<!--       	              <td></td>-->
+<!--      	            </tr>-->
+<!--                    <tr>Debug:-->
+<!--       	              <td>Balance <t t-esc="project.analytic_account_id and project.analytic_account_id.balance or 0.0"/></td>-->
+<!--       	              <td>Credit <t t-esc="project.analytic_account_id and project.analytic_account_id.credit or 0.0"/></td>-->
+<!--       	              <td>Debit <t t-esc="project.analytic_account_id and project.analytic_account_id.debit or 0.0"/></td>-->
+<!--       	              <td>Quantity <t t-esc="project.analytic_account_id and project.analytic_account_id.quantity or 0.0"/></td>-->
+<!--       	              <td>State <t t-esc="project.analytic_account_id and project.analytic_account_id.state or 0.0"/></td>-->
+<!--                    </tr>-->
+
+<!--                    <tr>-->
+<!--       	              <td></td>-->
+<!--       	              <td></td>-->
+<!--     	              -->
+<!--      	              <td class="cell" style="text-align: right;">-->
+<!--      	              		<strong>Total Project Planning</strong>-->
+<!--	  	              </td>-->
+<!--      	              <td class="cell" style="text-align: right;"> =-->
+<!--      	                 <t t-esc="user_id.company_id.expense_line_sum"/> <t t-esc="res_user.company_id.currency_id.symbol"/> -->
+<!--      	              </td>-->
+<!--					  <td></td>-->
+<!--      	            </tr>-->
+
+                   
+      	          </tbody>
+      	          
+      	        </table>
+
+                  
+                
+                
+<!-- End Expenses                 -->                
+                
+
+<!--</template>-->
+
+
+
+
+
 			    
 		     </section>
               
@@ -247,6 +471,8 @@ Hello world
         </div>
 	</t>        
 </template>
+
+
 
 
 

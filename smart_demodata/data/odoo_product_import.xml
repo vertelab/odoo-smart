@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="True">
+<!--          Category            -->
+<record forcecreate="0" id="product_category_expenses" model="product.category">
+<field name="name">Expenses</field>
+<field name="categ_id/id">product.product_category_all</field>
+<!--<field name="type">Normal</field>-->
+<field name="categ_id"></field>
+<field name="list_price"></field>
+<field name="type"></field>
+</record>
+<!--          Product            -->
+<record forcecreate="0" id="product_product_crewfees" model="product.product">
+<field name="name">Crew fees</field>
+<field name="categ_id/id">hr_expense.cat_expense</field>
+<field name="type">Normal</field>
+<field name="categ_id"></field>
+<field name="list_price"></field>
+<field name="type"></field>
+</record>
+</data>
+</openerp>
+
