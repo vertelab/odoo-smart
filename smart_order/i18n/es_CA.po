@@ -6,39 +6,22 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_order\n"
 "Language: ca\n"
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Action"
-msgstr "Acció"
-=======
 
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Action"
 msgstr "AcciÃ³"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Amount"
 msgstr "Quantitat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.order
 msgid "Billing"
-<<<<<<< HEAD
-msgstr "Facturació"
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "Cancel"
-msgstr "Cancel·la"
-=======
 msgstr "FacturaciÃ³"
 
 #. module: smart_order
@@ -46,7 +29,6 @@ msgstr "FacturaciÃ³"
 msgid "Cancel"
 msgstr "CancelÂ·la"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.list
@@ -54,72 +36,43 @@ msgstr "CancelÂ·la"
 #: view:website:smart_order.order
 msgid "Client"
 msgstr "Client"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 #: view:website:smart_order.order
 msgid "Contact"
 msgstr "Contacte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Contact person"
 msgstr "Persona de contacte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: field:website,currency_id:0
 msgid "Default Currency"
 msgstr "Moneda per defecte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: field:website,pricelist_id:0
 msgid "Default Pricelist"
 msgstr "Llista de preus per defecte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: field:sale.order,description:0
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 #: view:website:smart_order.order
 msgid "Description"
-<<<<<<< HEAD
-msgstr "Descripció"
-=======
 msgstr "DescripciÃ³"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.order
 msgid "Details"
 msgstr "Detalls"
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Edit Order Lines"
-msgstr "Edita línies de comandes"
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Excl VAT"
-msgstr "IVA exclòs"
-=======
 
 #. module: smart_order
 #: view:website:smart_order.order
@@ -131,77 +84,47 @@ msgstr "Edita lÃ­nies de comandes"
 msgid "Excl VAT"
 msgstr "IVA exclÃ²s"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: code:addons/smart_order/controllers/main.py:228
 msgid "Front order"
 msgstr "Per frontal"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Individual"
 msgstr "Individual"
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Mobile:"
-msgstr "Mòbil:"
-=======
 
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Mobile:"
 msgstr "MÃ²bil:"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Name"
 msgstr "Nom"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "Name your order!"
 msgstr "El nom de la seva ordre!"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "New Order"
 msgstr "Nou Ordre"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "New order"
 msgstr "Nou ordre"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 msgid "Next"
-<<<<<<< HEAD
-msgstr "Següent"
-#. module: smart_order
-#: view:website:smart_order.edit_lines
-msgid "Order line price"
-msgstr "Sol·licitar preu de la línia"
-=======
 msgstr "SegÃ¼ent"
 
 #. module: smart_order
@@ -209,26 +132,15 @@ msgstr "SegÃ¼ent"
 msgid "Order line price"
 msgstr "SolÂ·licitar preu de la lÃ­nia"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 msgid "Orders"
 msgstr "Ordres"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Organisation"
-<<<<<<< HEAD
-msgstr "Organització"
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Phone:"
-msgstr "Telèfon:"
-=======
 msgstr "OrganitzaciÃ³"
 
 #. module: smart_order
@@ -236,110 +148,72 @@ msgstr "OrganitzaciÃ³"
 msgid "Phone:"
 msgstr "TelÃ¨fon:"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.order
 msgid "Price"
 msgstr "Preu"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 #: view:website:smart_order.order
 msgid "Project"
 msgstr "Projecte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: model:ir.model,name:smart_order.model_sale_order
 msgid "Sales Order"
 msgstr "Ordre de Venda"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Status"
 msgstr "Estat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Total"
 msgstr "Total"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Type"
 msgstr "Tipus"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.order
 msgid "VAT"
 msgstr "IVA"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: model:ir.model,name:smart_order.model_website
 msgid "Website"
 msgstr "Lloc web"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: field:account.tax,active_web:0
 msgid "Active Web"
 msgstr "Actiu Web"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list_all
 msgid "Activity"
 msgstr "Activitat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list_all
 msgid "All Orders"
 msgstr "Totes les comandes"
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Cancel order"
-msgstr "Cancel·lar demanat"
-=======
 
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Cancel order"
 msgstr "CancelÂ·lar demanat"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -347,12 +221,8 @@ msgstr "CancelÂ·lar demanat"
 #: view:website:smart_order.list_all
 #: view:website:smart_order.order
 msgid "Cancelled"
-<<<<<<< HEAD
-msgstr "Cancel·lat"
-=======
 msgstr "CancelÂ·lat"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -361,27 +231,17 @@ msgstr "CancelÂ·lat"
 #: view:website:smart_order.order
 msgid "Draft"
 msgstr "Esborrany"
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.order
-msgid "Edit Order information"
-msgstr "Edita la informació de l'ordre"
-=======
 
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Edit Order information"
 msgstr "Edita la informaciÃ³ de l'ordre"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: model:ir.model,name:smart_order.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -390,10 +250,7 @@ msgstr "Factura"
 #: view:website:smart_order.order
 msgid "Invoiced"
 msgstr "Facturat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -402,10 +259,7 @@ msgstr "Facturat"
 #: view:website:smart_order.order
 msgid "Open"
 msgstr "Obert"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -414,27 +268,18 @@ msgstr "Obert"
 #: view:website:smart_order.order
 msgid "Paid"
 msgstr "Pagat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 #: view:website:smart_order.list_all
 msgid "Remove Order"
 msgstr "Traieu Ordre"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 msgid "Search"
 msgstr "Cerca"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -443,116 +288,74 @@ msgstr "Cerca"
 #: view:website:smart_order.order
 msgid "Submitted"
 msgstr "Enviat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: model:ir.model,name:smart_order.model_account_tax
 msgid "Tax"
 msgstr "Impost"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "- Clients outside my Activity-"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "- My clients -"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Approve"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "Approved by Client"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "(This order is) Approved by the client"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "- Select a Client -"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "- Select a Project -"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "A brief order name that will be referenced to your invoice."
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Add"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 #: view:website:smart_order.order
 msgid "Back"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.order
 msgid "City:"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: code:addons/smart_order/controllers/main.py:44
 msgid "Compose Email"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
@@ -561,115 +364,72 @@ msgstr ""
 #: view:website:smart_order.order
 msgid "Here is an explanation text"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 #: view:website:smart_order.order
 msgid "Notes"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "Order description"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list_all
 msgid "Pending Valdiation"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 msgid "Pending Validation"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 msgid "Pending validation"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Price in"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Product/Service description"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.list
 msgid "Search for: Description, Client, date... Reset with empty search."
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "Select a Project to organize your work. If you want a new project, please go to Projects -> New project before you create your order."
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "Select the Client if you don't want your contact persons name on the invoice. Select the contact person if you want the invoice to be issued to the client with your contact person as a reference."
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "Use this field for comments or additional info to SMart."
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_order
 #: view:website:smart_order.edit_lines
 msgid "Use this field for comments or additional info to SMart. If you would like to send an invoice in an other currency, please the currency here."
 msgstr ""
-<<<<<<< HEAD
-#. module: smart_order
-#: view:website:smart_order.edit_order_data
-msgid "________________"
-msgstr ""
-=======
 
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "________________"
 msgstr ""
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
