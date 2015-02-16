@@ -6,139 +6,81 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_salarysimulator\n"
 "Language: ca\n"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "\"WithHoldingTaxAmount\" kr"
 msgstr "KR \"WithHoldingTaxAmount\""
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "#AmountToSMartBudget# kr"
-msgstr "# AmountToSMartBudget # laa"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#AmountToSMartBudget#  kr"
 msgstr "# AmountToSMartBudget # laa"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#ExpenseInclusiveVAT# kr"
 msgstr "# ExpenseInclusiveVAT # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#GrossSalaryAmount# kr"
 msgstr "# GrossSalaryAmount # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#NetSalary# kr"
 msgstr "# NetSalary # laa"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "#SMartShareAmount# kr"
-msgstr "# SMartShareAmount # laa"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#SMartShareAmount#  kr"
 msgstr "# SMartShareAmount # laa"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#SocialSecurityAmount# kr"
 msgstr "# SocialSecurityAmount # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#ToBePaidBySMart# kr"
 msgstr "# ToBePaidBySMart # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#VATabount\" kr"
 msgstr "#VATabount \"KR"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "#invoiceExclusiveVAT# kr"
-msgstr "# InvoiceExclusiveVAT # laa"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#invoiceExclusiveVAT#  kr"
 msgstr "# InvoiceExclusiveVAT # laa"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#invoiceinclusiveVAT# kr"
 msgstr "# InvoiceinclusiveVAT # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "#netsalary# kr"
 msgstr "# Netsalary # laa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Amount"
 msgstr "Quantitat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Amount on your SMart-Account"
 msgstr "Suma en el seu Smart-Compte"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Amount that could be payed by SMartSe"
 msgstr "Quantitat que podria ser pagat per SMartSe"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Calculating salary…"
-msgstr "Càlcul de salari ..."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "Edit simulation"
-msgstr "Edita simulació"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
@@ -150,75 +92,36 @@ msgstr "CÃ lcul de salari ..."
 msgid "Edit simulation"
 msgstr "Edita simulaciÃ³"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Europe"
 msgstr "Europa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Excluded"
 msgstr "Exclosos"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Expenses"
 msgstr "Despeses"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "I live and work in"
 msgstr "Visc i treballo a"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "I work as a musician."
-msgstr "Jo treball com a músic."
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "I work as a musician."
 msgstr "Jo treball com a mÃºsic."
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "I work as an artist or athlete."
 msgstr "Jo treball com a artista o esportista."
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "If SMartSe is your secondary income source, we recommend that you do not pay extra pension contributions from your SMartSe income."
-msgstr "Si SMartSe és la seva font d'ingressos secundària, es recomana que vostè no paga contribucions a les pensions addicionals dels seus ingressos SMartSe."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "If you are an artist or an athlete and pay your taxes abroad, less taxes are withdrawn in Sweden due to SINK (Special income tax)."
-msgstr "Si ets un artista o un esportista i paga els seus impostos a l'estranger, menys impostos es retiren a Suècia a causa de enfonsar (impost sobre la renda Especial)."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "If you live outside of Sweden, special tax regulations apply. Please contact us if you wish to know more."
-msgstr "Si vostè viu fora de Suècia, s'apliquen les normes tributàries especials. Si us plau, poseu-vos en contacte amb nosaltres si voleu saber més."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "If you work as a musician or a singer, employers' social contributions and income tax witholdments are lower."
-msgstr "Si vostè treballa com un músic o un cantant, les contribucions socials dels ocupadors i witholdments impostos són més baixos."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Included"
-msgstr "Inclòs"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
@@ -245,45 +148,25 @@ msgstr "Si vostÃ¨ treballa com un mÃºsic o un cantant, les contribucions socials
 msgid "Included"
 msgstr "InclÃ²s"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Invoice"
 msgstr "Factura"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Invoice amount"
 msgstr "Import de la factura"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Invoice to the client:"
 msgstr "Factura al client:"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: model:ir.model,name:smart_salary_simulator.model_res_partner
 msgid "Partner"
 msgstr "Soci"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."
-msgstr "Si us plau, escolliu un tipus de retenció d'impostos. Si a vostè li agradaria que nosaltres retenim menys del 30%, serà necessari un certificat de l'autoritat fiscal sueca."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Please fill in the amount you want to use and choose what type of calculation you would like to do"
-msgstr "Si us plau, ompli la suma que voleu utilitzar i triar quin tipus de càlcul que li agradaria fer"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
@@ -295,81 +178,47 @@ msgstr "Si us plau, escolliu un tipus de retenciÃ³ d'impostos. Si a vostÃ¨ li ag
 msgid "Please fill in the amount you want to use and choose what type of calculation you would like to do"
 msgstr "Si us plau, ompli la suma que voleu utilitzar i triar quin tipus de cÃ lcul que li agradaria fer"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Please fill in the total amount of expenses for this activity"
 msgstr "Si us plau, ompli el import total de les despeses per a aquesta activitat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Please review the form,"
 msgstr "Si us plau revisi el formulari,"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."
-msgstr "Seleccioneu el tipus d'IVA per a la seva activitat. Si vostè té IVA taxes mixtes, si us plau fer dues simulacions."
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."
 msgstr "Seleccioneu el tipus d'IVA per a la seva activitat. Si vostÃ¨ tÃ© IVA taxes mixtes, si us plau fer dues simulacions."
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_xx
 msgid "SMartSe Salary Simulator"
 msgstr "SMartSe Salari Simulador"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "SMartSe is my"
-msgstr "SMartSe és el meu"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "SMartSe is my"
 msgstr "SMartSe Ã©s el meu"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "SMartSe's share #SMartSharePercent# %"
 msgstr "De SMartSe compartit # SMartSharePercent #%"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Salary"
 msgstr "Salari"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 #: view:website:smart_salary_simulator.simulator_es
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Salary Simulator"
 msgstr "Simulador Salari"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Salary after tax"
-msgstr "Salari després d'impostos"
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "Salary after tax (net)"
-msgstr "Salari després d'impostos (net)"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
@@ -381,56 +230,36 @@ msgstr "Salari desprÃ©s d'impostos"
 msgid "Salary after tax (net)"
 msgstr "Salari desprÃ©s d'impostos (net)"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Salary before tax"
 msgstr "Salari abans d'impostos"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Salary before tax (gross)"
 msgstr "Salari abans d'impostos (brut)"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Simulate"
 msgstr "Simular"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Social contributions"
 msgstr "Les cotitzacions socials"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Sweden"
-msgstr "Suècia"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Sweden"
 msgstr "SuÃ¨cia"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "The salary you may get:"
 msgstr "El salari pot obtenir:"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_at
 #: view:website:smart_salary_simulator.simulator_de
@@ -439,26 +268,12 @@ msgstr "El salari pot obtenir:"
 #: view:website:smart_salary_simulator.simulator_it
 #: view:website:smart_salary_simulator.simulator_nl
 msgid "This breakdown provides you with an overview of your salary."
-<<<<<<< HEAD
-msgstr "Aquest desglossament li proporciona una visió general del seu salari."
-=======
 msgstr "Aquest desglossament li proporciona una visiÃ³ general del seu salari."
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "Total amount exclusive VAT"
 msgstr "Import total sense IVA"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "Total amount inclusive VAT"
-msgstr "Import total amb IVA inclòs"
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "Total amount of expenses inclusive VAT"
-msgstr "Import total de les despeses d'IVA inclòs"
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
@@ -470,39 +285,26 @@ msgstr "Import total amb IVA inclÃ²s"
 msgid "Total amount of expenses inclusive VAT"
 msgstr "Import total de les despeses d'IVA inclÃ²s"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Type of amount"
 msgstr "Tipus de quantitat"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "VAT"
 msgstr "IVA"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.result_se
 msgid "VAT ( #VATPercent# %)"
 msgstr "IVA (# VATPercent #%)"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: model:ir.model,name:smart_salary_simulator.model_website
 msgid "Website"
 msgstr "Lloc web"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_at
 #: view:website:smart_salary_simulator.simulator_de
@@ -511,17 +313,6 @@ msgstr "Lloc web"
 #: view:website:smart_salary_simulator.simulator_it
 #: view:website:smart_salary_simulator.simulator_nl
 msgid "What is billed, and what is retained for social contributions and taxes."
-<<<<<<< HEAD
-msgstr "El que es factura, i el que és retingut per cotitzacions socials i impostos."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "Withholding tax"
-msgstr "Retenció a la font"
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "Withholding tax rate"
-msgstr "Tipus de retenció"
-=======
 msgstr "El que es factura, i el que Ã©s retingut per cotitzacions socials i impostos."
 
 #. module: smart_salary_simulator
@@ -534,61 +325,30 @@ msgstr "RetenciÃ³ a la font"
 msgid "Withholding tax rate"
 msgstr "Tipus de retenciÃ³"
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "Year of birth"
 msgstr "Any de naixement"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "income source."
 msgstr "font d'ingressos."
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "outside of Europe"
 msgstr "fora d'Europa"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "primary"
 msgstr "primari"
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
 msgid "secondary"
 msgstr "secundari"
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_se
-msgid "some details are missing in order to calculate your salary."
-msgstr "li falten detalls per al càlcul del seu salari."
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.result_se
-msgid "– Result"
-msgstr "- Resultat"
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_be
-msgid "Quel est facturé, et ce qui est retenu pour les cotisations sociales et les impôts."
-msgstr ""
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_be
-msgid "Sa répartition vous donne un aperçu de votre salaire."
-msgstr ""
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_se
@@ -610,53 +370,33 @@ msgstr ""
 msgid "Sa rÃ©partition vous donne un aperÃ§u de votre salaire."
 msgstr ""
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_at
 msgid "Salary Simulator (At test)"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_de
 msgid "Salary Simulator (De test)"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_hu
 msgid "Salary Simulator (Hu test)"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_it
 msgid "Salary Simulator (It test)"
 msgstr ""
-<<<<<<< HEAD
-=======
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_nl
 msgid "Salary Simulator (NL test)"
 msgstr ""
-<<<<<<< HEAD
-#. module: smart_salary_simulator
-#: view:website:smart_salary_simulator.simulator_be
-msgid "Simulateur de salaires (test)"
-msgstr ""
-=======
 
 #. module: smart_salary_simulator
 #: view:website:smart_salary_simulator.simulator_be
 msgid "Simulateur de salaires (test)"
 msgstr ""
 
->>>>>>> 4485a7622731d7ceb644bacf7c4300a9ef27c301
