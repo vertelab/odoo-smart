@@ -219,6 +219,7 @@ msgid "Company Phone and Email"
 msgstr "Céges telefon és e-mail"
 
 #. module: smart_client
+#: view:website:smart_client.client_individual
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Contact person"
