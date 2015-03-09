@@ -22,13 +22,13 @@ msgstr "Sitio web"
 #: code:addons/smart_login/models/res_users.py:127
 #: code:addons/smart_login/models/res_users.py:155
 msgid "%s Activity"
-msgstr "%s Actividad"
+msgstr "% Actividad"
 
 #. module: smart_login
 #: code:addons/smart_login/models/res_users.py:183
 #: code:addons/smart_login/models/res_users.py:203
 msgid "%s activity"
-msgstr "%s actividad"
+msgstr "% actividad"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -38,7 +38,7 @@ msgstr "%s actividad"
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "1. Allmän information"
-msgstr ""
+msgstr "1. Información general"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -48,7 +48,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "10. Ansvar"
-msgstr ""
+msgstr "10. Responsabilidad"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -58,7 +58,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "11.  Tillämplig lagstiftning"
-msgstr ""
+msgstr "11. Legislación aplicable"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -68,7 +68,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "2. Tredje parts kampanjer och PR"
-msgstr ""
+msgstr "2. Campañas de terceras partes y PPRR"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -78,7 +78,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "3. Störningar – Kompatibilitet"
-msgstr ""
+msgstr "3. Interrupciones - Compatibilidad"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -88,7 +88,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "4. Immateriella rättigheter"
-msgstr ""
+msgstr "4. Derechos de propiedad intelectual"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -98,7 +98,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "5. Länkar till tredje parts webbplatser"
-msgstr ""
+msgstr "5. Enlaces a webs de terceros"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -108,7 +108,8 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "6. Obehörig användning av webbplatsen"
-msgstr ""
+msgstr "6. El uso no autorizado del web\n"
+""
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -118,7 +119,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "7. Kakor"
-msgstr ""
+msgstr "7. Cookies"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -128,7 +129,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "8. Personuppgifter"
-msgstr ""
+msgstr "8. Información personal"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -138,7 +139,7 @@ msgstr ""
 #: view:website:smart_login.legal_nl
 #: view:website:smart_login.legal_se
 msgid "9. Lösenord"
-msgstr ""
+msgstr "9. Contraseña"
 
 #. module: smart_login
 #: model:ir.actions.server,name:smart_login.action_add_activity
@@ -308,7 +309,7 @@ msgstr ""
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "Let's start by adding a"
-msgstr "Empezemos añadiendo un"
+msgstr "Empecemos añadiendo un"
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -419,7 +420,7 @@ msgstr "Política web SE"
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "You have not yet accepted"
-msgstr "Sigues sin acceptar "
+msgstr "Todavía no has acceptado "
 
 #. module: smart_login
 #: view:website:smart_login.legal_at
@@ -479,5 +480,5 @@ msgstr ""
 #. module: smart_login
 #: view:website:smart_dashboard.dashboard
 msgid "to group your work, then a"
-msgstr ""
+msgstr "para agrupar tu trabajo, después "
 
