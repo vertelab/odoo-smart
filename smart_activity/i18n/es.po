@@ -56,80 +56,85 @@ msgstr "Sitio web"
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid ", admin"
-msgstr ""
+msgstr "Admin"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Add Members to the activity"
-msgstr ""
+msgstr "Añadir miembros a la actividad"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
 msgid "Budget"
-msgstr ""
+msgstr "Presupuesto"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
 msgid "Cash"
-msgstr ""
+msgstr "Efectivo"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
+#, fuzzy
 msgid "Make Admin"
-msgstr ""
+msgstr "Nuevo administrador"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Manage your Activity"
-msgstr ""
+msgstr "Gestionar tu actividad"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Members in this Activity"
-msgstr ""
+msgstr "Miembros de esta actividad"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Members in this activity"
-msgstr ""
+msgstr "Miembros de esta actividad"
 
 #. module: smart_activity
 #: code:addons/smart_activity/controllers/main.py:80
+#, fuzzy
 msgid "No activity choosen or missing read rights on this activity"
-msgstr ""
+msgstr "No hay actividad elegida"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
 msgid "Reverse order: last first."
-msgstr ""
+msgstr "Invertir orden: último primero."
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Settings for the Activity"
-msgstr ""
+msgstr "Preferencias para la actividad"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
+#, fuzzy
 msgid "To do on this view"
-msgstr ""
+msgstr "Tareas"
 
 #. module: smart_activity
 #: view:website:smart_activity.activity
 msgid "Your activitys new name"
-msgstr ""
+msgstr "Nuevo nombre para tu actividad"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
 msgid "Your current \"budget\""
-msgstr ""
+msgstr "Tu presupuesto actual"
 
 #. module: smart_activity
 #: view:website:smart_activity.x_mall tabb
+#, fuzzy
 msgid "Your current \"cash\""
-msgstr ""
+msgstr "Tu saldo actual\n"
+""
 
