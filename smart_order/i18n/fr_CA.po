@@ -85,7 +85,7 @@ msgid "Excl VAT"
 msgstr "HT"
 
 #. module: smart_order
-#: code:addons/smart_order/controllers/main.py:228
+#: code:addons/smart_order/controllers/main.py:185
 msgid "Front order"
 msgstr "Commande Bec"
 
@@ -352,11 +352,6 @@ msgid "City:"
 msgstr ""
 
 #. module: smart_order
-#: code:addons/smart_order/controllers/main.py:44
-msgid "Compose Email"
-msgstr ""
-
-#. module: smart_order
 #: view:website:smart_order.edit_lines
 #: view:website:smart_order.edit_order_data
 #: view:website:smart_order.list
@@ -431,5 +426,10 @@ msgstr ""
 #. module: smart_order
 #: view:website:smart_order.edit_order_data
 msgid "________________"
+msgstr ""
+
+#. module: smart_order
+#: code:addons/smart_order/controllers/main.py:201
+msgid "Something went wrong with the form (no sale_order)"
 msgstr ""
 
