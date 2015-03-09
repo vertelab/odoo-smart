@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template name="Salary Simulator Se" id="sim_frame_se">
+    <t t-call="website.layout">
+<!--
+<html>
+    <head>
+   	<title>Lönesimulator_v2014</title>
+	<link rel="stylesheet" href="/smart_salary_simulator/static/ui/salary_simulator/SMartSe/assets/app.min.css" />
+	<script type="text/javascript" src="/web/static/lib/qweb/qweb2.js"></script>
+	<script type="text/javascript" src="/web/static/src/js/openerpframework.js"></script>
+	
+    </head>
+    <body> 
+-->
+<script type="text/javascript">
+    function calculate_salary() {
+	var lusers = new openerp.Model('res.users');
+	lusers.Query(['name', 'login', 'user_email']).all().then(function (users) {
+	    document.forms["formc"]["foo"].value = users[0].name;
+	});
+	return "foo";
+    }
+</script>
+        <form id='formc' name='formc' method='post' action='foo' target='_top'>
+	    <input type='hidden' id='xl_spreadsheet' name='xl_spreadsheet' value='Lönesimulator_v2014' />
+	    <input type='hidden' id='xl_client' name='xl_client' value='x7.8.6067.0' />
+	    <div id='tab'>
+		<div id='sheet-1'>
+		    <table width= '376' cellspacing='0' cellpadding='0'><!--onkeydown='javascript:navigate(event);'-->
+			<col width='208'/>
+			<col width='47'/>
+			<col width='121'/>
+			<tr>
+			    <td class='ee106'>
+				    Födelseår
+			    </td>
+			    <td class='ee103'></td>
+			    <td class='ee109'>
+				    <input id='XLEW_1_2_3' type='text' value='1985' style='width:100%' class='ee105' name='XLEW_1_2_3' placeholder='' tabindex='1' data-sheet='1' data-row='2' data-col='3' onchange="this.value=calculate_salary()"/> <!--onchange="this.value=eedisplayFloatND(eeparseFloat(this.value),0);recalc_onclick('XLEW_1_2_3') " -->
+			    </td>
+			</tr>
+			<tr style='height:16pt'>
+			    <td class='ee106' style='height:16pt;'>
+				    Fakturabelopp<font class='ee116'> (exkl moms)</font>
+			    </td>
+			    <td class='ee106' style='height:16pt;'></td>
+			    <td class='ee117' style='height:16pt;'>
+				    <input id='XLEW_1_4_3' type='text' value='1000' class='ee118' style='width:100%'  name='XLEW_1_4_3' placeholder='' tabindex='2' data-sheet='1' data-row='4' data-col='3'/> <!--onchange="this.value=eedisplayFloatND(eeparseFloat(this.value),0);recalc_onclick('XLEW_1_4_3') "-->
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<input name="foo" type="text" value="foobar" />
+			    </td>
+			</tr>
+		    </table>
+                </div>
+            </div>
+        </form>
+<!--
+    </body>
+</html>
+-->
+</t>
+</template>
+</data>
+
+</openerp>
