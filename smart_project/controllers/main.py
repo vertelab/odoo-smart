@@ -205,7 +205,7 @@ class website_project(http.Controller):
         res_user = request.registry.get('res.users').browse(cr,uid,uid)
         context['lang'] = res_user.lang
 
-        order_budget = pool.get('sale.order').browse(cr, uid, pool.get('sale.order').search(cr,uid,['&','&',('company_id','=',res_user.company_id.id),('state','in',('sent','waiting_date')),()],context=context), context=context)
+        order_budget = pool.get('sale.order').browse(cr, uid, pool.get('sale.order').search(cr,uid,['&',('company_id','=',res_user.company_id.id),('state','in',('sent','waiting_date'))],context=context), context=context)
 
 
         order_sum = 0

@@ -23,9 +23,9 @@ class website_client(http.Controller):
         clients = []
         for c in request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context):
 #        for c in request.registry['res.partner'].browse(cr,uid,companies,request.registry['res.partner'].search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)],context=context),context=context):
-            if c.is_company:
+            if c.is_company:       # Companies
                 clients += c
-            elif not c.parent_id:
+            elif not c.parent_id:  # Individuals
                 clients += c
 
 

@@ -408,11 +408,16 @@
            
 				       
 	     
-	     
      			<div class="tools ">
-                        <t t-if="error"> 
-                              <strong t-value="#{error}"/>
-                        </t>
+
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>			
+
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                    
 
 
      					<ul>
@@ -788,7 +793,7 @@
               <p>
               <BR/>
               <BR/>
-              Here is an explanation text</p>
+              Here is an explanation text. Fredrik</p>
 <!--              </div>-->
 	            </header>
 	             
@@ -966,7 +971,7 @@
 			  <div class="well " style="margin-top: -10px;">
 			  
 			  <legend>
-			    <strong>Billing </strong>
+			    <strong>Billing Fredrik</strong>
 <!--			    <a href="../../order/edit_lines" class="btn btn-small "><i class="icon-pencil"></i> <strong>Edit Order lines</strong></a> + -->
      	  	  <strong>Details</strong> 
 <!--     	  	  <a t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>-->
@@ -1017,7 +1022,7 @@
                              <tr>  
 
                               <td align="right"></td>
-                              <td class="cell" style="text-align: right;"><strong>Total</strong></td>
+                              <td class="cell" style="text-align: right;"><strong>Total Fredrik</strong></td>
                               <td class="cell" style="text-align: right;">
                               <strong>
 <!--								<span t-field="sale_order.amount_total" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
@@ -1081,6 +1086,271 @@
 </t>        
 </template>
 
+
+
+<template name="Order Print layout" id="order_print">
+
+    <t t-call="smart_common.layout">
+        
+   	<div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="order.edit">
+          <div class="panelsheet">
+          
+          
+        
+          
+	            <header class="panelsheet-header clearfix">
+			      <h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/>.</small>
+			      </h1>
+	            </header>
+	             
+             
+	<div class="well">
+	
+			<legend>
+	   	  	  <strong>Details </strong> 
+			</legend>  	
+	
+	
+            <div class="control-group client and contact">
+              
+              <div class="controls">
+					<table width="100%" border="0">
+
+<!--Start Organisation-->
+						<t t-if="sale_order.partner_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><t t-esc="sale_order.partner_id.zip"/> <t t-esc="sale_order.partner_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"></td>
+		            	<td width="30%"></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+						
+						</t>
+						
+<!--End Organisation -->
+
+<!--Start Contact Person at an Organisation-->
+						<t t-if="not sale_order.partner_id.is_company"><t t-if="sale_order.partner_id.parent_id.is_company">
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.parent_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.parent_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.parent_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><t t-esc="sale_order.partner_id.parent_id.zip"/> <t t-esc="sale_order.partner_id.parent_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"><label class="control-label">Contact </label></td>
+		            	<td width="30%"><strong><t t-esc="sale_order.partner_id.name"/></strong></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>																				
+						<td>Mobile: <t t-esc="sale_order.partner_id.mobile"/></td>
+						</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+						
+				</t> </t>
+						
+<!--End Contact Person at an Organisation-->
+					
+					
+<!--Start Individual-->
+		            	<t t-if="not sale_order.partner_id.is_company"><t t-if="not sale_order.partner_id.parent_id.is_company"> 
+
+						<tr>
+							<td width="20%"><label class="control-label">Client </label></td>
+							<td width="30%"><strong>
+							<t t-esc="sale_order.partner_id.name"/>
+							</strong></td>				
+							<td width="50%"><t t-esc="sale_order.partner_id.street"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						<td><t t-esc="sale_order.partner_id.street2"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>City: <t t-esc="sale_order.partner_id.zip"/> <t t-esc="sale_order.partner_id.city"/></td>
+						</tr>
+					<tr>
+              			<td width="20%"></td>
+		            	<td width="30%"></td>				
+		            	<td width="50%"> Phone: <t t-esc="sale_order.partner_id.phone"/></td>
+		            	</tr>
+						<tr>
+						<td></td>														
+						<td></td>																				
+						<td>Mobile: <t t-esc="sale_order.partner_id.mobile"/></td>
+						</tr>
+						<tr>
+						<td></td>														
+						<td></td>														
+						<td> <t t-esc="sale_order.partner_id.email"/></td>
+						</tr>
+
+						
+						</t></t>
+						
+<!--End Individual -->
+						
+						
+						
+						
+						<tr>
+	              			<td width="20%"><label class="control-label">Project</label></td>
+							<td width="30%"><strong><t t-esc="sale_order.project_id.name"/></strong></td>
+			            	<td width="50%"></td>
+						</tr>
+						<tr>
+	              			<td width="20%"><label class="control-label">Notes</label></td>
+							<td width="30%"><t t-esc="sale_order.note"/></td>
+			            	<td width="50%"></td>
+						</tr>
+
+
+					</table>
+              </div>
+            </div>
+            
+    
+
+       </div>
+       <!-- end div well -->
+           
+	
+	     
+<!-- Order -->
+
+			  
+			  <div class="well " style="margin-top: -10px;">
+			  
+			  <legend>
+			    <strong>Billing </strong>
+     	  	  <strong>Details</strong> 
+			  </legend>
+
+  				<table id="billed-items" class="table" style="margin: -20px 0;">
+      	          <thead>
+      	            <tr>
+      	              <th colspan="2"><span class="muted">Description</span></th>
+      	              <th class="cell" style="text-align: right;"><span class="muted">Price</span></th>
+      	            </tr>
+      	          </thead>
+
+
+                  <tbody>
+                      <t t-foreach="sale_order.order_line" t-as="o">
+                            <tr>  
+				              <td colspan="2" class="cell-primary"><t t-raw="o.name"/></td>
+<!--                              <td align="right"><t t-esc="o.tax_id.name"/></td>-->
+                              <td class="cell" style="text-align: right;">
+								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+                              </td>
+                            </tr>
+                      </t>
+                      
+                            <tr>  
+                             <td class="cell" style="text-align: right;"></td>
+                             <td class="cell" style="text-align: right;"><strong>Excl VAT</strong></td>
+                             <td class="cell" style="text-align: right;"><strong>
+<!--								<span t-field="sale_order.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
+                             <t t-esc="sale_order.amount_untaxed"/> €
+								</strong></td>
+                            </tr>
+                            <tr>  
+                             <td class="cell" style="text-align: right;"></td>
+                             <td class="cell" style="text-align: right;">VAT</td>
+                             <td class="cell" style="text-align: right;">
+<!--								<span t-field="sale_order.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
+                             <t t-esc="sale_order.amount_tax"/> €
+                             </td>
+                            </tr>
+                             <tr>  
+
+                              <td align="right"></td>
+                              <td class="cell" style="text-align: right;"><strong>Total</strong></td>
+                              <td class="cell" style="text-align: right;">
+                              <strong>
+<!--								<span t-field="sale_order.amount_total" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
+                              <t t-esc="sale_order.amount_total"/> €
+                              </strong>
+                              </td>
+                            </tr>
+
+      	          </tbody>
+                </table>
+
+				               
+
+                               
+
+
+
+			</div>	     
+	     
+			<!--/panelsheet-content-->
+
+
+<!-- </div> -->
+
+
+          </div>
+          <!-- /panelsheet -->
+                 
+        </div>
+        <!-- /order.edit -->
+        
+        
+                <!-- ** CURRENT VIEW CONTENT ** -->
+        
+     </div>
+     <!-- /content span 10 -->
+</t>        
+</template>
 
 
 </data>

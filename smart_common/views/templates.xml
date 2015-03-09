@@ -92,20 +92,21 @@
             <li t-attf-class="#{expense_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/expense/list/all"><i class="glyphicon glyphicon-euro"></i><i class="glyphicon glyphicon-euro"></i> <b>All Expenses</b></a></li>
     	    <li t-attf-class="#{account_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/account/list"><i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-user"></i> <b>All Accounts</b></a></li>
 
-            <li t-attf-class="#{project_menu}" groups="base.group_smart_user"><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b> Project</b></a></li>
+            <li t-attf-class="#{project_menu}" groups="base.group_smart_user"><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b>Project</b></a></li>
             <li t-attf-class="#{client_menu}" groups="base.group_smart_user"><a t-attf-href="/client/list"><i class="glyphicon glyphicon-book"></i> <b>Clients</b></a></li>
             <li t-attf-class="#{order_menu}" groups="base.group_smart_user"><a t-attf-href="/order/list"><i class="glyphicon glyphicon-briefcase"></i> <b>Orders</b></a></li>
             <li t-attf-class="#{expense_menu}" groups="base.group_smart_user"><a t-attf-href="/expense/list"><i class="glyphicon glyphicon-euro"></i> <b>Expenses</b></a></li>
+            
 			<hr groups="base.group_smart_user" />
 	        <li t-attf-class="#{account_menu}" groups="base.group_smart_user"><a t-attf-href="/account"><i class="glyphicon glyphicon-user"></i> <b>My Account</b></a></li>
 			<hr/>
+<!--	        <li t-attf-class="#{documents_menu}"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b>Documents</b></a></li>-->
+			<t groups="base.group_smart_user">
+				        <li t-if="res_user.partner_id.dropbox_link"><a t-attf-href="#{res_user.partner_id.dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>
+<!--				        <li t-if="res_user.employee_ids[0].dropbox_link"><a t-attf-href="#{res_user.employee_ids[0].dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>-->
+				        </t>
 		    <li t-attf-class="#{salarysimulator_menu}"><a t-attf-href="/salary/simulator/"><i class="glyphicon glyphicon-pencil"></i> <b>Salary Simulator</b></a></li>
-<!--</t>-->
-<!--	        <li t-attf-class="#{documents_menu}" groups="not base.group_erp_manager"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b> Documents</b></a></li>-->
-<!--	        <li t-attf-class="#{documents_menu}" groups="not base.group_erp_manager"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b> Documents</b></a></li>-->
-	
 <!--		    <li class=""><a href="../salaries"><i class="glyphicon glyphicon-leaf"></i> Salaries</a></li>  -->
-<!--		    <li class=""><a href="../../expenses"><i class="glyphicon glyphicon-plane"></i> Expenses</a></li>-->
 
 		  </ul>
 		</nav>
@@ -197,21 +198,49 @@
 	    
 	    <!-- # Region selector -->
 
-<!--	    Original -->
-     <t t-if="res_company.country_id.code == 'ES'">
+
+<!--	    SMartAt -->
+     <t t-if="res_company.country_id.code == 'AT'">
 	    <span class="region">
 	      <a href="#" class="" data-toggle="dropdown">
-	        <span><i class="iconflag-de">De</i><b class="caret"></b></span>
+	        <span><i class="iconflag-at">At</i><b class="caret"></b></span>
 	      </a>
 	      <ul class="dropdown-menu">
 	        <!-- Change to your region -->
-	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
 	        <li class="divider"></li>
 	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
 	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
-<!--	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>-->
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
 	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
 	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+<!--	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>-->
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+
+<!--	    SMartCA -->
+     <t t-if="res_company.country_id.code == 'CA'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-ca">Ca</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-ca.org"><i class="iconflag-ca"></i> Canada</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
 	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
 	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
 	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
@@ -222,8 +251,9 @@
 	  </t>
 
 
+
 <!--	    SMartDe -->
-     <t t-if="res_company.country_id.code == 'ES'">
+     <t t-if="res_company.country_id.code == 'DE'">
 	    <span class="region">
 	      <a href="#" class="" data-toggle="dropdown">
 	        <span><i class="iconflag-de">De</i><b class="caret"></b></span>
@@ -237,6 +267,7 @@
 <!--	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>-->
 	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
 	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
 	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
 	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
 	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
@@ -249,29 +280,55 @@
 
 
 <!--	    SMartEu -->
-     <t t-if="res_company.country_id.code == 'EU'">
+     <t t-if="res_company.country_id.code == 'BE'">
 	    <span class="region">
 	      <a href="#" class="" data-toggle="dropdown">
-	        <span><i class="iconflag-eu">Eu</i><b class="caret"></b></span>
+	        <span><i class="iconflag-euu">Eu</i><b class="caret"></b></span>
 	      </a>
 	      <ul class="dropdown-menu">
 	        <!-- Change to your region -->
 	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
 	        <li class="divider"></li>
 	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
-<!--	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>-->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
 	        <li><a href="http://demo-de.smarteu.net"><i class="iconflag-de"></i> Deutschland</a></li>
-<!--	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>-->
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
 	        <li><a href="http://demo-ib.smarteu.net"><i class="iconflag-ib"></i> Iberia</a></li>
 	        <li><a href="http://demo-nl.smarteu.net"><i class="iconflag-nl"></i> Nederland</a></li>
 	        <li><a href="http://demo-se.smarteu.net"><i class="iconflag-sw"></i> Sverige</a></li>
-<!--	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>-->
-<!--	        <li class="divider"></li>-->
-<!--	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>-->
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>-->
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
 	      </ul>
 	    </span>
 	  </t>
 
+
+	    
+<!--	    SMartHu -->
+     <t t-if="res_company.country_id.code == 'HU'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-hu">Hu</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-hu.org"><i class="iconflag-hu"></i> Hungary</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
 	    
 <!--	    SMartIb -->
      <t t-if="res_company.country_id.code == 'ES'">
@@ -297,6 +354,59 @@
 	    </span>
 	  </t>
 
+<!--	    SMartIt -->
+     <t t-if="res_company.country_id.code == 'IT'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-it">It</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+
+<!--	    SMartNl -->
+     <t t-if="res_company.country_id.code == 'NL'">
+	    <span class="region">
+	      <a href="#" class="" data-toggle="dropdown">
+	        <span><i class="iconflag-nl">NL</i><b class="caret"></b></span>
+	      </a>
+	      <ul class="dropdown-menu">
+	        <!-- Change to your region -->
+	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
+	        <li class="divider"></li>
+	        <!-- List the the others SMart regions in alphabetical order, each in his local name -->
+	        <li><a href="http://smartbe.be"><i class="iconflag-be"></i> Belgium</a></li>
+	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
+	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
+	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
+<!--	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>-->
+	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>
+	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
+	        <li class="divider"></li>
+	        <li><a href="http://smart-eu.org"><i class="iconflag-eu"></i> SMart Europe</a></li>
+	      </ul>
+	    </span>
+	  </t>
+
+
+
 <!--	    SMartSe -->
      <t t-if="res_company.country_id.code == 'SE'">
 	    <span class="region">
@@ -312,6 +422,7 @@
 	        <li><a href="http://smart-de.org"><i class="iconflag-de"></i> Deutschland</a></li>
 	        <li><a href="http://smartfr.fr"><i class="iconflag-fr"></i> France</a></li>
 	        <li><a href="http://smart-ib.org"><i class="iconflag-ib"></i> Iberia</a></li>
+	        <li><a href="http://smart-it.org"><i class="iconflag-it"></i> Italia</a></li>
 	        <li><a href="http://smart-nl.org"><i class="iconflag-nl"></i> Nederland</a></li>
 <!--	        <li><a href="http://smart-se.org"><i class="iconflag-sw"></i> Sverige</a></li>-->
 	        <li><a href="http://smart-at.org"><i class="iconflag-at"></i> Österreich</a></li>
@@ -348,7 +459,7 @@
 	      <li class="dropdown">
             <t t-if="user_id.active == True">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-original-title=""><span t-esc="user_id.name"/><b class="caret"></b></a>
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu" id="smart_user_ddmenu">
                       <li><a href="/account" data-original-title="">Manage my account</a></li>
                       <li><a href="/web/" groups="base.group_smart_advisor">Backoffice</a></li>
                       <li><img src="/smart_common/static/ui/img/faux-column.png" width="75px"/></li>

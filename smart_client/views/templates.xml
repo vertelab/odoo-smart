@@ -32,14 +32,27 @@
 	            <div class="panelsheet-content">
 	              
 	              <section class="panelsheet-section">
+
+              
+<!--              start search box-->
+              <p>
+			   <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   
+                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
+				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search [not working yet] </button>
+              </form>
+              </p>
+<!--              end search box-->
+
+
 	                
 	                <table class="table table-striped" >
 		  	          <thead>
 		  	            <tr>
+		   	              <th></th>
+
 		   	              <th><span class="muted">Name</span></th>
 		  	              <th><span class="muted">Adress</span></th>
 		  	              <th><span class="muted">Country</span></th>
-		  	              <th><span class="muted">Type</span></th>
 <!--		  	              <th><span class="muted">VAT number</span></th>-->
 		  	              <th><span class="muted"> </span></th>  	              
 		  	            </tr>
@@ -51,13 +64,21 @@
 
 
 	                       <tr>
+<!-- display an icon based on what type of client it is -->
 							<td>
+                            <t t-if="not c.is_company and c.parent_id"> <span class="muted"><i class="icon-user" style="opacity: 0.4; margin: 8px 0;"></i></span> </t>
+                            <t t-if="not c.is_company and not c.parent_id"> <span class="muted"><i class="icon-user" style="opacity: 0.4; margin: 0px 0;"></i></span> </t>
+                            <t t-if="c.is_company and not c.parent_id"> <span class="muted"><i class="icon-briefcase" style="opacity: 0.4; margin: 0px 0;"></i></span> </t>
+							</td>
+							
 <!--Display name of Company, Contact person or Individual-->
+							<td>
 				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
 				                       		<t t-raw="c.parent_id.name"/>
 				                       </t>
-				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a>
+				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> (<t t-raw="c.client_contact_counter"/>)
 				                       </t>
+<!--Display the number of contact persons for the client-->
 	                       </td>
 	                       
 	                       <td><div t-raw="c.street"/></td>
@@ -65,12 +86,6 @@
 	                       <td><div t-field="c.country_id.name"/></td>
 
 
-<!--Type	                       -->
-	                       <td>
-                            <t t-if="not c.is_company and c.parent_id"> <span class="muted">Contact person</span> </t>
-                            <t t-if="not c.is_company and not c.parent_id"> <span class="muted">Individual</span> </t>
-                            <t t-if="c.is_company and not c.parent_id"> <span class="muted">Organisation</span> </t>
-	                       </td>
 <!--	                       <td><div t-field="c.vat" /></td>-->
 	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
 							</tr>
@@ -274,12 +289,12 @@
 			                </div>
 			              </div>
 
-			              <div class="control-group company name">
-			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
-			                <div class="controls">
-								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>
-			                </div>
-			              </div>
+<!--			              <div class="control-group company name">-->
+<!--			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>-->
+<!--			                <div class="controls">-->
+<!--								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>-->
+<!--			                </div>-->
+<!--			              </div>-->
 
 			              
 			             <div class="control-group">
@@ -351,12 +366,13 @@
 	<fieldset>
 			              <legend>Company registration and VAT-number </legend>
 
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Company identity number</strong></label>  <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
+						   <div class="control-group company name">
+			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
 			                <div class="controls">
-<!--				               	<input type="text" id="company_registry" name="company_registry" placeholder="" t-attf-value="#{res_partner.company_registry}"/>-->
+								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>
 			                </div>
 			              </div>
+
 
 
 			              <div class="control-group">
@@ -838,4 +854,3 @@ Hello world
 
 </data>
 </openerp>
-                                                                     
