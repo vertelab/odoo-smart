@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> <!-- noupdate="1" -->
+
+        <record id="dummy_employee" model="hr.employee">
+            <field name = "name">Smart Salary Simulator Dummy Employee</field>
+        </record>
+        
+        <record id="arbetsgivaravgift" model="hr.salary.rule">
+            <field name="amount_select">percentage</field>
+            <field eval="120" name="sequence"/>
+            <field eval="-10.0" name="amount_percentage"/>
+            <field name="amount_percentage_base">contract.wage</field>
+            <field name="code">ARBAVG</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+<!--
+            <field name="register_id" ref="hr_provident_fund_register"/>
+-->
+            <field name="name">Arbetsgivaravgift</field>
+        </record>
+        
+        <record id="skatt" model="hr.salary.rule">
+            <field name="amount_select">percentage</field>
+            <field eval="150" name="sequence"/>
+            <field eval="-30.0" name="amount_percentage"/>
+            <field name="amount_percentage_base">contract.wage</field>
+            <field name="code">SKATT</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Kommunalskatt</field>
+        </record>
+        
+        <record id="smart_fee" model="hr.salary.rule">
+            <field name="amount_select">percentage</field>
+            <field eval="50" name="sequence"/>
+            <field eval="-6.5" name="amount_percentage"/>
+            <field name="amount_percentage_base">contract.wage</field>
+            <field name="code">SMARTFEE</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="name">Smart fee</field>
+        </record>
+
+        <record id ="structure_musician" model="hr.payroll.structure">
+            <field name="name">Smart Salary Simulator Structure Musician</field>
+            <field name="code">SSSMUSIC</field>
+            <field eval="[(6, 0, [ref('smart_fee'), ref('skatt'),ref('arbetsgivaravgift')])]" name="rule_ids"/>
+<!--
+            <field name="company_id" ref="base.main_company"/>
+-->
+            <field name="parent_id" ref="hr_payroll.structure_base"/>
+        </record>
+        
+        
+        <record id="smart_contract_musician" model="hr.contract">
+            <field name="name">Smart Salary Simulator</field>
+            <field name="employee_id" ref="dummy_employee"/>
+            <field name="struct_id" ref="structure_musician"/>
+            <field name="date_start" eval="time.strftime('%Y-%m')+'-1'"/>
+            <field name="date_end" eval="time.strftime('%Y')+'-12-31'"/>
+
+            <field name="type_id" ref="hr_contract.hr_contract_type_emp"/>
+
+            <field name="notes">This is a Smart contract for musicians</field>
+            <field eval="1000.0" name="wage"/>
+<!--
+            <field name="working_hours" ref="resource.timesheet_group1"/>
+-->
+        </record>
+        
+<!--
+        <record id ="musician_rule" model="hr.payroll.rule">
+            <field name="name">Smart Salary Simulator Structure Musician</field>
+            <field name="category_id" ref=""/>
+            <field name="condition_select"></field>
+            <field name="code"></field>
+            <field name="sequence"></field>
+            <field name="condition_select">none</field>--> <!-- none, range, python -->
+<!--
+            <field name="quantity" type="float">1</field>
+-->
+            
+            <!--<field name="amount_select"></field>--> <!-- percentage, fix, code -->
+
+            
+<!--
+             fix
+            <field name="amount_fix"></field>
+-->
+            
+<!--
+            percentage
+            <field name="amount_percentage_base"></field>
+            <field name="amount_percentage"></field>
+-->
+            
+<!--
+            code
+            <field name="amount_python_compute"></field>
+-->
+<!--
+        </record>
+-->
+        
+        
+
+    </data>
+</openerp>
