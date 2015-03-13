@@ -196,29 +196,30 @@ msgstr "first.last@company.org"
 #. module: smart_client
 #: code:addons/smart_client/controllers/main.py:80
 msgid "21"
-msgstr ""
+msgstr "21"
 
 #. module: smart_client
 #: view:website:smart_client.list_all
 msgid "Acitivity"
-msgstr ""
+msgstr "Acitivity"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Add a new Client"
-msgstr ""
+msgstr "Fügen Sie einen neuen Client"
 
 #. module: smart_client
 #: view:website:smart_client.list_all
 msgid "All Clients"
-msgstr ""
+msgstr "Alle Clients"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company Phone and Email"
-msgstr ""
+msgstr "Unternehmen Telefon und E-Mail"
 
 #. module: smart_client
+#: view:website:smart_client.client_individual
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Contact person"
@@ -227,18 +228,18 @@ msgstr "Kontaktperson"
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Contact persons"
-msgstr ""
+msgstr "Ansprechpartner"
 
 #. module: smart_client
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Individual"
-msgstr ""
+msgstr "Einzelne"
 
 #. module: smart_client
 #: code:addons/smart_client/controllers/main.py:78
 msgid "My first client"
-msgstr ""
+msgstr "Mein erster Kunde"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -246,7 +247,7 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Organisation"
-msgstr ""
+msgstr "Organisation"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -254,44 +255,44 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Type"
-msgstr ""
+msgstr "Art"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Back"
-msgstr ""
+msgstr "Der Rücken"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company identity number"
-msgstr ""
+msgstr "Unternehmensidentifikationsnummer"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company reference ID"
-msgstr ""
+msgstr "Unternehmen Referenz-ID"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company registration and VAT-number"
-msgstr ""
+msgstr "Eintragung von Unternehmen und MwSt-Nummer"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Edit Contact person"
-msgstr ""
+msgstr "Bearbeiten Ansprechpartner"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Edit client"
-msgstr ""
+msgstr "Client bearbeiten"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -300,37 +301,37 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Here is an explanation text"
-msgstr ""
+msgstr "Hier ist ein Erklärungstext"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Notes"
-msgstr ""
+msgstr "Aufzeichnungen"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "SE012345678901"
-msgstr ""
+msgstr "SE012345678901"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "This is the chamber of commerce or government identity number."
-msgstr ""
+msgstr "Dies ist die Handelskammer oder Regierungsidentitätsnummer."
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Use full international VAT-format: SE012345678901."
-msgstr ""
+msgstr "Verwenden Sie Voll internationalen Mehrwertsteuer-Format: SE012345678901."
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Use this field for comments or additional info to SMart."
-msgstr ""
+msgstr "Verwenden Sie dieses Feld für Anmerkungen oder weitere Informationen zu SMart."
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "VAT-number"
-msgstr ""
+msgstr "MwSt-Nummer"
 

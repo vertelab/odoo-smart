@@ -105,8 +105,14 @@ class website_order(http.Controller):
 #        return request.website.render("smart_order.list",values)
 
 
-    @http.route(['/order/<model("sale.order"):sale_order>','/order/new','/order/<model("sale.order"):sale_order>/edit_lines','/order/<model("sale.order"):sale_order>/edit_order_data',
-    '/order/<model("sale.order"):sale_order>/cancel/','/order/<model("sale.order"):sale_order>/line/<model("sale.order.line"):sale_order_line>/delete'], type='http', auth="user", website=True)
+    @http.route(['/order/<model("sale.order"):sale_order>',
+    '/order/new',
+    '/order/<model("sale.order"):sale_order>/edit_lines',
+    '/order/<model("sale.order"):sale_order>/edit_order_data',
+    '/order/<model("sale.order"):sale_order>/print',
+    '/order/<model("sale.order"):sale_order>/cancel/',
+    '/order/<model("sale.order"):sale_order>/line/<model("sale.order.line"):sale_order_line>/delete',
+    ], type='http', auth="user", website=True)
     def order(self, sale_order=False,sale_order_line=False, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         
@@ -118,7 +124,8 @@ class website_order(http.Controller):
             context['next_form'] = 'smart_order.edit_lines'         
             context['form_action'] = '/order/new'
         else:
-            template='smart_order.order'
+#            template='smart_order.order'
+            template='smart_order.order_print'
             context['form_action'] = '/order/%s' % sale_order.id         
             if context.get('next_form') == 'smart_order.edit_order_data':
                 template=context.get('next_form')     
@@ -150,6 +157,8 @@ class website_order(http.Controller):
             'clients_order':  request.registry['res.partner'].browse(cr,uid,request.registry['res.partner'].search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)],context=context),context=context),
             'clients_local':  request.registry['res.partner'].browse(cr,uid,request.registry['res.partner'].search(cr,uid,[('company_id','=',res_user.company_id.id)],context=context),context=context),
         }
+        if len(values['projects']) == 0:
+			values['error'] = _('You have to create your first project before you continues with the order')
 
         if request.httprequest.method == 'POST':
             _logger.warning("This is order post %s /order/nn" % (post))

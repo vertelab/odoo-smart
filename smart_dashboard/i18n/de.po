@@ -136,7 +136,7 @@ msgstr "Sumbitted (Bestätigung)"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr "Übersetzung Inhalt wurde zuletzt aktualisiert: 2015/02/17"
+msgstr "Übersetzung Inhalt wurde zuletzt aktualisiert: 2015/02/18"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard

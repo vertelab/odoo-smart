@@ -16,6 +16,7 @@ class res_partner(osv.Model):
         'smart_bank_acc_no': fields.char('Account No',size=60,),
         'smart_bank_acc_iban': fields.char('IBAN',size=60,),
         'smart_bank_acc_bic': fields.char('BIC / SWIFT',size=60,),
+        'dropbox_link': fields.char('Your documents',size=100,),
     }
 
 

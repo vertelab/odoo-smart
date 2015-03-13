@@ -341,9 +341,8 @@
 								<input id="otherid" name="otherid" t-attf-value="#{res_user.employee_ids[0].otherid}" type="text"/>
   				    	      </div>
   				        	</div>
-  				        
 
-
+ 				        
 <!--							<t t-esc="hr_country_id.employee_ids"/>-->
 <!--							<t t-esc="res_user.employee_ids[0].country_id.id"/>-->
 <!--							<t t-esc="res_user.employee_ids[0].country_id.name"/>-->
@@ -356,9 +355,6 @@
 <!--                                        <option t-attf-value="#{c.id}" ><t t-esc="c.name"/></option> -->
 
 <!--                           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.country_id.id}"/>-->
-
-
-
 
 			        
 	  				        <div class="control-group nationality">
@@ -394,6 +390,21 @@
   				        	      </div>
   				            	</div>
   					          </div>
+
+						<ul groups="base.group_smart_advisor">  		
+  				        <legend>System administration</legend>
+						</ul> 
+
+<!--  				            <div class="control-group" >-->
+  				            <div class="control-group" groups="base.group_smart_advisor">
+	  				          <label class="control-label" for="dropbox_link">Dropbox link </label>
+  					          <div class="controls">
+    					            <input id="dropbox_link" name="dropbox_link" placeholder="http://..." t-attf-value="#{res_user.partner_id.dropbox_link}" type="text"/>
+  				        	  </div>
+	  				        </div>
+
+
+
 
 
 							<hr/>
@@ -558,8 +569,7 @@
 <template name="User list" id="list">
     <t t-call="smart_common.layout">
         
-
-   	    <div class="content span10">
+	<div class="content span10">
       
         <!-- ** CURRENT VIEW CONTENT ** -->
         
@@ -583,7 +593,7 @@
       	              <th><span class="muted">Name</span></th>
       	              <th><span class="muted">Activity</span></th>
       	              <th><span class="muted">ID</span></th>
-<!--      	              <th><span class="muted">Active since</span></th>-->
+      	              <th><span class="muted">Active since</span></th>
       	              <th><span class="muted">Status</span></th>
       	              <th><span class="muted"> </span></th>
       	            </tr>
@@ -596,7 +606,7 @@
                               <td class="cell-primary"><a  t-att-href="'/account/%s' % u.id"><t t-raw="u.name"/></a></td>
                               <td><t t-raw="u.company_id.name"/></td>
                               <td><t t-raw="u.id"/></td>
-<!--                              <td><t t-raw="u.date"/>date</td>-->
+                              <td><t t-raw="u.create_date"/></td>
 <!--                              [[ formatLang(o.date_start,date=True) ]]-->
                               <td><t t-raw="u.state"/></td>
 <!--  Anders                          <td class="cell-primary"><a  t-att-href="'/order/delete/%s' % tr_order.id"><a href="#" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return false;'/><i class="icon-trash icon-white"></i></a></td>-->

@@ -130,6 +130,9 @@ class res_users(osv.Model):
                 if company and company.id <> user.company_id.id:    
                     user.company_ids = [(6,0,[int(template_user.company_id.id),int(company.id)])]
                     user.company_id = int(company.id)
+                    admin_user = self.env['res.users'].browse(1)
+                    admin_user.sudo.company_ids = [(4,company.id,0)]
+                    
 
 
     def add_message(self):

@@ -95,180 +95,180 @@ msgstr "Österreich"
 #. module: smart_common
 #: view:website:website.layout
 msgid "Backoffice"
-msgstr ""
+msgstr "Backoffice"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Clients"
-msgstr ""
+msgstr "Clients"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Expenses"
-msgstr ""
+msgstr "Kosten"
 
 #. module: smart_common
 #: view:website:smart_common.layout_footer_copyright
 msgid "Hello World"
-msgstr ""
+msgstr "Hallo Welt"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "My Account"
-msgstr ""
+msgstr "Mein Konto"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "My Dashboard"
-msgstr ""
+msgstr "Meine Übersicht"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Orders"
-msgstr ""
+msgstr "Bestellungen"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Salary Simulator"
-msgstr ""
+msgstr "Salary Simulator"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Sign in"
-msgstr ""
+msgstr "Anmelden"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
 msgid "©  SMartEu 2013->Today"
-msgstr ""
+msgstr "© SMartEu 2013-> Heute"
 
 #. module: smart_common
 #: view:website:smart_common.smartfooter
 msgid "©  SMartEu 2014-Today"
-msgstr ""
+msgstr "© SMartEu 2014-Heute"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "About SMart"
-msgstr ""
+msgstr "Über SMart"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "All Accounts"
-msgstr ""
+msgstr "Alle Konten"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "All Clients"
-msgstr ""
+msgstr "Alle Clients"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "All Expenses"
-msgstr ""
+msgstr "Alle Ausgaben"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "All Orders"
-msgstr ""
+msgstr "Alle Bestellungen"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "All Projects"
-msgstr ""
+msgstr "Alle Projekte"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Change Theme"
-msgstr ""
+msgstr "Theme ändern"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Content"
-msgstr ""
+msgstr "Inhalt"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Customize"
-msgstr ""
+msgstr "Anpassen"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Edit Menu"
-msgstr ""
+msgstr "Menü Bearbeiten"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Edit Top Menu"
-msgstr ""
+msgstr "Bearbeiten Top Menu"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "HELP & TUTORIALS"
-msgstr ""
+msgstr "HILFE & Tutorials"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "HTML Editor"
-msgstr ""
+msgstr "HTML-Editor"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Install Apps"
-msgstr ""
+msgstr "Installieren Sie Apps"
 
 #. module: smart_common
 #: view:website:smart_common.layout
 msgid "Logged in as Advisor"
-msgstr ""
+msgstr "In als Advisor angemeldet"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Mobile preview"
-msgstr ""
+msgstr "Mobil Vorschau"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "New Page"
-msgstr ""
+msgstr "Neue Seite"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Promote"
-msgstr ""
+msgstr "Fördern"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Promote page on the web"
-msgstr ""
+msgstr "Fördern Seite im Web"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "Webterms"
-msgstr ""
+msgstr "Webterms"
 
 #. module: smart_common
 #: view:website:website.layout
 msgid "© SMartEu 2015-Today"
-msgstr ""
+msgstr "© SMartEu 2015-Heute"
 

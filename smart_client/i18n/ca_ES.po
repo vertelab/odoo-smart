@@ -173,7 +173,7 @@ msgstr "CIF"
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Your clients name"
-msgstr "Nombre de tus clientes"
+msgstr "Nom dels teus clients"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -196,49 +196,50 @@ msgstr "nom.cognom@empresa.org"
 #. module: smart_client
 #: code:addons/smart_client/controllers/main.py:80
 msgid "21"
-msgstr ""
+msgstr "21"
 
 #. module: smart_client
 #: view:website:smart_client.list_all
 msgid "Acitivity"
-msgstr ""
+msgstr "Activitat"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Add a new Client"
-msgstr ""
+msgstr "Afegeix un client nou"
 
 #. module: smart_client
 #: view:website:smart_client.list_all
 msgid "All Clients"
-msgstr ""
+msgstr "Tots els clients"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company Phone and Email"
-msgstr ""
+msgstr "Telèfon i email de l'empresa"
 
 #. module: smart_client
+#: view:website:smart_client.client_individual
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Contact person"
-msgstr ""
+msgstr "Persona de contacte"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Contact persons"
-msgstr ""
+msgstr "Persones de contacte"
 
 #. module: smart_client
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Individual"
-msgstr ""
+msgstr "Particular"
 
 #. module: smart_client
 #: code:addons/smart_client/controllers/main.py:78
 msgid "My first client"
-msgstr ""
+msgstr "El meu primer client"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -246,7 +247,7 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Organisation"
-msgstr ""
+msgstr "Entitat"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -254,44 +255,44 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Type"
-msgstr ""
+msgstr "Tipus"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Back"
-msgstr ""
+msgstr "Tornar"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Comments"
-msgstr ""
+msgstr "Comentaris"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company identity number"
-msgstr ""
+msgstr "Número de registre de l'empresa"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company reference ID"
-msgstr ""
+msgstr "Número de referència de l'empresa"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company registration and VAT-number"
-msgstr ""
+msgstr "CIF empresa"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Edit Contact person"
-msgstr ""
+msgstr "Edita persona de contacte"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 msgid "Edit client"
-msgstr ""
+msgstr "Edita client"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -300,13 +301,13 @@ msgstr ""
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Here is an explanation text"
-msgstr ""
+msgstr "Heus aquí un text d'explicació"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
@@ -316,21 +317,21 @@ msgstr ""
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "This is the chamber of commerce or government identity number."
-msgstr ""
+msgstr "Aquest és el número identificatiu de la cambra de comerç o del govern"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Use full international VAT-format: SE012345678901."
-msgstr ""
+msgstr "Utilitza el format internacional del CIF: ES-F-90065418"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Use this field for comments or additional info to SMart."
-msgstr ""
+msgstr "Utilitza aquest camp per comentaris i/o informació addicional per SMartIb"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "VAT-number"
-msgstr ""
+msgstr "CIF"
 

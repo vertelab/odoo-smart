@@ -10,7 +10,7 @@ msgstr ""
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "+32 123..."
-msgstr "+34 123 ..."
+msgstr "+34 93 ..."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -35,7 +35,7 @@ msgstr "Perfil"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Alice Artist"
-msgstr "Alice Artista"
+msgstr "Alicia Artista"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -220,65 +220,65 @@ msgstr "Arxiu comprimido"
 #. module: smart_account
 #: field:res.partner,smart_bank_acc_no:0
 msgid "Account No"
-msgstr ""
+msgstr "Número de cuenta"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account Number"
-msgstr ""
+msgstr "Número de cuenta"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account number/ IBAN"
-msgstr ""
+msgstr "Número de cuenta / IBAN"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_acc_bic:0
 msgid "BIC / SWIFT"
-msgstr ""
+msgstr "BIC / Swift"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_account_type:0
 msgid "Bank Account Type"
-msgstr ""
+msgstr "Tipo de cuenta bancaria"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_name:0
 msgid "Bank name"
-msgstr ""
+msgstr "Nombre del banco"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If the bank is in an other country"
-msgstr ""
+msgstr "Si el banco está en otro país"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Your Preferred Language"
-msgstr ""
+msgstr "Tu idioma preferido"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If the ID-card-number is different from your Social Security number."
-msgstr ""
+msgstr "Si tu DNI es diferente de tu número de seguridad social"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you do not have a social security number or a national identification number."
-msgstr ""
+msgstr "Si no tienes un número de seguridad social o un DNI"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you hold a foreign citizenship."
-msgstr ""
+msgstr "Si tienes nacionalidad extranjera"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you want us to withhold a different level of tax."
-msgstr ""
+msgstr "Si quieres que te retengamos otro porcentaje de IRPF"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "This is your national identity number."
-msgstr ""
+msgstr "Este es tu DNI"
 

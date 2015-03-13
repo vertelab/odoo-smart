@@ -55,7 +55,7 @@ class website_account(http.Controller):
         context['lang'] = res_user.lang
             
         partnerdata = dict((field_name, post[field_name])
-            for field_name in ['phone','mobile','street','zip','city','country_id','smart_bank_account_type','smart_bank_name','smart_bank_acc_no', 'smart_bank_acc_iban','smart_bank_acc_bic'] if post.get(field_name))
+            for field_name in ['phone','mobile','street','zip','city','country_id','smart_bank_account_type','smart_bank_name','smart_bank_acc_no', 'smart_bank_acc_iban','smart_bank_acc_bic','dropbox_link'] if post.get(field_name))
             
         if partnerdata:
             account.partner_id.write(partnerdata)

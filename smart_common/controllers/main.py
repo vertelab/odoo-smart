@@ -36,6 +36,9 @@ class smart_common(http.Controller):
         res_user = pool.get('res.users').browse(cr,uid,uid,context)
         context['lang'] = res_user.lang
 
+#        hrdata = dict((field_name.replace('hr_',''), post[field_name])
+#            for field_name in ['dropbox_link'] if post.get(field_name))
+
 
         values = {
             'client_menu': 'active',

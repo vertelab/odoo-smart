@@ -15,7 +15,7 @@ msgstr "+49 123 ..."
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account"
-msgstr "Konto 654"
+msgstr "Konto"
 
 #. module: smart_account
 #: view:website:smart_account.list
@@ -220,65 +220,65 @@ msgstr "Reißverschluss"
 #. module: smart_account
 #: field:res.partner,smart_bank_acc_no:0
 msgid "Account No"
-msgstr ""
+msgstr "Konto Nr"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account Number"
-msgstr ""
+msgstr "Kontonummer"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Account number/ IBAN"
-msgstr ""
+msgstr "Kontonummer / IBAN"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_acc_bic:0
 msgid "BIC / SWIFT"
-msgstr ""
+msgstr "BIC / Swift"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_account_type:0
 msgid "Bank Account Type"
-msgstr ""
+msgstr "Kontotyp"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_name:0
 msgid "Bank name"
-msgstr ""
+msgstr "Name der Bank"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If the bank is in an other country"
-msgstr ""
+msgstr "Ist die Bank in einem anderen Land"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Your Preferred Language"
-msgstr ""
+msgstr "Ihre bevorzugte Sprache"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If the ID-card-number is different from your Social Security number."
-msgstr ""
+msgstr "Wenn der ID-Card-Nummer unterscheidet sich von Ihrer Sozialversicherungsnummer."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you do not have a social security number or a national identification number."
-msgstr ""
+msgstr "Wenn Sie nicht über eine Sozialversicherungsnummer oder eine nationale Identifikationsnummer."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you hold a foreign citizenship."
-msgstr ""
+msgstr "Wenn Sie halten eine ausländische Staatsangehörigkeit."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "If you want us to withhold a different level of tax."
-msgstr ""
+msgstr "Wenn Sie wollen, dass wir eine andere Ebene der Steuerabzug vor."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "This is your national identity number."
-msgstr ""
+msgstr "Das ist Ihre nationale Identitätsnummer."
 

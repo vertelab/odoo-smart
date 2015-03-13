@@ -16,6 +16,7 @@
                 <h1>Expenses</h1>
                 <div class="pull-right">
                   <a href="/expense/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New expense note</a>
+                  <a href="http://stage.smart-eu.org/smart_expense/static/ui/Expenses_SMartSe/index.html" class="btn btn-large btn-primary"><i class="icon-plus"></i> Excel form </a>
                 </div>
               </div>
             </header>
@@ -402,10 +403,10 @@
                       <p>Expenses incurred to travel for the job:<br/> 
                     <t t-foreach="cat_travel" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
                        </p>
@@ -418,10 +419,10 @@
                       <p>All purchases of material for the management of the activity.<br/>
                     <t t-foreach="cat_office" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
                        </p>
@@ -434,10 +435,10 @@
                       <p>If you have costs as part of a contract.<br/>
                     <t t-foreach="cat_meal" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
                        </p>
@@ -450,10 +451,10 @@
                       <p>Your own items made available for a daily fee to the activity.<br/>
                     <t t-foreach="cat_personal" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
                        </p>
@@ -466,10 +467,10 @@
                       <p>The cost of your work space etc.<br/>
                     <t t-foreach="cat_rent" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
 </p>
@@ -482,10 +483,10 @@
                       <p>Regular necessary payments for your work etc.<br/>
                     <t t-foreach="cat_fixed" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
 </p>
@@ -498,10 +499,10 @@
                       <p>Anything that fall in these other categories.<br/>
                     <t t-foreach="cat_other" t-as="c">
                         <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
                         <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/>, </a><br/>
+                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
                         </t>
 					</t>
                       .</p>

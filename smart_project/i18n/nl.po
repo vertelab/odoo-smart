@@ -19,6 +19,7 @@ msgstr "Actief"
 
 #. module: smart_project
 #: view:website:smart_project.list
+#: view:website:smart_project.list_all
 msgid "Add a new project"
 msgstr "Voeg een nieuw project"
 
@@ -38,12 +39,8 @@ msgid "Edit Project"
 msgstr "Project bewerken"
 
 #. module: smart_project
-#: view:website:smart_project.project_overview
-msgid "Hello world"
-msgstr "Hello world"
-
-#. module: smart_project
 #: view:website:smart_project.list
+#: view:website:smart_project.list_all
 msgid "Name"
 msgstr "Naam"
 
@@ -58,7 +55,7 @@ msgid "Project name"
 msgstr "Projectnaam"
 
 #. module: smart_project
-#: view:website:smart_common.smartmenu view:website:smart_project.list
+#: view:website:smart_project.list
 msgid "Projects"
 msgstr "Projecten"
 
@@ -73,7 +70,7 @@ msgid "Save"
 msgstr "Opslaan"
 
 #. module: smart_project
-#: view:website:smart_project.project
+#: view:website:smart_project.project_overview
 msgid "Status"
 msgstr "Toestand"
 
@@ -81,4 +78,122 @@ msgstr "Toestand"
 #: model:ir.model,name:smart_project.model_website
 msgid "Website"
 msgstr "Website"
+
+#. module: smart_project
+#: view:website:smart_project.list_all
+msgid "Activity"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list_all
+msgid "All Projects"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Approved"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Cancelled"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Client"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Description"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Draft"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Invoiced"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Open"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Paid"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Pending Approval"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Planned"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Planned Expenses"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Planned Income"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list
+#: view:website:smart_project.list_all
+msgid "Project Budget"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Save changes"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Submitted"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Sumbitted"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project_overview
+msgid "Type"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list
+#: view:website:smart_project.list_all
+msgid "View Budget"
+msgstr ""
+
+#. module: smart_project
+#: code:addons/smart_project/controllers/main.py:64
+msgid "Your project name"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.project
+msgid "Your projects new name"
+msgstr ""
+
+#. module: smart_project
+#: view:website:smart_project.list
+#: view:website:smart_project.list_all
+msgid "here is an explanation text"
+msgstr ""
 

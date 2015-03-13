@@ -34,6 +34,7 @@ demo-sync
 
 
 ### Pull from Github
+cd /usr/share/odoo-smart
 git pull
 
 git pull stage merge commit pull och commit igen
