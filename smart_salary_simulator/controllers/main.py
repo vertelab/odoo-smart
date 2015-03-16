@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import werkzeug
 
-from openerp import http, fields
+from openerp import http, fields, _
 from openerp.http import request
 
 import logging
@@ -25,9 +25,10 @@ class website_client(http.Controller):
         _logger.info(employee.name)
         if request.httprequest.method == 'POST':
             values = {
-                'salary': post.get('salary-amount'),
-                'yob': post.get('salary-birth-year'),
-                'tax': post.get('salary-tax-prct'),
+                'salary': float(post.get('salary-amount') or 0),
+                'yob': int(post.get('salary-birth-year') or 0),
+                'tax': float(post.get('salary-tax-prct') or 0),
+                'expenses': float(post.get('salary-expense') or 0),
             }
             if post.get('sender') == 'form':
                 payslip = env['hr.payslip'].create({
@@ -37,31 +38,58 @@ class website_client(http.Controller):
                     'date_to': fields.Date.today(),
                     'state': 'draft',
                     'contract_id': contract.id,
+                    'input_line_ids': [
+                        (0, _, {
+                            'name': 'Salary Base',
+                            'code': 'SALARY',
+                            'contract_id': contract.id,
+                            'amount': values['salary'],
+                        }),
+                        (0, _, {
+                            'name': 'Year of Birth',
+                            'code': 'YOB',
+                            'contract_id': contract.id,
+                            'amount': values['yob'],
+                        }),
+                        (0, _, {
+                            'name': 'Withholding Tax Rate',
+                            'code': 'WT',
+                            'contract_id': contract.id,
+                            'amount': values['tax'],
+                        }),
+                        (0, _, {
+                            'name': 'Expenses',
+                            'code': 'EXPENSES',
+                            'contract_id': contract.id,
+                            'amount': values['expenses'],
+                        }),
+                        (0, _, {
+                            'name': 'Current Year',
+                            'code': 'YEAR',
+                            'contract_id': contract.id,
+                            'amount': fields.Date.from_string(fields.Date.today()).year,
+                        }),
+                        ]
                 })
-                for line in payslip.input_line_ids:
-                    if line.code == 'SALARY':
-                        line.amount = values['salary']
-                    elif line.code == 'AGE':
-                        line.amount = values['yob']
-                    elif line.code == 'WT':
-                        line.amount = values['tax']
                 lines = payslip.simulate_sheet()
-                payslip.unlink()
+                #payslip.unlink()
                 values['lines'] = lines
                 
                 for line in lines:
-                    if line['code'] == 'BASIC':
-                        values['invoice'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
-                    elif line['code'] == 'NET':
-                        values['salary'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
+                    if line['code'] == 'NET':
+                        values['net'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
                 return request.website.render("smart_salary_simulator.result_se", values)
             elif post.get('sender') == 'result':
                 return request.website.render("smart_salary_simulator.simulator_form_se", values)
         else:
+            
+            #TODO: Get tax from wherever
+            
             values = {
-                'salary': 1000,
-                'yob': 1990,
-                'tax': 30,
+                'salary': contract.wage or 1000,
+                'yob': (employee.birthday and fields.Date.from_string(employee.birthday).year) or 1990,
+                'tax': 30.0,
+                'expenses': 0,
             }
             return request.website.render("smart_salary_simulator.simulator_form_se", values)
         """

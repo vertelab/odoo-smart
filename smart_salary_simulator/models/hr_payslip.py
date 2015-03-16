@@ -1,4 +1,6 @@
-class hr_payslip(model.Model):
+class smart_salary_simulator_payslip(model.TransientModel):
+    _name = "smart_salary_simulator.payslip"
+    _description = "Simulated payslip"
     _inherit = 'hr.payslip'
 
     def simulate_sheet(self, cr, uid, ids, context=None):

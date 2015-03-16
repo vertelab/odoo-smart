@@ -1,1 +1,2 @@
 import res_partner
+import smart_salary_simulator_payslip
