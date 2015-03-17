@@ -73,7 +73,7 @@
         <record id="vat" model="hr.salary.rule">
             <field name="amount_select">code</field>
             <field eval="5" name="sequence"/>
-            <field name="amount_python_compute">result = - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0)</field>
+            <field name="amount_python_compute">result = - inputs.SALARY.amount * (1 - 100 / (100.0 + inputs.VAT.amount))</field>
             <field name="code">VAT</field>
             <field name="category_id" ref="hr_payroll.BASIC"/>
             <field name="name">VAT ( %)</field>
@@ -82,7 +82,7 @@
         <record id="smart_fee" model="hr.salary.rule">
             <field name="amount_select">code</field>
             <field eval="20" name="sequence"/>
-            <field name="amount_python_compute">result = - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0</field>
+            <field name="amount_python_compute">result = - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount * (1 - 100 / (100.0 + inputs.VAT.amount)) - inputs.EXPENSES.amount) / 100.0</field>
             <field name="code">SMARTFEE</field>
             <field name="category_id" ref="hr_payroll.BASIC"/>
             <field name="name">SMartSe's share</field>
@@ -102,11 +102,11 @@
             <field eval="50" name="sequence"/>
             <field name="amount_python_compute">age = inputs.YEAR.amount - inputs.YOB.amount
 if age &lt; 27:
-    res = -0.1549 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
+    res = -0.1549 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount * (1 - 100 / (100.0 + inputs.VAT.amount)) - inputs.EXPENSES.amount) / 100.0)
 elif age &lt; 66:
-    res = -0.3142 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
+    res = -0.3142 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount * (1 - 100 / (100.0 + inputs.VAT.amount)) - inputs.EXPENSES.amount) / 100.0)
 elif age &lt; 77:
-    res = -0.1021 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
+    res = -0.1021 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount * (1 - 100 / (100.0 + inputs.VAT.amount)) - inputs.EXPENSES.amount) / 100.0)
 else:
     res = 0
 if inputs.MUSICIAN.amount > 0:
