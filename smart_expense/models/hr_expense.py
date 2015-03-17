@@ -54,11 +54,11 @@ class hr_expense_line(osv.osv):
 
     _columns = {
         'justification': fields.char('Justification for this expense', ),
-        'from': fields.char('From', ),
+        'starting_point': fields.char('From', ),
         'to': fields.char('To', ),
         'distance': fields.integer('Distance, km', ),        
-        'amount_untaxed': fields.function(_untaxed, type="float", digits_compute=dp.get_precision('Account'), string='Untaxed',multi='all',help="Expense amount without tax.",),
-        'amount_tax': fields.function(_untaxed,     type="float", digits_compute=dp.get_precision('Account'), string='Tax',    multi='all',help="Expense tax.",),
+        'amount_untaxed': fields.function(_untaxed, type="float", digits_compute=dp.get_precision('Account'), string='Untaxed', multi='all',help="Expense amount without tax.",),
+        'amount_tax': fields.function(_untaxed,     type="float", digits_compute=dp.get_precision('Account'), string='Tax',     multi='all',help="Expense tax.",),
         'unit_amount_untaxed': fields.float('Unit Price without tax', digits_compute=dp.get_precision('Product Price')),
         }
         

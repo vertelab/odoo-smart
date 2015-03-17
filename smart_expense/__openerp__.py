@@ -2,7 +2,7 @@
     'name': 'SMart Expense',
     'category': 'Website',
     'summary': 'Create your Expense notes on-line',
-    'version': '0.1',
+    'version': '0.2',
     'description': """
 SMart Expense
 ===========
@@ -14,6 +14,7 @@ SMart Expense
     'data': [
         'views/templates.xml',
         'views/product_view.xml',
+        'views/templates_expense_forms.xml',        
     ],
     'demo': [ ],
     'installable': True,

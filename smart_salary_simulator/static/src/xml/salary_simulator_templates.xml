@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="smart_salary_simulator.payslip_lines_table">
+        foobar
+        <t t-foreach="lines" t-as="line">
+            <tr>
+            <td>
+                <t t-raw="line[0]"/>
+            </td>
+            <td>
+                <t t-raw="line[1]"/>
+            </td>
+            </tr>
+        </t>
+    </t>
+</templates>

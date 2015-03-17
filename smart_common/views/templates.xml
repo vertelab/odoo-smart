@@ -102,7 +102,7 @@
 			<hr/>
 <!--	        <li t-attf-class="#{documents_menu}"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b>Documents</b></a></li>-->
 			<t groups="base.group_smart_user">
-				        <li t-if="res_user.partner_id.dropbox_link"><a t-attf-href="#{res_user.partner_id.dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>
+				        <li t-if="res_user and res_user.partner_id and res_user.partner_id.dropbox_link"><a t-attf-href="#{res_user.partner_id.dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>
 <!--				        <li t-if="res_user.employee_ids[0].dropbox_link"><a t-attf-href="#{res_user.employee_ids[0].dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>-->
 				        </t>
 		    <li t-attf-class="#{salarysimulator_menu}"><a t-attf-href="/salary/simulator/"><i class="glyphicon glyphicon-pencil"></i> <b>Salary Simulator</b></a></li>

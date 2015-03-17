@@ -1,5 +1,14 @@
 Create new database
 - xx_database and xx_demo
+at_demo
+ca_demo
+de_demo
+eu_demo
+hu_demo
+ib_demo
+it_demo
+nl_demo
+se_demo
 
 - Install "Accounting & Finance" module (local currency and CoA)
 - Create Default Search filter for Apps: "smart"

@@ -3,3 +3,4 @@ base.group_smart_user,SMartUser
 base.group_smart_advisor,SMartAdvisor
 base.group_smart_country_manager,SMartCountryManager
 base.group_smart_activity_owner,SMartActivityOwner
+base.group_smart_debug,SMartDebug

@@ -93,7 +93,7 @@ class website_client(http.Controller):
                     'client_menu': 'active',
                     'res_user': res_user,
                     'res_partner': partner,
-                    'res_countrys': pool.get('res.country').browse(cr,uid,pool.get('res.country').search(cr,uid,[],context=context),context=context),
+                    'res_countrys': pool.get('res.country').browse(cr,uid,pool.get('res.country').search(cr,uid,[],order="code",context=context),context=context),
                     'res_partners':  clients,
                     'form_post': '/client/%s?redirect=%s' % (partner.id,post.get('redirect')),
                 }
@@ -102,7 +102,8 @@ class website_client(http.Controller):
 
     
             partner_data = dict((field_name.replace('hr_',''), post[field_name])
-                for field_name in ['name','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
+#                for field_name in ['name','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
+                for field_name in ['name', 'firstname','lastname','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
             if partner_data:
                 partner.write(partner_data)
 
