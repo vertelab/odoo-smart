@@ -21,10 +21,96 @@
 
 from openerp import models, fields, api, _
 from openerp.exceptions import except_orm, Warning, RedirectWarning
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class smart_salary_simulator_payslip(models.Model):
     _inherit = 'hr.payslip'
     
+    def simulate_payslip(self, uid, values):
+        user = self.env['res.users'].browse(uid)[0]
+        if user.employee_ids and user.employee_ids[0].contract_ids:
+            employee = user.employee_ids[0]
+            contract = employee.contract_ids[0]
+        else:
+            employee = self.env.ref('smart_salary_simulator.dummy_employee')
+            contract = self.env.ref('smart_salary_simulator.smart_contract_swe')
+        _logger.info(values['smart_fee'])
+        payslip = self.create({
+            'struct_id': contract.struct_id.id,
+            'employee_id': employee.id,
+            'date_from': fields.Date.today(),
+            'date_to': fields.Date.today(),
+            'state': 'draft',
+            'contract_id': contract.id,
+            'input_line_ids': [
+                (0, _, {
+                    'name': 'Salary Base',
+                    'code': 'SALARY',
+                    'contract_id': contract.id,
+                    'amount': values['salary'],
+                }),
+                
+                (0, _, {
+                    'name': 'Invoice VAT',
+                    'code': 'VAT',
+                    'contract_id': contract.id,
+                    'amount': values['vat'],
+                }),
+                (0, _, {
+                    'name': 'Smart Share',
+                    'code': 'SMARTSHARE',
+                    'contract_id': contract.id,
+                    'amount': values['smart_fee'],
+                }),
+                (0, _, {
+                    'name': 'Expenses',
+                    'code': 'EXPENSES',
+                    'contract_id': contract.id,
+                    'amount': values['expenses'],
+                }),
+                (0, _, {
+                    'name': 'Expenses VAT',
+                    'code': 'EXPVAT',
+                    'contract_id': contract.id,
+                    'amount': values['expenses'],
+                }),
+                (0, _, {
+                    'name': 'Year of Birth',
+                    'code': 'YOB',
+                    'contract_id': contract.id,
+                    'amount': values['yob'],
+                }),
+                (0, _, {
+                    'name': 'Current Year',
+                    'code': 'YEAR',
+                    'contract_id': contract.id,
+                    'amount': fields.Date.from_string(fields.Date.today()).year,
+                }),
+                (0, _, {
+                    'name': 'Musician',
+                    'code': 'MUSICIAN',
+                    'contract_id': contract.id,
+                    'amount': 1 if values['musician'] == 'on' else 0,
+                }),
+                (0, _, {
+                    'name': 'Withholding Tax Rate',
+                    'code': 'WT',
+                    'contract_id': contract.id,
+                    'amount': values['tax'],
+                }),
+                
+                
+                ]
+        })
+        
+        result = payslip.simulate_sheet()
+        
+        #payslip.unlink()
+        
+        return result
+        
     def simulate_sheet(self):
         cr, uid, context = self.env.cr, self.env.uid, self.env.context
         ids = []

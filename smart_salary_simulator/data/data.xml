@@ -6,6 +6,7 @@
             <field name = "name">Smart Salary Simulator Dummy Employee</field>
         </record>
         
+<!--
         <record id="arbetsgivaravgift" model="hr.salary.rule">
             <field name="amount_select">percentage</field>
             <field eval="120" name="sequence"/>
@@ -13,12 +14,11 @@
             <field name="amount_percentage_base">contract.wage</field>
             <field name="code">ARBAVG</field>
             <field name="category_id" ref="hr_payroll.DED"/>
-<!--
-            <field name="register_id" ref="hr_provident_fund_register"/>
--->
             <field name="name">Arbetsgivaravgift</field>
         </record>
+-->
         
+<!--
         <record id="skatt" model="hr.salary.rule">
             <field name="amount_select">percentage</field>
             <field eval="150" name="sequence"/>
@@ -28,16 +28,9 @@
             <field name="category_id" ref="hr_payroll.DED"/>
             <field name="name">Kommunalskatt</field>
         </record>
+-->
         
-        <record id="smart_fee" model="hr.salary.rule">
-            <field name="amount_select">percentage</field>
-            <field eval="50" name="sequence"/>
-            <field eval="-6.5" name="amount_percentage"/>
-            <field name="amount_percentage_base">contract.wage</field>
-            <field name="code">SMARTFEE</field>
-            <field name="category_id" ref="hr_payroll.DED"/>
-            <field name="name">Smart fee</field>
-        </record>
+        
         
         <!-- Base structure -->
         
@@ -47,7 +40,7 @@
             <field name="amount_python_compute">result = inputs.SALARY.amount</field>
             <field name="code">BASE</field>
             <field name="category_id" ref="hr_payroll.BASIC"/>
-            <field name="name">Base Salary</field>
+            <field name="name">Total amount</field>
         </record>
         
         <record id="gross" model="hr.salary.rule">
@@ -56,7 +49,7 @@
             <field name="amount_python_compute">result = categories.BASIC + categories.ALW</field>
             <field name="code">GROSS</field>
             <field name="category_id" ref="hr_payroll.GROSS"/>
-            <field name="name">Gross</field>
+            <field name="name">Salary before tax (gross)</field>
         </record>
         
         <record id="net" model="hr.salary.rule">
@@ -65,7 +58,7 @@
             <field name="amount_python_compute">result = categories.GROSS + categories.DED</field>
             <field name="code">NET</field>
             <field name="category_id" ref="hr_payroll.NET"/>
-            <field name="name">Net</field>
+            <field name="name">Salary after tax (net)</field>
         </record>
         
         <record id ="structure_base" model="hr.payroll.structure">
@@ -76,6 +69,24 @@
         </record>
         
         <!-- Swedish Smart Contract -->
+        
+        <record id="vat" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field eval="5" name="sequence"/>
+            <field name="amount_python_compute">result = - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0)</field>
+            <field name="code">VAT</field>
+            <field name="category_id" ref="hr_payroll.BASIC"/>
+            <field name="name">VAT ( %)</field>
+        </record>
+        
+        <record id="smart_fee" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field eval="20" name="sequence"/>
+            <field name="amount_python_compute">result = - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0</field>
+            <field name="code">SMARTFEE</field>
+            <field name="category_id" ref="hr_payroll.BASIC"/>
+            <field name="name">SMartSe's share</field>
+        </record>
         
         <record id="expenses" model="hr.salary.rule">
             <field name="amount_select">code</field>
@@ -91,16 +102,20 @@
             <field eval="50" name="sequence"/>
             <field name="amount_python_compute">age = inputs.YEAR.amount - inputs.YOB.amount
 if age &lt; 27:
-    result = -0.1549 * (inputs.SALARY.amount - inputs.EXPENSES.amount)
+    res = -0.1549 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
 elif age &lt; 66:
-    result = -.3142 * (inputs.SALARY.amount - inputs.EXPENSES.amount)
+    res = -0.3142 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
 elif age &lt; 77:
-    result = -0.1021 * (inputs.SALARY.amount - inputs.EXPENSES.amount)
+    res = -0.1021 * (inputs.SALARY.amount - inputs.EXPENSES.amount - inputs.SMARTSHARE.amount * (inputs.SALARY.amount - inputs.SALARY.amount / (100.0 - inputs.VAT.amount / 100.0) - inputs.EXPENSES.amount) / 100.0)
 else:
-    result = 0</field>
+    res = 0
+if inputs.MUSICIAN.amount > 0:
+    result = 0.7 * res
+else:
+    result = res</field>
             <field name="code">SOC</field>
             <field name="category_id" ref="hr_payroll.BASIC"/>
-            <field name="name">Arbetsgivaravgift</field>
+            <field name="name">Social contributions</field>
         </record>
         
         <record id="tax" model="hr.salary.rule">
@@ -109,13 +124,13 @@ else:
             <field name="amount_python_compute">result = - (inputs.WT.amount or 0.0) * categories.GROSS / 100.0</field>
             <field name="code">TAX</field>
             <field name="category_id" ref="hr_payroll.DED"/>
-            <field name="name">Kommunalskatt</field>
+            <field name="name">Withholding tax</field>
         </record>
         
         <record id ="structure_base_swe" model="hr.payroll.structure">
             <field name="name">Smart Base Structure SWE</field>
             <field name="code">SWEBASE</field>
-            <field eval="[(6, 0, [ref('expenses'), ref('social'),ref('tax')])]" name="rule_ids"/>
+            <field eval="[(6, 0, [ref('vat'), ref('expenses'), ref('smart_fee'), ref('social'),ref('tax')])]" name="rule_ids"/>
             <field name="parent_id" ref="structure_base"/>
         </record>
         
@@ -123,26 +138,30 @@ else:
             <field name="name">Swedish Smart Contract</field>
             <field name="struct_id" ref="structure_base_swe"/>
             <field name="date_start" eval="time.strftime('%Y-%m')+'-1'"/>
+<!--
             <field name="date_end" eval="time.strftime('%Y')+'-12-31'"/>
-            <field name="employee_id">1</field>
+-->
+            <field name="employee_id" ref="dummy_employee"/>
             <field name="type_id" ref="hr_contract.hr_contract_type_emp"/>
             <field name="notes">This is a Smart contract for Sweden</field>
             <field eval="1000.0" name="wage"/>
         </record>
         
+        
+        
         <!--  -->
 
+<!--
         <record id ="structure_musician" model="hr.payroll.structure">
             <field name="name">Smart Salary Simulator Structure Musician</field>
             <field name="code">SSSMUSIC</field>
             <field eval="[(6, 0, [ref('smart_fee'), ref('skatt'),ref('arbetsgivaravgift')])]" name="rule_ids"/>
-<!--
-            <field name="company_id" ref="base.main_company"/>
--->
             <field name="parent_id" ref="hr_payroll.structure_base"/>
         </record>
+-->
         
         
+<!--
         <record id="smart_contract_musician" model="hr.contract">
             <field name="name">Smart Salary Simulator</field>
             <field name="employee_id" ref="dummy_employee"/>
@@ -154,11 +173,14 @@ else:
 
             <field name="notes">This is a Smart contract for musicians</field>
             <field eval="1000.0" name="wage"/>
+-->
 <!--
             <field name="working_hours" ref="resource.timesheet_group1"/>
 -->
+<!--
         </record>
         
+-->
 <!--
         <record id ="musician_rule" model="hr.payroll.rule">
             <field name="name">Smart Salary Simulator Structure Musician</field>

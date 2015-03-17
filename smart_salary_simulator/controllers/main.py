@@ -14,83 +14,53 @@ class website_client(http.Controller):
     @http.route(['/salary/simulator'], type='http', auth="public", website=True)
     def salary_simulation(self, **post):
         env = request.env
-        
-        user = env['res.users'].browse(env.uid)[0]
-        if user.employee_ids and user.employee_ids[0].contract_ids:
-            employee = user.employee_ids[0]
-            contract = employee.contract_ids[0]
-        else:
-            employee = env.ref('smart_salary_simulator.dummy_employee')
-            contract = env.ref('smart_salary_simulator.smart_contract_musician')
-        _logger.info(employee.name)
         if request.httprequest.method == 'POST':
             values = {
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),
                 'tax': float(post.get('salary-tax-prct') or 0),
                 'expenses': float(post.get('salary-expense') or 0),
+                'vat': float(post.get('salary-vat-prct') or 0),
+                'musician': post.get('salary-musician') or 'off',
+                'smart_fee': float(post.get('salary-smart-fee') or 0),
             }
             if post.get('sender') == 'form':
-                payslip = env['hr.payslip'].create({
-                    'struct_id': contract.struct_id.id,
-                    'employee_id': employee.id,
-                    'date_from': fields.Date.today(),
-                    'date_to': fields.Date.today(),
-                    'state': 'draft',
-                    'contract_id': contract.id,
-                    'input_line_ids': [
-                        (0, _, {
-                            'name': 'Salary Base',
-                            'code': 'SALARY',
-                            'contract_id': contract.id,
-                            'amount': values['salary'],
-                        }),
-                        (0, _, {
-                            'name': 'Year of Birth',
-                            'code': 'YOB',
-                            'contract_id': contract.id,
-                            'amount': values['yob'],
-                        }),
-                        (0, _, {
-                            'name': 'Withholding Tax Rate',
-                            'code': 'WT',
-                            'contract_id': contract.id,
-                            'amount': values['tax'],
-                        }),
-                        (0, _, {
-                            'name': 'Expenses',
-                            'code': 'EXPENSES',
-                            'contract_id': contract.id,
-                            'amount': values['expenses'],
-                        }),
-                        (0, _, {
-                            'name': 'Current Year',
-                            'code': 'YEAR',
-                            'contract_id': contract.id,
-                            'amount': fields.Date.from_string(fields.Date.today()).year,
-                        }),
-                        ]
-                })
-                lines = payslip.simulate_sheet()
-                #payslip.unlink()
-                values['lines'] = lines
+                _logger.info(post)
+                payslip = env['hr.payslip']
+                lines = payslip.sudo().simulate_payslip(env.uid, values)
                 
+                
+                values['net'] = 0.0
                 for line in lines:
                     if line['code'] == 'NET':
                         values['net'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
+                values['lines'] = lines
                 return request.website.render("smart_salary_simulator.result_se", values)
             elif post.get('sender') == 'result':
                 return request.website.render("smart_salary_simulator.simulator_form_se", values)
         else:
-            
-            #TODO: Get tax from wherever
-            
-            values = {
-                'salary': contract.wage or 1000,
-                'yob': (employee.birthday and fields.Date.from_string(employee.birthday).year) or 1990,
-                'tax': 30.0,
-                'expenses': 0,
-            }
+            user = env['res.users'].browse(env.uid)[0]
+            if user.sudo().employee_ids and user.sudo().employee_ids[0].contract_ids:
+                employee = user.employee_ids[0]
+                contract = employee.sudo().contract_ids[0]
+                values = {
+                    'salary': (employee.company_id and employee.company_id.smart_cash) or contract.sudo().wage,
+                    'yob': 1990,
+                    'tax': 30.0,
+                }
+            else:
+                employee = env.ref('smart_salary_simulator.dummy_employee')
+                contract = env.ref('smart_salary_simulator.smart_contract_swe')
+                values = {
+                    'salary': contract.sudo().wage,
+                    'yob': (employee.sudo().birthday and fields.Date.from_string(employee.sudo().birthday).year) or 1990,
+                    'tax': 30.0,
+                }
+                
+            values['expenses'] = 0
+            values['vat'] = 25
+            values['musician'] = 1
+            values['smart_fee'] = 6.5
             return request.website.render("smart_salary_simulator.simulator_form_se", values)
         """
         env = request.env
