@@ -16,7 +16,10 @@ class website_client(http.Controller):
         env = request.env
         if request.httprequest.method == 'POST':
             values = {
+<<<<<<< HEAD
                 'res_user': env['res.users'].browse(env.uid)[0],
+=======
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),
                 'tax': float(post.get('salary-tax-prct') or 0),
@@ -27,6 +30,7 @@ class website_client(http.Controller):
             }
             if post.get('sender') == 'form':
                 _logger.info(post)
+<<<<<<< HEAD
                 invoice_lines = [
                     {
                         'name': 'Total amount inclusive VAT',
@@ -70,6 +74,17 @@ class website_client(http.Controller):
                 values['salary_lines'] = salary_lines
                 values['invoice_lines'] = invoice_lines
                 values['expenses_lines'] = expenses_lines
+=======
+                payslip = env['hr.payslip']
+                lines = payslip.sudo().simulate_payslip(env.uid, values)
+                
+                
+                values['net'] = 0.0
+                for line in lines:
+                    if line['code'] == 'NET':
+                        values['net'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
+                values['lines'] = lines
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
                 return request.website.render("smart_salary_simulator.result_se", values)
             elif post.get('sender') == 'result':
                 return request.website.render("smart_salary_simulator.simulator_form_se", values)
@@ -96,7 +111,10 @@ class website_client(http.Controller):
             values['vat'] = 25
             values['musician'] = 1
             values['smart_fee'] = 6.5
+<<<<<<< HEAD
             values['res_user'] = user
+=======
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
             return request.website.render("smart_salary_simulator.simulator_form_se", values)
         """
         env = request.env

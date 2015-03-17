@@ -131,7 +131,7 @@ class res_users(osv.Model):
                     user.company_ids = [(6,0,[int(template_user.company_id.id),int(company.id)])]
                     user.company_id = int(company.id)
                     admin_user = self.env['res.users'].browse(1)
-                    admin_user.sudo.company_ids = [(4,company.id,0)]
+                    admin_user.sudo().company_ids = [(4,company.id,0)]
                     
 
 

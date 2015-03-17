@@ -11,6 +11,7 @@
 	
     </xpath>
 </template>
+<<<<<<< HEAD
 -->
     
     
@@ -227,6 +228,220 @@
 			    </div>
 -->
 
+=======
+-->
+    
+    
+<template name="Get payslip lines" id="get_lines">
+    <table>
+	<t t-foreach="lines" t-as="line">
+	    <tr>
+		<td>
+		    <t t-raw="line[0]"/>
+		</td>
+		<td>
+		    <t t-raw="line[1]"/>
+		</td>
+	    </tr>
+	</t>
+    </table>
+</template>
+
+<template name="Salary Simulator Se" id="simulator_form_se">
+
+    <t t-call="smart_common.layout">
+   	<div class="content span10">
+      
+        <!-- ** CURRENT VIEW CONTENT ** -->
+        
+        <div id="salary-simulator-view">
+	    <div class="panelsheet">
+		<header class="panelsheet-header clearfix">
+		    <div class="title">
+			<h1>Salary Simulator</h1>
+		    </div>
+		</header>
+		<div class="panelsheet-content">
+		  
+		<section class="panelsheet-section">
+      
+<!-- start content -->
+		<div class="row-fluid">
+
+		<section id="salary-calculator-form" class="content">
+
+
+		<form id="form-simulation" class="form-horizontal" action="/salary/simulator" method="POST">
+		    <hr/>
+		    <div id="loading-sim" style="display: none;">
+			<div class="loading">
+			    <p>Calculating salary</p>
+			</div>
+		    </div>
+
+
+		    <div class="alert alert-error pp_form_errors" style="display:none">
+			<strong>Please review the form,</strong> some details are missing in order to calculate your salary.
+		    </div>
+         	  
+
+         				
+		    <!-- Amount -->
+		    <div class="control-group">
+			<label class="control-label" for="salary-amount">Amount <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
+			<div class="controls">
+			    <div class="input-append">
+				<input id="salary-amount" name="salary-amount" size="16" type="number" min="0" data-path="amount" t-att-value="salary"/><span class="add-on">kr</span>
+			    </div>
+			</div>
+		    </div>
+<!--
+  						<div class="control-group">
+  						<label class="control-label" for="salaryType">Type of amount</label>
+  						  <div class="controls">
+  						    <label class="radio inline"><input name="salaryType" type="radio" data-path="salaryType" value="invoice" checked=""/> Invoice amount</label>
+  						    <label class="radio inline"><input name="salaryType" type="radio" value="net" data-path="salaryType"/> Salary after tax</label>
+  						    <label class="radio inline"><input name="salaryType" type="radio" value="gross" data-path="salaryType"/> Salary before tax</label>
+  						  </div>
+  						</div>
+-->
+
+<!-- VAT -->
+
+		    <div class="control-group">
+			<label class="control-label" for="salary-vat-prct">VAT  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."><i class="glyphicon glyphicon-question-sign"></i></a></label>
+
+			<div class="controls">
+			    <select id="salary-vat-prct" name="salary-vat-prct" data-path="vat" class="span2">
+				<option value="0">0%</option>
+				<option value="6">6%</option>
+				<option value="12">12%</option>
+				<option selected="" value="25">25%</option>
+			    </select>
+			</div>
+			<div class="controls">
+			    <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios1" data-path="vatIncluded" value="1" checked=""/> Included</label>
+			    <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios2" data-path="vatIncluded" value="0"/> Excluded</label>
+			</div>
+		    </div>
+
+		    <!-- Expenses -->
+		    <div class="control-group">
+			<label class="control-label" for="salary-expense">Expenses  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
+			<div class="controls">
+			    <div class="input-append">
+				<input id="salary-expense" name="salary-expense" data-path="expenses" size="16" type="number" t-att-value="expenses" min="0" step="0.01"/><span class="add-on">kr</span>
+			    </div>
+			</div>
+		    </div>
+		    
+		    <!-- smart fee -->
+
+		    <div class="control-group">
+			<label class="control-label" for="salary-smart-fee">Smart fee <a class="tip" data-toogle="tooltip" data-placement="top" title="Smart fee."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
+
+			<div class="controls">
+			    <div class="input-append">
+				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="number" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>
+			    </div>
+			</div>
+		    </div>
+
+		    <hr/>
+
+		    <!-- Year of birth -->
+
+		    <div class="control-group pp_not_form_errors">
+			<label class="control-label">Year of birth</label>
+			<div class="controls">
+			    <input id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" size="16" type="number" t-att-value="yob" min="1900" max="2015"/>
+			
+			</div>
+		    </div>
+		    
+		    <!-- tax rate -->
+
+		    <div class="control-group">
+			<label class="control-label" for="salary-tax-prct">Withholding tax rate   <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
+
+			<div class="controls">
+			    <div class="input-append">
+				<input id="salary-tax-prct" name="salary-tax-prct" data-path="taxRate" size="16" type="number" min="0" max="100" step="0.01" t-att-value="tax"/><span class="add-on">%</span>
+			    </div>
+			</div>
+		    </div>
+						
+						
+						
+<!--
+		    <div class="control-group">
+			<div class="controls">
+			    <label class="checkbox">
+				<a href="" id="lnkShow">Show advanced parameters</a>
+			    </label>
+			</div>
+		    </div>
+-->
+		    
+<!--
+		    <div id="advancedParams" style="display: none;">
+-->
+			<div id="advancedParams">
+			    
+			<!-- Income source -->
+					
+<!--
+			    <div class="control-group">
+				<div class="controls">
+				    SMartSe is my  
+				    <select class="span2" data-path="incomeSource" style="vertical-align: baseline;">
+					<option value="primary"> primary </option>
+					<option value="secondary" selected=""> secondary </option>
+				    </select>
+				    income source.
+				    <a class="tip" data-toogle="tooltip" data-placement="top" title="If SMartSe is your secondary income source, we recommend that you do not pay extra pension contributions from your SMartSe income."><i class="glyphicon glyphicon-question-sign"></i> </a>
+				</div>
+			    </div>
+-->
+						
+			    <!-- Location -->
+<!--
+			    <div class="control-group">
+				<div class="controls">
+				    I live and work in  
+				    <select class="span2" data-path="location" style="vertical-align: baseline;">
+					<option value="SE" selected=""> Sweden </option>
+					<option value="EU"> Europe </option>
+					<option value="notEU"> outside of Europe </option>
+				    </select>
+				    <a class="tip" data-toogle="tooltip" data-placement="top" title="If you live outside of Sweden, special tax regulations apply. Please contact us if you wish to know more."><i class="glyphicon glyphicon-question-sign"></i> </a>
+				</div>
+			    </div>
+-->
+			    <!-- Musician or singer -->
+			    
+			    <div class="control-group">
+				<div class="controls">
+				    <label class="checkbox inline">
+					<input type="checkbox" name="salary-musician" t-att-value="musician" style="vertical-align: middle;"/>I work as a musician.
+					<a class="tip" data-toogle="tooltip" data-placement="top" title="If you work as a musician or a singer, employers&#39; social contributions and income tax witholdments are lower."><i class="glyphicon glyphicon-question-sign"></i> </a>
+				    </label>
+				</div>
+			    </div>
+						
+			    <!-- Not art or sport -->
+<!--
+			    <div class="control-group">
+				<div class="controls">
+				    <label class="checkbox inline">
+					<input type="checkbox" data-path="athlete" value="1"/>I work as an artist or athlete.
+					 <a class="tip" data-toogle="tooltip" data-placement="top" title="If you are an artist or an athlete and pay your taxes abroad, less taxes are withdrawn in Sweden due to SINK (Special income tax)."><i class="glyphicon glyphicon-question-sign"></i> </a>
+				    </label>
+				</div>
+			    </div>
+-->
+
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
 			</div>	
 						<!-- end advanced parapeters-->
         
@@ -293,7 +508,11 @@
 	<div class="well">
 	  <h2>
 	    <small>The salary you may get:</small>
+<<<<<<< HEAD
 	    <strong><t t-esc="int(round(net_result))"/> kr</strong>
+=======
+	    <strong><t t-esc="int(round(net))"/> kr</strong>
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
 	  </h2>
 	</div>
 	<div class="well">
@@ -303,6 +522,7 @@
 	  </h2>
 	</div>
     </div>
+<<<<<<< HEAD
     
     <table class="table">
 	<thead>
@@ -321,13 +541,19 @@
 	    </t>
 	</tbody>
     </table>
+=======
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
   
     <table class="table">
 	<thead>
 	    <tr><th colspan="2">Salary</th></tr>
 	</thead>
 	<tbody>
+<<<<<<< HEAD
 	    <t t-foreach="salary_lines" t-as="line">
+=======
+	    <t t-foreach="lines" t-as="line">
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
 		<tr>
 		    <td>
 			<t t-esc="line['name']"/>
@@ -340,6 +566,7 @@
 	</tbody>
     </table>
     
+<<<<<<< HEAD
     <table class="table">
 	<thead>
 	    <tr><th colspan="2">Expenses</th></tr>
@@ -367,6 +594,8 @@
     </tfoot>
   </table>
     
+=======
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
     <form id="form-simulation" action="/salary/simulator" method="POST">
 	<input name="sender" type="hidden" value="result"/>
 	    <input name="salary-amount" type="hidden" t-att-value="salary"/>

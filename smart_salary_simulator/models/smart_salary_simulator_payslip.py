@@ -28,7 +28,11 @@ _logger = logging.getLogger(__name__)
 class smart_salary_simulator_payslip(models.Model):
     _inherit = 'hr.payslip'
     
+<<<<<<< HEAD
     def simulate_payslip(self, uid, salary, values):
+=======
+    def simulate_payslip(self, uid, values):
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
         user = self.env['res.users'].browse(uid)[0]
         if user.employee_ids and user.employee_ids[0].contract_ids:
             employee = user.employee_ids[0]
@@ -36,9 +40,13 @@ class smart_salary_simulator_payslip(models.Model):
         else:
             employee = self.env.ref('smart_salary_simulator.dummy_employee')
             contract = self.env.ref('smart_salary_simulator.smart_contract_swe')
+<<<<<<< HEAD
         
         
         
+=======
+        _logger.info(values['smart_fee'])
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
         payslip = self.create({
             'struct_id': contract.struct_id.id,
             'employee_id': employee.id,
@@ -51,6 +59,7 @@ class smart_salary_simulator_payslip(models.Model):
                     'name': 'Salary Base',
                     'code': 'SALARY',
                     'contract_id': contract.id,
+<<<<<<< HEAD
                     'amount': salary,
                 }),
                 
@@ -78,6 +87,35 @@ class smart_salary_simulator_payslip(models.Model):
                     #~ 'contract_id': contract.id,
                     #~ 'amount': values['expenses'],
                 #~ }),
+=======
+                    'amount': values['salary'],
+                }),
+                
+                (0, _, {
+                    'name': 'Invoice VAT',
+                    'code': 'VAT',
+                    'contract_id': contract.id,
+                    'amount': values['vat'],
+                }),
+                (0, _, {
+                    'name': 'Smart Share',
+                    'code': 'SMARTSHARE',
+                    'contract_id': contract.id,
+                    'amount': values['smart_fee'],
+                }),
+                (0, _, {
+                    'name': 'Expenses',
+                    'code': 'EXPENSES',
+                    'contract_id': contract.id,
+                    'amount': values['expenses'],
+                }),
+                (0, _, {
+                    'name': 'Expenses VAT',
+                    'code': 'EXPVAT',
+                    'contract_id': contract.id,
+                    'amount': values['expenses'],
+                }),
+>>>>>>> 4be2d5f40abce64c2ffb0002ea971704c5c01d3c
                 (0, _, {
                     'name': 'Year of Birth',
                     'code': 'YOB',
