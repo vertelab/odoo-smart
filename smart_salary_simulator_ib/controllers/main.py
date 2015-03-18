@@ -96,7 +96,7 @@ class website_client(http.Controller):
             values['musician'] = 1
             values['smart_fee'] = 6.5
             values['res_user'] = user
-            return request.website.render("smart_salary_simulator.simulator_form_se", values)
+            return request.website.render("smart_salary_simulator_ib.simulator_form_se", values)
         """
         env = request.env
         if user and user.employee_ids and user.employee_ids[0].contract_id:
