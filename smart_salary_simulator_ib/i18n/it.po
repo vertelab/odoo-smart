@@ -1,0 +1,389 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"Project-Id-Version: smart_salarysimulator\n"
+"Language: it_IT\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "\"WithHoldingTaxAmount\" kr"
+msgstr "Kr \"WithHoldingTaxAmount\""
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#AmountToSMartBudget#  kr"
+msgstr "# AmountToSMartBudget # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#ExpenseInclusiveVAT# kr"
+msgstr "# ExpenseInclusiveVAT # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#GrossSalaryAmount# kr"
+msgstr "# GrossSalaryAmount # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#NetSalary# kr"
+msgstr "# NetSalary # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#SMartShareAmount#  kr"
+msgstr "# SMartShareAmount # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#SocialSecurityAmount# kr"
+msgstr "# SocialSecurityAmount # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#ToBePaidBySMart# kr"
+msgstr "# ToBePaidBySMart # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#VATabount\" kr"
+msgstr "#VATabount \"Kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#invoiceExclusiveVAT#  kr"
+msgstr "# InvoiceExclusiveVAT # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#invoiceinclusiveVAT# kr"
+msgstr "# InvoiceinclusiveVAT # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "#netsalary# kr"
+msgstr "# Netsalary # kr"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Amount"
+msgstr "Importo"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Amount on your SMart-Account"
+msgstr "Importo sul tuo smart-account"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Amount that could be payed by SMartSe"
+msgstr "Importo che potrebbe essere pagato da SMartSe"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Calculating salary…"
+msgstr "Calcolo stipendio ..."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Edit simulation"
+msgstr "Modifica simulazione"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Europe"
+msgstr "Europa"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Excluded"
+msgstr "Esclusa"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Expenses"
+msgstr "Spese"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "I live and work in"
+msgstr "Vivo e lavoro in"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "I work as a musician."
+msgstr "Io lavoro come musicista."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "I work as an artist or athlete."
+msgstr "Io lavoro come un artista o atleta."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"If SMartSe is your secondary income source, we recommend that you do not pay "
+"extra pension contributions from your SMartSe income."
+msgstr ""
+"Se SMartSe è la vostra fonte di reddito secondaria, si consiglia di non "
+"pagare i contributi pensionistici in più dal vostro reddito SMartSe."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"If you are an artist or an athlete and pay your taxes abroad, less taxes are "
+"withdrawn in Sweden due to SINK (Special income tax)."
+msgstr ""
+"Se sei un artista o uno sportivo e paghi le tasse all'estero, al netto delle "
+"imposte sono ritirati in Svezia a causa di LAVELLO (imposta sul reddito "
+"Speciale)."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"If you live outside of Sweden, special tax regulations apply. Please contact "
+"us if you wish to know more."
+msgstr ""
+"Se vivete al di fuori della Svezia, si applicano norme fiscali speciali. Vi "
+"preghiamo di contattarci se si desidera saperne di più."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"If you work as a musician or a singer, employers' social contributions and "
+"income tax witholdments are lower."
+msgstr ""
+"Se si lavora come musicista o un cantante, i contributi sociali dei datori "
+"di lavoro e witholdments imposte sul reddito sono più bassi."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Included"
+msgstr "Incluso"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Invoice amount"
+msgstr "Importo della fattura"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Invoice to the client:"
+msgstr "Fattura al cliente:"
+
+#. module: smart_salary_simulator
+#: model:ir.model,name:smart_salary_simulator.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"Please choose a tax withholding rate. If you would like us to withhold less "
+"than 30%, we will need a certificate from the Swedish tax authority."
+msgstr ""
+"Si prega di scegliere un tasso di ritenuta d'imposta. Se volete ci "
+"tratteniamo meno del 30%, avremo bisogno di un certificato dell'autorità "
+"fiscale svedese."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"Please fill in the amount you want to use and choose what type of "
+"calculation you would like to do"
+msgstr ""
+"Si prega di compilare l'importo che si desidera utilizzare e scegliere il "
+"tipo di calcolo che si desidera fare"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Please fill in the total amount of expenses for this activity"
+msgstr "Si prega di compilare l'importo totale delle spese per questa attività"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Please review the form,"
+msgstr "Si prega di rivedere la forma,"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid ""
+"Please select the VAT-rate for your activity. If you have mixed VAT-rates, "
+"please make two simulations."
+msgstr ""
+"Si prega di selezionare l'aliquota IVA per la vostra attività. Se si dispone "
+"di aliquote IVA misti, si prega di fare due simulazioni."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_xx
+msgid "SMartSe Salary Simulator"
+msgstr "SMartSe Stipendio Simulator"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "SMartSe is my"
+msgstr "SMartSe è il mio"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "SMartSe's share #SMartSharePercent# %"
+msgstr "Di SMartSe quota SMartSharePercent # #%"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Salary"
+msgstr "Stipendio"
+
+#. module: smart_salary_simulator
+#: view:website:smart_common.smartmenu
+#: view:website:smart_salary_simulator.result_se
+#: view:website:smart_salary_simulator.simulator_ib
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Salary Simulator"
+msgstr "Stipendio Simulator"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Salary after tax"
+msgstr "Stipendio netto delle imposte"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Salary after tax (net)"
+msgstr "Stipendio netto delle imposte (al netto)"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Salary before tax"
+msgstr "Stipendio lordo delle imposte"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Salary before tax (gross)"
+msgstr "Stipendio lordo delle imposte (lordo)"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Simulate"
+msgstr "Simulare"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Social contributions"
+msgstr "Contributi sociali"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Sweden"
+msgstr "Svezia"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "The salary you may get:"
+msgstr "Lo stipendio si può ottenere:"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_ib
+msgid "This breakdown provides you with an overview of your salary."
+msgstr "Questa ripartizione si fornisce una panoramica del tuo stipendio."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Total amount exclusive VAT"
+msgstr "Importo totale IVA esclusa"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Total amount inclusive VAT"
+msgstr "Importo totale IVA inclusa"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Total amount of expenses inclusive VAT"
+msgstr "Importo totale delle spese incluso IVA"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Type of amount"
+msgstr "Tipo di importo"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "VAT"
+msgstr "IVA"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "VAT ( #VATPercent# %)"
+msgstr "IVA (# VATPercent #%)"
+
+#. module: smart_salary_simulator
+#: model:ir.model,name:smart_salary_simulator.model_website
+msgid "Website"
+msgstr "Sito web"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_ib
+msgid ""
+"What is billed, and what is retained for social contributions and taxes."
+msgstr ""
+"Ciò che viene fatturato, e ciò che viene conservato per contributi sociali e "
+"imposte."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "Withholding tax"
+msgstr "Ritenuta alla fonte"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Withholding tax rate"
+msgstr "Aliquota d'imposta alla fonte"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "Year of birth"
+msgstr "Anno di nascita"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "income source."
+msgstr "fonte di reddito."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "outside of Europe"
+msgstr "al di fuori dell'Europa"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "primary"
+msgstr "primario"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "secondary"
+msgstr "secondario"
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.simulator_se
+msgid "some details are missing in order to calculate your salary."
+msgstr "alcuni dettagli mancanti al fine di calcolare il vostro stipendio."
+
+#. module: smart_salary_simulator
+#: view:website:smart_salary_simulator.result_se
+msgid "– Result"
+msgstr "- Risultato"

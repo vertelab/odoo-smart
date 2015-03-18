@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="18px" height="18px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve">
+<g>
+	<g opacity="0.9">
+		<rect x="4.749" y="0.87" transform="matrix(0.8661 -0.4999 0.4999 0.8661 -0.9146 3.3256)" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g opacity="0.3">
+		
+			<rect x="11.25" y="12.127" transform="matrix(0.8663 -0.4996 0.4996 0.8663 -5.669 8.0752)" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g opacity="0.2">
+		
+			<rect x="13.63" y="3.249" transform="matrix(0.4999 0.8661 -0.8661 0.4999 12.2948 -9.7958)" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g opacity="0.6">
+		
+			<rect x="2.371" y="9.749" transform="matrix(0.4999 0.8661 -0.8661 0.4999 12.2946 3.2055)" fill="#FFFFFF" width="2" height="5.001"/>
+	</g>
+	<g opacity="0.5">
+		
+			<rect x="4.75" y="12.129" transform="matrix(-0.8663 -0.4996 0.4996 -0.8663 3.4223 30.1739)" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g opacity="0.15">
+		
+			<rect x="11.249" y="0.871" transform="matrix(-0.8658 -0.5005 0.5005 -0.8658 21.1682 12.4208)" fill="#FFFFFF" width="2.001" height="5"/>
+	</g>
+	<g opacity="0.8">
+		<rect x="2.37" y="3.249" transform="matrix(0.4999 -0.8661 0.8661 0.4999 -3.2935 5.7936)" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g opacity="0.32">
+		
+			<rect x="13.63" y="9.751" transform="matrix(0.4999 -0.8661 0.8661 0.4999 -3.2937 18.7968)" fill="#FFFFFF" width="2" height="4.999"/>
+	</g>
+	<g opacity="0.26">
+		<rect x="13" y="8" fill="#FFFFFF" width="5" height="2"/>
+	</g>
+	<g opacity="0.7">
+		<rect y="8" fill="#FFFFFF" width="5" height="2"/>
+	</g>
+	<g opacity="0.4">
+		<rect x="8" y="13" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	<g>
+		<rect x="8" fill="#FFFFFF" width="2" height="5"/>
+	</g>
+	
+		<animateTransform  fill="remove" type="rotate" begin="0s" attributeName="transform" accumulate="none" dur="1s" additive="replace" from="0 9 9" to="360 9 9" restart="always" calcMode="linear" attributeType="XML" repeatCount="indefinite">
+		</animateTransform>
+</g>
+</svg>
