@@ -16,6 +16,7 @@ class website_client(http.Controller):
         env = request.env
         if request.httprequest.method == 'POST':
             values = {
+                'res_user': env['res.users'].browse(env.uid)[0],
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),
                 'tax': float(post.get('salary-tax-prct') or 0),
@@ -26,15 +27,49 @@ class website_client(http.Controller):
             }
             if post.get('sender') == 'form':
                 _logger.info(post)
+                invoice_lines = [
+                    {
+                        'name': 'Total amount inclusive VAT',
+                        'amount': values['salary'],
+                    },
+                    {
+                        'name': 'VAT ( %)',
+                        'amount': - values['salary'] * (1 - 100/ (100 + values['vat'])),
+                    },
+                    {
+                        'name': 'Total amount exclusive VAT',
+                        'amount': values['salary'] - values['salary'] * (1 - 100/ (100 + values['vat'])),
+                    },
+                    {
+                        'name': "SMartSe's share 6.5%",
+                        'amount': - values['smart_fee'] / 100 * (values['salary'] - values['salary'] * (1 - 100/ (100 + values['vat']))),
+                    },
+                    {
+                        'name': "Amount on your SMart-Account",
+                        'amount': values['salary'] - values['salary'] * (1 - 100/ (100 + values['vat'])) - values['smart_fee'] / 100 * (values['salary'] - values['salary'] * (1 - 100/ (100 + values['vat']))),
+                    },
+                ]
+                
+                expenses_lines = [
+                    {
+                        'name': 'Expenses',
+                        'amount': values['expenses'],
+                    }
+                ]
+                
                 payslip = env['hr.payslip']
-                lines = payslip.sudo().simulate_payslip(env.uid, values)
+                salary_lines = payslip.sudo().simulate_payslip(env.uid, invoice_lines[4]['amount'] - values['expenses'], values)
                 
                 
                 values['net'] = 0.0
-                for line in lines:
+                values['net_result'] = 0.0
+                for line in salary_lines:
                     if line['code'] == 'NET':
                         values['net'] = float(line['quantity']) * line['amount'] * line['rate'] / 100
-                values['lines'] = lines
+                        values['net_result'] = values['net'] + values['expenses']
+                values['salary_lines'] = salary_lines
+                values['invoice_lines'] = invoice_lines
+                values['expenses_lines'] = expenses_lines
                 return request.website.render("smart_salary_simulator.result_se", values)
             elif post.get('sender') == 'result':
                 return request.website.render("smart_salary_simulator.simulator_form_se", values)
@@ -61,6 +96,7 @@ class website_client(http.Controller):
             values['vat'] = 25
             values['musician'] = 1
             values['smart_fee'] = 6.5
+            values['res_user'] = user
             return request.website.render("smart_salary_simulator.simulator_form_se", values)
         """
         env = request.env

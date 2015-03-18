@@ -101,10 +101,12 @@
 				<option selected="" value="25">25%</option>
 			    </select>
 			</div>
+<!--
 			<div class="controls">
 			    <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios1" data-path="vatIncluded" value="1" checked=""/> Included</label>
 			    <label class="radio inline"><input type="radio" name="optionsRadios" id="optionsRadios2" data-path="vatIncluded" value="0"/> Excluded</label>
 			</div>
+-->
 		    </div>
 
 		    <!-- Expenses -->
@@ -289,7 +291,7 @@
 	<div class="well">
 	  <h2>
 	    <small>The salary you may get:</small>
-	    <strong><t t-esc="int(round(net))"/> kr</strong>
+	    <strong><t t-esc="int(round(net_result))"/> kr</strong>
 	  </h2>
 	</div>
 	<div class="well">
@@ -299,13 +301,31 @@
 	  </h2>
 	</div>
     </div>
+    
+    <table class="table">
+	<thead>
+	    <tr><th colspan="2">Invoice</th></tr>
+	</thead>
+	<tbody>
+	    <t t-foreach="invoice_lines" t-as="line">
+		<tr>
+		    <td>
+			<t t-esc="line['name']"/>
+		    </td>
+		    <td>
+			<t t-esc="'%s kr' % int(round(line['amount']))"/>
+		    </td>
+		</tr>
+	    </t>
+	</tbody>
+    </table>
   
     <table class="table">
 	<thead>
 	    <tr><th colspan="2">Salary</th></tr>
 	</thead>
 	<tbody>
-	    <t t-foreach="lines" t-as="line">
+	    <t t-foreach="salary_lines" t-as="line">
 		<tr>
 		    <td>
 			<t t-esc="line['name']"/>
@@ -317,6 +337,33 @@
 	    </t>
 	</tbody>
     </table>
+    
+    <table class="table">
+	<thead>
+	    <tr><th colspan="2">Expenses</th></tr>
+	</thead>
+	<tbody>
+	    <t t-foreach="expenses_lines" t-as="line">
+		<tr>
+		    <td>
+			<t t-esc="line['name']"/>
+		    </td>
+		    <td>
+			<t t-esc="'%s kr' % int(round(line['amount']))"/>
+		    </td>
+		</tr>
+	    </t>
+	</tbody>
+    </table>
+    
+    <table class="table">
+    <tfoot>
+      <tr>
+        <td><strong>Amount that could be payed by SMartSe</strong></td>
+        <td><strong><t t-esc="'%s kr' % int(round(net_result))"/></strong></td>
+      </tr>            
+    </tfoot>
+  </table>
     
     <form id="form-simulation" action="/salary/simulator" method="POST">
 	<input name="sender" type="hidden" value="result"/>
