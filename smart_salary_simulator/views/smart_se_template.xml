@@ -1,5 +1,5 @@
 
-<template name="Salary Simulator Se" id="sim_form_se">
+<template name="Salary Simulator Se" id="simulator_se">
 
     <t t-call="smart_common.layout">
 

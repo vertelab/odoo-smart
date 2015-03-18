@@ -2,53 +2,6 @@
 <openerp>
 <data>
 
-<template name="Salary Simulator Se" id="sim_se2">
-    <t t-call="smart_common.layout">
-	<link rel="stylesheet" href="/smart_salary_simulator/static/ui/salary_simulator/SMartSe/assets/app.min.css" />
-
-   	<div class="content span10">
-      
-        <!-- ** CURRENT VIEW CONTENT ** -->
-        
-        <div id="salary-simulator-view">
-          <div class="panelsheet">
-            <header class="panelsheet-header clearfix">
-              <div class="title">
-                <h1>Salary Simulator</h1>
-              </div>
-            </header>
-            <div class="panelsheet-content">
-              
-              <section class="panelsheet-section">
-      
-				<!-- start content -->
-				      <div class="row-fluid">
-					  <t t-call="smart_salary_simulator.sim_frame_se"></t>
-<!--
-						<p>This breakdown provides you with an overview of your salary. <br/>
-						What is billed, and what is retained for social contributions and taxes.</p>
-							<TABLE>
-								<TR>
-									<TD><iframe width="450" height="600" src="sim/frame" frameborder="0" ></iframe></TD>
-								</TR>
-							</TABLE>  
--->
-				    	</div>
-    
-              </section>
-              
-            </div><!--/panelsheet-content-->
-
-          </div><!-- /panelsheet -->
-                 
-        </div><!-- #salary-simulator-view -->
-        
-        <!-- ** / CURRENT VIEW CONTENT ** -->
-    </div>
-</t>        
-</template>
-
-
 <template name="Salary Simulator At" id="simulator_at">
     <t t-call="smart_common.layout">
 

@@ -13,12 +13,9 @@ http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-order
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website','smart_common', 'hr_payroll'],
+    'depends': ['website','smart_common'],
     'data': [
         'views/templates.xml',
-        'views/sim_se_template.xml',
-        'salary_calculator.xml',
-        'data/data.xml',
     ],
     'demo': [ ],
     'installable': True,
