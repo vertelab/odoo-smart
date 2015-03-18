@@ -56,7 +56,6 @@ class website_client(http.Controller):
                         'amount': values['expenses'],
                     }
                 ]
-                
                 payslip = env['hr.payslip']
                 salary_lines = payslip.sudo().simulate_payslip(env.uid, invoice_lines[4]['amount'] - values['expenses'], values)
                 

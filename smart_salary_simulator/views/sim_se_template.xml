@@ -126,7 +126,7 @@
 
 			<div class="controls">
 			    <div class="input-append">
-				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="number" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>
+				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="number" readonly="true" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>
 			    </div>
 			</div>
 		    </div>
@@ -204,6 +204,7 @@
 -->
 			    <!-- Musician or singer -->
 			    
+<!--
 			    <div class="control-group">
 				<div class="controls">
 				    <label class="checkbox inline">
@@ -212,6 +213,7 @@
 				    </label>
 				</div>
 			    </div>
+-->
 						
 			    <!-- Not art or sport -->
 <!--
@@ -337,7 +339,7 @@
 	    </t>
 	</tbody>
     </table>
-    
+
     <table class="table">
 	<thead>
 	    <tr><th colspan="2">Expenses</th></tr>

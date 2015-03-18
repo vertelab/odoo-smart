@@ -34,7 +34,7 @@ class website_account(http.Controller):
             'context': context,
             'form_post': '/account/%s/post' % account.id,
 #            'form_post': '/account/%s/' % account.id,
-            'res_country': pool.get('res.country').browse(cr, uid, pool.get('res.country').search(cr, uid, [], context=context), context=context),
+            'res_country': pool.get('res.country').browse(cr, uid, pool.get('res.country').search(cr, uid, [], order="code",context=context), context=context),
             'res_lang': pool.get('res.lang').browse(cr, uid, pool.get('res.lang').search(cr, uid, [('active','=',True)], context=context), context=context),
             'res_bank': pool.get('res.bank').browse(cr, uid, pool.get('res.bank').search(cr, uid, [], context=context), context=context),
             'res_user': account,
@@ -96,7 +96,7 @@ class website_account(http.Controller):
             'res_user': account,
             'form_post': '/account/%s/post' % account.id,
             'res_lang': pool.get('res.lang').browse(cr, uid, pool.get('res.lang').search(cr, uid, [('active','=',True)], context=context), context=context),
-            'res_country': pool.get('res.country').browse(cr, uid, pool.get('res.country').search(cr, uid, [], context=context), context=context),
+            'res_country': pool.get('res.country').browse(cr, uid, pool.get('res.country').search(cr, uid, [], order="code",context=context), context=context),
             'res_bank': pool.get('res.bank').browse(cr, uid, pool.get('res.bank').search(cr, uid, [], context=context), context=context),
             'context': context,
 

@@ -80,6 +80,7 @@ class website_expense(http.Controller):
 
         values = {
             'product': category,
+            'expense_line': expense_line,
             'context': context,
             'expense_menu': 'active',
             'res_user': res_user,
@@ -143,7 +144,7 @@ class website_expense(http.Controller):
                 'line_date_value',
 #                'line_description',
                 'line_distance',
-                'line_from',
+                'line_starting_point',
                 'line_justification',
                 'line_name',
                 'line_product_id',
@@ -186,7 +187,7 @@ class website_expense(http.Controller):
                             'line_date_value_%s' % int(post.get('line_id_' + row)),
 #                            'line_description_%s' % int(post.get('line_id_' + row)),
                             'line_distance_%s' % int(post.get('line_id_' + row)),
-                            'line_from_%s' % int(post.get('line_id_' + row)),
+                            'line_starting_point_%s' % int(post.get('line_id_' + row)),
                             'line_justification_%s' % int(post.get('line_id_' + row)),
                             'line_name_%s' % int(post.get('line_id_' + row)),
                             'line_product_id_%s' % int(post.get('line_id_' + row)),
@@ -197,6 +198,21 @@ class website_expense(http.Controller):
                             'line_unit_amount_untaxed_%s' % int(post.get('line_id_' + row)),
                             'line_unit_quantity_%s' % int(post.get('line_id_' + row)),
                             'line_uom_id_%s' % int(post.get('line_id_' + row)),
+                            'line_analytic_account',
+                            'line_date_value',
+            #                'line_description',
+                            'line_distance',
+                            'line_starting_point',
+                            'line_justification',
+                            'line_name',
+                            'line_product_id',
+                            'line_ref',
+                            'line_sequence',
+                            'line_to',
+                            'line_unit_amount',
+                            'line_unit_amount_untaxed',
+                            'line_unit_quantity',
+                            'line_uom_id',
                             ] if post.get(field_name))
                         expense_line.write(expense_line_data)
 

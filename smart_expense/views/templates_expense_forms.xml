@@ -16,7 +16,7 @@
 	            <header class="panelsheet-header clearfix">
 			      <div class="page-header">
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/></small></t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line </h2>
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2> 			      
 			      </div>
 	            </header>
    
@@ -29,8 +29,8 @@
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
                               <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
-<!--                   			 <input type="text" size="5" name="expense_line.name" align="right"  t-attf-value="#{expense_line.name}"/>-->
-                   			 <input type="hidden" name="line_product_id" t-att-value="product.id"  />
+                   			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
+                   			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
     					</div>
 
@@ -59,7 +59,8 @@
     					  <label class="control-label"><strong>From</strong></label>
     					  <div class="controls">
 <!--                   			 <input type="text" size="5" name="expense_line.from" align="right" placeholder="Address" t-attf-value="#{expense_line.from}"/>-->
-                   			 <input type="text" size="5" name="line_starting_point" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/>  <!-- t-attf-value="#{expense_line and expense_line.from or ''}" -->
+                   			 <input type="text" size="5" name="line_starting_point" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
+                   			 
     					  </div>
     					</div>
     					
@@ -130,8 +131,8 @@
 	            <header class="panelsheet-header clearfix">
 			      <div class="page-header">
 <!--If it is a new expense-->
-			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>.</small> </t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line </h2>
+			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>. </small></t></h1><BR/>
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 
 
@@ -145,9 +146,9 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="line_name" align="right" />-->
                               <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
-                   			 <input type="hidden" name="line_product_id" t-att-value="product.id"  />
+                   			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
+                   			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
     					</div>
 
@@ -181,7 +182,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Date (of purchase)</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"/>
+                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
     					  </div>
     					</div>
 
@@ -190,15 +191,14 @@
     					  <label class="control-label"><strong>From</strong></label>
     					  <div class="controls">
 <!--                   			 <input type="text" size="5" name="from" align="right" placeholder="Airport" t-attf-value="#{expense_line.from}"/>-->
-                   			 <input type="text" size="5" name="line_from" align="right" placeholder="City" />
+                   			 <input type="text" size="5" name="line_starting_point" align="right" placeholder="City" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
     					  </div>
     					</div>
     					
     					<div class="control-group">
     					  <label class="control-label"><strong>To</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="from" align="right" placeholder="Airport" t-attf-value="#{expense_line.to}"/>-->
-                   			 <input type="text" size="5" name="line_to" align="right" placeholder="City"/>
+                   			 <input type="text" size="5" name="line_to" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.to or ''}"/>
     					  </div>
     					</div>
     					
@@ -256,8 +256,7 @@
 			      <div class="page-header">
 <!--If it is a new expense-->
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>.</small> </t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line </h2>
-
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 			      </div>
 	            </header>
@@ -270,9 +269,8 @@
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
                               <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_name" align="right" />-->
-<!--                  			 <input type="hidden" size="5" name="expense.id" align="right" />-->
-                   			 <input type="hidden" name="line_product_id" t-att-value="product.id"/>
+                   			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
+                   			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
     					</div>
 
@@ -306,7 +304,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Date (of purchase)</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"/>
+                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
     					  </div>
     					</div>
 
@@ -323,8 +321,7 @@
     					  <label class="control-label"><strong>Price (including VAT)</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-                   			 <input type="text" size="5" name="line_unit_amount" align="right" placeholder="123"/>
-<!--                   			 <input type="text" size="5" name="line_unit_quantity" align="right" placeholder="121"/>-->
+		                   			 <input type="text" size="5" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
     					  </div>
     					</div>
     					  
@@ -359,8 +356,7 @@
 			      <div class="page-header">
 <!--If it is a new expense-->
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>.</small></t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line </h2>
-
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 			      </div>
 	            </header>
@@ -372,19 +368,9 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="expense_line.name" align="right"  t-attf-value="#{expense_line.name}"/>-->
                               <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_name" align="right" />-->
-<!--                  			 <input type="hidden" size="5" name="expense.id" align="right" />-->
-<!--                   			 <input type="hidden" name="line_product_id" t-att-value="product.id"  />-->
-                   			 <input type="hidden" size="5" name="line_product_id" t-attf-value="#{product.id}" />
-
-<!--							 <select name="line_product_id">-->
-<!--				                    <t t-foreach="products" t-as="p">-->
-<!--				    	                <option t-att-value="p.id"><t t-esc="p.name"/></option>-->
-<!--									</t>-->
-<!--									</select>-->
-
+                   			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
+                   			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
     					</div>
 

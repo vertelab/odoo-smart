@@ -37,8 +37,6 @@ class smart_salary_simulator_payslip(models.Model):
             employee = self.env.ref('smart_salary_simulator.dummy_employee')
             contract = self.env.ref('smart_salary_simulator.smart_contract_swe')
         
-        
-        
         payslip = self.create({
             'struct_id': contract.struct_id.id,
             'employee_id': employee.id,

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (c) 2013-Present Acespritech Solutions Pvt. Ltd. (<http://acespritech.com>).
+#    OpenERP, Open Source Management Solution, third party addon
+#    Copyright (C) 2004-2015 Vertel AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,12 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv, orm
+from openerp import models, fields, api, _
+from openerp.exceptions import except_orm, Warning, RedirectWarning
+import logging
 
-class account_invoice(osv.osv):
-    _inherit = "account.invoice"
+_logger = logging.getLogger(__name__)
 
-    def invoice_print(self, cr, uid, ids, context = None):
-        '''
-        This function prints the invoice and mark it as sent, so that we can see more easily the next step of the workflow
-        '''
-        assert len(ids) == 1, 'This option should only be used for a single id at a time.'
-        self.write(cr, uid, ids, {'sent': True}, context = context)
-        return self.pool['report'].get_action(cr, uid, ids, 'account_report.report_invoice_custom', context = context)
+#class hr_salary_rule(models.Models):
+    #_inherit = 'hr.salary.rule'
+    #name = fields.Char(string="Name",required=True, translate=True, readonly=False)
