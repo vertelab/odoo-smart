@@ -69,9 +69,9 @@ class website_client(http.Controller):
                 values['salary_lines'] = salary_lines
                 values['invoice_lines'] = invoice_lines
                 values['expenses_lines'] = expenses_lines
-                return request.website.render("smart_salary_simulator.result_se", values)
+                return request.website.render("smart_salary_simulator_ib.result_se", values)
             elif post.get('sender') == 'result':
-                return request.website.render("smart_salary_simulator.simulator_form_se", values)
+                return request.website.render("smart_salary_simulator_ib.simulator_form_se", values)
         else:
             user = env['res.users'].browse(env.uid)[0]
             if user.sudo().employee_ids and user.sudo().employee_ids[0].contract_ids:
@@ -83,8 +83,8 @@ class website_client(http.Controller):
                     'tax': 30.0,
                 }
             else:
-                employee = env.ref('smart_salary_simulator.dummy_employee')
-                contract = env.ref('smart_salary_simulator.smart_contract_swe')
+                employee = env.ref('smart_salary_simulator_ib.dummy_employee')
+                contract = env.ref('smart_salary_simulator_ib.smart_contract_swe')
                 values = {
                     'salary': contract.sudo().wage,
                     'yob': (employee.sudo().birthday and fields.Date.from_string(employee.sudo().birthday).year) or 1990,
@@ -145,60 +145,60 @@ class website_client(http.Controller):
         }
         
         
-        return request.website.render("smart_salary_simulator.sim_%s" %  request.env['res.users'].browse(request.uid).company_id.country_id.code.lower() , values)
+        return request.website.render("smart_salary_simulator_ib.sim_%s" %  request.env['res.users'].browse(request.uid).company_id.country_id.code.lower() , values)
         """
 
-    @http.route(['/salary/simulator/get_lines'], type='json', auth="public", website=True)
-    def get_lines(self, contract_id=None, salary=1000.0, **post):
-        _logger.info(contract_id)
-        env = request.env
-        if not contract_id:
-            return [{'result':'<div class="foobargazonksvinollon">No contract found</div>'}]
-        contract = env['hr.contract'].browse(int(contract_id))[0]
-        wage = contract.wage or 0.0
-        contract.wage = float(salary)
-        payslip = env['hr.payslip'].create({
-        'struct_id': contract.struct_id.id,
-        'employee_id': contract.employee_id.id,
-        'date_from': fields.Date.today(),
-        'date_to': fields.Date.today(),
-        'state': 'draft',
-        'contract_id': contract.id,
-        })
-        lines = payslip.simulate_sheet()
-        payslip.unlink()
-        contract.wage = wage
-        
-        lines_list = []
-        for line in lines:
-            lines_list.append([line['name'], float(line['quantity']) * line['amount'] * line['rate'] / 100])
-        
-        return {'lines': lines_list}
-    
-    @http.route(['/salary/sim/calc'], type='http', auth="user", website=True)
-    def salary_simulation_frame(self, order=False):
-        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-        
-        res_user = request.registry.get('res.users').browse(cr,uid,uid)
-        values = {}
-        
-        return request.website.render("smart_salary_simulator.sim_frame_%s" %  pool.get('res.users').browse(cr, uid, uid).company_id.country_id.code.lower() , values)
-
-    @http.route(['/salary/sim',
-#        '/salary/<int:user>'
-    ], type='http', auth="public", website=True)
-    def salary(self, user=0, search='', **post):
-        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-
-        res_user = request.registry.get('res.users').browse(cr,uid,uid)
-        context['lang'] = res_user.lang
-
-        values = {
-            'salarysimulator_menu': 'active',        
-            'context': context,
-            'res_user': res_user,
-        }
-        return request.website.render("smart_salary_simulator.simulator_%s" %  pool.get('res.users').browse(cr, uid, uid).company_id.country_id.code.lower() , values)
+    #~ @http.route(['/salary/simulator/get_lines'], type='json', auth="public", website=True)
+    #~ def get_lines(self, contract_id=None, salary=1000.0, **post):
+        #~ _logger.info(contract_id)
+        #~ env = request.env
+        #~ if not contract_id:
+            #~ return [{'result':'<div class="foobargazonksvinollon">No contract found</div>'}]
+        #~ contract = env['hr.contract'].browse(int(contract_id))[0]
+        #~ wage = contract.wage or 0.0
+        #~ contract.wage = float(salary)
+        #~ payslip = env['hr.payslip'].create({
+        #~ 'struct_id': contract.struct_id.id,
+        #~ 'employee_id': contract.employee_id.id,
+        #~ 'date_from': fields.Date.today(),
+        #~ 'date_to': fields.Date.today(),
+        #~ 'state': 'draft',
+        #~ 'contract_id': contract.id,
+        #~ })
+        #~ lines = payslip.simulate_sheet()
+        #~ payslip.unlink()
+        #~ contract.wage = wage
+        #~ 
+        #~ lines_list = []
+        #~ for line in lines:
+            #~ lines_list.append([line['name'], float(line['quantity']) * line['amount'] * line['rate'] / 100])
+        #~ 
+        #~ return {'lines': lines_list}
+    #~ 
+    #~ @http.route(['/salary/sim/calc'], type='http', auth="user", website=True)
+    #~ def salary_simulation_frame(self, order=False):
+        #~ cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
+        #~ 
+        #~ res_user = request.registry.get('res.users').browse(cr,uid,uid)
+        #~ values = {}
+        #~ 
+        #~ return request.website.render("smart_salary_simulator_ib.sim_frame_%s" %  pool.get('res.users').browse(cr, uid, uid).company_id.country_id.code.lower() , values)
+#~ 
+    #~ @http.route(['/salary/sim',
+#~ #        '/salary/<int:user>'
+    #~ ], type='http', auth="public", website=True)
+    #~ def salary(self, user=0, search='', **post):
+        #~ cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
+#~ 
+        #~ res_user = request.registry.get('res.users').browse(cr,uid,uid)
+        #~ context['lang'] = res_user.lang
+#~ 
+        #~ values = {
+            #~ 'salarysimulator_menu': 'active',        
+            #~ 'context': context,
+            #~ 'res_user': res_user,
+        #~ }
+        #~ return request.website.render("smart_salary_simulator_ib.simulator_%s" %  pool.get('res.users').browse(cr, uid, uid).company_id.country_id.code.lower() , values)
 
 
 #~ class QueryURL(object):
