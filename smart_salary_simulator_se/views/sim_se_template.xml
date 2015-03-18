@@ -95,10 +95,10 @@
 
 			<div class="controls">
 			    <select id="salary-vat-prct" name="salary-vat-prct" data-path="vat" class="span2">
-				<option value="0">0%</option>
-				<option value="6">6%</option>
-				<option value="12">12%</option>
 				<option selected="" value="25">25%</option>
+				<option value="12">12%</option>
+				<option value="6">6%</option>
+				<option value="0">0%</option>
 			    </select>
 			</div>
 <!--
