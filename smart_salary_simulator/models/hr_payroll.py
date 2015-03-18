@@ -25,6 +25,6 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
-#class hr_salary_rule(models.Models):
-    #_inherit = 'hr.salary.rule'
-    #name = fields.Char(string="Name",required=True, translate=True, readonly=False)
+class hr_salary_rule(models.Model):
+    _inherit = 'hr.salary.rule'
+    name = fields.Char(string="Name",required=True, translate=True, readonly=False)
