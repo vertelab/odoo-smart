@@ -71,22 +71,43 @@ class website_order(http.Controller):
         }
         return request.website.render("smart_order.list",values)
         
+        
+        
+        
+        
     @http.route(['/order/list/all',], type='http', auth="user", website=True)
     def order_list_all(self, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 
         res_user = request.registry.get('res.users').browse(cr,uid,uid)
         context['lang'] = res_user.lang
+
+
+        if post.get('search_phrase'):
+            order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id),'|',
+                                                                                ('partner_id.name','ilike','%%%s%%' % post.get('search_phrase')),
+                                                                                ('description','ilike','%%%s%%' % post.get('search_phrase')),
+                                                                                ],context=context)
+        else:
+            order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)],context=context)
+            
+
         
         values = {
             'context': context,
             'order_all_menu': 'active',
             'res_user': res_user,
+            'form_action': '/order/list/all',
+            'search_phrase': post.get('search_phrase'),
 #            'sale_orders': request.registry.get('sale.order').browse(cr,uid,request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context),
             'sale_orders': request.registry['sale.order'].browse(cr, uid, request.registry['sale.order'].search(cr, uid,[('company_id','in',[company.id for company in res_user.company_ids])]),context=context),
 # Orders = the orders that the advisor works with 'my users' (company_ids / Allowed companies)
         }
         return request.website.render("smart_order.list_all",values)
+
+
+
+
 
 #    @http.route(['/order/search',], type='http', auth="user", website=True)
 #    def order_search(self, **post):

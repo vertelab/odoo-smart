@@ -18,7 +18,7 @@ http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-order
         'views/templates.xml',
     ],
     'demo': [ ],
-    'installable': True,
-    'application': True,
+    'installable': False,
+    'application': False,
     'sequence': 60,
 }

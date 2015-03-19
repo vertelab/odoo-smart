@@ -1,15 +1,12 @@
 {
-    'name': 'SMart Salary Simulator',
+    'name': 'SMart Salary Simulator - ib',
     'category': 'Website',
-    'summary': 'Webpage as Salary Simulator',
+    'summary': 'Webpage as Salary Simulator - IB',
     'version': '1.0',
     'description': """
 SMart Account
 ===========
 
-Customers
-
-http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-orders/
 
         """,
     'author': 'Vertel AB',

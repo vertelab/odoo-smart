@@ -20,6 +20,7 @@
 <t t-if="res_user.id == 1"><span class="draft">Draft </span></t>
 <!--t-if needs a span-tag, it does not work with just a p-tag-->
 <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/>
+<t groups="base.group_smart_debug"><span>Align right and then remove this</span></t>
 
 <div t-esc="sale_order.partner_id.display_name"/>
 <hr groups="base.group_smart_user" />

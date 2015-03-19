@@ -83,7 +83,7 @@
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>			    			
 <!--debug-->
- <br/>(<t t-raw="o.state"/>)
+<t groups="base.group_smart_debug"> <br/>(<t t-raw="o.state"/>)</t>
                              </td>
 
                              <td t-if="o.state == 'draft'" class="cell-primary"><a  t-att-href="'/order/%s/cancel' % o.id" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return true;'><i class="icon-trash icon-red"></i></a></td>
@@ -163,6 +163,19 @@
             <div class="panelsheet-content">
               
               <section class="panelsheet-section">
+
+
+<t groups="base.group_smart_debug"> 
+<!--              start search box-->
+              <p>
+			   <form class="form-horizontal form-preview"   action="/order/list/all"  method="POST">   
+                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
+				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search [not working yet]</button>
+              </form>
+              </p>
+<!--              end search box-->
+</t>
+
                 
                 <table class="table table-striped" >
       	          <thead>

@@ -110,15 +110,28 @@ class website_project(http.Controller):
 
 #        order = pool.get('sale.order').browse(cr, uid, pool.get('sale.order').search(cr,uid,['&','&',('company_id','=',res_user.company_id.id),('state','in',('progress','manual','done')),('project_id','=',project.id)],context=context), context=context)
         order = pool.get('sale.order').browse(cr, uid, pool.get('sale.order').search(cr,uid,['&',('state','in',('draft','sent','open','manual','progress','done')),('project_id','=',project.id)],context=context), context=context)
-        _logger.warning('Order: %s' % order)        
+        _logger.warning('Order: %s' % order)
+        
+        class BrowsableObject(object):
+            def __init__(self,):
+                self.dict = {}
+
+            def __getattr__(self, attr):
+                return attr in self.dict and self.dict.__getitem__(attr) or 0.0
+
+        order_sum = BrowsableObject()
+        for o in order:
+            order_sum.amount_untaxed      += o.amount_untaxed
+            order_sum.amount_tax          += o.amount_tax
+            order_sum.amount_total        += o.amount_total
+            order_sum.amount_undiscounted += o.amount_undiscounted
+            order_sum.planned_untaxed     += o.amount_untaxed if o.state in ('draft','sent','open','manual','progress','done') else 0.0
+            order_sum.approved_untaxed    += o.amount_untaxed if o.state in ('open','manual','progress','done') else 0.0
+
+
         order_lines = pool.get('sale.order.line').browse(cr, uid, pool.get('sale.order.line').search(cr,uid,[('order_id','in',[o.id for o in order])],context=context), context=context)
         _logger.warning('Order_lines %s' % order_lines)
 # sale.order.line
-        #order_sum = lambda: None
-        
-        #for o in order:
-            #order_sum.amount_untaxed += o.amount_untaxed  # create a dict
-
 
 #		    <t t-if="o.order_id.state == 'draft'"><span class="draft">Draft </span></t>
 #			<t t-if="o.order_id.state == 'sent'"><span class="sent">Sent to Client</span></t>
@@ -135,17 +148,16 @@ class website_project(http.Controller):
 
 # Select by project_id (analytic account)
 
-        expense_sum = lambda: None
-#        for e in expense.filtered(lambda r: r.analytic_account.id == project.analytic_account_id.id):
+        expense_sum = BrowsableObject()
         for e in expense_line:
-            try:
-                expense_sum.amount_untaxed -= e.amount_untaxed
-                expense_sum.amount_tax     -= e.amount_tax
-                expense_sum.total_amount   -= e.total_amount
-            except Exception, ex:
-                _logger.warning("Having trouble with e.amount_untaxed %s (%s) " % (ex,e))
-
-
+            expense_sum.amount_untaxed  -= e.amount_untaxed
+            expense_sum.amount_tax      -= e.amount_tax
+            expense_sum.total_amount    -= e.total_amount
+            expense_sum.planned_untaxed -= e.amount_untaxed if e.expense_id.state in ('draft','sent','confirm','accepted','done') else 0.0
+            expense_sum.approved_untaxed-= e.amount_untaxed if e.expense_id.state in ('confirm','accepted','done') else 0.0
+             
+            
+#draft','sent','open','manual'
         return request.website.render("smart_project.project_overview",{
             'context': context,
             'project_menu': 'active',
@@ -153,7 +165,7 @@ class website_project(http.Controller):
             'res_user': res_user,
             'sale_orders': order,
             'sale_order_lines': order_lines,
-#            'sale_orders_sum': order_sum,
+            'sale_orders_sum': order_sum,
             'expense_lines': expense_line,
             'expense_line_sum': expense_sum,
         }

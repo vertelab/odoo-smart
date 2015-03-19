@@ -70,7 +70,7 @@
          				
 		    <!-- Amount -->
 		    <div class="control-group">
-			<label class="control-label" for="salary-amount">Amount <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
+			<label class="control-label" for="salary-amount">Amount (incl VAT) <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
 			<div class="controls">
 			    <div class="input-append">
 				<input id="salary-amount" name="salary-amount" size="16" type="number" min="0" data-path="amount" t-att-value="salary"/><span class="add-on">kr</span>
@@ -111,7 +111,7 @@
 
 		    <!-- Expenses -->
 		    <div class="control-group">
-			<label class="control-label" for="salary-expense">Expenses  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
+			<label class="control-label" for="salary-expense">Expenses (incl VAT) <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="controls">
 			    <div class="input-append">
 				<input id="salary-expense" name="salary-expense" data-path="expenses" size="16" type="number" t-att-value="expenses" min="0" step="0.01"/><span class="add-on">kr</span>
@@ -121,15 +121,17 @@
 		    
 		    <!-- smart fee -->
 
-		    <div class="control-group">
-			<label class="control-label" for="salary-smart-fee">Smart fee <a class="tip" data-toogle="tooltip" data-placement="top" title="Smart fee."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
-
-			<div class="controls">
-			    <div class="input-append">
-				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="number" readonly="true" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>
-			    </div>
-			</div>
-		    </div>
+<!--Remarket by Fredrik-->
+<!--		    <div class="control-group">-->
+<!--			<label class="control-label" for="salary-smart-fee">Smart fee <a class="tip" data-toogle="tooltip" data-placement="top" title="Smart fee."><i class="glyphicon glyphicon-question-sign"></i></a></label>	-->
+<!---->
+<!--			<div class="controls">-->
+<!--			    <div class="input-append">-->
+<!--				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="number" readonly="true" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>-->
+				<input id="salary-smart-fee" name="salary-smart-fee" size="16" type="hidden" t-att-value="smart_fee"/>
+<!--			    </div>-->
+<!--			</div>-->
+<!--		    </div>-->
 
 		    <hr/>
 
@@ -290,23 +292,36 @@
 <section id="salary-calculator-results" class="content">
  
     <div id="salary-calculator-overview">
+<table>
+<tr>
+<td>	<div class="well">
+	  <h2>
+	    <small>Invoice to the client:</small>
+	    <strong><t t-esc="int(round(salary))"/>  kr</strong>
+	  </h2>
+	</div>
+</td>
+<td>
+<img src="/smart_common/static/ui/img/blank.jpg" width="25px"/>
+</td>
+<td>
 	<div class="well">
 	  <h2>
 	    <small>The salary you may get:</small>
 	    <strong><t t-esc="int(round(net_result))"/> kr</strong>
 	  </h2>
 	</div>
-	<div class="well">
-	  <h2>
-	    <small>Invoice to the client:</small>
-	    <strong><t t-esc="int(round(salary))"/>  kr</strong>
-	  </h2>
-	</div>
+</td>
+</tr>
+</table>
+
     </div>
     
     <table class="table">
 	<thead>
-	    <tr><th colspan="2">Invoice</th></tr>
+	    <tr><th colspan="1">Invoice</th>
+  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+	    </tr>
 	</thead>
 	<tbody>
 	    <t t-foreach="invoice_lines" t-as="line">
@@ -314,7 +329,7 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td>
+		    <td align="right">
 			<t t-esc="'%s kr' % int(round(line['amount']))"/>
 		    </td>
 		</tr>
@@ -324,7 +339,10 @@
   
     <table class="table">
 	<thead>
-	    <tr><th colspan="2">Salary</th></tr>
+	    <tr><th colspan="1">Salary</th>
+  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+	    </tr>
+
 	</thead>
 	<tbody>
 	    <t t-foreach="salary_lines" t-as="line">
@@ -332,7 +350,7 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td>
+		    <td align="right">
 			<t t-esc="'%s kr' % int(round(float(line['quantity']) * line['amount'] * line['rate'] / 100))"/>
 		    </td>
 		</tr>
@@ -342,7 +360,9 @@
 
     <table class="table">
 	<thead>
-	    <tr><th colspan="2">Expenses</th></tr>
+	    <tr><th colspan="1">Expenses (incl VAT) </th>
+  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+	    </tr>
 	</thead>
 	<tbody>
 	    <t t-foreach="expenses_lines" t-as="line">
@@ -350,7 +370,7 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td>
+		    <td align="right">
 			<t t-esc="'%s kr' % int(round(line['amount']))"/>
 		    </td>
 		</tr>
