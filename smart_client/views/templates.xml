@@ -447,9 +447,9 @@
 			                <table class="table table-striped" >
 					  	          <thead>
 					  	            <tr>
-<!--					   	              <th><span class="muted">Name</span></th>-->
-					   	              <th><span class="muted">First Name</span></th>
-					   	              <th><span class="muted">Last Name</span></th>
+					   	              <th><span class="muted">Name</span></th>
+<!--					   	              <th><span class="muted">First Name</span></th>-->
+<!--					   	              <th><span class="muted">Last Name</span></th>-->
 
 <!--					  	              <th><span class="muted">Office</span></th>-->
 					  	              <th><span class="muted">Mobile</span></th>
@@ -461,9 +461,9 @@
 					  	          <tbody>
 							          	<t t-foreach="res_partner.child_ids" t-as="ccp">
 					                       <tr>
-<!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.name"/></a></td>-->
-					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.firstname"/></a></td>
-					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.lastname"/></a></td>
+					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.name"/></a></td>
+<!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.firstname"/></a></td>-->
+<!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.lastname"/></a></td>-->
 <!--				                       <td><div t-field="ccp.phone" /></td>-->
 					                       <td><div t-raw="ccp.mobile"  /></td>
 					                       <td><div t-field="ccp.email" /></td>
@@ -474,9 +474,9 @@
 
 
 			               <tr>
-<!--                              <td><input type="text" id="name" name="ccp_name" placeholder="Name"/></td>-->
-                              <td><input type="text" id="firstname" name="ccp_firstname" placeholder="First Name"/></td>
-                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>
+                              <td><input type="text" id="name" name="ccp_name" placeholder="Name"/></td>
+<!--                              <td><input type="text" id="firstname" name="ccp_firstname" placeholder="First Name"/></td>-->
+<!--                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>-->
 <!--                              <td><input type="text" id="phone" size="10" name="res_partner.child_id.phone" align="right" placeholder="Phone" /></td>                              -->
                               <td><input type="text" id="mobile" size="10" name="res_partner.child_id.mobile" align="right" placeholder="Mobile" /></td>
 				              <td><input type="text" id="email" name="ccp_email" placeholder="first.last@company.org" /></td>
@@ -626,9 +626,9 @@
 <!--Edit Organisational client-->
             			        	<t t-if="res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.parent_id.name}"/></t>
 <!--Edit Individual client-->
-<!--            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.name}"/></t>-->
-            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="firstname" t-attf-value="#{res_partner.firstname}"/></t> 
-            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="lastname" t-attf-value="#{res_partner.lastname}"/></t>
+            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.name}"/></t>
+<!--            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="firstname" t-attf-value="#{res_partner.firstname}"/></t> -->
+<!--            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="lastname" t-attf-value="#{res_partner.lastname}"/></t>-->
 								</t>
 			                </div>
 			              </div>
