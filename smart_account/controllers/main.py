@@ -55,7 +55,26 @@ class website_account(http.Controller):
         context['lang'] = res_user.lang
             
         partnerdata = dict((field_name, post[field_name])
-            for field_name in ['phone','mobile','street','zip','city','country_id','smart_bank_account_type','smart_bank_name','smart_bank_acc_no', 'smart_bank_acc_iban','smart_bank_acc_bic','dropbox_link'] if post.get(field_name))
+            for field_name in [
+            'phone',
+            'mobile',
+            'email',
+            'street',
+            'zip',
+            'city',
+            'country_id',
+            'smart_bank_account_type',
+            'smart_bank_name',
+            'smart_bank_acc_no', 
+            'smart_bank_branch',
+            'smart_bank_code',
+            'smart_bank_acc_iban',
+            'smart_bank_acc_bic',
+            'smart_work_roles',
+            'dropbox_link',
+            'smart_place_of_birth',
+            'category_id',           
+            ] if post.get(field_name))
             
         if partnerdata:
             account.partner_id.write(partnerdata)
@@ -65,7 +84,16 @@ class website_account(http.Controller):
 
         hrdata = dict((field_name.replace('hr_',''), post[field_name])
 #            for field_name in ['passport_id','legal_city','street','phone','mobile'] if post.get(field_name))
-            for field_name in ['withhold_tax','otherid','identification_id','passport_id','hr_country_id'] if post.get(field_name))
+            for field_name in [
+            'country_id',
+            'withhold_tax',
+            'otherid',
+            'identification_id',
+            'passport_id',
+            'hr_country_id'
+            'job_id',
+            'birthday',
+            ] if post.get(field_name))
         if hrdata:
             _logger.warning("This is my hrdata post %s" % (hrdata))
             _logger.warning("This is my contracts %s" % (account.employee_ids))

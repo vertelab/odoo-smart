@@ -88,7 +88,7 @@
 	    				        </div>
 	    				      </div>
                             
-                            
+
                            
                             
 
@@ -222,6 +222,14 @@
   				          </div>
   				        </div>
 
+  				        <div class="control-group">
+  				          <label class="control-label" for="phone">Email</label>
+  				          <div class="controls">
+                           	<input type="text" id="email" name="email" t-attf-value="#{res_user.partner_id.email}"/>
+  				          </div>
+  				        </div>
+
+
 					<ul>
   				        <legend>Address</legend>
 <!--  				        <legend>Legal address</legend>-->
@@ -322,16 +330,39 @@
 
 						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
 <!-- 					<form class="form-horizontal" action="#confirmation" method="post">-->
-		        
-  				            <div class="control-group">
-	  				          <label class="control-label" for="wtx">Withholding tax </label>
-  					          <div class="controls">
-					            <div class="input-append">
-    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/><span class="add-on"><big>%</big></span>
-  				    	        </div>
-  				        	  </div>
-	  				        </div>
 
+			  		<ul>
+			  			<header>
+               				<h2 style="margin: 0;">
+               				  <small>Work you do</small><BR/>
+               				</h2>
+						</header>
+					</ul>	
+
+<!--  					        <div class="control-group">-->
+<!--  					          <label class="control-label" for="otherid">Your main work role</label>-->
+<!--  					          <div class="controls">-->
+<!--								<input id="job_id" name="job_id" t-attf-value="#{res_user.employee_ids[0].job_id.name}" type="text"/>-->
+<!--  				    	      </div>-->
+<!--                                 <select name="job_id">-->
+<!--                                    <t t-foreach="hr_user.job_ids" t-as="j">-->
+<!--                                        <option t-attf-value="#{j.id}" t-att-selected="res_user.employee_ids[0].job_id == j.id"><t t-esc="j.name"/></option> -->
+<!--                                    </t>-->
+<!--                                </select>-->
+<!--  				        	</div>-->
+
+  					        <div class="control-group">
+  					          <label class="control-label" for="smart_work_roles">Work roles you have as well</label>
+  					          <div class="controls">
+<!--								<input id="category_id" name="category_id" t-attf-value="#{res_user.partner_id.category_id.name}" type="text"/>-->
+                          		<textarea name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line." ><t t-esc="res_user.partner_id.smart_work_roles or '' "/></textarea>
+
+  				    	      </div>
+  				        	</div>
+
+
+
+		        
 						<ul>  		
   				        <legend>Identity</legend>
 						</ul>  		  				          				        
@@ -360,8 +391,6 @@
 	  				        <div class="control-group nationality">
   					          <label class="control-label" for="nationality">Nationality</label>
   					          <div class="controls">
-                                  
-
                                  <select name="hr_country_id">
                                     <t t-foreach="res_country" t-as="c">
                                         <option t-attf-value="#{c.id}" t-att-selected="res_user.employee_ids[0].country_id.id == c.id"><t t-esc="c.name"/></option> 
@@ -371,6 +400,8 @@
   					          </div>
   					        </div>
   				        
+<!--<t t-if="res_user.partner_id.country_id.id == 'ib'"> </t>-->
+<span><t t-esc="res_user.partner_id.country_id.id"/></span>
 
     					        <div class="control-group">
     					          <label class="control-label" for="identification_id">ID Card Number</label>
@@ -391,9 +422,67 @@
   				            	</div>
   					          </div>
 
+    					        <div class="control-group">
+    					          <label class="control-label" for="birthday">Date of birth</label>
+    					          <div class="controls">
+    					            <input id="birthday" name="birthday" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
+    					          </div>
+    				    	    </div>
+
+
+    					        <div class="control-group">
+    					          <label class="control-label" for="birthday">Place of birth</label>
+    					          <div class="controls">
+	                           	<input type="text" id="smart_place_of_birth" name="zip" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
+    					          </div>
+    				    	    </div>
+
+<!--    					        <div class="control-group">-->
+<!--    					          <label class="control-label" for="gender">Gender</label>-->
+<!--    					          <div class="controls">-->
+<!--    					            <input id="birthday" name="gender" t-attf-value="#{res_user.employee_ids[0].gender}" type="text"/>-->
+<!--    					          </div>-->
+<!--    				    	    </div>-->
+
+<!--7. Civil status: 7 options (soltero/a, casado/a, viudo/a, separado/a, divorciado/a, pareja de hecho, desconocido)-->
+<!--    					        <div class="control-group">-->
+<!--    					          <label class="control-label" for="birthday">Civil status</label>-->
+<!--    					          <div class="controls">-->
+<!--    					            <input id="birthday" name="smart_place_of_birth" t-attf-value="#{res_user.employee_ids[0].smart_place_of_birth}" type="text"/>-->
+<!--    					          </div>-->
+<!--    				    	    </div>-->
+
+<!--8. Level of studies: 3 options (basico, bachiller, Estudios superiores)-->
+<!--    					        <div class="control-group">-->
+<!--    					          <label class="control-label" for="birthday">Level of studies:</label>-->
+<!--    					          <div class="controls">-->
+<!--    					            <input id="birthday" name="smart_place_of_birth" t-attf-value="#{res_user.employee_ids[0].smart_place_of_birth}" type="text"/>-->
+<!--    					          </div>-->
+<!--    				    	    </div>-->
+
+
+
+
+
+
+
+
 						<ul groups="base.group_smart_advisor">  		
   				        <legend>System administration</legend>
 						</ul> 
+
+          
+
+  				            <div class="control-group">
+	  				          <label class="control-label" for="wtx">Withholding tax </label>
+  					          <div class="controls">
+					            <div class="input-append">
+    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/><span class="add-on"><big>%</big></span>
+  				    	        </div>
+  				        	  </div>
+	  				        </div>
+
+
 
 <!--  				            <div class="control-group" >-->
   				            <div class="control-group" groups="base.group_smart_advisor">
@@ -465,7 +554,6 @@
   				          <!-- Bankname -->
   				          <div class="control-group">
   				          	<label class="control-label">Bankname</label>
-                            
                             <div class="controls">
 <!--                                 <select name="bank">-->
 <!--                                    <t t-foreach="res_bank" t-as="b">-->
@@ -474,6 +562,21 @@
 <!--                                    </t>-->
 <!--                                </select>-->
   				    	            <input id="smart_bank_name" name="smart_bank_name" t-attf-value="#{res_user.partner_id.smart_bank_name}" type="text"/> 
+    				        </div>
+  				          </div>
+
+  				          <div class="control-group">
+  				          	<label class="control-label">Branch name</label>
+                            <div class="controls">
+  				    	            <input id="smart_bank_branch" name="smart_bank_branch" t-attf-value="#{res_user.partner_id.smart_bank_branch}" type="text"/> 
+    				        </div>
+  				          </div>
+
+
+  				          <div class="control-group">
+  				          	<label class="control-label">Bank code</label>
+                            <div class="controls">
+  				    	            <input id="smart_bank_code" name="smart_bank_code" t-attf-value="#{res_user.partner_id.smart_bank_code}" type="text"/> 
     				        </div>
   				          </div>
 

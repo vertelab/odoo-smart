@@ -145,8 +145,8 @@ class website_order(http.Controller):
             context['next_form'] = 'smart_order.edit_lines'         
             context['form_action'] = '/order/new'
         else:
-#            template='smart_order.order'
-            template='smart_order.order_print'
+            template='smart_order.order'
+#            template='smart_order.order_print'
             context['form_action'] = '/order/%s' % sale_order.id         
             if context.get('next_form') == 'smart_order.edit_order_data':
                 template=context.get('next_form')     

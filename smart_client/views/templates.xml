@@ -33,7 +33,8 @@
 	              
 	              <section class="panelsheet-section">
 
-              
+
+            <t groups="base.group_smart_debug">
 <!--              start search box-->
               <p>
 			   <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   
@@ -42,7 +43,7 @@
               </form>
               </p>
 <!--              end search box-->
-
+			</t>
 
 	                
 	                <table class="table table-striped" >
@@ -76,7 +77,8 @@
 				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
 				                       		<t t-raw="c.parent_id.name"/>
 				                       </t>
-				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> (<t t-raw="c.client_contact_counter"/>)
+				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> 
+<!--				                       <t groups="base.group_smart_debug">(<t t-raw="c.client_contact_counter"/>)</t>-->
 				                       </t>
 <!--Display the number of contact persons for the client-->
 	                       </td>

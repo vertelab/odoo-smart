@@ -29,7 +29,7 @@
     'description': """ Depends and install all modules that SMart EU needs. Use this module with --load-parameter to the server """,
 #    'depends': ["virtual_company","smart_cash","account_report","account_invoice_submitted","ir_sequence_country","l10n_se","sale_sequence","web_smartux"],
 #    'depends': ["account","sale","project","hr_expense","smart_multicompany","smart_common","smart_account","smart_salary_simulator","smart_client","smart_order","smart_project","smart_activity","smart_dashboard"],
-    'depends': ["smart_common","smart_account","smart_salary_simulator","smart_client","smart_order","smart_project","smart_expense","smart_dashboard","smart_mc_account","smart_mc_hr","smart_mc_hr_expense","smart_mc_product",],
+    'depends': ["smart_common","smart_account","smart_client","smart_order","smart_project","smart_expense","smart_dashboard","smart_mc_account","smart_mc_hr","smart_mc_hr_expense","smart_mc_product",],
 
     'data': [],
     'installable': True,

@@ -290,10 +290,13 @@
 <!--            <div groups="base.smart_advisor" class="panelsheet-content">-->
             <div class="panelsheet-content">
 	         <ul>
+
+<t groups="base.group_smart_debug">
 <span> 
 Translation content was last updated: 2015-01-01<BR/>
 Translation files was last updated: 2015-01-01<BR/>
 </span>
+</t>
 	         </ul>
 			</div>		
 		

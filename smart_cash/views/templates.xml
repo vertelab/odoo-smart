@@ -162,8 +162,9 @@
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
 <!-- Debug-->
- <BR/>(<t t-raw="o.state"/>)
-
+<t groups="base.group_smart_user">
+<BR/>(<t t-raw="o.state"/>)
+</t>
                              </td>
 
                             </tr>

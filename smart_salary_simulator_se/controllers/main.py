@@ -16,6 +16,10 @@ class website_client(http.Controller):
         env = request.env
         if request.httprequest.method == 'POST':
             values = {
+#Added by Fredrik
+                'salarysimulator_menu': 'active',        
+                'context': context,
+#End Added by Fredrik
                 'res_user': env['res.users'].browse(env.uid)[0],
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),
