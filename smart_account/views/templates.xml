@@ -405,7 +405,8 @@
 <span><t t-esc="res_user.company_id.country_id.id"/></span>
 <span><t t-esc="res_user.company_ids"/></span>
 
-    					        <div class="control-group">
+
+    					        <div class="control-group" t-if="res_company.country_id.code in ['ES']">
     					          <label class="control-label" for="identification_id">ID Card Number</label>
     					          <div class="controls">
 <!--                                  <input type="text" id="otherid" name="identification_id" placeholder="Identification ID" t-attf-value="#{hr.employee.otherid}"/>-->
@@ -435,7 +436,7 @@
     					        <div class="control-group">
     					          <label class="control-label" for="birthday">Place of birth</label>
     					          <div class="controls">
-	                           	<input type="text" id="smart_place_of_birth" name="zip" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
+	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
     					          </div>
     				    	    </div>
 

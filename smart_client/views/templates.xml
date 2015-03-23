@@ -298,19 +298,6 @@
 <!--			                </div>-->
 <!--			              </div>-->
 
-			              
-			             <div class="control-group">
-    				        <label class="control-label" for="country"><strong>Country</strong></label>
-    				        <div class="controls">
-<!--                                 <select id="country_id">-->
-                                 <select name="country_id">
-
-                                    <t t-foreach="res_countrys" t-as="c">
-                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
-                                    </t>
-                                </select>
-    				        </div>
-    				      </div>
 
 
            	            <t t-if="not res_partner.is_company">
@@ -362,6 +349,21 @@
 				           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/>
 			                </div>
 			              </div>
+
+			              
+			             <div class="control-group">
+    				        <label class="control-label" for="country"><strong>Country</strong></label>
+    				        <div class="controls">
+<!--                                 <select id="country_id">-->
+                                 <select name="country_id">
+
+                                    <t t-foreach="res_countrys" t-as="c">
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
+                                    </t>
+                                </select>
+    				        </div>
+    				      </div>
+
 			            
 				         </fieldset>
 			
@@ -676,6 +678,38 @@
 
         	            
 
+			              
+			            </fieldset>
+			            
+			            <fieldset>
+			              <legend>Address</legend>
+			              <div class="control-group address">
+			                <label class="control-label"><strong>Address</strong></label>
+			                <div class="controls">
+			                    <t t-if="not res_partner"><input type="text" id="street" name="street" placeholder="Your street and number"/>  </t>
+            			        <t t-if="res_partner"><input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/> </t>
+			                </div>
+			                <div class="controls" style="margin-top: 8px;">
+								<t t-if="not res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info"/></t>
+								<t t-if="res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/></t>
+			                </div>
+			              </div>
+			              <div class="control-group postal code">
+			                <label class="control-label"><strong>Postal code</strong></label>
+			                <div class="controls">
+								<t t-if="not res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" /></t>
+								<t t-if="res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/></t>
+			                </div>
+			              </div>
+			              <div class="control-group city">
+			                <label class="control-label" for="inputCity"><strong>City</strong></label>
+			                <div class="controls">
+								<t t-if="not res_partner"><input type="text" id="city" name="city" placeholder="Your town" /></t>
+								<t t-if="res_partner"><input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/></t>
+			                </div>
+			              </div>
+			              
+
 
 						<t t-if="res_partner and not res_partner.parent_id">			              
 			              <div class="control-group country">
@@ -708,36 +742,8 @@
 			                </div>
 			              </div>
 			            </t>
+
 			              
-			            </fieldset>
-			            
-			            <fieldset>
-			              <legend>Address</legend>
-			              <div class="control-group address">
-			                <label class="control-label"><strong>Address</strong></label>
-			                <div class="controls">
-			                    <t t-if="not res_partner"><input type="text" id="street" name="street" placeholder="Your street and number"/>  </t>
-            			        <t t-if="res_partner"><input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/> </t>
-			                </div>
-			                <div class="controls" style="margin-top: 8px;">
-								<t t-if="not res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info"/></t>
-								<t t-if="res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/></t>
-			                </div>
-			              </div>
-			              <div class="control-group postal code">
-			                <label class="control-label"><strong>Postal code</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" /></t>
-								<t t-if="res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/></t>
-			                </div>
-			              </div>
-			              <div class="control-group city">
-			                <label class="control-label" for="inputCity"><strong>City</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="city" name="city" placeholder="Your town" /></t>
-								<t t-if="res_partner"><input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/></t>
-			                </div>
-			              </div>
 				         </fieldset>
 
 
