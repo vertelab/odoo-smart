@@ -354,13 +354,13 @@
 			             <div class="control-group">
     				        <label class="control-label" for="country"><strong>Country</strong></label>
     				        <div class="controls">
-<!--                                 <select id="country_id">-->
-                                 <select name="country_id">
+<!--                                 <select name="country_id">-->
+<!--                                    <t t-foreach="res_countrys" t-as="c">-->
+<!--                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> -->
+<!--                                    </t>-->
+<!--                                </select>-->
+								 <t t-esc="res_partner.country_id.name"/>
 
-                                    <t t-foreach="res_countrys" t-as="c">
-                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
-                                    </t>
-                                </select>
     				        </div>
     				      </div>
 
@@ -469,7 +469,7 @@
 <!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.firstname"/></a></td>-->
 <!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.lastname"/></a></td>-->
 <!--				                       <td><div t-field="ccp.phone" /></td>-->
-					                       <td><div t-raw="ccp.mobile"  /></td>
+					                       <td><div t-raw="ccp.mobile" /></td>
 					                       <td><div t-field="ccp.email" /></td>
 			<!--	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       -->
 											</tr>
@@ -482,7 +482,7 @@
 <!--                              <td><input type="text" id="firstname" name="ccp_firstname" placeholder="First Name"/></td>-->
 <!--                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>-->
 <!--                              <td><input type="text" id="phone" size="10" name="res_partner.child_id.phone" align="right" placeholder="Phone" /></td>                              -->
-                              <td><input type="text" id="mobile" size="10" name="res_partner.child_id.mobile" align="right" placeholder="Mobile" /></td>
+                              <td><input type="text" id="mobile" size="10" name="res_partner.child_id.ccp_mobile" align="right" placeholder="Mobile" /></td>
 				              <td><input type="text" id="email" name="ccp_email" placeholder="first.last@company.org" /></td>
                             </tr>
 

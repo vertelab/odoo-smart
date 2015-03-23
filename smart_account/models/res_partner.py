@@ -40,8 +40,8 @@ class res_partner(models.Model):
     
     
     
-class website(models.Model):
-    _inherit = 'website'
-
+#~ class website(models.Model):
+    #~ _inherit = 'website'
+#~ 
     #~ company = fields.Many2one('res.company', string="Company",default=lambda self: self.env['ir.model.data'].xmlid_to_res_id(openerp.SUPERUSER_ID, 'base.public_user'))
-    smart_company = fields.Many2one('res.company', string="Company",default=1)
+    #~ smart_company = fields.Many2one('res.company', string="Company",default=1)

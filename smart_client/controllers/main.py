@@ -76,11 +76,8 @@ class website_client(http.Controller):
         if not partner:
             partner_id = pool.get('res.partner').create(cr,uid,{
                 'name': _('My first client'),
-                'is_company': ('TRUE'),
-#Anders: Lägg in länk till användarens country_id istället här.
-                'country_id': _('21'),
-#Anders: Lägg in länk till användarens country_id istället här.
-                
+                'is_company': True,
+                'country_id': request.env.ref('base.main_company').country_id.id,
             })
             partner = pool.get('res.partner').browse(cr,uid,partner_id)
 
@@ -98,7 +95,7 @@ class website_client(http.Controller):
                     'res_partners':  clients,
                     'form_post': '/client/%s?redirect=%s' % (partner.id,post.get('redirect')),
                 }
-
+ 
         if request.httprequest.method == 'POST':
 
     
