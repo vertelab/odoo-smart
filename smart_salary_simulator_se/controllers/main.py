@@ -14,8 +14,10 @@ class website_client(http.Controller):
     @http.route(['/salary/simulator'], type='http', auth="public", website=True)
     def salary_simulation(self, **post):
         env = request.env
+        user = env['res.users'].browse(env.uid)[0]
         if request.httprequest.method == 'POST':
             values = {
+                'salarysimulator_menu': 'active',
                 'res_user': env['res.users'].browse(env.uid)[0],
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),
@@ -24,6 +26,7 @@ class website_client(http.Controller):
                 'vat': float(post.get('salary-vat-prct') or 0),
                 'musician': post.get('salary-musician') or 'off',
                 'smart_fee': float(post.get('salary-smart-fee') or 0),
+                'res_user': user,
             }
             if post.get('sender') == 'form':
                 _logger.info(post)
@@ -73,7 +76,6 @@ class website_client(http.Controller):
             elif post.get('sender') == 'result':
                 return request.website.render("smart_salary_simulator_se.simulator_form_se", values)
         else:
-            user = env['res.users'].browse(env.uid)[0]
             if user.sudo().employee_ids and user.sudo().employee_ids[0].contract_ids:
                 employee = user.employee_ids[0]
                 contract = employee.sudo().contract_ids[0]
@@ -90,7 +92,7 @@ class website_client(http.Controller):
                     'yob': (employee.sudo().birthday and fields.Date.from_string(employee.sudo().birthday).year) or 1990,
                     'tax': 30.0,
                 }
-                
+            values['salarysimulator_menu'] = 'active'
             values['expenses'] = 0
             values['vat'] = 25
             values['musician'] = 1
