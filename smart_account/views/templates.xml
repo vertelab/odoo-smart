@@ -402,6 +402,8 @@
   				        
 <!--<t t-if="res_user.partner_id.country_id.id == 'ib'"> </t>-->
 <span><t t-esc="res_user.partner_id.country_id.id"/></span>
+<span><t t-esc="res_user.company_id.country_id.id"/></span>
+<span><t t-esc="res_user.company_ids"/></span>
 
     					        <div class="control-group">
     					          <label class="control-label" for="identification_id">ID Card Number</label>
