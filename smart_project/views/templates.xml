@@ -180,7 +180,7 @@
 
     				        <input type="text" class="input-xlarge inline" name="name" placeholder="Your projects new name" t-attf-value="#{project.name}"/>
 
-    				        <p class="help-block">A short and relevant name is best.</p>
+    				        <p class="help-block">Please give a brief description of the project, the main characteristics, dates, what art form, etc....</p>
     				      </div>
     				    </div>
     				  </div>

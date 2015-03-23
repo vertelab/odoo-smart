@@ -19,7 +19,9 @@
 #
 ##############################################################################
 
+import openerp
 from openerp import models, fields, api, _, tools
+
 
 
 class res_partner(models.Model):
@@ -35,3 +37,11 @@ class res_partner(models.Model):
     smart_work_roles        = fields.Char(string='Your workroles',size=100,)
     dropbox_link            = fields.Char(string='Your documents',size=100,)
     smart_place_of_birth    = fields.Char(string='Place of Birth',size=100,)
+    
+    
+    
+class website(models.Model):
+    _inherit = 'website'
+
+    #~ company = fields.Many2one('res.company', string="Company",default=lambda self: self.env['ir.model.data'].xmlid_to_res_id(openerp.SUPERUSER_ID, 'base.public_user'))
+    smart_company = fields.Many2one('res.company', string="Company",default=1)

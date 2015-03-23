@@ -77,6 +77,7 @@ class website_client(http.Controller):
             partner_id = pool.get('res.partner').create(cr,uid,{
                 'name': _('My first client'),
                 'is_company': ('TRUE'),
+#Anders: Lägg in länk till användarens country_id istället här.
                 'country_id': _('21'),
 #Anders: Lägg in länk till användarens country_id istället här.
                 
@@ -108,7 +109,7 @@ class website_client(http.Controller):
                 partner.write(partner_data)
 
             contact_person = dict((field_name.replace('ccp_',''), post[field_name])
-                for field_name in ['ccp_name','ccp_email',] if post.get(field_name))
+                for field_name in ['ccp_name','ccp_mobile','ccp_email',] if post.get(field_name))
             if contact_person:
                 contact_person['parent_id'] = partner.id
                 contact_person['street'] = partner.street
