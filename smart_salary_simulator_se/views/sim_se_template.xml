@@ -269,6 +269,31 @@
 	}
     };
 
+    function displayFloatND(x,nd){
+	if(myIsNaN(x)){
+	    return Number.NaN;
+	}
+	else{
+	    var res=round(x,nd);
+	    if(nd>0){
+		var str=String(res);
+		if(str.indexOf('e')!=-1)return str;
+		if(str.indexOf('E')!=-1)return str;
+		var parts=str.split('.');
+		if(parts.length<2){
+		    var decimals=('00000000000000').substring(0,nd);
+		    return(parts[0]).toString()+decSeparator+decimals;
+		}
+		else{
+		    var decimals=((parts[1]).toString()+'00000000000000').substring(0,nd);
+		    return(parts[0]).toString()+decSeparator+decimals;
+		}
+	    }
+	    else{
+		return res;
+	    }
+	}
+    };
 </script>
 -->
 </t>        
@@ -340,8 +365,8 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td align="right">
-			<t t-esc="'%s kr' % int(round(line['amount']))"/>
+		    <td>
+			<p class="text-right" t-esc="'%s kr' % int(round(line['amount']))"/>
 		    </td>
 		</tr>
 	    </t>
@@ -361,8 +386,8 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td align="right">
-			<t t-esc="'%s kr' % int(round(float(line['quantity']) * line['amount'] * line['rate'] / 100))"/>
+		    <td>
+			<p class="text-right" t-esc="'%s kr' % int(round(float(line['quantity']) * line['amount'] * line['rate'] / 100))"/>
 		    </td>
 		</tr>
 	    </t>
@@ -381,8 +406,8 @@
 		    <td>
 			<t t-esc="line['name']"/>
 		    </td>
-		    <td align="right">
-			<t t-esc="'%s kr' % int(round(line['amount']))"/>
+		    <td>
+			<p class="text-right" t-esc="'%s kr' % int(round(line['amount']))"/>
 		    </td>
 		</tr>
 	    </t>
@@ -393,7 +418,7 @@
     <tfoot>
       <tr>
         <td><strong>Amount that could be payed by SMartSe</strong></td>
-        <td><strong><t t-esc="'%s kr' % int(round(net_result))"/></strong></td>
+        <td><strong><p class="text-right" t-esc="'%s kr' % int(round(net_result))"/></strong></td>
       </tr>            
     </tfoot>
   </table>
