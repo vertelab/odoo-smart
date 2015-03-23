@@ -400,13 +400,8 @@
   					          </div>
   					        </div>
   				        
-<!--<t t-if="res_user.partner_id.country_id.id == 'ib'"> </t>-->
-<span><t t-esc="res_user.partner_id.country_id.id"/></span>
-<span><t t-esc="res_user.company_id.country_id.id"/></span>
-<span><t t-esc="res_user.company_ids"/></span>
 
-
-    					        <div class="control-group" t-if="res_company.country_id.code in ['ES']">
+    					        <div class="control-group" t-if="not res_company.country_id.code in ['ES','SE']">
     					          <label class="control-label" for="identification_id">ID Card Number</label>
     					          <div class="controls">
 <!--                                  <input type="text" id="otherid" name="identification_id" placeholder="Identification ID" t-attf-value="#{hr.employee.otherid}"/>-->
@@ -425,7 +420,7 @@
   				            	</div>
   					          </div>
 
-    					        <div class="control-group">
+    					        <div class="control-group" t-if="not res_company.country_id.code in ['SE','BE']">
     					          <label class="control-label" for="birthday">Date of birth</label>
     					          <div class="controls">
     					            <input id="birthday" name="birthday" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
@@ -433,7 +428,7 @@
     				    	    </div>
 
 
-    					        <div class="control-group">
+    					        <div class="control-group" t-if="not res_company.country_id.code in ['SE']">
     					          <label class="control-label" for="birthday">Place of birth</label>
     					          <div class="controls">
 	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
@@ -476,11 +471,13 @@
 
           
 
-  				            <div class="control-group">
+    					        <div class="control-group" t-if="not res_company.country_id.code in ['NL','DE']">
 	  				          <label class="control-label" for="wtx">Withholding tax </label>
   					          <div class="controls">
 					            <div class="input-append">
-    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/><span class="add-on"><big>%</big></span>
+    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
+    					            			  <div class="input-group-addon">%</div>
+<!--    					            			  <span class="add-on"><big>%</big></span>-->
   				    	        </div>
   				        	  </div>
 	  				        </div>
