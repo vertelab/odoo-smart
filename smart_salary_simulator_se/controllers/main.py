@@ -17,7 +17,8 @@ class website_client(http.Controller):
         user = env['res.users'].browse(env.uid)[0]
         if request.httprequest.method == 'POST':
             values = {
-                'salarysimulator_menu': 'active',
+                'salarysimulator_menu': 'active',        
+                'context': context,
                 'res_user': env['res.users'].browse(env.uid)[0],
                 'salary': float(post.get('salary-amount') or 0),
                 'yob': int(post.get('salary-birth-year') or 0),

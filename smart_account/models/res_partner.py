@@ -1,31 +1,37 @@
 # -*- coding: utf-8 -*-
-import random
+##############################################################################
+#
+# OpenERP, Open Source Management Solution, third party addon
+# Copyright (C) 2004-2015 Vertel AB (<http://vertel.se>).
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 
-from openerp import SUPERUSER_ID
-from openerp.osv import osv, orm, fields
-from openerp.addons.web.http import request
+from openerp import models, fields, api, _, tools
 
 
-
-class res_partner(osv.Model):
+class res_partner(models.Model):
     _inherit = "res.partner"
 
-    _columns = {
-        'smart_bank_account_type': fields.char('Bank Account Type',size=60,),
-        'smart_bank_name': fields.char('Bank name',size=60,),
-        'smart_bank_acc_no': fields.char('Account No',size=60,),
-        'smart_bank_acc_iban': fields.char('IBAN',size=60,),
-        'smart_bank_acc_bic': fields.char('BIC / SWIFT',size=60,),
-        'dropbox_link': fields.char('Your documents',size=100,),
-    }
-
-
-class website(orm.Model):
-    _inherit = 'website'
-
-    def account_domain(self, cr, uid, ids, context=None):
-        user = self.pool.get('res.users').browse(cr, uid, uid, context=context)
-        return [("company_id", "=", user.company_id.id)]
-
-
-
+    smart_bank_account_type = fields.Char(string='Bank Account Type',size=60,)
+    smart_bank_name         = fields.Char(string='Bank name',size=60,)
+    smart_bank_branch       = fields.Char(string='Branch name',size=60,)
+    smart_bank_code         = fields.Char(string='Bank code',size=60,)
+    smart_bank_acc_no       = fields.Char(string='Account No',size=60,)
+    smart_bank_acc_iban     = fields.Char(string='IBAN',size=60,)
+    smart_bank_acc_bic      = fields.Char(string='BIC / SWIFT',size=60,)
+    smart_work_roles        = fields.Char(string='Your workroles',size=100,)
+    dropbox_link            = fields.Char(string='Your documents',size=100,)
+    smart_place_of_birth    = fields.Char(string='Place of Birth',size=100,)

@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2014 Vertel AB (<http://vertel.se>).
+#    Copyright (c) 2013-Present Acespritech Solutions Pvt. Ltd. (<http://acespritech.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,22 +19,22 @@
 #
 ##############################################################################
 
+
 {
-    'name': 'SMart All Step 2',
-    'version': '1.4',
-    'author': 'Vertel AB',
-    'category': 'Base',
-    'website': 'http://www.vertel.se',
-
-    'description': """ Depends and install all modules that SMart EU needs. Use this module with --load-parameter to the server """,
-#    'depends': ["virtual_company","smart_cash","account_report","account_invoice_submitted","ir_sequence_country","l10n_se","sale_sequence","web_smartux"],
-#    'depends': ["account","sale","project","hr_expense","smart_multicompany","smart_common","smart_account","smart_salary_simulator","smart_client","smart_order","smart_project","smart_activity","smart_dashboard"],
-    'depends': ["smart_common","smart_account","smart_client","smart_order","smart_project","smart_expense","smart_dashboard","smart_mc_account","smart_mc_hr","smart_mc_hr_expense","smart_mc_product",],
-
-    'data': [],
+    'name': 'SMart Custom Invoice',
+    'author': 'Acespritech Solutions Pvt. Ltd. + Vertel AB',
+    'website': 'http://www.acespritech.com',
+    'version': '1.2',
+    'description': """
+        Customized Account Invoice Report 
+    """,
+     'depends': ['account_accountant', 'base', 'base_iban'],
+    "data": [
+        'account/views/report_invoice_custom.xml',
+        'account/account_report.xml',
+        'account/views/layouts.xml'
+    ],
     'installable': True,
-    'auto_install': False,
-    'application': True,
-
 }
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

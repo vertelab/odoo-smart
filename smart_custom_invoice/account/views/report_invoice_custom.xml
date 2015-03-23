@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="account.report_invoice_document">
+            <t t-call="report.external_layout">
+
+                <div class="page">
+                    <style>
+                        .ctable{
+                        border-collapse:separate;
+                        border-spacing:3px
+                        3px;
+                        }
+                        .ctable td{
+                        padding:3px !important;
+                        }
+                        .ctable .first{
+                        min-width:20px;
+                        }
+                        .ctable .second{
+                        min-width:115px
+                        }
+                        .ctable
+                        .third{
+                        border:1px solid black;
+                        min-width:100px
+                        }
+
+                        .line_table {
+
+                        }
+                        .line-table thead{
+                        font-weight: bold;
+                        }
+                        .line-table th{
+                        padding:3px !important;
+                        }
+                        .line-table td{
+                        padding:3px !important;
+                        }
+                        .line-table .first{
+                        min-width:20px !important;
+                        }
+                        .line-table .second{
+                        min-width:550px !important;
+                        }
+                        .line-table .third{
+                        min-width:100px !important;
+                        margin-right: 50px;
+                        }
+                        .line-table .fourth{
+                        min-width:150px !important;
+                        text-align: right;
+                        }
+
+                        .tax_table {
+                        }
+                        .tax-table thead{
+                        font-weight: bold;
+                        }
+                        .tax-table th{
+                        padding:4px !important;
+                        }
+                        .tax-table td{
+                        padding:4px !important;
+                        }
+                        .tax-table
+                        .first{
+                        min-width:20px !important;
+                        }
+                        .tax-table .second{
+                        min-width:100px !important;
+                        text-align: left;
+                        }
+                        .tax-table
+                        .third{
+                        min-width:100px !important;
+                        text-align: right;
+                        }
+                        .tax-table .fourth{
+                        min-width:100px !important;
+                        text-align: right;
+                        }
+
+                        .total-table{
+                        float: right;
+                        border-collapse:separate;
+                        border-spacing:10px 10px;
+                        }
+                        .total-table td{
+                        padding:6px !important;
+                        }
+                        .total-table
+                        .first{
+                        min-width:120px;
+                        text-align:right;
+                        }
+                        .total-table .second{
+                        border:1px
+                        solid black;
+                        text-align: right;
+                         min-width:120px;"
+                        }
+
+
+                    </style>
+                    <div class="row">
+                        <div class="col-xs-5" style="float: left;">
+                            <table class="ctable">
+                                <tr>
+                                    <td class="first">
+                                        <span style="color:red;">&#9632;</span>
+                                    </td>
+                                    <td class="second"> Invoice Number</td>
+                                    <td class="third">
+                                        <span t-field="o.number" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first"></td>
+                                    <td class="second">Date:</td>
+                                    <td class="third">
+                                        <span t-field="o.date_invoice" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first"></td>
+                                    <td class="second">To be paid before:</td>
+                                    <td class="third" style="border:1px solid red !important;">
+                                        <span t-field="o.date_due" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first"></td>
+                                    <td class="second">Client Contact Person Name:
+                                    </td>
+                                    <td class="third">
+                                        <span t-field="o.name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first"></td>
+                                    <td class="second">Clients VAT-number:</td>
+                                    <td class="third"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="col-xs-6"
+                            style="float: left;border:2px solid black; border-radius: 10px; padding:5px">
+                            <address t-field="o.partner_id" class="text-right"
+                                t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
+                            <span t-field="o.partner_id.vat" />
+                        </div>
+                    </div>
+
+                    <br />
+                    <div style="border-top: 1px solid red; min-width:100%">
+                    </div>
+                    <br />
+
+                    <table class="line-table">
+                        <thead>
+                            <tr>
+                                <th class="first">
+                                    <span style="color:red;">&#9632;</span>
+                                </th>
+                                <th class="second">Description</th>
+                                <th class="third">Taxes</th>
+                                <th class="fourth">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.invoice_line" t-as="l">
+                                <td class="first"></td>
+                                <td class="second">
+                                    <span t-field="l.name" />
+                                </td>
+                                <td class="third">
+                                    <span
+                                        t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))" />
+                                </td>
+                                <td class="fourth">
+                                    <span t-field="l.price_subtotal"
+                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <div style="border-top: 1px solid black; min-width:100%" />
+                    <br />
+
+                    <div class="row">
+                        <div class="col-xs-6" style="float: left;">
+                            <table class="tax-table">
+                                <thead>
+                                    <tr>
+                                        <th class="first">
+                                            <span style="color:red;">&#9632;</span>
+                                        </th>
+                                        <th class="second">Tax</th>
+                                        <th class="third">Base</th>
+                                        <th class="fourth">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.tax_line" t-as="t">
+                                        <th class="first"></th>
+                                        <td class="second">
+                                            <span t-field="t.name" />
+                                        </td>
+                                        <td class="third">
+                                            <span t-field="t.base"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                        </td>
+                                        <td class="fourth">
+                                            <span t-field="t.amount"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-xs-5 pull-right" style="float: right;">
+                            <table class="total-table">
+                                <tr>
+                                    <td class="first">Total without Taxes:</td>
+                                    <td class="second" style="text-align: right">
+                                        <span t-field="o.amount_untaxed"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first">TVA:</td>
+                                    <td class="second" style="text-align: right;">
+                                        <span t-field="o.amount_tax"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first">Total Facture:</td>
+                                    <td class="second" style="text-align: right;">
+                                        <span t-field="o.amount_total"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br />
+                            <div style="border-top: 1px solid black; min-width:100%; float:right;" />
+
+                            <table class="total-table">
+                                <tr>
+                                    <td class="first">Deja Paye:</td>
+                                    <td class="second" style="text-align: right; ">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first">SOLDE A PAYER:</td>
+                                    <td
+                                        style="border:1px solid red !important;
+                                                              text-align: right;">
+                                        <span t-field="o.residual"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="float: left; min-width:500px">
+                            Please pay to:
+
+                            <t t-foreach="o.partner_id.company_id.bank_ids" t-as="b">
+                            <span style="margin-right:10px;">
+                            <span t-field="b.acc_number" />
+                            </span>
+                            </t>
+                            <br />
+                            <span style="min-width:300px;">
+                                With the following reference
+                            </span>
+                            <br />
+                            <span t-if="o.move_id.name">
+                                <span t-field="o.move_id.name"
+                                    style="min-width:300px; border:1px solid black; float:left; padding:2px" />
+                            </span>
+                            <!-- <p t-if="o.comment"> -->
+                            <!-- <strong>Comment:</strong> -->
+                            <!-- <span t-field="o.comment" /> -->
+                            <!-- </p> -->
+                            <!-- <p t-if="o.payment_term"> -->
+                            <!-- <strong>Payment Term:</strong> -->
+                            <!-- <span t-field="o.payment_term" /> -->
+                            <!-- </p> -->
+                            <!-- <p t-if="o.fiscal_position"> -->
+                            <!-- <strong>Fiscal Position:</strong> -->
+                            <!-- <span t-field="o.fiscal_position" /> -->
+                            <!-- </p> -->
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="account_report.report_invoice_custom">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t
+                        t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'account.report_invoice_document')" />
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

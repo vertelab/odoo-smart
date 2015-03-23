@@ -13,10 +13,11 @@
 	          <div class="panelsheet">
             	<header class="panelsheet-header clearfix">
               <div class="title">
-                <h1>Orders</h1>
+                <h1>Orders fredrik</h1>
                 <div class="pull-right">
                   <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
                 </div>
+			      <t groups="base.group_smart_debug"><span>template id="list"</span></t>
               </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
@@ -152,6 +153,7 @@
                 <div class="pull-right">
                   <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
                 </div>
+			      <t groups="base.group_smart_debug"><span>template id="list_all"</span></t>
               </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
@@ -275,7 +277,7 @@
                 <t t-if="not sale_order"> 
 			      <h1>New Order</h1>
                 </t>
-
+			      <t groups="base.group_smart_debug"><span>template id="edit_order_data"</span></t>
 
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
@@ -489,8 +491,7 @@
 	            <header class="panelsheet-header clearfix">
 			      <!--<div class="page-header">-->
 <!--			      <h1><t t-raw="sale_order.client_order_ref"/> <small><t t-esc="sale_order.name"/>.</small>-->
-			      <h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/>.</small>
-			      </h1>
+			      <h1><t t-raw="sale_order.description"/> fredrik <small><t t-esc="sale_order.name"/>.</small></h1>
 			      <div class="pull-right"><small>
 			    (<t t-if="sale_order.state == 'draft'"><span class="draft">Draft </span></t>
 <!--			   	 <t t-if="sale_order.state == 'sent'"><span class="sent">Approved by Client</span></t>-->
@@ -503,6 +504,8 @@
 			      </small>
 			      </div>
 			    
+			      <t groups="base.group_smart_debug"><span>template id="edit_lines"</span></t>			    
+			      
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
 <!--		      		 <li><i class="icon-tag" style="margin-top: 3px;"></i> <strong>Details</strong><span><i class="icon-chevron-right"></i></span></li>-->
@@ -635,7 +638,13 @@
                                  </select> 
                                  </td>
 
-                              <td><input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/></td>
+                              <td>
+<!--problemet-->
+<t groups="base.group_smart_debug">
+                              <input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/>
+                              </t>
+<!--/problemet-->
+                              </td>
                               <td><a  t-att-href="'/order/%s/line/%s/delete' % (sale_order.id,o.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a></td>
                             </tr>
 
@@ -793,6 +802,7 @@
 			   	 <t t-if="sale_order.state == 'cancel'"><span class="sent">Cancelled</span></t>)
 			      </small>
 			      </div>
+			      <t groups="base.group_smart_debug"><span>template id="order"</span></t>
 			      
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
@@ -806,7 +816,7 @@
               <p>
               <BR/>
               <BR/>
-              Here is an explanation text. Fredrik</p>
+              Here is an explanation text1.</p>
 <!--              </div>-->
 	            </header>
 	             
@@ -984,7 +994,7 @@
 			  <div class="well " style="margin-top: -10px;">
 			  
 			  <legend>
-			    <strong>Billing Fredrik</strong>
+			    <strong>Billing</strong>
 <!--			    <a href="../../order/edit_lines" class="btn btn-small "><i class="icon-pencil"></i> <strong>Edit Order lines</strong></a> + -->
      	  	  <strong>Details</strong> 
 <!--     	  	  <a t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>-->
@@ -1010,8 +1020,9 @@
 				              <td colspan="2" class="cell-primary"><t t-raw="o.name"/></td>
 <!--                              <td align="right"><t t-esc="o.tax_id.name"/></td>-->
                               <td class="cell" style="text-align: right;">
-								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
-<!--                              <t t-esc="o.price_subtotal"/>-->
+<!--fredrik har ändrat-->
+<!--								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+                              <t t-esc="o.price_subtotal"/>
                               </td>
                             </tr>
                       </t>
@@ -1035,7 +1046,7 @@
                              <tr>  
 
                               <td align="right"></td>
-                              <td class="cell" style="text-align: right;"><strong>Total Fredrik</strong></td>
+                              <td class="cell" style="text-align: right;"><strong>Total</strong></td>
                               <td class="cell" style="text-align: right;">
                               <strong>
 <!--								<span t-field="sale_order.amount_total" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
@@ -1117,6 +1128,7 @@
           
 	            <header class="panelsheet-header clearfix">
 			      <h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/>.</small>
+			      <t groups="base.group_smart_debug"><span>template id="order_print"</span></t>
 			      </h1>
 	            </header>
 	             
@@ -1282,7 +1294,7 @@
 			  <div class="well " style="margin-top: -10px;">
 			  
 			  <legend>
-			    <strong>Billing </strong>
+			    <strong>Billing</strong>
      	  	  <strong>Details</strong> 
 			  </legend>
 
