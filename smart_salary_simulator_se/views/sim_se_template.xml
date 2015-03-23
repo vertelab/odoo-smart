@@ -33,6 +33,44 @@
 
     <t t-call="smart_common.layout">
    	<div class="content span10">
+	    
+	    <script>
+		var decSign = ",";
+
+		function validateFloatField(element){
+		    if(isNaN(convertDecSign(element.value))){
+			element.setCustomValidity('Please enter a number.');
+		    }
+		    else{
+			element.setCustomValidity('');
+		    }
+		};
+
+		function convertDecSign(str){
+		    return String(str).replace(decSign, ".");
+		};
+
+		function convertInputFields(form){
+		    if (! form.checkValidity()) {
+			return false;
+		    }
+		    var fields = form.getElementsByClassName("floatinput");
+		    var i = 0;
+		    for (i = 0; i &lt; fields.length; i++) {
+			fields[i].value = convertDecSign(fields[i].value);
+		    }
+		    return true;
+		};
+		
+		
+		document.addEventListener("DOMContentLoaded", function() {
+		    var fields = document.getElementsByClassName("floatinput");
+		    var i = 0;
+		    for (i = 0; i &lt; fields.length; i++) {
+			fields[i].value = String(fields[i].value).replace(".", decSign);
+		    }
+		});
+	    </script>
       
         <!-- ** CURRENT VIEW CONTENT ** -->
         
@@ -53,7 +91,7 @@
 		<section id="salary-calculator-form" class="content">
 
 
-		<form id="form-simulation" class="form-horizontal" action="/salary/simulator" method="POST">
+		<form id="form-simulation" class="form-horizontal" action="/salary/simulator" method="POST" onsubmit="convertInputFields(this)">
 		    <hr/>
 		    <div id="loading-sim" style="display: none;">
 			<div class="loading">
@@ -72,7 +110,7 @@
 		    <div class="form-group">
 			<label class="control-label" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
 			<div class="input-group col-md-3">
-			  <input type="text" class="form-control" id="salary-amount" name="salary-amount" t-att-value="salary"/>
+			  <input type="text" class="form-control floatinput" id="salary-amount" name="salary-amount" t-att-value="salary" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
 			</div>
 		    </div>
@@ -113,7 +151,7 @@
 		    <div class="form-group">
 			<label class="control-label" for="salary-expense">Expenses (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
 			<div class="input-group col-md-3">
-			  <input type="text" class="form-control" id="salary-expense" name="salary-expense" t-att-value="expenses"/>
+			  <input type="text" class="form-control floatinput" id="salary-expense" name="salary-expense" t-att-value="expenses" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
 			</div>
 		    </div>
@@ -138,7 +176,7 @@
 		    <div class="form-group">
 			<label class="control-label">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
 			<div class="input-group col-md-1">
-			    <input class="form-control" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="text" t-att-value="yob"/>
+			    <input class="form-control intinput" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="text" t-att-value="yob" onChange="validateFloatField(this)"/>
 			</div>
 		    </div>
 		    
@@ -148,7 +186,7 @@
 			<label class="control-label" for="salary-tax-prct">Withholding tax rate  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>	
 
 			<div class="input-group col-md-2">
-			    <input class="form-control" id="salary-tax-prct" name="salary-tax-prct" data-path="taxRate" type="text" t-att-value="tax"/>
+			    <input class="form-control floatinput" id="salary-tax-prct" name="salary-tax-prct" data-path="taxRate" type="text" t-att-value="tax" onChange="validateFloatField(this)"/>
 			    <div class="input-group-addon">%</div>
 			</div>
 		    </div>
@@ -247,7 +285,6 @@
 
     </div >
 <!--			end panesheet-content -->
-
 </div >
 <!--			end panesheet -->
 </div >
@@ -255,47 +292,6 @@
 
 </div>
 <!--	end content span10-->
-<!--
-<script>
-    var decSeparator = ","
-    function parseFloat(str){
-	str=String(str).replace(decSeparator,".");
-	var res=parseFloat(str);
-	if(isNaN(res)){
-	    return 0;
-	}
-	else{
-	    return res;
-	}
-    };
-
-    function displayFloatND(x,nd){
-	if(myIsNaN(x)){
-	    return Number.NaN;
-	}
-	else{
-	    var res=round(x,nd);
-	    if(nd>0){
-		var str=String(res);
-		if(str.indexOf('e')!=-1)return str;
-		if(str.indexOf('E')!=-1)return str;
-		var parts=str.split('.');
-		if(parts.length<2){
-		    var decimals=('00000000000000').substring(0,nd);
-		    return(parts[0]).toString()+decSeparator+decimals;
-		}
-		else{
-		    var decimals=((parts[1]).toString()+'00000000000000').substring(0,nd);
-		    return(parts[0]).toString()+decSeparator+decimals;
-		}
-	    }
-	    else{
-		return res;
-	    }
-	}
-    };
-</script>
--->
 </t>        
 </template>
 
