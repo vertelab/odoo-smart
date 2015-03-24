@@ -20,7 +20,7 @@ _logger = logging.getLogger(__name__)
 class hr_employee(models.Model):
     _inherit = "hr.employee"
 
-    withhold_tax = fields.Float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold"),
-    education = fields.Char('Education Level', help="Level of completed edcation",),
+    withhold_tax = fields.Float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold")
+    education = fields.Selection([('basic', 'Basic'), ('bachelor', 'Partner'), ('postgrad', 'Post Graduate'), ('unknown', 'Unknown')], string='Education Level', help="Level of completed edcation",)
     marital = fields.Selection([('single', 'Single'), ('married', 'Married'), ('widower', 'Widower'), ('divorced', 'Divorced'), ('partner', 'Partner'), ('separated', 'Separated'), ('unknown', 'Unknown')], string='Marital Status')
     

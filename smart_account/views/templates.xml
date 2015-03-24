@@ -427,7 +427,7 @@
   					          <div class="input-group col-md-3">
                                  <select name="hr_country_id">
                                     <t t-foreach="res_country" t-as="c">
-                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.employee_ids[0].country_id.id == c.id"><t t-esc="c.name"/></option> 
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.employee_ids[0].country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
                                     </t>
                                 </select>
 
@@ -499,14 +499,14 @@
                                 <div class="control-group">
     					          <label class="control-label" for="marital">Civil status</label>
     					          <div class="controls">
-									<select class="form-control" id="res_user.employee_ids[0].martial"name="marital">
-									    <option value="single" t-att-selected="res_user.employee_ids[0].martial == 'single'">Single</option>
-									    <option value="partner" t-att-selected="res_user.employee_ids[0].martial == 'partner'">Partner</option>
-									    <option value="married" t-att-selected="res_user.employee_ids[0].martial == 'married'">Married</option>
-									    <option value="separated" t-att-selected="res_user.employee_ids[0].martial == 'separated'">Separated</option>
-									    <option value="divorced" t-att-selected="res_user.employee_ids[0].martial == 'divorced'">Divorced</option>
-									    <option value="widower" t-att-selected="res_user.employee_ids[0].martial == 'widower'">Widow/er</option>
-									    <option value="unknown" t-att-selected="res_user.employee_ids[0].martial == 'unknown'">Unknown</option>
+									<select class="form-control" id="marital" name="marital">
+									    <option value="single" t-att-selected="res_user.employee_ids[0].marital == 'single'">Single</option>
+									    <option value="partner" t-att-selected="res_user.employee_ids[0].marital == 'partner'">Partner</option>
+									    <option value="married" t-att-selected="res_user.employee_ids[0].marital == 'married'">Married</option>
+									    <option value="separated" t-att-selected="res_user.employee_ids[0].marital == 'separated'">Separated</option>
+									    <option value="divorced" t-att-selected="res_user.employee_ids[0].marital == 'divorced'">Divorced</option>
+									    <option value="widower" t-att-selected="res_user.employee_ids[0].marital == 'widower'">Widow/er</option>
+									    <option value="unknown" t-att-selected="res_user.employee_ids[0].marital == 'unknown'">Unknown</option>
 									</select>
 
     					            <input id="marital" name="marital" t-attf-value="#{res_user.employee_ids[0].marital}" type="text"/>
@@ -515,9 +515,10 @@
                                 </div>
 <!--basic, bachelor, Further Studies-->
 <!--8. Level of studies: 3 options (basico, bachiller, Estudios superiores)-->
+
     					        <div class="row">
                                 <div class="control-group">
-    					          <label class="control-label" for="marital">Education level</label>
+    					          <label class="control-label" for="education">Education level</label>
     					          <div class="controls">
 									<select class="form-control" id="res_user.employee_ids[0].education" name="education">
 									    <option selected="" value="">Select here</option>
