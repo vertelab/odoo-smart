@@ -354,12 +354,12 @@
 			             <div class="control-group">
     				        <label class="control-label" for="country"><strong>Country</strong></label>
     				        <div class="controls">
-<!--                                 <select name="country_id">-->
-<!--                                    <t t-foreach="res_countrys" t-as="c">-->
-<!--                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> -->
-<!--                                    </t>-->
-<!--                                </select>-->
-								 <t t-esc="res_partner.country_id.name"/>
+                                 <select name="country_id">
+                                    <t t-foreach="res_countrys" t-as="c">
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
+                                    </t>
+                                </select>
+<!--								 <t t-esc="res_partner.country_id.name"/>-->
 
     				        </div>
     				      </div>
@@ -483,7 +483,7 @@
 <!--                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>-->
 <!--                              <td><input type="text" id="phone" size="10" name="res_partner.child_id.phone" align="right" placeholder="Phone" /></td>                              -->
                               <td><input type="text" id="mobile" size="10" name="res_partner.child_id.ccp_mobile" align="right" placeholder="Mobile" /></td>
-				              <td><input type="text" id="email" name="ccp_email" placeholder="first.last@company.org" /></td>
+				              <td><input type="text" id="email" size="20" name="ccp_email" placeholder="first.last@company.org" /></td>
                             </tr>
 
 
