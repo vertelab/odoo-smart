@@ -203,24 +203,45 @@
                				</h2>
 						</header>
 						</ul>
-							
-						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
-                          
-  				        <div class="control-group">
-  				          <label class="control-label" for="phone">Mobile Phone</label>
-  				          <div class="controls">
-                           	<input type="text" id="mobile" name="mobile" placeholder="Your mobile nr" t-attf-value="#{res_user.partner_id.mobile}"/>
-  				            <span class="help-block">Use international format : +32 123 45 67 89</span>
-  				          </div>
-  				        </div>
 
-  				        <div class="control-group">
-  				          <label class="control-label" for="phone">Phone</label>
-  				          <div class="controls">
+						<form class="form-horizontal container" t-attf-action="#{form_post}" method="post" role="form">
+                          
+                        <!-- Enclose the [label] [input] line in a row and a form-group 6 col wide, label 3 and content 6 --> 
+                        <div class="row"> 
+                            <div class="form-group col-md-6">
+                              <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="mobile">Mobile Phone</label>
+                              <div class="col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your mobile nr" t-attf-value="#{res_user.partner_id.mobile}"
+                                data-toogle="tooltip" data-placement="top" title="Use international format : +32 123 45 67 89"
+                                />
+
+                                <span class="help-block">Use international format : +32 123 45 67 89</span>
+
+                              </div> <!-- controls -->
+                            </div> <!-- form-group -->
+                        </div> <!-- row -->
+                        
+<!--
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-sm-3 col-md-3 col-lg-2" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
+                            <div class="input-group col-md-3">
+                                <input type="text" class="form-control floatinput" id="salary-amount" name="salary-amount" t-att-value="salary" onChange="validateFloatField(this)"/>
+                                <div class="input-group-addon">kr</div>
+                            </div>
+                        </div>
+                    </div>
+-->
+                        <div class="row">
+                        <div class="form-group col-md-6">
+  				          <label class="col-sm-3 col-md-3 col-lg-2 control-label" for="phone">Phone</label>
+  				          <div class="Xcontrols col-sm-9 col-md-6 col-lg-5">
                            	<input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_user.partner_id.phone}"/>
   				            <span class="help-block">Use international format : +32 123 45 67 89</span>
   				          </div>
   				        </div>
+                        </div>
+  				        
 
   				        <div class="control-group">
   				          <label class="control-label" for="phone">Email</label>
@@ -334,7 +355,7 @@
 			  		<ul>
 			  			<header>
                				<h2 style="margin: 0;">
-               				  <small>Work you do</small><BR/>
+               				  <small>Type of work you do</small><BR/>
                				</h2>
 						</header>
 					</ul>	
@@ -352,7 +373,7 @@
 <!--  				        	</div>-->
 
   					        <div class="control-group">
-  					          <label class="control-label" for="smart_work_roles">Work roles you have as well</label>
+  					          <label class="control-label" for="smart_work_roles">Work roles</label>
   					          <div class="controls">
 <!--								<input id="category_id" name="category_id" t-attf-value="#{res_user.partner_id.category_id.name}" type="text"/>-->
                           		<textarea name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line." ><t t-esc="res_user.partner_id.smart_work_roles or '' "/></textarea>
@@ -423,43 +444,78 @@
     					        <div class="control-group" t-if="not res_company.country_id.code in ['SE','BE']">
     					          <label class="control-label" for="birthday">Date of birth</label>
     					          <div class="controls">
-    					            <input id="birthday" name="birthday" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
+    					            <input id="birthday" name="birthday" placeholder="YYYY-MM-DD" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
     					          </div>
     				    	    </div>
 
 
+<!--    					        <div class="control-group" t-if="not res_company.country_id.code in ['SE']">-->
+<!--    					          <label class="control-label" for="birthday">Smart Place of birth</label>-->
+<!--    					          <div class="controls">-->
+<!--	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>-->
+<!--    					          </div>-->
+<!--    				    	    </div>-->
     					        <div class="control-group" t-if="not res_company.country_id.code in ['SE']">
-    					          <label class="control-label" for="birthday">Place of birth</label>
+    					          <label class="control-label" for="place_of_birth">Place of birth</label>
     					          <div class="controls">
-	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
+	                           	<input type="text" id="place_of_birth" name="place_of_birth" t-attf-value="#{res_user.employee_ids[0].place_of_birth}"/>
     					          </div>
     				    	    </div>
 
-<!--    					        <div class="control-group">-->
-<!--    					          <label class="control-label" for="gender">Gender</label>-->
-<!--    					          <div class="controls">-->
-<!--    					            <input id="birthday" name="gender" t-attf-value="#{res_user.employee_ids[0].gender}" type="text"/>-->
-<!--    					          </div>-->
-<!--    				    	    </div>-->
 
+<!--    					        <div class="control-group" t-if="res_company.country_id.code in ['ES']">-->
+						        <div class="control-group">
+    					          <label class="control-label" for="gender">Gender</label>
+    					          <div class="controls">
+<!--                                        'gender': fields.selection([('male', 'Male'), ('female', 'Female')], 'Gender'),-->
+									<select class="form-control" id="hr_employee.gender" name="hr_employee.gender">
+									    <option selected="" value="">Select here</option>
+									    <option value="male">Male</option>
+									    <option value="female">Female</option>
+									</select>
+    					            <input id="gender" name="gender" t-attf-value="#{res_user.employee_ids[0].gender}" type="text"/>
+    					          </div>
+    				    	    </div>
+                                
+
+
+<!--        'marital': fields.selection([('single', 'Single'), ('married', 'Married'), ('', 'Widower'), ('divorced', 'Divorced')], 'Marital Status'),-->
 <!--7. Civil status: 7 options (soltero/a, casado/a, viudo/a, separado/a, divorciado/a, pareja de hecho, desconocido)-->
-<!--    					        <div class="control-group">-->
-<!--    					          <label class="control-label" for="birthday">Civil status</label>-->
-<!--    					          <div class="controls">-->
-<!--    					            <input id="birthday" name="smart_place_of_birth" t-attf-value="#{res_user.employee_ids[0].smart_place_of_birth}" type="text"/>-->
-<!--    					          </div>-->
-<!--    				    	    </div>-->
+<!--								bachelor / a, married / a, widow / widower, separated / a, divorced / a, partner, unknown-->
+    					        <div class="control-group">
+    					          <label class="control-label" for="marital">Civil status</label>
+    					          <div class="controls">
+									<select class="form-control" id="hr_employee.martial" name="hr_employee.marital">
+									    <option selected="" value="">Select here</option>
+<!--                                        <option t-attf-value="#{hr_employee.marital}" t-att-selected="res_user.employee_ids[0].marital == hr_employee.marital"><t t-esc="hr_employee.marital"/></option> -->
+									    <option value="single">Single</option>
+									    <option value="partner">Partner</option>
+									    <option value="married">Married</option>
+									    <option value="separated">Separated</option>
+									    <option value="divorced">Divorced</option>
+									    <option value="widower">Widow/er</option>
+									    <option value="unknown">Unknown</option>
+									</select>
 
+    					            <input id="marital" name="marital" t-attf-value="#{res_user.employee_ids[0].marital}" type="text"/>
+    					          </div>
+    				    	    </div>
+
+<!--basic, bachelor, Further Studies-->
 <!--8. Level of studies: 3 options (basico, bachiller, Estudios superiores)-->
-<!--    					        <div class="control-group">-->
-<!--    					          <label class="control-label" for="birthday">Level of studies:</label>-->
-<!--    					          <div class="controls">-->
-<!--    					            <input id="birthday" name="smart_place_of_birth" t-attf-value="#{res_user.employee_ids[0].smart_place_of_birth}" type="text"/>-->
-<!--    					          </div>-->
-<!--    				    	    </div>-->
-
-
-
+    					        <div class="control-group">
+    					          <label class="control-label" for="marital">Education level</label>
+    					          <div class="controls">
+									<select class="form-control" id="hr_employee.education" name="hr_employee.education">
+									    <option selected="" value="">Select here</option>
+									    <option value="basic">Basic</option>
+									    <option value="bachelor">Partner</option>
+									    <option value="postgrad">Post Graduate</option>
+									    <option value="unknown">Unknown</option>
+									</select>
+    					            <input id="education" name="education" t-attf-value="#{res_user.employee_ids[0].education}" type="text"/>
+    					          </div>
+    				    	    </div>
 
 
 
@@ -483,8 +539,7 @@
 	  				        </div>
 
 
-
-<!--  				            <div class="control-group" >-->
+<!--  				            <div class="control-group" > -->
   				            <div class="control-group" groups="base.group_smart_advisor">
 	  				          <label class="control-label" for="dropbox_link">Dropbox link </label>
   					          <div class="controls">

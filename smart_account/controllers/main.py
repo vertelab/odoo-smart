@@ -72,7 +72,7 @@ class website_account(http.Controller):
             'smart_bank_acc_bic',
             'smart_work_roles',
             'dropbox_link',
-            'smart_place_of_birth',
+#            'smart_place_of_birth',
             'category_id',           
             ] if post.get(field_name))
             
@@ -85,14 +85,17 @@ class website_account(http.Controller):
         hrdata = dict((field_name.replace('hr_',''), post[field_name])
 #            for field_name in ['passport_id','legal_city','street','phone','mobile'] if post.get(field_name))
             for field_name in [
-            'country_id',
-            'withhold_tax',
-            'otherid',
-            'identification_id',
-            'passport_id',
-            'hr_country_id'
-            'job_id',
             'birthday',
+            'country_id',
+            'education',            
+            'identification_id',
+            'job_id',
+            'gender',
+            'hr_country_id'
+            'marital',
+            'passport_id',
+            'otherid',
+            'withhold_tax',
             ] if post.get(field_name))
         if hrdata:
             _logger.warning("This is my hrdata post %s" % (hrdata))

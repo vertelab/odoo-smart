@@ -41,3 +41,46 @@
 <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;" class="btn btn-large btn-danger"/></FORM>
 <a href="javascript:history.back()" class="btn btn-large btn-danger">Back</a>
 <a href="#" onclick="history.go(-1)" class="btn btn-large btn-danger">Go Back</a>
+
+
+
+Odoo Models Old syntax
+        'active_web': fields.boolean('Active Web'),
+        'education': fields.char('Education Level', help="Level of completed edcation",),
+        'withhold_tax': fields.float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold"),
+        'unit_amountd': fields.float('Unit Price without tax', digits_compute=dp.get_precision('Product Price')),
+        'pricelist_id': fields.related('user_id','partner_id','property_product_pricelist', type='many2one', relation='product.pricelist', string='Default Pricelist'),
+        'distance': fields.integer('Distance, km', ),        
+        'amount_untaxed': fields.function(_untaxed, type="float", digits_compute=dp.get_precision('Account'), string='Untaxed', multi='all',help="Expense amount without tax.",),
+
+
+
+<!--programmeringsstandard -->
+<!--<form class="form-horizontal container" t-attf-action="#{form_post}" method="post" role="form">-->
+
+                        <!-- Enclose the [label] [input] line in a row and a form-group 6 col wide, label 3 and content 6 -->
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                              <label class="control-label col-sm-3 col-md-3 col-lg-2" for="mobile">Mobile Phone</label>
+                              <div class="col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your mobile nr" t-attf-value="#{res_user.partner_id.mobile}"
+                                data-toogle="tooltip" data-placement="top" title="Use international format : +32 123 45 67 89" />
+                                <span class="help-block">Use international format : +32 123 45 67 89</span>
+                              </div> <!-- controls -->
+                            </div> <!-- form-group -->
+                        </div> <!-- row -->
+
+
+<!--
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-sm-3 col-md-3 col-lg-2" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
+                            <div class="input-group col-md-3">
+                                <input type="text" class="form-control floatinput" id="salary-amount" name="salary-amount" t-att-value="salary" onChange="validateFloatField(this)"/>
+                                <div class="input-group-addon">kr</div>
+                            </div>
+                        </div>
+                    </div>
+-->
+
+<!--slut programmeringsstandard-->

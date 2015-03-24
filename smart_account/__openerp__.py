@@ -2,7 +2,7 @@
     'name': 'SMart Account',
     'category': 'Website',
     'summary': 'Administer your account information on-line',
-    'version': '1.0',
+    'version': '1.1',
     'description': """
 SMart Account
 ===========

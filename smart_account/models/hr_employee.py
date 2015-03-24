@@ -22,7 +22,9 @@ class hr_employee(osv.osv):
 
     _columns = {
         'withhold_tax': fields.float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold"),
+        'education': fields.char('Education Level', help="Level of completed edcation",),
     }
+
 
 
 
