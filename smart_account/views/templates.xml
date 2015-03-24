@@ -244,12 +244,12 @@
   				        </div>
                         </div>
   				        
-
+				    <div class="row">
   				        <div class="control-group">
-  				          <label class="control-label" for="phone">Email</label>
-  				          <div class="controls">
-                           	<input type="text" id="email" name="email" t-attf-value="#{res_user.partner_id.email}"/>
-  				          </div>
+					    <label class="control-label" for="phone">Email</label>
+					    <div class="controls">
+						<input type="text" id="email" name="email" t-attf-value="#{res_user.partner_id.email}"/>
+					    </div>
   				        </div>
 				    </div>
 

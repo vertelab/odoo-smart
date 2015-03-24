@@ -108,8 +108,8 @@
          				
 		    <!-- Amount -->
 		    <div class="form-group">
-			<label class="control-label col-md-3" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
-			<div class="input-group col-md-3">
+			<label class="control-label col-md-4" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
+			<div class="input-group col-md-2">
 			  <input type="text" class="form-control floatinput" id="salary-amount" name="salary-amount" t-att-value="salary" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
 			</div>
@@ -129,7 +129,7 @@
 <!-- VAT -->
 
 		    <div class="form-group">
-			<label class="control-label col-md-3" for="salary-vat-prct">VAT  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."><i class="glyphicon glyphicon-question-sign"></i></a></label>
+			<label class="control-label col-md-4" for="salary-vat-prct">VAT  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="input-group col-md-2">
 			<select class="form-control" id="salary-vat-prct" name="salary-vat-prct" data-path="vat">
 			    <option selected="" value="25">25%</option>
@@ -149,8 +149,8 @@
 
 		    <!-- Expenses -->
 		    <div class="form-group">
-			<label class="control-label col-md-3" for="salary-expense">Expenses (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
-			<div class="input-group col-md-3">
+			<label class="control-label col-md-4" for="salary-expense">Expenses (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
+			<div class="input-group col-md-2">
 			  <input type="text" class="form-control floatinput" id="salary-expense" name="salary-expense" t-att-value="expenses" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
 			</div>
@@ -161,7 +161,7 @@
 <!--
 		    <div class="form-group">
 			<label class="control-label" for="salary-smart-fee">Smart fee <a class="tip" data-toogle="tooltip" data-placement="top" title="Smart fee."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
-			<div class="input-group col-md-3">
+			<div class="input-group col-md-2">
 			    <div class="input-append">
 				<input id="salary-smart-fee" name="salary-smart-fee" type="text" readonly="true" min="0" max="100" step="0.01" t-att-value="smart_fee"/><span class="add-on">%</span>
 				<input id="salary-smart-fee" name="salary-smart-fee" type="hidden" t-att-value="smart_fee"/>
@@ -174,8 +174,8 @@
 		    <!-- Year of birth -->
 
 		    <div class="form-group">
-			<label class="control-label col-md-3">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a></label>
-			<div class="input-group col-md-1">
+			<label class="control-label col-md-4">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a></label>
+			<div class="input-group col-md-2">
 			    <input class="form-control intinput" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="text" t-att-value="yob" onChange="validateFloatField(this)"/>
 			</div>
 		    </div>
@@ -183,7 +183,7 @@
 		    <!-- tax rate -->
 
 		    <div class="form-group">
-			<label class="control-label col-md-3" for="salary-tax-prct">Withholding tax rate  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
+			<label class="control-label col-md-4" for="salary-tax-prct">Withholding tax rate  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
 
 			<div class="input-group col-md-2">
 			    <input class="form-control floatinput" id="salary-tax-prct" name="salary-tax-prct" data-path="taxRate" type="text" t-att-value="tax" onChange="validateFloatField(this)"/>
@@ -195,7 +195,7 @@
 						
 <!--
 		    <div class="form-group">
-			<div class="input-group col-md-3">
+			<div class="input-group col-md-2">
 			    <label class="checkbox">
 				<a href="" id="lnkShow">Show advanced parameters</a>
 			    </label>
@@ -212,7 +212,7 @@
 					
 <!--
 			    <div class="form-group">
-				<div class="input-group col-md-3">
+				<div class="input-group col-md-2">
 				    SMartSe is my  
 				    <select class="span2" data-path="incomeSource" style="vertical-align: baseline;">
 					<option value="primary"> primary </option>
@@ -227,7 +227,7 @@
 			    <!-- Location -->
 <!--
 			    <div class="form-group">
-				<div class="input-group col-md-3">
+				<div class="input-group col-md-2">
 				    I live and work in  
 				    <select class="span2" data-path="location" style="vertical-align: baseline;">
 					<option value="SE" selected=""> Sweden </option>
@@ -242,7 +242,7 @@
 			    
 <!--
 			    <div class="form-group">
-				<div class="input-group col-md-3">
+				<div class="input-group col-md-2">
 				    <label class="checkbox inline">
 					<input type="checkbox" name="salary-musician" t-att-value="musician" style="vertical-align: middle;"/>I work as a musician.
 					<a class="tip" data-toogle="tooltip" data-placement="top" title="If you work as a musician or a singer, employers&#39; social contributions and income tax witholdments are lower."><i class="glyphicon glyphicon-question-sign"></i> </a>
@@ -254,7 +254,7 @@
 			    <!-- Not art or sport -->
 <!--
 			    <div class="form-group">
-				<div class="input-group col-md-3">
+				<div class="input-group col-md-2">
 				    <label class="checkbox inline">
 					<input type="checkbox" data-path="athlete" value="1"/>I work as an artist or athlete.
 					 <a class="tip" data-toogle="tooltip" data-placement="top" title="If you are an artist or an athlete and pay your taxes abroad, less taxes are withdrawn in Sweden due to SINK (Special income tax)."><i class="glyphicon glyphicon-question-sign"></i> </a>
@@ -352,7 +352,7 @@
     <table class="table">
 	<thead>
 	    <tr><th colspan="1">Invoice</th>
-  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+  	    <th colspan="2"></th>
 	    </tr>
 	</thead>
 	<tbody>
@@ -372,7 +372,7 @@
     <table class="table">
 	<thead>
 	    <tr><th colspan="1">Salary</th>
-  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+  	    <th colspan="2"></th>
 	    </tr>
 
 	</thead>
@@ -393,7 +393,7 @@
     <table class="table">
 	<thead>
 	    <tr><th colspan="1">Expenses (incl VAT) </th>
-  	    <th colspan="2"><t groups="base.group_smart_debug"><span>Align right (and then remove this)</span></t></th>
+  	    <th colspan="2"></th>
 	    </tr>
 	</thead>
 	<tbody>
