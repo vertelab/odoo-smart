@@ -517,7 +517,7 @@
 <!--basic, bachelor, Further Studies-->
 <!--8. Level of studies: 3 options (basico, bachiller, Estudios superiores)-->
     					        <div class="control-group">
-    					          <label class="control-label" for="marital">Education level</label>
+    					          <label class="control-label" for="education">Education level</label>
     					          <div class="controls">
 									<select class="form-control" id="hr_employee.education" name="hr_employee.education">
 									    <option selected="" value="">Select here</option>
