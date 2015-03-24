@@ -120,7 +120,7 @@ msgstr "Mi cuenta"
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "My Dashboard"
-msgstr "Mi tablero"
+msgstr "Inicio"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu
@@ -130,7 +130,7 @@ msgstr "Pedidos"
 #. module: smart_common
 #: view:website:smart_common.smartmenu
 msgid "Project"
-msgstr "Proyecto"
+msgstr "Proyectos"
 
 #. module: smart_common
 #: view:website:smart_common.smartmenu

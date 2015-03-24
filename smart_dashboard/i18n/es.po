@@ -26,7 +26,7 @@ msgstr "Aprobado"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
-msgstr "Mi tablero!"
+msgstr "Inicio"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
@@ -36,22 +36,22 @@ msgstr "Usuarios"
 #. module: smart_dashboard
 #: field:res.users,webterms_accepted:0
 msgid "Web Terms Accepted"
-msgstr "Términos web Aceptadas"
+msgstr "Términos web aceptadas"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Expenses"
-msgstr "Gastos Activo"
+msgstr "Gastos activos"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Orders"
-msgstr "Órdenes activas"
+msgstr "Pedidos activos"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Amount"
-msgstr "Cantidad"
+msgstr "Importe"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard

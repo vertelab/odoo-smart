@@ -30,7 +30,7 @@ msgstr "Dirección"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Administrative"
-msgstr "Perfil"
+msgstr "Área administrativa"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -70,7 +70,7 @@ msgstr "Cambia tu cuenta bancaria"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Change your name"
-msgstr "Cambiar tu nombre"
+msgstr "Cambia tu nombre"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -170,7 +170,7 @@ msgstr "Calle"
 #. module: smart_account
 #: view:website:smart_account.my_account
 msgid "Thanks, your settings have been saved."
-msgstr "Gracias, tus ajustes se han guardado."
+msgstr "Gracias, tus cambios se han guardado."
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -189,13 +189,15 @@ msgstr "Sitio web"
 
 #. module: smart_account
 #: field:hr.employee,withhold_tax:0
+#, fuzzy
 msgid "Withhold Tax"
-msgstr "Impuesto sobre la Renta"
+msgstr "Retención de IRPF"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
+#, fuzzy
 msgid "Withholding tax"
-msgstr "Retener a cuenta"
+msgstr "Retención de IRPF"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
@@ -214,8 +216,9 @@ msgstr "Tu ciudad"
 
 #. module: smart_account
 #: view:website:smart_account.my_account
+#, fuzzy
 msgid "Zip"
-msgstr "Arxiu comprimido"
+msgstr "Código postal"
 
 #. module: smart_account
 #: field:res.partner,smart_bank_acc_no:0
