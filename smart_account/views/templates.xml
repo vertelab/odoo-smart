@@ -477,6 +477,7 @@
 
 
 <!--    					        <div class="control-group" t-if="res_company.country_id.code in ['ES']">-->
+                        
 						        <div class="control-group">
     					          <label class="control-label" for="gender">Gender</label>
     					          <div class="controls">
