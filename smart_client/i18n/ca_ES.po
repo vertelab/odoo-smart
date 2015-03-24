@@ -83,7 +83,7 @@ msgstr "Empresa"
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Company name"
-msgstr "Nom d'empresa"
+msgstr "Nom de l'empresa"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -107,12 +107,12 @@ msgstr "Correu electrònic"
 #. module: smart_client
 #: view:website:smart_client.client_overview
 msgid "Hello world"
-msgstr "Hola, Món"
+msgstr "Hola Món!"
 
 #. module: smart_client
 #: view:website:smart_client.client_organisation
 msgid "Legal Information"
-msgstr "Avís Legal"
+msgstr "Informació legal"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -179,13 +179,13 @@ msgstr "Nom dels teus clients"
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Your street and number"
-msgstr "El teu carrer i número"
+msgstr "Carrer i número"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
 #: view:website:smart_client.client_organisation
 msgid "Your town"
-msgstr "La teva ciutat"
+msgstr "Ciutat"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
@@ -301,7 +301,7 @@ msgstr "Edita client"
 #: view:website:smart_client.list
 #: view:website:smart_client.list_all
 msgid "Here is an explanation text"
-msgstr "Heus aquí un text d'explicació"
+msgstr "Aquí teniu un text d'explicació"
 
 #. module: smart_client
 #: view:website:smart_client.client_individual
