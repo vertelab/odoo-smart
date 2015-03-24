@@ -8,8 +8,8 @@ import time
 import openerp
 from openerp import SUPERUSER_ID, api
 from openerp import tools
-from openerp.osv import fields, osv, expression
-from openerp.tools.translate import _
+from openerp import models, fields, api, _
+from openerp.exceptions import except_orm, Warning, RedirectWarning
 from openerp.tools.float_utils import float_round as round
 
 import openerp.addons.decimal_precision as dp
@@ -17,15 +17,10 @@ import openerp.addons.decimal_precision as dp
 _logger = logging.getLogger(__name__)
 
 
-class hr_employee(osv.osv):
+class hr_employee(models.Model):
     _inherit = "hr.employee"
 
-    _columns = {
-        'withhold_tax': fields.float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold"),
-        'education': fields.char('Education Level', help="Level of completed edcation",),
-    }
-
-
-
-
-
+    withhold_tax = fields.Float('Withhold Tax', digits=(2,2), help="Percentage tax to withhold"),
+    education = fields.Char('Education Level', help="Level of completed edcation",),
+    marital = fields.Selection([('single', 'Single'), ('married', 'Married'), ('widower', 'Widower'), ('divorced', 'Divorced'), ('partner', 'Partner'), ('separated', 'Separated'), ('unknown', 'Unknown')], string='Marital Status')
+    
