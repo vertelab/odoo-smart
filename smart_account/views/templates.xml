@@ -26,7 +26,7 @@
 <!-- start content -->
             <div class="panelsheet-content">
               
-<!--              <section class="panelsheet-section">-->
+              <section class="panelsheet-section">
     
 			
 <!--	Start tabbable-->
@@ -57,6 +57,7 @@
 
 
   				    <!-- start Tab Account -->
+				    <section>
 				<div class="tab-pane active" id="tab-account">
 
             		<ul>
@@ -69,16 +70,16 @@
 							
 						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
 
-                        	<div class="control-group">
-	    				        <label class="control-label" for="name">Your Name</label>
+                        	<div class="form-group">
+	    				        <label class="control-label col-md-3" for="name">Your Name</label>
 	                            <div class="controls">
 	
 	                            	<input type="text" id="name" name="name" placeholder="Alice Artist" t-attf-value="#{res_user.partner_id.name}"/>
 	                            </div>
                             </div>
                             
-                            <div class="control-group">
-    				        <label class="control-label" for="country">Your Preferred Language</label>
+                            <div class="form-group">
+    				        <label class="control-label col-md-3" for="country">Your Preferred Language</label>
 	    				        <div class="controls">
 	                                 <select name="lang">
 	                                    <t t-foreach="res_lang" t-as="l">
@@ -112,6 +113,7 @@
 						
 	
 				</div>
+				</section>
 				    <!-- end Tab Account -->
 
 
@@ -205,60 +207,72 @@
 						</ul>
 							
 						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
-                          
-  				        <div class="control-group">
-  				          <label class="control-label" for="phone">Mobile Phone</label>
-  				          <div class="controls">
+					<div class="row">
+  				        <div class="form-group">
+  				          <label class="control-label col-md-3" for="phone">Mobile Phone</label>
+  				          <div class="input-group">
                            	<input type="text" id="mobile" name="mobile" placeholder="Your mobile nr" t-attf-value="#{res_user.partner_id.mobile}"/>
   				            <span class="help-block">Use international format : +32 123 45 67 89</span>
   				          </div>
   				        </div>
-
-  				        <div class="control-group">
-  				          <label class="control-label" for="phone">Phone</label>
-  				          <div class="controls">
+				    </div>
+				
+				<div class="row">
+  				        <div class="form-group">
+  				          <label class="control-label col-md-3" for="phone">Phone</label>
+  				          <div class="input-group">
                            	<input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_user.partner_id.phone}"/>
   				            <span class="help-block">Use international format : +32 123 45 67 89</span>
   				          </div>
   				        </div>
-
-  				        <div class="control-group">
-  				          <label class="control-label" for="phone">Email</label>
-  				          <div class="controls">
+				    </div>
+				    <div class="row">
+  				        <div class="form-group">
+  				          <label class="control-label col-md-3" for="phone">Email</label>
+  				          <div class="input-group">
                            	<input type="text" id="email" name="email" t-attf-value="#{res_user.partner_id.email}"/>
   				          </div>
   				        </div>
+				    </div>
 
 
 					<ul>
   				        <legend>Address</legend>
 <!--  				        <legend>Legal address</legend>-->
 					</ul>
-  				        
-    				      <div class="control-group">
-    				        <label class="control-label" for="address">Street</label>
-    				        <div class="controls">
+  				 
+				    <div class="row">      
+    				      <div class="form-group">
+    				        <label class="control-label col-md-3" for="address">Street</label>
+    				        <div class="input-group">
                            	<input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_user.partner_id.street}"/>
     				        </div>
     				      </div>
-
-    				      <div class="control-group">
-    				        <label class="control-label" for="zip">Zip</label>
-    				        <div class="controls">
+				    </div>
+				    
+				    <div class="row">
+    				      <div class="form-group">
+    				        <label class="control-label col-md-3" for="zip">Zip</label>
+    				        <div class="input-group">
                            	<input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_user.partner_id.zip}"/>
     				        </div>
     				      </div>
-    				      
-    				      <div class="control-group">
-    				        <label class="control-label" for="city">City</label>
-    				        <div class="controls">
+				  </div>
+				  
+				    <div class="row">
+    				      <div class="form-group">
+    				        <label class="control-label col-md-3" for="city">City</label>
+    				        <div class="input-group">
                            	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.city}"/>
     				        </div>
     				      </div>
-    				      
-    				      <div class="control-group">
-    				        <label class="control-label" for="country">Country</label>
-    				        <div class="controls">
+				    </div>
+				    
+				    <div class="row">
+    				      <div class="form-group">
+    				        <label class="control-label col-md-3" for="country">Country</label>
+    				        <div class="input-group">
+				    </div>
 <!--kasta-->
 <!--							<t t-esc="res_user.employee_ids"/>-->
 <!--							<t t-esc="res_user.partner_id"/>-->
@@ -267,6 +281,7 @@
 <!--							<t t-esc="res_user.partner_id.country_id.name"/>-->
 
 
+				    <div class="row">
                                  <select name="country_id">
                                     <t t-foreach="res_country" t-as="c">
                                         <option t-attf-value="#{c.id}" t-att-selected="res_user.partner_id.country_id.id == c.id"><t t-esc="c.name"/></option> 
@@ -277,6 +292,7 @@
 
     				        </div>
     				      </div>
+				      </div>
 
 
 
@@ -351,9 +367,9 @@
 <!--                                </select>-->
 <!--  				        	</div>-->
 
-  					        <div class="control-group">
-  					          <label class="control-label" for="smart_work_roles">Work roles you have as well</label>
-  					          <div class="controls">
+  					        <div class="form-group">
+  					          <label class="control-label col-md-3" for="smart_work_roles">Work roles you have as well</label>
+  					          <div class="input-group col-md-4">
 <!--								<input id="category_id" name="category_id" t-attf-value="#{res_user.partner_id.category_id.name}" type="text"/>-->
                           		<textarea name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line." ><t t-esc="res_user.partner_id.smart_work_roles or '' "/></textarea>
 
@@ -366,9 +382,9 @@
 						<ul>  		
   				        <legend>Identity</legend>
 						</ul>  		  				          				        
-  					        <div class="control-group">
-  					          <label class="control-label" for="otherid">Social Security Number</label>
-  					          <div class="controls">
+  					        <div class="form-group">
+  					          <label class="control-label col-md-3" for="otherid">Social Security Number</label>
+  					          <div class="input-group col-md-3">
 								<input id="otherid" name="otherid" t-attf-value="#{res_user.employee_ids[0].otherid}" type="text"/>
   				    	      </div>
   				        	</div>
@@ -388,9 +404,9 @@
 <!--                           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_user.partner_id.country_id.id}"/>-->
 
 			        
-	  				        <div class="control-group nationality">
-  					          <label class="control-label" for="nationality">Nationality</label>
-  					          <div class="controls">
+	  				        <div class="form-group nationality">
+  					          <label class="control-label col-md-3" for="nationality">Nationality</label>
+  					          <div class="input-group col-md-3">
                                  <select name="hr_country_id">
                                     <t t-foreach="res_country" t-as="c">
                                         <option t-attf-value="#{c.id}" t-att-selected="res_user.employee_ids[0].country_id.id == c.id"><t t-esc="c.name"/></option> 
@@ -401,36 +417,36 @@
   					        </div>
   				        
 
-    					        <div class="control-group" t-if="not res_company.country_id.code in ['ES','SE']">
-    					          <label class="control-label" for="identification_id">ID Card Number</label>
-    					          <div class="controls">
+    					        <div class="form-group" t-if="not res_company.country_id.code in ['ES','SE']">
+    					          <label class="control-label col-md-3" for="identification_id">ID Card Number</label>
+    					          <div class="input-group col-md-3">
 <!--                                  <input type="text" id="otherid" name="identification_id" placeholder="Identification ID" t-attf-value="#{hr.employee.otherid}"/>-->
     					            <input id="identification_id" name="identification_id" t-attf-value="#{res_user.employee_ids[0].identification_id}" type="text"/>
     					          </div>
     				    	    </div>
 
   				        
-  					          <div class="control-group">
-  					            <div class="control-group">
-  					              <label class="control-label" for="passport_id">Passport Number</label>
-  					              <div class="controls">
+  					          
+  					            <div class="form-group">
+  					              <label class="control-label col-md-3" for="passport_id">Passport Number</label>
+  					              <div class="input-group col-md-3">
 <!--                               	  <input type="text" id="snn" name="passport_id" placeholder="Passport nr" t-attf-value="#{hr.employee.passport_id}"/>-->
   				    	            <input id="passport_id" name="passport_id" t-attf-value="#{res_user.employee_ids[0].passport_id}" type="text"/> 
   				        	      </div>
   				            	</div>
-  					          </div>
+  					      
 
-    					        <div class="control-group" t-if="not res_company.country_id.code in ['SE','BE']">
-    					          <label class="control-label" for="birthday">Date of birth</label>
-    					          <div class="controls">
+    					        <div class="form-group" t-if="not res_company.country_id.code in ['SE','BE']">
+    					          <label class="control-label col-md-3" for="birthday">Date of birth</label>
+    					          <div class="input-group col-md-3">
     					            <input id="birthday" name="birthday" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
     					          </div>
     				    	    </div>
 
 
-    					        <div class="control-group" t-if="not res_company.country_id.code in ['SE']">
-    					          <label class="control-label" for="birthday">Place of birth</label>
-    					          <div class="controls">
+    					        <div class="form-group" t-if="not res_company.country_id.code in ['SE']">
+    					          <label class="control-label col-md-3" for="birthday">Place of birth</label>
+    					          <div class="input-group col-md-3">
 	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
     					          </div>
     				    	    </div>
@@ -469,25 +485,24 @@
   				        <legend>System administration</legend>
 						</ul> 
 
-          
+							
 
-    					        <div class="control-group" t-if="not res_company.country_id.code in ['NL','DE']">
-	  				          <label class="control-label" for="wtx">Withholding tax </label>
-  					          <div class="controls">
-					            <div class="input-append">
-    					            <input id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
-    					            			  <div class="input-group-addon">%</div>
-<!--    					            			  <span class="add-on"><big>%</big></span>-->
-  				    	        </div>
+    					        <div class="form-group" t-if="not res_company.country_id.code in ['NL','DE']">
+	  				          <label class="control-label col-md-3" for="wtx">Withholding tax</label>
+  					          <div class="input-group col-md-2">
+    					            <input class="form-control" id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
+							<div class="input-group-addon">%</div>
+<!--    					        <span class="add-on"><big>%</big></span>-->
+  			
   				        	  </div>
 	  				        </div>
 
 
 
 <!--  				            <div class="control-group" >-->
-  				            <div class="control-group" groups="base.group_smart_advisor">
-	  				          <label class="control-label" for="dropbox_link">Dropbox link </label>
-  					          <div class="controls">
+  				            <div class="form-group" groups="base.group_smart_advisor">
+	  				          <label class="control-label col-md-3" for="dropbox_link">Dropbox link </label>
+  					          <div class="input-group col-md-3">
     					            <input id="dropbox_link" name="dropbox_link" placeholder="http://..." t-attf-value="#{res_user.partner_id.dropbox_link}" type="text"/>
   				        	  </div>
 	  				        </div>
@@ -552,9 +567,9 @@
   				          
   				          
   				          <!-- Bankname -->
-  				          <div class="control-group">
-  				          	<label class="control-label">Bankname</label>
-                            <div class="controls">
+  				          <div class="form-group">
+  				          	<label class="control-label col-md-3">Bankname</label>
+                            <div class="input-group col-md-3">
 <!--                                 <select name="bank">-->
 <!--                                    <t t-foreach="res_bank" t-as="b">-->
 <!--                                        <t t-if="res_user.company_id.bank_ids">     <option t-attf-value="#{b.id}"   t-attf-selection="res_user.company_id.bank_ids[0].bank.id == b.id"><t t-esc="b.name"/></option> </t>-->
@@ -565,17 +580,17 @@
     				        </div>
   				          </div>
 
-  				          <div class="control-group">
-  				          	<label class="control-label">Branch name</label>
-                            <div class="controls">
+  				          <div class="form-group">
+  				          	<label class="control-label col-md-3">Branch name</label>
+                            <div class="input-group col-md-3">
   				    	            <input id="smart_bank_branch" name="smart_bank_branch" t-attf-value="#{res_user.partner_id.smart_bank_branch}" type="text"/> 
     				        </div>
   				          </div>
 
 
-  				          <div class="control-group">
-  				          	<label class="control-label">Bank code</label>
-                            <div class="controls">
+  				          <div class="form-group">
+  				          	<label class="control-label col-md-3">Bank code</label>
+                            <div class="input-group col-md-3">
   				    	            <input id="smart_bank_code" name="smart_bank_code" t-attf-value="#{res_user.partner_id.smart_bank_code}" type="text"/> 
     				        </div>
   				          </div>
@@ -583,9 +598,9 @@
 
   				    
   				          <!-- Account -->
-  				          <div  class="control-group">
-  				          	<label class="control-label">Account Number</label>
-  				          	<div class="controls">
+  				          <div  class="form-group">
+  				          	<label class="control-label col-md-3">Account Number</label>
+  				          	<div class="input-group col-md-3">
 <!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].acc_number}"  t-if="res_user.company_id.bank_ids" /></t>-->
 <!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank_account_id" name="acc_number" placeholder="123 456 789"  t-if="not res_user.company_id.bank_ids" /></t>-->
   				    	            <input id="smart_bank_acc_no" name="smart_bank_acc_no" t-attf-value="#{res_user.partner_id.smart_bank_acc_no}" type="text"/> 
@@ -605,9 +620,9 @@
                     
   				          
   				          <!-- Account -->
-  				          <div class="control-group">
-  				          	<label class="control-label">Account number/ IBAN</label>
-  				          	<div class="controls">
+  				          <div class="form-group">
+  				          	<label class="control-label col-md-3">Account number/ IBAN</label>
+  				          	<div class="input-group col-md-3">
 <!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank" name="iban" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].iban}" t-if="res_user.company_id.bank_ids"/></t>-->
 <!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank" name="iban" placeholder="123 456 789" t-if="not res_user.company_id.bank_ids"/></t>-->
   				    	            <input id="smart_bank_acc_iban" name="smart_bank_acc_iban" t-attf-value="#{res_user.partner_id.smart_bank_acc_iban}" type="text"/> 
@@ -615,9 +630,9 @@
   				          </div>
   				          
   				          <!-- Account -->
-  				          <div class="control-group">
-  				          	<label class="control-label">BIC/Swift</label>
-  				          	<div class="controls">
+  				          <div class="form-group">
+  				          	<label class="control-label col-md-3">BIC/Swift</label>
+  				          	<div class="input-group col-md-3">
 <!--                           	<t t-if="res_user.company_id.bank_ids"><input type="text" id="bank" name="bank_bic" placeholder="123 456 789" t-attf-value="#{res_user.company_id.bank_ids[0].bank_bic}" t-if="res_user.company_id.bank_ids"/></t>-->
 <!--                           	<t t-if="not res_user.company_id.bank_ids"><input type="text" id="bank" name="bank_bic" placeholder="123 456 789" t-if="not res_user.company_id.bank_ids"/></t>-->
   				    	            <input id="smart_bank_acc_bic" name="smart_bank_acc_bic" t-attf-value="#{res_user.partner_id.smart_bank_acc_bic}" type="text"/> 
@@ -652,7 +667,7 @@
   				
   				</div> 
   				<!-- end tabbable -->
-<!--			  </section>	-->
+			  </section>	
             
 	    	</div>
 <!--	    End panelsheet-content	-->

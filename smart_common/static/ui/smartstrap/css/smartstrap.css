@@ -89,7 +89,9 @@ button,
 input,
 select,
 textarea {
+/*
   margin: 0;
+*/
   font-size: 100%;
   vertical-align: middle;
 }
@@ -907,11 +909,13 @@ input[type="color"],
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+/*
 input,
 textarea,
 .uneditable-input {
   width: 206px;
 }
+*/
 textarea {
   height: auto;
 }
@@ -1118,11 +1122,13 @@ textarea {
 .row-fluid .input-append [class*="span"] {
   display: inline-block;
 }
+/*
 input,
 textarea,
 .uneditable-input {
   margin-left: 0;
 }
+*/
 .controls-row [class*="span"] + [class*="span"] {
   margin-left: 30px;
 }
@@ -1580,7 +1586,9 @@ input.search-query {
   /* IE7 inline-block hack */
 
   *zoom: 1;
+/*
   margin-bottom: 0;
+*/
   vertical-align: middle;
 }
 .form-search .hide,
@@ -1645,8 +1653,10 @@ legend + .control-group {
 }
 .form-horizontal .control-label {
   float: left;
+/*
   width: 180px;
   padding-top: 4px;
+*/
   text-align: right;
 }
 .form-horizontal .controls {
@@ -7677,9 +7687,11 @@ html[xmlns] .slides {
   .row-fluid .thumbnails {
     margin-left: 0;
   }
+/*
   .form-horizontal .control-label {
     width: 170px;
   }
+*/
   .form-horizontal .controls {
     margin-left: 200px;
   }
@@ -7999,9 +8011,11 @@ html[xmlns] .slides {
   input.span1, textarea.span1, .uneditable-input.span1 {
     width: 42px;
   }
+/*
   .form-horizontal .control-label {
     width: 104px;
   }
+*/
   .form-horizontal .controls {
     margin-left: 124px;
   }
@@ -8113,8 +8127,10 @@ html[xmlns] .slides {
   }
   .form-horizontal .control-label {
     float: none;
+/*
     width: auto;
     padding-top: 0;
+*/
     text-align: left;
   }
   .form-horizontal .controls {

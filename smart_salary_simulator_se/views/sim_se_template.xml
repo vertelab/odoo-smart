@@ -108,7 +108,7 @@
          				
 		    <!-- Amount -->
 		    <div class="form-group">
-			<label class="control-label" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
+			<label class="control-label col-md-3" for="salary-amount">Amount (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the amount you want to use and choose what type of calculation you would like to do"><i class="glyphicon glyphicon-question-sign"></i> </a></label>
 			<div class="input-group col-md-3">
 			  <input type="text" class="form-control floatinput" id="salary-amount" name="salary-amount" t-att-value="salary" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
@@ -129,7 +129,7 @@
 <!-- VAT -->
 
 		    <div class="form-group">
-			<label class="control-label" for="salary-vat-prct">VAT  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
+			<label class="control-label col-md-3" for="salary-vat-prct">VAT  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please select the VAT-rate for your activity. If you have mixed VAT-rates, please make two simulations."><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="input-group col-md-2">
 			<select class="form-control" id="salary-vat-prct" name="salary-vat-prct" data-path="vat">
 			    <option selected="" value="25">25%</option>
@@ -149,7 +149,7 @@
 
 		    <!-- Expenses -->
 		    <div class="form-group">
-			<label class="control-label" for="salary-expense">Expenses (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
+			<label class="control-label col-md-3" for="salary-expense">Expenses (incl VAT)  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the total amount of expenses for this activity"><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="input-group col-md-3">
 			  <input type="text" class="form-control floatinput" id="salary-expense" name="salary-expense" t-att-value="expenses" onChange="validateFloatField(this)"/>
 			  <div class="input-group-addon">kr</div>
@@ -174,7 +174,7 @@
 		    <!-- Year of birth -->
 
 		    <div class="form-group">
-			<label class="control-label">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>
+			<label class="control-label col-md-3">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="input-group col-md-1">
 			    <input class="form-control intinput" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="text" t-att-value="yob" onChange="validateFloatField(this)"/>
 			</div>
@@ -183,7 +183,7 @@
 		    <!-- tax rate -->
 
 		    <div class="form-group">
-			<label class="control-label" for="salary-tax-prct">Withholding tax rate  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</label>	
+			<label class="control-label col-md-3" for="salary-tax-prct">Withholding tax rate  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please choose a tax withholding rate. If you would like us to withhold less than 30%, we will need a certificate from the Swedish tax authority."><i class="glyphicon glyphicon-question-sign"></i></a></label>	
 
 			<div class="input-group col-md-2">
 			    <input class="form-control floatinput" id="salary-tax-prct" name="salary-tax-prct" data-path="taxRate" type="text" t-att-value="tax" onChange="validateFloatField(this)"/>
@@ -462,6 +462,7 @@
         
 </t>        
 </template>
+
     
 <!--
 <template name="Salary Simulator Se" id="sim_frame_se">
