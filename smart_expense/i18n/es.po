@@ -4,447 +4,271 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: smart_expense\n"
+"Project-Id-Version: smart_common\n"
 "Language: es\n"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "A brief description that will be referenced to your expense note."
-msgstr "Una breve descripción que aparecerá en tu nota de gastos."
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "About us"
+msgstr "Sobre nosotros"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Add a new Expense note"
-msgstr "Añadir nueva nota de gastos"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Belgium"
+msgstr "Bélgica"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Add expense line"
-msgstr "Añadir línea de gastos"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "Contact us"
+msgstr "Contáctanos"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_car
-msgid "Address"
-msgstr "Dirección"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Deutschland"
+msgstr "Alemania"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "All purchases of material for the management of the activity."
-msgstr "Todas las compras de material para la gestión de la actividad."
+#. module: smart_common
+#: view:website:website.layout
+msgid "France"
+msgstr "Francia"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.list
-msgid "Amount"
-msgstr "Importe"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "Home"
+msgstr "Página de inicio"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Anything that fall in these other categories."
-msgstr "Cualquier cosa que caiga en estas otras categorías."
+#. module: smart_common
+#: view:website:website.layout
+msgid "Iberia"
+msgstr "Iberia"
 
-#. module: smart_expense
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Approved"
-msgstr "Aprobado"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Logout"
+msgstr "Cerrar sesión"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Back to Expense list"
-msgstr "Volver a la lista de gastos"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Manage my account"
+msgstr "Gestionar mi cuenta"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Briefly explain why this expense is related to your activity."
-msgstr "Explica brevemente por qué este gasto está relacionado con tu actividad."
+#. module: smart_common
+#: view:website:website.layout
+msgid "Nederland"
+msgstr "Países Bajos"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Budget"
-msgstr "Presupuesto"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "News"
+msgstr "Novedades"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Cancel"
-msgstr "Cancelar"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "SMart"
+msgstr "SMart"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Cancelled"
-msgstr "Cancelado"
+#. module: smart_common
+#: view:website:website.layout
+msgid "SMart Europe"
+msgstr "SMart Europa"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_public_transport
-msgid "City"
-msgstr "Ciudad"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Sverige"
+msgstr "Suecia"
 
-#. module: smart_expense
-#: field:hr.expense.line,line_date_value:0
-#: view:website:smart_expense.list
-msgid "Date"
-msgstr "Fecha"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+#: view:website:website.layout
+msgid "What we do"
+msgstr "Que hacemos?"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Date (of purchase)"
-msgstr "Fecha (de compra)"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Österreich"
+msgstr "Austria"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Description"
-msgstr "Descripción"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Backoffice"
+msgstr "Administración"
 
-#. module: smart_expense
-#: field:hr.expense.line,distance:0
-msgid "Distance, km"
-msgstr "Distancia, km"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Clients"
+msgstr "Clientes"
 
-#. module: smart_expense
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Draft"
-msgstr "Borrador"
-
-#. module: smart_expense
-#: model:ir.model,name:smart_expense.model_hr_expense_expense
-msgid "Expense"
-msgstr "Gasto"
-
-#. module: smart_expense
-#: model:ir.model,name:smart_expense.model_hr_expense_line
-msgid "Expense Line"
-msgstr "Línea de gastos"
-
-#. module: smart_expense
-#: field:product.template,expense_template_id:0
-msgid "Expense Template"
-msgstr "Plantilla de gastos"
-
-#. module: smart_expense
-#: help:hr.expense.line,amount_untaxed:0
-msgid "Expense amount without tax."
-msgstr "Importe de gastos sin impuestos."
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Expense line"
-msgstr "Línea de gastos"
-
-#. module: smart_expense
-#: help:hr.expense.line,amount_tax:0
-msgid "Expense tax."
-msgstr "Impuestos Gastos."
-
-#. module: smart_expense
-#: view:product.template:smart_expense.product_template_form_view
-#: view:website:smart_expense.list
+#. module: smart_common
+#: view:website:smart_common.smartmenu
 msgid "Expenses"
 msgstr "Gastos"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Expenses incurred to travel for the job:"
-msgstr "Los gastos de viaje ocasionados para la realización del trabajo:"
+#. module: smart_common
+#: view:website:smart_common.layout_footer_copyright
+msgid "Hello World"
+msgstr "Hola, Mundo"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Fixed costs"
-msgstr "Los costes fijos"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Account"
+msgstr "Mi cuenta"
 
-#. module: smart_expense
-#: field:hr.expense.line,starting_point:0
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-msgid "From"
-msgstr "Desde"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "My Dashboard"
+msgstr "Inicio"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "If you have costs as part of a contract."
-msgstr "Si usted tiene costes en el marco de un contrato."
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Orders"
+msgstr "Pedidos"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Justification"
-msgstr "Justificación"
-
-#. module: smart_expense
-#: field:hr.expense.line,justification:0
-msgid "Justification for this expense"
-msgstr "La justificación de este gasto"
-
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Meals and Accommodation"
-msgstr "Comidas y Alojamiento"
-
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Name your expense!"
-msgstr "Nombre de tu gasto!"
-
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "New"
-msgstr "Nuevo"
-
-#. module: smart_expense
-#: view:website:smart_expense.list
-msgid "New expense note"
-msgstr "Nueva nota de gastos"
-
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Office supplies"
-msgstr "Material de oficina"
-
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Other"
-msgstr "Otro"
-
-#. module: smart_expense
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Paid"
-msgstr "Pagado"
-
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Personal material"
-msgstr "Material personal"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-msgid "Price excluding VAT"
-msgstr "Precio sin IVA"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-msgid "Price including VAT"
-msgstr "Precio IVA incluido"
-
-#. module: smart_expense
-#: model:ir.model,name:smart_expense.model_product_template
-msgid "Product Template"
-msgstr "Plantilla del producto"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-#: view:website:smart_expense.overview
+#. module: smart_common
+#: view:website:smart_common.smartmenu
 msgid "Project"
-msgstr "Proyecto"
+msgstr "Proyectos"
 
-#. module: smart_expense
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Recipient"
-msgstr "Beneficiario"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "Salary Simulator"
+msgstr "Simulador Salario"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Refuse"
-msgstr "Rechazar"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Sign in"
+msgstr "Iniciar sesión"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Regular necessary payments for your work etc."
-msgstr "Pagos regulares necesarios regulares para tu trabajo, etc."
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2013->Today"
+msgstr "© SMartEu 2013-> Hoy"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Rent"
-msgstr "Alquiler"
+#. module: smart_common
+#: view:website:smart_common.smartfooter
+msgid "©  SMartEu 2014-Today"
+msgstr "© SMartEu 2014-> Hoy"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Reset to Draft"
-msgstr "Restablecer para Proyecto"
+#. module: smart_common
+#: view:website:website.layout
+msgid "About SMart"
+msgstr "Sobre SMart"
 
-#. module: smart_expense
-#: view:product.template:smart_expense.product_template_form_view
-msgid "Sales"
-msgstr "Venta"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Accounts"
+msgstr "Todas las cuentas"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Save"
-msgstr "Guardar"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Clients"
+msgstr "Todos los clientes"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Select the"
-msgstr "Selecciona el"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Expenses"
+msgstr "Todos los gastos"
 
-#. module: smart_expense
-#: view:website:smart_expense.list
-msgid "Status"
-msgstr "Estado"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Orders"
+msgstr "Todos los pedidos"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Submit to Advisor"
-msgstr "Enviar a asesor"
+#. module: smart_common
+#: view:website:smart_common.smartmenu
+msgid "All Projects"
+msgstr "Todos los proyectos"
 
-#. module: smart_expense
-#: field:hr.expense.line,amount_tax:0
-msgid "Tax"
-msgstr "Impuesto"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Change Theme"
+msgstr "Cambiar tema"
 
-#. module: smart_expense
-#: field:hr.expense.expense,amount_tax:0
-msgid "Tax Amount"
-msgstr "Importe de impuestos"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Content"
+msgstr "Contenido"
 
-#. module: smart_expense
-#: field:product.template,template_xml:0
-msgid "Template XML"
-msgstr "plantilla XML"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Customize"
+msgstr "Personaliza"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "The cost of your work space etc."
-msgstr "El coste de tu espacio de trabajo, etc."
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit"
+msgstr "Edita"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_public_transport
-msgid "Ticket Price excluding VAT"
-msgstr "Precio de la entrada sin IVA"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit Menu"
+msgstr "Edita Menú"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_public_transport
-msgid "Ticket Price including VAT"
-msgstr "Precio de la entrada IVA incluido"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Edit Top Menu"
+msgstr "Edita Menú principal"
 
-#. module: smart_expense
-#: field:hr.expense.line,to:0
-msgid "To"
-msgstr "A"
+#. module: smart_common
+#: view:website:website.layout
+msgid "HELP & TUTORIALS"
+msgstr "AYUDA & TUTORIALES"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Travel"
-msgstr "Viajes"
+#. module: smart_common
+#: view:website:website.layout
+msgid "HTML Editor"
+msgstr "Editor HTML"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Type"
-msgstr "Tipo"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Help"
+msgstr "Ayuda"
 
-#. module: smart_expense
-#: field:hr.expense.line,unit_amount_untaxed:0
-msgid "Unit Price without tax"
-msgstr "Precio unitario sin impuestos"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Install Apps"
+msgstr "Instala Apps"
 
-#. module: smart_expense
-#: field:hr.expense.line,amount_untaxed:0
-msgid "Untaxed"
-msgstr "Sin tributar"
+#. module: smart_common
+#: view:website:smart_common.layout
+msgid "Logged in as Advisor"
+msgstr "Has iniciado sesión como administrador"
 
-#. module: smart_expense
-#: field:hr.expense.expense,amount_untaxed:0
-msgid "Untaxed Amount"
-msgstr "Importe no tributable"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Mobile preview"
+msgstr "Vista previa móvil"
 
-#. module: smart_expense
-#: view:website:smart_expense.list
-msgid "User"
-msgstr "Usuario"
+#. module: smart_common
+#: view:website:website.layout
+msgid "New Page"
+msgstr "Página nueva"
 
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "VAT"
-msgstr "IVA"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Promote"
+msgstr "Promocionar"
 
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "YYYY-MM-DD"
-msgstr "AAAA-MM-DD"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Promote page on the web"
+msgstr "Promocionar página en el web"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "Your own items made available for a daily fee to the activity."
-msgstr "Sus propios bienes disponibles por una tarifa diaria para la actividad."
+#. module: smart_common
+#: view:website:website.layout
+msgid "Website"
+msgstr "Sitio web"
 
-#. module: smart_expense
-#: view:website:smart_expense.category_list
-msgid "type of expense"
-msgstr "tipo de gasto"
+#. module: smart_common
+#: view:website:website.layout
+msgid "Webterms"
+msgstr "Terminología web"
 
-#. module: smart_expense
-#: code:addons/smart_expense/controllers/main.py:132
-msgid "Something went wrong with the form (no expense)"
-msgstr "Algo ha ido mal con el formulario (no gasto)"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_car
-msgid "Amount per km"
-msgstr "Importe por km"
-
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Approve"
-msgstr "Aprobado"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_line_car
-msgid "Distance"
-msgstr "Distancia"
-
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Excl VAT"
-msgstr "Excluido IVA"
-
-#. module: smart_expense
-#: view:website:smart_expense.overview
-msgid "Incl VAT"
-msgstr "Incluido IVA"
-
-#. module: smart_expense
-#: view:website:smart_expense.list
-#: view:website:smart_expense.overview
-msgid "Pending Approval"
-msgstr "Pendiente de aprobación"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_receipt
-msgid "Price (including VAT)"
-msgstr "Precio (incluido IVA)"
-
-#. module: smart_expense
-#: view:website:smart_expense.expense_invoice
-#: view:website:smart_expense.expense_line_car
-#: view:website:smart_expense.expense_line_public_transport
-#: view:website:smart_expense.expense_receipt
-msgid "Save changes"
-msgstr "Guardar cambios"
+#. module: smart_common
+#: view:website:website.layout
+msgid "© SMartEu 2015-Today"
+msgstr "© SMartEu 2015-Hoy"
 
