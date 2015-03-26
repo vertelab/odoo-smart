@@ -366,7 +366,7 @@
 						</header>
 						</ul>
 
-						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+						<form class="form-horizontal smart-input-form" t-attf-action="#{form_post}" method="post">
 <!-- 					<form class="form-horizontal" action="#confirmation" method="post">-->
 
 			  		<ul>
@@ -549,7 +549,7 @@
     					        <div class="form-group" t-if="not res_company.country_id.code in ['NL','DE']">
 	  				          <label class="control-label col-sm-3 col-md-3 col-lg-2" for="wtx">Withholding tax</label>
   					          <div class="input-group col-sm-9 col-md-3 col-lg-3">
-    					            <input class="form-control" id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
+    					            <input class="form-control smart-input-float" id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
 							<div class="input-group-addon">%</div>
 <!--    					        <span class="add-on"><big>%</big></span>-->
   			

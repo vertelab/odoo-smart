@@ -525,7 +525,8 @@
       <link href="/smart_common/static/ui/smartstrap/css/smartstrap.css" rel="stylesheet"/>   <!-- förstör  modal overlays t ex content/edit menu -->
 	  <link href="/smart_common/static/ui/smartstrap/css/smartbar.css" rel="stylesheet"/>
 	  <link href="/smart_common/static/ui/css/app.css" rel="stylesheet"/> 
-	  <link href="/smart_expense/static/ui/css/expenses.css" rel="stylesheet"/> 
+	  <link href="/smart_expense/static/ui/css/expenses.css" rel="stylesheet"/>
+	<script src="/smart_salary_simulator_se/static/src/js/smart_form_validation.js"></script>    
 <!--
   	  <link href="/smart_common/static/ui/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 -->
