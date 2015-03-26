@@ -13,8 +13,12 @@
     <t t-call="website.layout">
 	    		<t t-if="res_user and res_user.webterms_accepted">
                     <div id="activityname"  style="position: absolute;top:70px;left: 30px; width: 500px;"/>
-                    <div id="smart_role"  style="position: absolute;top:70px;left: 500px; width: 400px;">
-                          <div groups="base.group_smart_advisor"><h2>Logged in as Advisor</h2></div>
+                    <div id="smart_role"  style="position: absolute;top:70px;left: 600px; width: 400px;">
+                          <div groups="base.group_smart_advisor">
+                          <h2>You are logged in as Advisor. <br/>
+                          <a href="/sudo_login" groups="base.group_smart_advisor">Login as an other user</a>
+                          </h2>
+                          </div>
 
                     </div>
                     <div id="cash" style="position: absolute; top: 75px;  left: 860px;"/>

@@ -639,11 +639,7 @@
                                  </td>
 
                               <td>
-<!--problemet-->
-<t groups="base.group_smart_debug">
-                              <input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/>
-                              </t>
-<!--/problemet-->
+                              <input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.sudo().price_subtotal}"/>
                               </td>
                               <td><a  t-att-href="'/order/%s/line/%s/delete' % (sale_order.id,o.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a></td>
                             </tr>
@@ -654,7 +650,6 @@
                         <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
 			               <tr>
                               <td colspan="2"><input type="text" id="name" name="line_name_new" placeholder="Name" /></td>
-<!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
 <!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
                                 <td style="width: 20px;"> <!-- TAX -->
                                  <select name="line_tax_new" >
@@ -673,7 +668,7 @@
 
                     <fieldset>
 			              <legend>Notes</legend>
-                          <textarea name="note" rows="8" cols="560" placeholder="Use this field for comments or additional info to SMart. If you would like to send an invoice in an other currency, please the currency here." ><t t-esc="sale_order.note or '' "/></textarea>
+                          <textarea name="note" rows="8" cols="56" placeholder="Use this field for comments or additional info to SMart. If you would like to send an invoice in an other currency, please the currency here." ><t t-esc="sale_order.note or '' "/></textarea>
 	                </fieldset>
 
 
@@ -1022,7 +1017,7 @@
                               <td class="cell" style="text-align: right;">
 <!--fredrik har ändrat-->
 <!--								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
-                              <t t-esc="o.price_subtotal"/>
+                              <t t-esc="o.sudo().price_subtotal"/>
                               </td>
                             </tr>
                       </t>
@@ -1313,7 +1308,7 @@
 				              <td colspan="2" class="cell-primary"><t t-raw="o.name"/></td>
 <!--                              <td align="right"><t t-esc="o.tax_id.name"/></td>-->
                               <td class="cell" style="text-align: right;">
-								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+								<span t-field="o.sudo().price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
                               </td>
                             </tr>
                       </t>

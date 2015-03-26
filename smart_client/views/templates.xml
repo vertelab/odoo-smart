@@ -51,7 +51,7 @@
 		  	            <tr>
 		   	              <th></th>
 
-		   	              <th><span class="muted">Name</span></th>
+		   	              <th><span class="muted">Name (Number of contact persons) </span> </th>
 		  	              <th><span class="muted">Adress</span></th>
 		  	              <th><span class="muted">Country</span></th>
 <!--		  	              <th><span class="muted">VAT number</span></th>-->
@@ -77,10 +77,9 @@
 				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
 				                       		<t t-raw="c.parent_id.name"/>
 				                       </t>
-				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> 
-<!--				                       <t groups="base.group_smart_debug">(<t t-raw="c.client_contact_counter"/>)</t>-->
+				                       <t t-if="c.is_company">
+				                       <a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> (<t t-raw="c.sudo().client_contact_counter"/>)
 				                       </t>
-<!--Display the number of contact persons for the client-->
 	                       </td>
 	                       
 	                       <td><div t-raw="c.street"/></td>
@@ -355,8 +354,9 @@
     				        <label class="control-label" for="country"><strong>Country</strong></label>
     				        <div class="controls">
                                  <select name="country_id">
+<!--                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> -->
                                     <t t-foreach="res_countrys" t-as="c">
-                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.sudo().code"/>, <t t-esc="c.name"/></option> 
                                     </t>
                                 </select>
 <!--								 <t t-esc="res_partner.country_id.name"/>-->

@@ -390,7 +390,7 @@
   					          <label class="control-label col-sm-3 col-md-3 col-lg-2" for="smart_work_roles">Work roles</label>
   					          <div class="input-group col-sm-9 col-md-3 col-lg-3">
 <!--								<input id="category_id" name="category_id" t-attf-value="#{res_user.partner_id.category_id.name}" type="text"/>-->
-                          		<textarea class="form-control" name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line." ><t t-esc="res_user.partner_id.smart_work_roles or '' "/></textarea>
+                          		<textarea class="form-control" name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line."><t t-esc="res_user.partner_id.smart_work_roles or ''"/></textarea>
 
   				    	      </div>
   				        	</div>
@@ -493,9 +493,8 @@
     					          <div class="input-group col-sm-9 col-md-3 col-lg-3">
 <!--                                        'gender': fields.selection([('male', 'Male'), ('female', 'Female')], 'Gender'),-->
 									<select class="form-control" id="gender" name="gender">
-									    <option selected="" value="">Select here</option>
-									    <option value="male">Male</option>
-									    <option value="female">Female</option>
+									    <option value="male" t-att-selected="res_user.employee_ids[0].gender == 'male'">Male</option>
+									    <option value="female"  t-att-selected="res_user.employee_ids[0].gender == 'female'">Female</option>
 									</select>
     					          </div>
     				    	    </div>
@@ -510,13 +509,13 @@
     					          <label class="control-label col-sm-3 col-md-3 col-lg-2" for="marital">Civil status</label>
     					          <div class="input-group col-sm-9 col-md-3 col-lg-3">
 									<select class="form-control" id="marital" name="marital">
-									    <option value="single" t-att-selected="res_user.employee_ids[0].marital == 'single'">Single</option>
-									    <option value="partner" t-att-selected="res_user.employee_ids[0].marital == 'partner'">Partner</option>
-									    <option value="married" t-att-selected="res_user.employee_ids[0].marital == 'married'">Married</option>
+									    <option value="single"    t-att-selected="res_user.employee_ids[0].marital == 'single'"   >Single</option>
+									    <option value="partner"   t-att-selected="res_user.employee_ids[0].marital == 'partner'"  >Partner</option>
+									    <option value="married"   t-att-selected="res_user.employee_ids[0].marital == 'married'"  >Married</option>
 									    <option value="separated" t-att-selected="res_user.employee_ids[0].marital == 'separated'">Separated</option>
-									    <option value="divorced" t-att-selected="res_user.employee_ids[0].marital == 'divorced'">Divorced</option>
-									    <option value="widower" t-att-selected="res_user.employee_ids[0].marital == 'widower'">Widow/er</option>
-									    <option value="unknown" t-att-selected="res_user.employee_ids[0].marital == 'unknown'">Unknown</option>
+									    <option value="divorced"  t-att-selected="res_user.employee_ids[0].marital == 'divorced'" >Divorced</option>
+									    <option value="widower"   t-att-selected="res_user.employee_ids[0].marital == 'widower'"  >Widow/er</option>
+									    <option value="unknown"   t-att-selected="res_user.employee_ids[0].marital == 'unknown'"  >Unknown</option>
 									</select>
     					          </div>
     				    	    </div>

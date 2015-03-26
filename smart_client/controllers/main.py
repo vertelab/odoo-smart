@@ -77,7 +77,7 @@ class website_client(http.Controller):
             partner_id = pool.get('res.partner').create(cr,uid,{
                 'name': _('My first client'),
                 'is_company': True,
-                'country_id': request.env.ref('base.main_company').country_id.id,
+                'country_id': request.env.ref('base.main_company').sudo().country_id.id,
             })
             partner = pool.get('res.partner').browse(cr,uid,partner_id)
 
@@ -112,6 +112,8 @@ class website_client(http.Controller):
                 contact_person['street'] = partner.street
                 contact_person['zip'] = partner.zip
                 contact_person['city'] = partner.city
+#The Mobilenumber does not save on a client contact person.
+#                contact_person['mobile'] = partner.mobile
                 contact_person['country_id'] = partner.country_id.id
                 
                 pool.get('res.partner').create(cr,uid,contact_person)

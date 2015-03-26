@@ -91,7 +91,7 @@ class website_account(http.Controller):
             'identification_id',
             'job_id',
             'gender',
-            'hr_country_id'
+            'hr_country_id',
             'marital',
             'passport_id',
             'otherid',

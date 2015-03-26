@@ -5,8 +5,8 @@
 <template id="smartbudgetcashbox" inherit_id="smart_common.layout" name="Smart Cash" customize_show="True" >
         <xpath expr="//div[@id='cash']" position="inside">
 
-               Start CashBudget Box
-					<div id="smartbudgetcashbox" >
+<!--               Start CashBudget Box-->
+					<div id="smartbudgetcashbox" groups="base.group_smart_user" >
 	                    <table id="table-widget-budget" style="width: 200px;" >
 					        <tr>
 					          <td style="text-align: right;">
@@ -15,7 +15,7 @@
 					          <a class="tip" data-toogle="tooltip" data-placement="top" title="Cash is what you have on your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
 					          					          
 					          <td></td>
-					          <td groups="base.group_smart_user" style="text-align: right;"><a href="/cash/list"><span t-field="user_id.company_id.smart_cash" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+					          <td style="text-align: right;"><a href="/cash/list"><span t-field="user_id.company_id.smart_cash" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
 					          </td>
 					        </tr>
 					      
@@ -27,7 +27,7 @@
 				          
 					          <a class="tip" data-toogle="tooltip" data-placement="bottom" title="Budget is what is planned to come in to your SMart Account."><i class="glyphicon glyphicon-question-sign"></i></a></td>
 					          <td></td>
-					          <td groups="base.group_smart_user" style="text-align: right;"><a href="/budget/list"><span t-field="user_id.company_id.smart_budget" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
+					          <td style="text-align: right;"><a href="/budget/list"><span t-field="user_id.company_id.smart_budget" t-field-options='{"widget": "monetary", "display_currency": "user_id.company_id.currency_id"}'/></a>
 <!--					          <t t-esc="user_id.company_id.smart_budget"/>-->
 <!--					          <t t-esc="formatLang(line['smart_budget'], dp='Account', currency_obj=res_company.currency_id)"/> -->
 <!--							<span t-esc="formatLang(data['smart_budget']['smart_budget'], date=False)"/>-->
