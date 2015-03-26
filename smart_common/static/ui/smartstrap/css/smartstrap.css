@@ -213,7 +213,9 @@ a:hover {
   min-height: 1px;
   margin-left: 30px;
 }
+/*
 .container,
+*/
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
@@ -7385,7 +7387,9 @@ html[xmlns] .slides {
     min-height: 1px;
     margin-left: 30px;
   }
+/*
   .container,
+*/
   .navbar-static-top .container,
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
@@ -7718,7 +7722,9 @@ html[xmlns] .slides {
     min-height: 1px;
     margin-left: 20px;
   }
+/*
   .container,
+*/
   .navbar-static-top .container,
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
@@ -8046,9 +8052,11 @@ html[xmlns] .slides {
   .dl-horizontal dd {
     margin-left: 0;
   }
+/*
   .container {
     width: auto;
   }
+*/
   .row-fluid {
     width: 100%;
   }
