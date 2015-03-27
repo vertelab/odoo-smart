@@ -416,7 +416,7 @@
 			                <label class="control-label" for="contactName"><strong>Comments</strong></label>
 			                <div class="controls">
 <!--				               	<input type="text" id="comment" name="comment" t-attf-value="#{res_partner.comment}"/>-->
-                          <textarea name="comment" rows="4" cols="360" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
+                          <textarea name="comment" rows="4" cols="60" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
 			                </div>
 			              </div>
 			            </fieldset>
@@ -482,7 +482,7 @@
 <!--                              <td><input type="text" id="firstname" name="ccp_firstname" placeholder="First Name"/></td>-->
 <!--                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>-->
 <!--                              <td><input type="text" id="phone" size="10" name="res_partner.child_id.phone" align="right" placeholder="Phone" /></td>                              -->
-                              <td><input type="text" id="mobile" size="10" name="res_partner.child_id.ccp_mobile" align="right" placeholder="Mobile" /></td>
+                              <td><input type="text" id="mobile" size="10" name="ccp_mobile" align="right" placeholder="Mobile" /></td>
 				              <td><input type="text" id="email" size="20" name="ccp_email" placeholder="first.last@company.org" /></td>
                             </tr>
 
@@ -788,7 +788,7 @@
 			                <label class="control-label" for="contactName"><strong>Comments</strong></label>
 			                <div class="controls">
 <!--				               	<input type="text" id="comment" name="comment" t-attf-value="#{res_partner.comment}"/>-->
-                          <textarea name="comment" rows="4" cols="360" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
+                          <textarea name="comment" rows="4" cols="60" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
 			                </div>
 			              </div>
 			            </fieldset>				

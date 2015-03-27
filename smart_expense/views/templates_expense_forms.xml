@@ -28,7 +28,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-                              <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
+                              <input type="text" size="30" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
                    			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
                    			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
@@ -37,7 +37,7 @@
   					  <div class="control-group">
   					    <label class="control-label"><strong>Justification</strong></label>
   					    <div class="controls">
-                   			 <input type="text" size="5" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
+                   			 <input type="text" size="30" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
 <!--                              <textarea name="line_justification" rows="3"><t t-esc="#{expense_line and expense_line.justification or ''}"/></textarea>  -->
   					      <span class="help-block">Briefly explain why this expense is related to your activity.</span>
   					    </div>
@@ -58,8 +58,8 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>From</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="expense_line.from" align="right" placeholder="Address" t-attf-value="#{expense_line.from}"/>-->
-                   			 <input type="text" size="5" name="line_starting_point" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
+<!--                   			 <input type="text" size="30" name="expense_line.from" align="right" placeholder="Address" t-attf-value="#{expense_line.from}"/>-->
+                   			 <input type="text" size="30" name="line_starting_point" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
                    			 
     					  </div>
     					</div>
@@ -67,8 +67,8 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>To</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="from" align="right" placeholder="Address" t-attf-value="#{expense_line.to}"/>-->
-                   			 <input type="text" size="5" name="line_to" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.to or ''}"/>
+<!--                   			 <input type="text" size="30" name="from" align="right" placeholder="Address" t-attf-value="#{expense_line.to}"/>-->
+                   			 <input type="text" size="30" name="line_to" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.to or ''}"/>
     					  </div>
     					</div>
 
@@ -77,8 +77,8 @@
     					  <label class="control-label"><strong>Distance</strong></label>
     					  <div class="controls">
     					    <div class="input-append">
-                   			 <input type="text" size="5" name="line_unit_quantity" align="right" placeholder="10" t-attf-value="#{expense_line and expense_line.unit_quantity or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_unit_quantity" align="right" placeholder="123" />-->
+                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="10" t-attf-value="#{expense_line and expense_line.unit_quantity or ''}"/>
+<!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="123" />-->
       					    <span class="add-on">km</span>
 							</div>
 
@@ -146,7 +146,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-                              <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
+                              <input type="text" size="30" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
                    			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
                    			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
@@ -155,7 +155,7 @@
   					  <div class="control-group">
   					    <label class="control-label"><strong>Justification</strong></label>
   					    <div class="controls">
-                   			 <input type="text" size="5" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
+                   			 <input type="text" size="30" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
 <!--                              <textarea name="line_justification" rows="3"><t t-esc="#{expense_line and expense_line.justification or ''}"/></textarea>  -->
   					      <span class="help-block">Briefly explain why this expense is related to your activity.</span>
   					    </div>
@@ -182,7 +182,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Date (of purchase)</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
+                   			 <input type="text" size="30" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
     					  </div>
     					</div>
 
@@ -190,15 +190,15 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>From</strong></label>
     					  <div class="controls">
-<!--                   			 <input type="text" size="5" name="from" align="right" placeholder="Airport" t-attf-value="#{expense_line.from}"/>-->
-                   			 <input type="text" size="5" name="line_starting_point" align="right" placeholder="City" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
+<!--                   			 <input type="text" size="30" name="from" align="right" placeholder="Airport" t-attf-value="#{expense_line.from}"/>-->
+                   			 <input type="text" size="30" name="line_starting_point" align="right" placeholder="City" t-attf-value="#{expense_line and expense_line.starting_point or ''}"/> 
     					  </div>
     					</div>
     					
     					<div class="control-group">
     					  <label class="control-label"><strong>To</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_to" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.to or ''}"/>
+                   			 <input type="text" size="30" name="line_to" align="right" placeholder="Address" t-attf-value="#{expense_line and expense_line.to or ''}"/>
     					  </div>
     					</div>
     					
@@ -206,8 +206,8 @@
     					  <label class="control-label"><strong>Ticket Price excluding VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.unit_amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'></span>-->
-		                   			 <input type="text" size="5" name="line_unit_amount_untaxed" align="right" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_unit_amount_untaxed" align="right" placeholder="100"/>-->
+		                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
+<!--                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" placeholder="100"/>-->
     					  </div>
     					</div>
 
@@ -217,9 +217,9 @@
     					  <label class="control-label"><strong>Ticket Price including VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-		                   			 <input type="text" size="5" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_unit_amount" align="right" placeholder="123"/>-->
-<!--                   			 <input type="text" size="5" name="line_unit_quantity" align="right" placeholder="121"/>-->
+		                   			 <input type="text" size="30" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+<!--                   			 <input type="text" size="30" name="line_unit_amount" align="right" placeholder="123"/>-->
+<!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="121"/>-->
     					  </div>
     					</div>
     					  
@@ -268,7 +268,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-                              <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
+                              <input type="text" size="30" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
                    			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
                    			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
@@ -277,7 +277,7 @@
   					  <div class="control-group">
   					    <label class="control-label"><strong>Justification</strong></label>
   					    <div class="controls">
-                   			 <input type="text" size="5" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
+                   			 <input type="text" size="30" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
 <!--                              <textarea name="line_justification" rows="3"><t t-esc="#{expense_line and expense_line.justification or ''}"/></textarea>  -->
   					      <span class="help-block">Briefly explain why this expense is related to your activity.</span>
   					    </div>
@@ -304,14 +304,14 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Date (of purchase)</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
+                   			 <input type="text" size="30" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
     					  </div>
     					</div>
 
 <!--   					<div class="control-group">-->
 <!--    					  <label class="control-label"><strong>Price excluding VAT</strong></label>-->
 <!--    					  <div class="controls">-->
-<!--                   			 <input type="text" size="5" name="line_unit_amount_untaxed" align="right" placeholder="100"/>-->
+<!--                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" placeholder="100"/>-->
 <!--    					  </div>-->
 <!--    					</div>-->
 
@@ -321,7 +321,7 @@
     					  <label class="control-label"><strong>Price (including VAT)</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-		                   			 <input type="text" size="5" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+		                   			 <input type="text" size="30" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
     					  </div>
     					</div>
     					  
@@ -368,7 +368,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Description</strong></label>
     					  <div class="controls">
-                              <input type="text" size="5" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
+                              <input type="text" size="30" name="line_name" align="right"  t-attf-value="#{expense_line and expense_line.name or ''}"/>
                    			 <input type="hidden" name="line_id_1" t-attf-value="#{expense_line and expense_line.id or ''}"/>
                    			 <input type="hidden" name="line_product_id" t-attf-value="#{product and product.id or ''}"/> 
     					  </div>
@@ -377,7 +377,7 @@
   					  <div class="control-group">
   					    <label class="control-label"><strong>Justification</strong></label>
   					    <div class="controls">
-                   			 <input type="text" size="5" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
+                   			 <input type="text" size="30" name="line_justification" align="right" placeholder="Justification" t-attf-value="#{expense_line and expense_line.justification or ''}"/>
 <!--                              <textarea name="line_justification" rows="3"><t t-esc="#{expense_line and expense_line.justification or ''}"/></textarea>  -->
   					      <span class="help-block">Briefly explain why this expense is related to your activity.</span>
   					    </div>
@@ -425,7 +425,7 @@
     					<div class="control-group">
     					  <label class="control-label"><strong>Date (of purchase)</strong></label>
     					  <div class="controls">
-                   			 <input type="text" size="5" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
+                   			 <input type="text" size="30" name="line_date_value" align="right" placeholder="YYYY-MM-DD"  t-attf-value="#{expense_line and expense_line.date_value or ''}"/>
     					  </div>
     					</div>
 
@@ -433,7 +433,7 @@
     					  <label class="control-label"><strong>Price excluding VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.unit_amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'></span>-->
-                   			 <input type="text" size="5" name="line_unit_amount_untaxed" align="right" placeholder="100" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
+                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" placeholder="100" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
     					  </div>
     					</div>
 
@@ -443,8 +443,8 @@
     					  <label class="control-label"><strong>Price including VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-                   			 <input type="text" size="5" name="line_unit_amount" align="right" placeholder="123"  t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
-<!--                   			 <input type="text" size="5" name="line_unit_quantity" align="right" placeholder="121"/>-->
+                   			 <input type="text" size="30" name="line_unit_amount" align="right" placeholder="123"  t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+<!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="121"/>-->
     					  </div>
     					</div>
     					  

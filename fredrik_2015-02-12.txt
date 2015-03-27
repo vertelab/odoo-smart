@@ -119,7 +119,8 @@ cd /var/backups/smart/
 /var/backups/smart/20141202-11/tree/usr/share
 
 Disk usage
-du -sh .
+du -sh . (whole folder)
+du -sh * (each folder)
 df -sh .
 
 du disk useage
