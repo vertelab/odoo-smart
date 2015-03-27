@@ -15,6 +15,7 @@ class website_client(http.Controller):
     def salary_simulation(self, **post):
         env = request.env
         user = env['res.users'].browse(env.uid)[0]
+        request.context['lang'] = user.lang
         if request.httprequest.method == 'POST':
             values = {
                 'salarysimulator_menu': 'active',        
@@ -28,6 +29,7 @@ class website_client(http.Controller):
                 'musician': post.get('salary-musician') or 'off',
                 'smart_fee': float(post.get('salary-smart-fee') or 0),
                 'res_user': user,
+                'context': request.context,
             }
             if post.get('sender') == 'form':
                 _logger.info(post)
@@ -99,6 +101,7 @@ class website_client(http.Controller):
             values['musician'] = 1
             values['smart_fee'] = 6.5
             values['res_user'] = user
+            values['context'] = request.context
             return request.website.render("smart_salary_simulator_se.simulator_form_se", values)
         """
         env = request.env

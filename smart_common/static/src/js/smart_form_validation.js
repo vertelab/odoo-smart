@@ -1,7 +1,22 @@
-var decSign = ",";
+
+function init_smart_form_handler(decSign, kSeparator){
+    smart_decSign = decSign;
+    smart_kSeparator = kSeparator;
+    var fields = document.getElementsByClassName("smart-input-float");
+    var i = 0;
+    for (i = 0; i < fields.length; i++) {
+	fields[i].value = String(fields[i].value).replace(".", smart_decSign);
+	fields[i].setAttribute("onchange", "validateFloatField(this)");
+    };
+    fields = document.getElementsByClassName("smart-input-form");
+    for (i = 0; i < fields.length; i++) {
+	fields[i].setAttribute("onsubmit", "convertInputFields(this)");
+    };
+};
+
 
 function validateFloatField(element){
-    if(isNaN(convertDecSign(element.value))){
+    if(isNaN(convert_decSign(element.value))){
 	element.setCustomValidity('Please enter a number.');
     }
     else{
@@ -9,8 +24,8 @@ function validateFloatField(element){
     }
 };
 
-function convertDecSign(str){
-    return String(str).replace(decSign, ".");
+function convert_decSign(str){
+    return String(str).replace(smart_decSign, ".");
 };
 
 function convertInputFields(form){
@@ -20,21 +35,7 @@ function convertInputFields(form){
     var fields = form.getElementsByClassName("smart-input-float");
     var i = 0;
     for (i = 0; i < fields.length; i++) {
-	fields[i].value = convertDecSign(fields[i].value);
+	fields[i].value = convert_decSign(fields[i].value);
     }
     return true;
 };
-
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Content loaded!")
-    var fields = document.getElementsByClassName("smart-input-float");
-    var i = 0;
-    for (i = 0; i < fields.length; i++) {
-	fields[i].value = String(fields[i].value).replace(".", decSign);
-	fields[i].setAttribute("onchange", "validateFloatField(this)");
-    };
-    fields = document.getElementsByClassName("smart-input-form");
-    for (i = 0; i < fields.length; i++) {
-	fields[i].setAttribute("onsubmit", "convertInputFields(this)");
-    };
-});

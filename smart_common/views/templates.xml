@@ -522,11 +522,22 @@
 <template id="css" inherit_id="website.layout" name="CSS and Javascript" customize_show="True" >
     <xpath expr="//head" position="inside">
 	  <!-- styles -->
-      <link href="/smart_common/static/ui/smartstrap/css/smartstrap.css" rel="stylesheet"/>   <!-- förstör  modal overlays t ex content/edit menu -->
-	  <link href="/smart_common/static/ui/smartstrap/css/smartbar.css" rel="stylesheet"/>
-	  <link href="/smart_common/static/ui/css/app.css" rel="stylesheet"/> 
-	  <link href="/smart_expense/static/ui/css/expenses.css" rel="stylesheet"/>
-	<script src="/smart_common/static/src/js/smart_form_validation.js"></script>    
+	<link href="/smart_common/static/ui/smartstrap/css/smartstrap.css" rel="stylesheet"/>   <!-- förstör  modal overlays t ex content/edit menu -->
+	<link href="/smart_common/static/ui/smartstrap/css/smartbar.css" rel="stylesheet"/>
+	<link href="/smart_common/static/ui/css/app.css" rel="stylesheet"/> 
+	<link href="/smart_expense/static/ui/css/expenses.css" rel="stylesheet"/>
+	
+	<!-- Load javascript for localized float inputs -->
+	<script src="/smart_common/static/src/js/smart_form_validation.js"></script>
+	<script>
+	    <t t-set="smart_language" t-value="request.env['res.lang'].search([('code', '=', context['lang'])]) if context else False"/>
+	    document.addEventListener("DOMContentLoaded", function() {
+		init_smart_form_handler(
+		"<t t-esc="smart_language[0].decimal_point if smart_language and len(smart_language) > 0 else '.'"/>",
+		"<t t-esc="smart_language[0].thousands_sep if smart_language and len(smart_language) > 0 else ','"/>"
+		)}
+	    );
+	</script>    
 <!--
   	  <link href="/smart_common/static/ui/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 -->

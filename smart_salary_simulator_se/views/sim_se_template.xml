@@ -93,7 +93,8 @@ getMethods(openerp);
 		    <div class="alert alert-error pp_form_errors" style="display:none">
 			<strong>Please review the form,</strong> some details are missing in order to calculate your salary.
 		    </div>
-         	  
+		    
+		    
 
          				
 		    <!-- Amount -->
@@ -166,7 +167,7 @@ getMethods(openerp);
 		    <div class="form-group">
 			<label class="control-label col-md-4">Year of birth  <a class="tip" data-toogle="tooltip" data-placement="top" title="Please fill in the year of your birth."><i class="glyphicon glyphicon-question-sign"></i></a></label>
 			<div class="input-group col-md-2">
-			    <input class="form-control intinput" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="text" t-att-value="yob"/>
+			    <input class="form-control" id="salary-birth-year" name="salary-birth-year" data-path="yearOfBirth" type="number" t-att-value="yob"/>
 			</div>
 		    </div>
 		    
