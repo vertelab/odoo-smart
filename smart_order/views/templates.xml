@@ -309,11 +309,11 @@
               <div class="controls">
                 <t t-if="sale_order and sale_order.id"> 
 <!--                    <input type="text" id="qty" size="5" name="client_order_ref" align="right" placeholder="Name your order!" t-attf-value="#{sale_order.client_order_ref}"/>-->
-                    <input type="text" id="qty" size="5" name="description" align="right" placeholder="Name your order!" t-attf-value="#{sale_order.description}"/>
+                    <input type="text" id="qty" size="60" name="description" align="right" placeholder="Name your order!" t-attf-value="#{sale_order.description}"/>
                 </t>
                 <t t-if="not sale_order"> 
 <!--                    <input type="text" size="5" name="client_order_ref"  placeholder="Name your order!" />-->
-                    <input type="text" size="5" name="description"  placeholder="Name your order!" />
+                    <input type="text" size="60" name="description"  placeholder="Name your order!" />
                 </t>
 
                 <t t-if="not sale_order"> 
@@ -624,7 +624,7 @@
                             <tr>  
                               
 
-                              <td colspan="2"><input type="text" t-att-name="'line_name_%s' % o_index" placeholder="Name" t-attf-value="#{o.name}"/><input type="hidden" t-att-name="'line_id_%s' % o_index" t-attf-value="#{o.id}"/></td>
+                              <td colspan="2"><input type="text" size="30" t-att-name="'line_name_%s' % o_index" placeholder="Name" t-attf-value="#{o.name}"/><input type="hidden" t-att-name="'line_id_%s' % o_index" t-attf-value="#{o.id}"/></td>
 
                                 <td style="width: 20px;"> <!-- TAX -->
                                  <select t-att-name="'line_tax_%s' % o_index" >

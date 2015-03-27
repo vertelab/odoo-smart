@@ -121,10 +121,10 @@
 
               <div class="controls">
                 <t t-if="expense and expense.id"> 
-                    <input type="text" id="qty" size="5" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
+                    <input type="text" id="name" size="30" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
                 </t>
                 <t t-if="not expense"> 
-                    <input type="text" size="5" name="name"  placeholder="Name your expense!" />
+                    <input type="text" size="30" name="name"  placeholder="Name your expense!" />
                 </t>
 
                 <t t-if="not expense"> 
