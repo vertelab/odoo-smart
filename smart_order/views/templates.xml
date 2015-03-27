@@ -594,7 +594,7 @@
             
 	       </UL>      
 
-   <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">              
+   <form class="form-horizontal form-preview smart-input-form"   t-attf-action="#{form_action}"  method="POST">              
 	     
 <!-- Order -->
 			  <ul>
@@ -639,7 +639,7 @@
                                  </td>
 
                               <td>
-                              <input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.sudo().price_subtotal}"/>
+                              <input class="smart-input-float" type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.sudo().price_subtotal}"/>
                               </td>
                               <td><a  t-att-href="'/order/%s/line/%s/delete' % (sale_order.id,o.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a></td>
                             </tr>
@@ -659,7 +659,7 @@
                                  </select> 
                                  </td>
 
-                              <td><input type="text" id="price" size="10" name="line_price_new" align="right" placeholder="Price" /></td>
+                              <td><input class="smart-input-float" type="text" id="price" size="10" name="line_price_new" align="right" placeholder="Price" /></td>
                               <td><button type="submit" class="btn btn-success">Add</button></td>
                             </tr>
                         </form>

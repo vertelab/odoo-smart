@@ -241,15 +241,10 @@ class website_order(http.Controller):
 
 ## Sale Order Lines
             if post.get('line_name_new'):
-                    price_unit = post.get('line_price_new')
-                    if isinstance(price_unit,(int,float)):
-                        price_unit = float(price_unit)
-                    else:
-                        price_unit = 0.0
-                    pool.get('sale.order.line').create(cr,uid,{'order_id': sale_order.id, 'name': post.get('line_name_new'), 'price_unit': price_unit, 'product_uom_qty': 1.0, 'tax_id': [(6,0,[post.get('line_tax_new',1)])] })
-                    template='smart_order.edit_lines'
+                pool.get('sale.order.line').create(cr,uid,{'order_id': sale_order.id, 'name': post.get('line_name_new'), 'price_unit': float(post.get('line_price_new', 0)), 'product_uom_qty': 1.0, 'tax_id': [(6,0,[post.get('line_tax_new',1)])] })
+                template='smart_order.edit_lines'
 #Anders: Här vill jag att Save-Order-Line landar på smart_order.edit_lines och att Next landar på smart_order.order
-                    values['form_action'] = '/order/%s' % sale_order.id
+                values['form_action'] = '/order/%s' % sale_order.id
             else:
                 for line in post.keys():
                     if line.startswith('line_id_'):
