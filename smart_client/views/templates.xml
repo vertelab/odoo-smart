@@ -67,13 +67,14 @@
 	                       <tr>
 <!-- display an icon based on what type of client it is -->
 							<td>
-                            <t t-if="not c.is_company and c.parent_id"> <span class="muted"><i class="icon-user" style="opacity: 0.4; margin: 8px 0;"></i></span> </t>
-                            <t t-if="not c.is_company and not c.parent_id"> <span class="muted"><i class="icon-user" style="opacity: 0.4; margin: 0px 0;"></i></span> </t>
-                            <t t-if="c.is_company and not c.parent_id"> <span class="muted"><i class="icon-briefcase" style="opacity: 0.4; margin: 0px 0;"></i></span> </t>
-							</td>
+							<t t-if="not c.is_company and c.parent_id"> <i class="glyphicon glyphicon-user" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
+                            <t t-if="not c.is_company and not c.parent_id"> <i class="glyphicon glyphicon-user" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
+                            <t t-if="c.is_company and not c.parent_id"> <i class="glyphicon glyphicon-briefcase" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
+                            							</td>
 							
 <!--Display name of Company, Contact person or Individual-->
 							<td>
+						
 				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
 				                       		<t t-raw="c.parent_id.name"/>
 				                       </t>
@@ -286,7 +287,7 @@
 			              <div class="control-group company name">
 			                <label class="control-label" for="input01"><strong>Company name</strong></label>
 			                <div class="controls">
-								<input type="text" class="input-xlarge inline" id="name" name="name" placeholder="Your clients name" t-attf-value="#{res_partner.name}"/>
+								<input type="text" size="30" class="input-xlarge inline" id="name" name="name" placeholder="Your clients name" t-attf-value="#{res_partner.name}"/>
 			                </div>
 			              </div>
 
@@ -330,7 +331,7 @@
 			              <div class="control-group address">
 			                <label class="control-label"><strong>Address</strong></label>
 			                <div class="controls">
-								<input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/>
+								<input type="text" size="30" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/>
 			                </div>
 			                <div class="controls" style="margin-top: 8px;">
 								<input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/>
@@ -339,7 +340,7 @@
 			              <div class="control-group postal code">
 			                <label class="control-label"><strong>Postal code</strong></label>
 			                <div class="controls">
-			                   	<input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/>
+			                   	<input type="text" size="10" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/>
 			                </div>
 			              </div>
 			              <div class="control-group city">
@@ -366,11 +367,14 @@
 
 			            
 				         </fieldset>
-			
-	<fieldset>
-			              <legend>Company registration and VAT-number </legend>
 
-						   <div class="control-group company name">
+
+			
+					<fieldset>
+		              <legend>Company registration and VAT-number </legend>
+
+    					   <div class="form-group" t-if="res_company.country_id.code in ['NL','DE']">
+<!--						   <div class="control-group company name">-->
 			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
 			                <div class="controls">
 								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>
@@ -403,7 +407,7 @@
 			              <div class="control-group">
 			                <label class="control-label" for="contactName"><strong>Email</strong></label>
 			                <div class="controls">
-				               	<input type="text" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}" />
+				               	<input type="text" size="60" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}" />
 			                </div>
 			              </div>
 			            </fieldset>

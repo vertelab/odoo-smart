@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    OpenERP, Open Source Management Solution, third party extension
+#    Copyright (C) 2004-2015 Vertel AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,19 +19,20 @@
 #
 ##############################################################################
 
-import time
-
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
-
+from openerp import models, fields, api, _
+from openerp.exceptions import except_orm, Warning, RedirectWarning
+from openerp.tools import float_compare
 import openerp.addons.decimal_precision as dp
+import logging
+_logger = logging.getLogger(__name__)
 
-class product_template(osv.osv):
+
+class product_template(models.Model):
     _inherit = "product.template"
 
-    _columns = {
-        'expense_template_id': fields.many2one('ir.ui.view','Expense Template',),
-        }
+    expense_template_id = fields.Many2one('ir.ui.view','Expense Template',domain="[('name','ilike','expense')]")
+    expense_icon_name   = fields.Char(string="Glyphicon name",help="eg <span class='glyphicon glyphicon-shopping-cart' />")
+        
 
 
 

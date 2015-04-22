@@ -108,7 +108,8 @@
 	  	          <tbody>
 	     	     		<t t-foreach="projects" t-as="p">
 	                       <tr>
-							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.company_id.name"/></strong></a></td>
+<!--							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.company_id.name"/></strong></a></td>-->
+							<td><strong><t t-raw="p.company_id.name"/></strong></td>
 							<td><a t-att-href="'/project/%s' % p.id"><strong><t t-raw="p.name"/></strong></a></td>
 							<td><a t-att-href="'/project/%s/overview' % p.id"><strong>View Budget</strong></a></td>
 	                       <td><a  t-att-href="'/project/%s/delete' % p.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
@@ -271,22 +272,28 @@
 
       	          
       	          <tbody>
-                      <t t-foreach="sale_order_lines" t-as="o">
+<!--                      <t t-foreach="sale_order_lines" t-as="o">-->
+                      <t t-foreach="sale_orders" t-as="o">
                             <tr>  
-                              <td><t t-raw="o.order_id.partner_id.display_name"/></td>
+<!--                              <td><t t-raw="o.order_id.partner_id.display_name"/></td>-->
+                              <td><t t-raw="o.partner_id.display_name"/></td>
 <!--                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.order_id.description"/> </strong> (<t t-raw="o.name"/>)</a></td>-->
-                              <td><a  t-att-href="'/order/%s/edit_lines' % (o.order_id.id)"><strong><t t-raw="o.name"/></strong></a></td>
-							  <td class="cell" style="text-align: right;"><t t-if="o.order_id.state in ['draft','sent','open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>
-							  <td class="cell" style="text-align: right;"><t t-if="o.order_id.state in ['open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>
+<!--                              <td><a  t-att-href="'/order/%s/edit_lines' % (o.order_id.id)"><strong><t t-raw="o.name"/></strong></a></td>-->
+                              <td><a  t-att-href="'/order/%s/edit_lines' % (o.id)"><strong><t t-raw="o.name"/></strong></a></td>
+<!--							  <td class="cell" style="text-align: right;"><t t-if="o.order_id.state in ['draft','sent','open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>-->
+							  <td class="cell" style="text-align: right;"><t t-if="o.state in ['draft','sent','open','manual','progress','done']"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></t></td>
+<!--							  <td class="cell" style="text-align: right;"><t t-if="o.order_id.state in ['open','manual','progress','done']"><span t-field="o.order_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.order_id.company_id.currency_id"}'/></t></td>-->
+							  <td class="cell" style="text-align: right;"><t t-if="o.state in ['open','manual','progress','done']"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></t></td>
                              <td class="cell">
-			    <t t-if="o.order_id.state == 'draft'"><span class="draft">Draft </span></t>
+<!--			    <t t-if="o.order_id.state == 'draft'"><span class="draft">Draft </span></t>-->
+			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
 <!--			   	 <t t-if="o.order_id.state == 'sent'"><span class="sent">Sent to Client</span></t>-->
-			   	 <t t-if="o.order_id.state == 'sent'"><span class="sent">Pending Approval</span></t>
-			   	 <t t-if="o.order_id.state == 'open'"><span class="sent">Open</span></t>
-   			     <t t-if="o.order_id.state == 'manual'"><span class="approved">Submitted</span></t>
-   			     <t t-if="o.order_id.state == 'progress'"><span class="invoiced">Invoiced</span></t>
-   			     <t t-if="o.order_id.state == 'done'"><span class="paid">Paid</span></t>
-			   	 <t t-if="o.order_id.state == 'cancel'"><span class="sent">Cancelled</span></t>		
+			   	 <t t-if="o.state == 'sent'"><span class="sent">Pending Approval</span></t>
+			   	 <t t-if="o.state == 'open'"><span class="sent">Open</span></t>
+   			     <t t-if="o.state == 'manual'"><span class="approved">Submitted</span></t>
+   			     <t t-if="o.state == 'progress'"><span class="invoiced">Invoiced</span></t>
+   			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
+			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
                              </td>
                             </tr>
                       </t>
@@ -295,9 +302,15 @@
                    <tr>
                              <td class="cell" style="text-align: left;"></td>
                              <td class="cell" style="text-align: left;"><strong>Sum Orders</strong></td>
+<!--Anders: I can not get the sum of the currency to display correct. -->
+<!--I have therefore added an extra 0 after the sum. But it displays a . instead of a , as a decimal separator.-->
+<!--FA 2015-04-02-->
 <!--      	              		 <td style="text-align: right;"> <strong><span t-esc="sale_orders_sum.planned_untaxed" t-field-options='{"widget": "monetary", "display_currency": "res_user.company_id.currency_id"}'/></strong></td>-->
-      	              		 <td style="text-align: right;"> <strong><span t-esc="sale_orders_sum.planned_untaxed" /><t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
-      	              		 <td style="text-align: right;"> <strong><span t-esc="sale_orders_sum.approved_untaxed"/><t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
+<!--						    <span t-field="sudo().sale_orders_sum.planned_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+<!--	       	                 <span t-field="sale_orders_sum.sudo().planned_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+<!--	       	                 <span t-field="sale_orders_sum.planned_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>      	              		 </strong></td>-->
+      	              		 <td style="text-align: right;"><strong><span t-esc="sale_orders_sum.planned_untaxed"/>0 <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
+      	              		 <td style="text-align: right;"><strong><span t-esc="sale_orders_sum.approved_untaxed"/>0 <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
                              <td class="cell" style="text-align: left;"></td>
       	            </tr>
 
@@ -403,8 +416,8 @@
                               <td class="cell" style="text-align: left;"></td>
 							  <td class="cell" style="text-align: left;"><strong>Sum Expenses</strong></td>
 <!--	       	                 <td class="cell" style="text-align: left;"><strong><t t-esc="expense_line_sum.amount_untaxed"/> <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>-->
-	       	                 <td class="cell" style="text-align: right;"><strong><t t-esc="expense_line_sum.planned_untaxed"/> <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
-	       	                 <td class="cell" style="text-align: right;"><strong><t t-esc="expense_line_sum.approved_untaxed"/> <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
+	       	                 <td class="cell" style="text-align: right;"><strong><t t-esc="expense_line_sum.planned_untaxed"/>0 <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
+	       	                 <td class="cell" style="text-align: right;"><strong><t t-esc="expense_line_sum.approved_untaxed"/>0 <t t-esc="res_user.company_id.currency_id.symbol"/></strong></td>
                               <td class="cell" style="text-align: left;"></td>
 						</tr>
                     

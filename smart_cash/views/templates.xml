@@ -7,7 +7,7 @@
 
 <!--               Start CashBudget Box-->
 					<div id="smartbudgetcashbox" groups="base.group_smart_user" >
-	                    <table id="table-widget-budget" style="width: 200px;" >
+	                    <table id="table-widget-budget" style="width: 250px;" >
 					        <tr>
 					          <td style="text-align: right;">
 			    		<t t-if="not cash_menu == 'active'"><a href="/cash/list">CASH</a></t>
@@ -137,7 +137,8 @@
       	          <tbody>
                       <t t-foreach="sale_orders" t-as="o">
                             <tr>  
-                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.description"/> </strong> (<t t-raw="o.name"/>)</a></td>
+                              <td><a  t-att-href="'/order/%s' % o.id"><strong><t t-raw="o.description"/> </strong> <span>(<t t-raw="o.name"/>)</span>
+                              </a></td>
                               <td><t t-raw="o.partner_id.display_name"/></td>
  			 				  <td class="cell" align="right">
 									<t t-if="o.partner_id.is_company"> <span class="muted"> Organisation </span></t>
@@ -162,9 +163,7 @@
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
 <!-- Debug-->
-<t groups="base.group_smart_user">
-<BR/>(<t t-raw="o.state"/>)
-</t>
+<t groups="base.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
                              </td>
 
                             </tr>
@@ -277,7 +276,8 @@
    			    			<t t-if="e.state == 'accepted'"> <span class="approved">Approved</span> </t>
    			    			<t t-if="e.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
 <!-- Debug-->
- <BR/>(<t t-raw="e.state"/>)
+<t groups="base.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
+
 
                              </td>
 

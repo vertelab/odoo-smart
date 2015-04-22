@@ -28,6 +28,20 @@ sudo /etc/cron.hourly/odoo-smart
 sudo /etc/cron.hourly/chown_odoo
 sudo /etc/cron.hourly/odoo-smart
 
+moe: 
+cd /
+sudo /etc/cron.hourly/odoo-owner
+ sudo chown -c odoo share_purchase_agreement.xml
+ sudo chgrp -c odoo share_purchase_agreement.xml
+
+cd 
+cd /usr/share/odoo-kegroup/
+ls -l
+sudo chown -c -R odoo share_register/
+sudo chgrp -c -R odoo share_register/
+
+
+
 
 ## Synca till prod-servern
 demo-sync

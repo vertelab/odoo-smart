@@ -212,7 +212,7 @@
 
 							</td>
 <!--                              <td><t t-raw="o.partner_id.date"/></td>-->
-							<td class="cell" style="text-align: right;"><t t-raw="o.amount_untaxed"/></td>
+                            <td class="cell" style="text-align: right;"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></td>
                              <td class="cell">
 			    <t t-if="o.state == 'draft'"><span class="draft">Draft </span></t>
 			   	 <t t-if="o.state == 'sent'"><span class="sent">Pending Valdiation</span></t>
@@ -649,7 +649,7 @@
 
                         <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
 			               <tr>
-                              <td colspan="2"><input type="text" id="name" name="line_name_new" placeholder="Name" /></td>
+                              <td colspan="2"><input type="text" size="30" id="name" name="line_name_new" placeholder="Name" /></td>
 <!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
                                 <td style="width: 20px;"> <!-- TAX -->
                                  <select name="line_tax_new" >
@@ -1015,9 +1015,7 @@
 				              <td colspan="2" class="cell-primary"><t t-raw="o.name"/></td>
 <!--                              <td align="right"><t t-esc="o.tax_id.name"/></td>-->
                               <td class="cell" style="text-align: right;">
-<!--fredrik har ändrat-->
-<!--								<span t-field="o.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
-                              <t t-esc="o.sudo().price_subtotal"/>
+								<span t-field="o.sudo().price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
                               </td>
                             </tr>
                       </t>
@@ -1026,16 +1024,22 @@
                              <td class="cell" style="text-align: right;"></td>
                              <td class="cell" style="text-align: right;"><strong>Excl VAT</strong></td>
                              <td class="cell" style="text-align: right;"><strong>
-<!--								<span t-field="sale_order.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
-                             <t t-esc="sale_order.amount_untaxed"/> €
+<!--Anders: I can not get the sum of the currency to display correct. -->
+<!--I have therefore added an extra 0 after the sum. But it displays a . instead of a , as a decimal separator.-->
+<!--FA 2015-04-02-->
+<!--                             <span t-field="sale_order.sudo().amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+                             <t t-esc="sale_order.amount_untaxed"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
 								</strong></td>
                             </tr>
                             <tr>  
                              <td class="cell" style="text-align: right;"></td>
                              <td class="cell" style="text-align: right;">VAT</td>
                              <td class="cell" style="text-align: right;">
-<!--								<span t-field="sale_order.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
-                             <t t-esc="sale_order.amount_tax"/> €
+<!--Anders: I can not get the sum of the currency to display correct. -->
+<!--I have therefore added an extra 0 after the sum. But it displays a . instead of a , as a decimal separator.-->
+<!--FA 2015-04-02-->
+<!--                             <span t-field="sale_order.sudo().amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+                             <t t-esc="sale_order.amount_tax"/>0 <t t-esc="res_user.company_id.currency_id.symbol"/>
                              </td>
                             </tr>
                              <tr>  
@@ -1044,8 +1048,11 @@
                               <td class="cell" style="text-align: right;"><strong>Total</strong></td>
                               <td class="cell" style="text-align: right;">
                               <strong>
-<!--								<span t-field="sale_order.amount_total" t-field-options='{"widget": "monetary", "display_currency": "sale_order.company_id.currency_id"}'/>-->
-                              <t t-esc="sale_order.amount_total"/> €
+<!--Anders: I can not get the sum of the currency to display correct. -->
+<!--I have therefore added an extra 0 after the sum. But it displays a . instead of a , as a decimal separator.-->
+<!--FA 2015-04-02-->
+<!--                             <span t-field="sale_order.sudo().amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>-->
+                              <t t-esc="sale_order.amount_total"/> <t t-esc="res_user.company_id.currency_id.symbol"/>
                               </strong>
                               </td>
                             </tr>

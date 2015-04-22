@@ -370,12 +370,13 @@
 
 						<form class="form-horizontal smart-input-form" t-attf-action="#{form_post}" method="post">
 <!-- 					<form class="form-horizontal" action="#confirmation" method="post">-->
-<row>
-			  		<ul>
-			  			
-               				  <legend>Type of work you do</legend>
-					</ul>	
-					</row>
+						    <div class="row">
+						  		<ul>			  			
+            	   				  <legend>Type of work you do</legend>
+								</ul>	
+						    </div>
+
+<!--A select that has not been connected yet.-->
 
 <!--  					        <div class="control-group">-->
 <!--  					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="otherid">Your main work role</label>-->
@@ -388,13 +389,12 @@
 <!--                                    </t>-->
 <!--                                </select>-->
 <!--  				        	</div>-->
-<div class="row">
-  					        <div class="form-group">
-  					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="smart_work_roles">Work roles</label>
-  					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
-<!--								<input id="category_id" name="category_id" t-attf-value="#{res_user.partner_id.category_id.name}" type="text"/>-->
-                          		<textarea class="form-control" name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line."><t t-esc="res_user.partner_id.smart_work_roles or ''"/></textarea>
 
+				    <div class="row">      
+    				      <div class="form-group">
+    				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="address">Workroles</label>
+    				        <div class="input-group col-sm-9 col-md-4 col-lg-4">
+                          		<textarea class="form-control" name="smart_work_roles" rows="4" cols="560" placeholder="One work role per line."><t t-esc="res_user.partner_id.smart_work_roles or ''"/></textarea>
   				    	      </div>
   				        	</div>
 						</div>
@@ -407,8 +407,8 @@
 						</ul>  		
 						</row>
 						
-						<div class="row">  				          				        
-  					        <div class="form-group">
+						    <div class="row">
+						        <div class="form-group" t-if="res_company.country_id.code in ['ES','SE']">
   					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="otherid">Social Security Number</label>
   					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 								<input class="form-control" id="otherid" name="otherid" t-attf-value="#{res_user.employee_ids[0].otherid}" type="text"/>
@@ -444,8 +444,8 @@
   					        </div>
 						</div>
   				        
-<div class="row">
-    					        <div class="form-group" t-if="not res_company.country_id.code in ['ES','SE']">
+						    <div class="row">
+						        <div class="form-group" t-if="res_company.country_id.code in ['BE']">
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="identification_id">ID Card Number</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 <!--                                  <input type="text" id="otherid" name="identification_id" placeholder="Identification ID" t-attf-value="#{hr.employee.otherid}"/>-->
@@ -465,8 +465,8 @@
   				            	</div>
 						</div>
   					      
-					      <div class="row">
-    					        <div class="form-group" t-if="not res_company.country_id.code in ['SE','BE']">
+						    <div class="row">
+						        <div class="form-group" t-if="res_company.country_id.code in ['ES']">
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="birthday">Date of birth</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
     					            <input class="form-control" id="birthday" name="birthday" t-attf-value="#{res_user.employee_ids[0].birthday}" type="text"/>
@@ -481,8 +481,8 @@
 <!--	                           	<input type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>-->
 <!--    					          </div>-->
 <!--    				    	    </div>-->
-					<div class="row">
-    					        <div class="form-group" t-if="not res_company.country_id.code in ['SE']">
+						    <div class="row">
+						        <div class="form-group" t-if="res_company.country_id.code in ['ES']">
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="birthday">Place of birth</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 	                           	<input class="form-control" type="text" id="smart_place_of_birth" name="smart_place_of_birth" t-attf-value="#{res_user.partner_id.smart_place_of_birth}"/>
@@ -491,9 +491,10 @@
 					    </div>
 
 
-<!--    					        <div class="control-group" t-if="res_company.country_id.code in ['ES']">-->
+
 						    <div class="row">
-						        <div class="form-group">
+						        <div class="form-group" t-if="res_company.country_id.code in ['ES']">
+<!--    					        <div class="form-group" t-if="not res_company.country_id.code in ['SE']">-->
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="gender">Gender</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 <!--                                        'gender': fields.selection([('male', 'Male'), ('female', 'Female')], 'Gender'),-->
@@ -503,14 +504,14 @@
 									</select>
     					          </div>
     				    	    </div>
-                                </div>
+							</div>
 
 
 <!--        'marital': fields.selection([('single', 'Single'), ('married', 'Married'), ('', 'Widower'), ('divorced', 'Divorced')], 'Marital Status'),-->
 <!--7. Civil status: 7 options (soltero/a, casado/a, viudo/a, separado/a, divorciado/a, pareja de hecho, desconocido)-->
 <!--								bachelor / a, married / a, widow / widower, separated / a, divorced / a, partner, unknown-->
-    					        <div class="row">
-                                <div class="form-group">
+						    <div class="row">
+    					        <div class="form-group" t-if="res_company.country_id.code in ['ES']">
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="marital">Civil status</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 									<select class="form-control" id="marital" name="marital">
@@ -528,8 +529,8 @@
 <!--basic, bachelor, Further Studies-->
 <!--8. Level of studies: 3 options (basico, bachiller, Estudios superiores)-->
 
-    					        <div class="row">
-                                <div class="form-group">
+						    <div class="row">
+    					        <div class="form-group" t-if="res_company.country_id.code in ['ES']">
     					          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="education">Education level</label>
     					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
 									<select class="form-control" id="education" name="education">
@@ -544,14 +545,14 @@
 
 
 
-<row>
+<div class="row">
 						<ul groups="base.group_smart_advisor">  		
   				        <legend>System administration</legend>
 						</ul> 
-</row>
+</div>
 							
 <div class="row">
-    					        <div class="form-group" t-if="not res_company.country_id.code in ['NL','DE']">
+    					        <div class="form-group" t-if="res_company.country_id.code in ['BE','ES','SE']">
 	  				          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="wtx">Withholding tax</label>
   					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
     					            <input class="form-control smart-input-float" id="withhold_tax" name="withhold_tax" t-attf-value="#{res_user.employee_ids[0].withhold_tax}" type="text"/>
@@ -565,8 +566,8 @@
 
 
 <!--  				            <div class="control-group" >-->
-<div class="row" groups="base.group_smart_advisor">
-  				            <div class="form-group">
+						<div class="row" groups="base.group_smart_advisor">
+						   <div class="form-group" t-if="res_company.country_id.code in ['AT','ES','DE','SE',]">
 	  				          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="dropbox_link">Dropbox link </label>
   					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
     					            <input class="form-control" id="dropbox_link" name="dropbox_link" placeholder="http://..." t-attf-value="#{res_user.partner_id.dropbox_link}" type="text"/>
@@ -651,8 +652,8 @@
     				        </div>
   				          </div>
 					  </div>
-<div class="row">
-  				          <div class="form-group">
+						<div class="row">
+						   <div class="form-group" t-if="res_company.country_id.code in ['ES']">
   				          	<label class="control-label col-sm-9 col-md-4 col-lg-4">Branch name</label>
                             <div class="input-group col-sm-9 col-md-4 col-lg-4">
   				    	            <input class="form-control" id="smart_bank_branch" name="smart_bank_branch" t-attf-value="#{res_user.partner_id.smart_bank_branch}" type="text"/> 
@@ -660,8 +661,8 @@
   				          </div>
 					  </div>
 
-<div class="row">
-  				          <div class="form-group">
+						<div class="row">
+						   <div class="form-group" t-if="res_company.country_id.code in ['ES']">
   				          	<label class="control-label col-sm-9 col-md-4 col-lg-4">Bank code</label>
                             <div class="input-group col-sm-9 col-md-4 col-lg-4">
   				    	            <input class="form-control" id="smart_bank_code" name="smart_bank_code" t-attf-value="#{res_user.partner_id.smart_bank_code}" type="text"/> 

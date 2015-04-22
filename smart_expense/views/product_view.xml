@@ -10,6 +10,7 @@
                 <page string="Sales" position="after">
                     <page string="Expenses" groups="account.group_account_invoice">
                                 <field name="expense_template_id" />
+                                <field name="expense_icon_name" />
                     </page>
                 </page>
             </field>

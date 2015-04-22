@@ -642,7 +642,8 @@ smartbudgetcashbox {
 }
 .table-striped th {
   font-size: 11px !important;
-  text-transform: uppercase;
+/*  text-transform: uppercase;*/
+  text-transform: lowercase;
 }
 .table-striped tbody td {
   border: none;

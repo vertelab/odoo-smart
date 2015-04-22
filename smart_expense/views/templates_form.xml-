@@ -121,10 +121,10 @@
 
               <div class="controls">
                 <t t-if="expense and expense.id"> 
-                    <input type="text" id="qty" size="5" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
+                    <input type="text" id="name" size="30" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
                 </t>
                 <t t-if="not expense"> 
-                    <input type="text" size="5" name="name"  placeholder="Name your expense!" />
+                    <input type="text" size="30" name="name"  placeholder="Name your expense!" />
                 </t>
 
                 <t t-if="not expense"> 
@@ -240,7 +240,7 @@
 <!--                                 </select> -->
 <!--                                 </td>-->
 
-                              <td><input type="text" id="price" size="10" t-att-name="'line_amount_%s' % e_index" align="right" placeholder="Expense line price" t-attf-value="#{e.total_amount}"/></td>
+                              <td><input class="smart-input-float" type="text" id="price" size="10" t-att-name="'line_amount_%s' % e_index" align="right" placeholder="Expense line price" t-attf-value="#{e.total_amount}"/></td>
                               <td><a  t-att-href="'/expense/%s/line/%s/delete' % (expense.id,e.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a></td>
                             </tr>
 
@@ -253,7 +253,7 @@
 
 <!--                        <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">-->
 			               <tr>
-                              <td colspan="2"><input type="text" id="name" name="line_name_new" placeholder="Name" /></td>
+                              <td colspan="2"><input type="text" size="30" id="line_name_new" name="line_name_new" placeholder="Name" /></td>
 <!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" />-->
 <!--									</td>-->
 
@@ -265,7 +265,7 @@
 <!--                                 </select> -->
 <!--                                 </td>-->
 
-                              <td><input type="text" id="price" size="10" name="line_price_new" align="right" placeholder="Expense line price" /></td>
+                              <td><input class="smart-input-float" type="text" id="price" size="10" name="line_price_new" align="right" placeholder="Expense line price" /></td>
                               <td><button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span>Save Line</button></td>
                             </tr>
 <!--                        </form>-->

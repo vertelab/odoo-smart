@@ -7,18 +7,25 @@
                                     </t>
                                  </select> 
 
+<img src="/smart_common/static/ui/img/faux-column.png" width="75px"/>
+http://stage.smart-eu.org/smart_common/static/ui/img/faux-column.png
+http://stage.smart-eu.org/smart_common/static/ui/img/blank.jpg
 
 <t t-foreach="clients_global" t-as="c">  </t>
-
 
 <div t-esc="sale_order.partner_id.display_name"/>
 
 <t t-if="error"> <strong t-value="#{error}"/></t>
 <t t-if="not sale_order">   
 <t t-if="sale_order.state == 'sent'"> </t>
+
 <t t-esc="res_user.id"/>
+<t t-raw="res_user.id"/>
+<t t-field="res_user.id"/>
+
 <t t-if="res_user.id == 1"><span class="draft">Draft </span></t>
 <!--t-if needs a span-tag, it does not work with just a p-tag-->
+
 <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/>
 <t groups="base.group_smart_debug"><span>Align right and then remove this</span></t>
 
@@ -26,11 +33,14 @@
 <hr groups="base.group_smart_user" />
 <a  t-att-href="'/order/%s/line/%s/delete' % (sale_order.id,o.id)" valign="top" border="1" class="btn btn-sm btn-danger"><i class="icon-trash icon-red"></i></a>
 
-<input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/>
+<!--<input type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="Order line price" t-attf-value="#{o.price_subtotal}"/>-->
+<input class="smart-input-float" type="text" id="price" size="10" t-att-name="'line_price_%s' % o_index" align="right" placeholder="123.10" t-attf-value="#{o.sudo().price_subtotal}"/>
+ <td class="cell" style="text-align: right;"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/></td>
 
 <a t-if="sale_order.state in ['draft']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>
 
-<span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+<span t-field="o.amount_untaxed" 		t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+<span t-field="o.sudo().price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
 
 <a  t-att-href="'/order/%s/cancel' % o.id" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return true;'><i class="icon-trash icon-red"></i></a>
 <a class="tip" data-toogle="tooltip" data-placement="top" title="Select the Client if you don't want your contact persons name on the invoice. Select the contact person if you want the invoice to be issued to the client with your contact person as a reference."> <i class="glyphicon glyphicon-question-sign"></i></a>
@@ -42,6 +52,8 @@
 <a href="javascript:history.back()" class="btn btn-large btn-danger">Back</a>
 <a href="#" onclick="history.go(-1)" class="btn btn-large btn-danger">Go Back</a>
 
+Hide/Show country specific content.
+<div class="form-group" t-if="res_company.country_id.code in ['NL','DE']"> </div>
 
 
 Odoo Models Old syntax

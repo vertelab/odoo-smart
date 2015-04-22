@@ -88,7 +88,7 @@ class website_expense(http.Controller):
             'form_action': context['form_action'],
             'context': context,
 #Fredriks försök att fixa supplier-listan
-#            'res_partner': res_partner,
+             'supplier': request.env['res.partner'].search([('supplier','=',True)]),
 #            'clients_global':  request.registry['res.partner'].browse(cr,uid,request.registry['res.partner'].search(cr,uid,[('company_id','=',False)],context=context),context=context),
 #            'clients_local':  request.registry['res.partner'].browse(cr,uid,request.registry['res.partner'].search(cr,uid,[('company_id','=',res_user.company_id.id)],context=context),context=context),
             'recipients':  pool.get('res.users').browse(cr,uid,pool.get('res.users').search(cr,uid,[],context=context),context=context),

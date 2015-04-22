@@ -88,7 +88,6 @@
 </template>
 
 
-
 <template name="Expense overview" id="overview">
     <t t-call="smart_common.layout">
         
@@ -135,10 +134,10 @@
 
               <div class="controls">
                 <t t-if="expense and expense.id"> 
-                    <input type="text" id="qty" size="5" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
+                    <input type="text" id="qty" size="30" name="name" align="right" placeholder="Name your expense!" t-attf-value="#{expense.name}"/>
                 </t>
                 <t t-if="not expense"> 
-                    <input type="text" size="5" name="name"  placeholder="Name your expense!"/>
+                    <input type="text" size="30" name="name"  placeholder="Name your expense!"/>
                 </t>
 
                 <t t-if="not expense"> 
@@ -364,6 +363,23 @@
 </template>
 
 
+<template name="Expense Button" id="smart_expense.exp_button">
+    <t t-set="icon" t-value="c.expense_icon_name"/>
+    
+    <t t-if="not icon">
+        <t t-set="icon">
+            <span class="glyphicon glyphicon-euro"/>
+        </t>
+    </t>
+<!--
+    <a class="btn btn-info btn-lg" t-att-href="'/expense/%s/category/%s' % ('new' if not expense else expense.id,c.id)">
+-->
+        <a class="btn btn-default btn-lg" t-att-href="'/expense/%s/category/%s' % ('new' if not expense else expense.id,c.id)">
+
+        <t t-raw="icon"/>
+        <t t-esc="c.display_name"/> 
+    </a>
+</template>
 
 <template name="Expense category List" id="category_list">
     <t t-call="smart_common.layout">
@@ -384,133 +400,36 @@
 	            
 	             	
 		<div class="well">
-	
-<!--Insert table with expense types-->
-
-
-<!--  			<section class="row">-->
-  			  
-<!--  			    <div class="span8">-->
-            
               <p class="lead">Select the <strong>type of expense</strong>…</p>
-              
-			<ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                
-                <li>
-                      <h3><i class="glyphicon glyphicon-road"></i> Travel</h3>
-                      <p>Expenses incurred to travel for the job:<br/> 
-                    <t t-foreach="cat_travel" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-                       </p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                      <h3><i class="glyphicon glyphicon-shopping-cart"></i> Office supplies</h3>
-                      <p>All purchases of material for the management of the activity.<br/>
-                    <t t-foreach="cat_office" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-                       </p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                    <h3><i class="glyphicon glyphicon-glass"></i> Meals and Accommodation</h3>
-                      <p>If you have costs as part of a contract.<br/>
-                    <t t-foreach="cat_meal" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-                       </p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                      <h3><i class="glyphicon glyphicon-camera"></i> Personal material</h3>
-                      <p>Your own items made available for a daily fee to the activity.<br/>
-                    <t t-foreach="cat_personal" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-                       </p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                      <h3><i class="glyphicon glyphicon-home"></i> Rent</h3>
-                      <p>The cost of your work space etc.<br/>
-                    <t t-foreach="cat_rent" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-</p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                      <h3><i class="glyphicon glyphicon-file"></i> Fixed costs</h3>
-                      <p>Regular necessary payments for your work etc.<br/>
-                    <t t-foreach="cat_fixed" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-</p>
-                </li>
-			</ul>
-                <hr/>
-            <ul id="expense-type-list" class="nav nav-tabs nav-stacked">
-                <li>
-                      <h3><i class="glyphicon glyphicon-question-sign"></i> Other</h3>
-                      <p>Anything that fall in these other categories.<br/>
-                    <t t-foreach="cat_other" t-as="c">
-                        <t t-if="not expense">
-                            <a t-att-href="'/expense/%s/category/%s' % ('new',c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-                        <t t-if="expense">
-                            <a t-att-href="'/expense/%s/category/%s' % (expense.id,c.id)"><t t-esc="c.display_name"/> </a><br/>
-                        </t>
-					</t>
-                      .</p>
-                </li>
-			</ul>
 
+              <h3><i class="glyphicon glyphicon-road"></i> Travel</h3>
+              <p>Expenses incurred to travel for the job:</p> 
+              <t t-foreach="cat_travel" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
               
+              <h3><i class="glyphicon glyphicon-shopping-cart"></i> Office supplies</h3>
+              <p>All purchases of material for the management of the activity.</p> 
+              <t t-foreach="cat_office" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
+                  
+              <h3><i class="glyphicon glyphicon-glass"></i> Meals and Accommodation</h3>
+              <p>If you have costs as part of a contract.</p> 
+              <t t-foreach="cat_meal" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
 
-<!--              </section>-->
-            </div>	
+              <h3><i class="glyphicon glyphicon-camera"></i> Personal material</h3>
+              <p>Your own items made available for a daily fee to the activity.</p> 
+              <t t-foreach="cat_personal" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
+            
+              <h3><i class="glyphicon glyphicon-home"></i> Rent</h3>
+              <p>The cost of your work space etc.</p> 
+              <t t-foreach="cat_rent" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
+
+              <h3><i class="glyphicon glyphicon-file"></i> Fixed costs</h3>
+              <p>Regular necessary payments for your work etc.</p> 
+              <t t-foreach="cat_fixed" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
+
+              <h3><i class="glyphicon glyphicon-question-sign"></i> Other costs</h3>
+              <p>Anything that fall in these other categories.</p> 
+              <t t-foreach="cat_other" t-as="c"><t t-call="smart_expense.exp_button"/></t><hr/>
+        </div>	
 
 <!--End of table with expense types-->
 
@@ -528,5 +447,7 @@
 </template>
 
 
+
+        
 </data>
 </openerp>

@@ -77,7 +77,7 @@
     					  <label class="control-label"><strong>Distance</strong></label>
     					  <div class="controls">
     					    <div class="input-append">
-                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="10" t-attf-value="#{expense_line and expense_line.unit_quantity or ''}"/>
+                   			 <input class="smart-input-float" type="text" size="10" name="line_unit_quantity" align="right" placeholder="10" t-attf-value="#{expense_line and expense_line.unit_quantity or ''}"/>
 <!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="123" />-->
       					    <span class="add-on">km</span>
 							</div>
@@ -206,7 +206,7 @@
     					  <label class="control-label"><strong>Ticket Price excluding VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.unit_amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'></span>-->
-		                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
+		                   			 <input class="smart-input-float" type="text"  size="10" name="line_unit_amount_untaxed" placeholder="123.10" align="right" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
 <!--                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" placeholder="100"/>-->
     					  </div>
     					</div>
@@ -217,7 +217,7 @@
     					  <label class="control-label"><strong>Ticket Price including VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-		                   			 <input type="text" size="30" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+		                   			 <input class="smart-input-float" type="text" size="10" name="line_unit_amount" align="right" placeholder="123.10" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
 <!--                   			 <input type="text" size="30" name="line_unit_amount" align="right" placeholder="123"/>-->
 <!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="121"/>-->
     					  </div>
@@ -321,7 +321,7 @@
     					  <label class="control-label"><strong>Price (including VAT)</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-		                   			 <input type="text" size="30" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+		                   			 <input class="smart-input-float" type="text" size="30" name="line_unit_amount" align="right" t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
     					  </div>
     					</div>
     					  
@@ -385,20 +385,20 @@
 
 <!--Start Select an existing Supplier-->
 
-<!--  			<div class="control-group supplier">-->
-<!--              <label class="control-label">Supplier</label>-->
-<!--              <div class="controls">-->
-<!--				 <select name="line_partner_id" >-->
-<!--                    <t t-foreach="clients_local" t-as="c">-->
-<!--    	                <option t-att-value="c.id"><t t-esc="c.display_name"/></option>-->
-<!--					</t>-->
+  			<div class="control-group supplier">
+              <label class="control-label">Supplier</label>
+              <div class="controls">
+				 <select name="line_partner_id" >
+                    <t t-foreach="supplier" t-as="c">
+					  <option t-att-value="c.id" t-attf-selected="#{expense_line and c.id == supplier.id}"><t t-esc="c.display_name"/></option>
+					</t>
 <!--    	                <option>-</option>-->
 <!--                    <t t-foreach="clients_global" t-as="c">-->
 <!--    	                <option t-att-value="c.id"><t t-esc="c.display_name"/></option>-->
 <!--					</t>-->
-<!--				 </select> -->
-<!--              </div>-->
-<!--            </div>-->
+				 </select> 
+              </div>
+            </div>
             
 
 <!-- End Select an existing Supplier            -->
@@ -433,7 +433,7 @@
     					  <label class="control-label"><strong>Price excluding VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.unit_amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'></span>-->
-                   			 <input type="text" size="30" name="line_unit_amount_untaxed" align="right" placeholder="100" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
+                   			 <input class="smart-input-float" type="text" size="10" name="line_unit_amount_untaxed" align="right" placeholder="100.00" t-attf-value="#{expense_line and expense_line.unit_amount_untaxed or ''}"/>
     					  </div>
     					</div>
 
@@ -443,7 +443,7 @@
     					  <label class="control-label"><strong>Price including VAT</strong></label>
     					  <div class="controls">
 <!--							<span t-field="expense_line.total_amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></span>-->
-                   			 <input type="text" size="30" name="line_unit_amount" align="right" placeholder="123"  t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
+                   			 <input class="smart-input-float" type="text" size="10" name="line_unit_amount" align="right" placeholder="123.10"  t-attf-value="#{expense_line and expense_line.unit_amount or ''}"/>
 <!--                   			 <input type="text" size="30" name="line_unit_quantity" align="right" placeholder="121"/>-->
     					  </div>
     					</div>

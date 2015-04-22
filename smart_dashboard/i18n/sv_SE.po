@@ -1,52 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smart_dashboard
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150326\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-22 07:46+0000\n"
+"PO-Revision-Date: 2015-04-22 09:50+0100\n"
+"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: smart_dashboard\n"
-"Language: sv\n"
-
-#. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_res_partner
-msgid "Partner"
-msgstr "Uppdragsgivare"
-
-#. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_website
-msgid "Website"
-msgstr "Webbsida"
-
-#. module: smart_dashboard
-#: field:res.users,approved:0
-#: view:website:smart_dashboard.dashboard
-msgid "Approved"
-msgstr "Godkänd"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Dashboard!"
-msgstr "Min Dashboard!"
-
-#. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_res_users
-msgid "Users"
-msgstr "Användare"
-
-#. module: smart_dashboard
-#: field:res.users,webterms_accepted:0
-msgid "Web Terms Accepted"
-msgstr "Webb Villkor Accepted"
+"Plural-Forms: \n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Expenses"
-msgstr "Aktiva Kostnader"
+msgstr "Aktiva utlägg"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Orders"
-msgstr "Aktiva Beställningar"
+msgstr "Aktiva Orders"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -54,9 +33,14 @@ msgid "Amount"
 msgstr "Mängd"
 
 #. module: smart_dashboard
+#: field:res.users,approved:0 view:website:smart_dashboard.dashboard
+msgid "Approved"
+msgstr "Godkänd"
+
+#. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Available Clients"
-msgstr "Tillgängliga klienter"
+msgstr "Tillgängliga uppdragsgivare"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -86,7 +70,12 @@ msgstr "Fakturering"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Activities"
-msgstr "Mina aktiviteter"
+msgstr "Mina verksamheter"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Dashboard!"
+msgstr "Min anslagstavla!"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -109,6 +98,11 @@ msgid "Paid"
 msgstr "Betal"
 
 #. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Recipient"
 msgstr "Mottagare"
@@ -116,7 +110,7 @@ msgstr "Mottagare"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sent to Client"
-msgstr "Skickas till klienten"
+msgstr "Skicka till uppdragsgivare"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -126,20 +120,34 @@ msgstr "Status"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Submitted"
-msgstr "Submitted"
+msgstr "Skickat"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sumbitted (confirm)"
-msgstr "Inlämnats, (bekräfta)"
+msgstr "Skickad (confirm)"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr "Översättning halt var senast uppdaterad: 2015/02/17"
+msgstr "Översättningen var senast uppdaterad: 2015/04/22"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation files was last updated: 2015-01-01"
 msgstr "Översättning filer var senast uppdaterad: 2015/02/17"
 
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_users
+msgid "Users"
+msgstr "Användare"
+
+#. module: smart_dashboard
+#: field:res.users,webterms_accepted:0
+msgid "Web Terms Accepted"
+msgstr "Webtermer accepterade"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_website
+msgid "Website"
+msgstr "Webbsida"

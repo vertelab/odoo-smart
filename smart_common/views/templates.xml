@@ -287,7 +287,7 @@
      <t t-if="res_company.country_id.code == 'BE'">
 	    <span class="region">
 	      <a href="#" class="" data-toggle="dropdown">
-	        <span><i class="iconflag-euu">Eu</i><b class="caret"></b></span>
+	        <span><i class="iconflag-eu">Eu</i><b class="caret"></b></span>
 	      </a>
 	      <ul class="dropdown-menu">
 	        <!-- Change to your region -->

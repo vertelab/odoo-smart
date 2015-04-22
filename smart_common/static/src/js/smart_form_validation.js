@@ -17,7 +17,8 @@ function init_smart_form_handler(decSign, kSeparator){
 
 function validateFloatField(element){
     if(isNaN(convert_decSign(element.value))){
-	element.setCustomValidity('Please enter a number.');
+//	element.setCustomValidity('Please enter a number.');
+	element.setCustomValidity('Please use . as decimal sign.');
     }
     else{
 	element.setCustomValidity('');
