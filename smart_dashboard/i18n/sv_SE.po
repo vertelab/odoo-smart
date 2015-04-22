@@ -26,7 +26,7 @@ msgstr "Godkänd"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Dashboard!"
-msgstr "Min Dashboard!"
+msgstr "Min anslagstavla"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
@@ -36,7 +36,7 @@ msgstr "Användare"
 #. module: smart_dashboard
 #: field:res.users,webterms_accepted:0
 msgid "Web Terms Accepted"
-msgstr "Webb Villkor Accepted"
+msgstr "Webb Villkor accepterade"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -126,7 +126,7 @@ msgstr "Status"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Submitted"
-msgstr "Submitted"
+msgstr "Skickade"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -136,10 +136,10 @@ msgstr "Inlämnats, (bekräfta)"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr "Översättning halt var senast uppdaterad: 2015/02/17"
+msgstr "Översättningsinnehållet uppdaterades: 2015-04-21"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation files was last updated: 2015-01-01"
-msgstr "Översättning filer var senast uppdaterad: 2015/02/17"
+msgstr "Filen uppdaterades: 2015-04-22"
 
