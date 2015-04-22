@@ -16,6 +16,38 @@ msgstr ""
 "Plural-Forms: \n"
 "Language: sv_SE\n"
 "X-Generator: Poedit 1.7.1\n"
+"Project-Id-Version: smart_dashboard\n"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_partner
+msgid "Partner"
+msgstr "Uppdragsgivare"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_website
+msgid "Website"
+msgstr "Webbsida"
+
+#. module: smart_dashboard
+#: field:res.users,approved:0
+#: view:website:smart_dashboard.dashboard
+msgid "Approved"
+msgstr "Godkänd"
+
+#. module: smart_dashboard
+#: view:website:smart_dashboard.dashboard
+msgid "My Dashboard!"
+msgstr "Min anslagstavla"
+
+#. module: smart_dashboard
+#: model:ir.model,name:smart_dashboard.model_res_users
+msgid "Users"
+msgstr "Användare"
+
+#. module: smart_dashboard
+#: field:res.users,webterms_accepted:0
+msgid "Web Terms Accepted"
+msgstr "Webb Villkor accepterade"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -120,7 +152,7 @@ msgstr "Status"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Submitted"
-msgstr "Skickat"
+msgstr "Skickade"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -130,12 +162,12 @@ msgstr "Skickad (confirm)"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation content was last updated: 2015-01-01"
-msgstr "Översättningen var senast uppdaterad: 2015/04/22"
+msgstr "Översättningsinnehållet uppdaterades: 2015-04-21"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Translation files was last updated: 2015-01-01"
-msgstr "Översättning filer var senast uppdaterad: 2015/02/17"
+msgstr "Filen uppdaterades: 2015-04-22"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_users
