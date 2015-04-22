@@ -1,22 +1,11 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* smart_dashboard
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0-20150326\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-22 07:46+0000\n"
-"PO-Revision-Date: 2015-04-22 09:50+0100\n"
-"Last-Translator: Fredrik Arvas <fredrik@arvas.se>\n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: smart_dashboard\n"
+"Language: sv\n"
 
 #. module: smart_dashboard
 #: model:ir.model,name:smart_dashboard.model_res_partner
@@ -52,12 +41,12 @@ msgstr "Webb Villkor accepterade"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Expenses"
-msgstr "Aktiva utlägg"
+msgstr "Aktiva Kostnader"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Active Orders"
-msgstr "Aktiva Orders"
+msgstr "Aktiva Beställningar"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -65,14 +54,9 @@ msgid "Amount"
 msgstr "Mängd"
 
 #. module: smart_dashboard
-#: field:res.users,approved:0 view:website:smart_dashboard.dashboard
-msgid "Approved"
-msgstr "Godkänd"
-
-#. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Available Clients"
-msgstr "Tillgängliga uppdragsgivare"
+msgstr "Tillgängliga klienter"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -102,12 +86,7 @@ msgstr "Fakturering"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "My Activities"
-msgstr "Mina verksamheter"
-
-#. module: smart_dashboard
-#: view:website:smart_dashboard.dashboard
-msgid "My Dashboard!"
-msgstr "Min anslagstavla!"
+msgstr "Mina aktiviteter"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -130,11 +109,6 @@ msgid "Paid"
 msgstr "Betal"
 
 #. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_res_partner
-msgid "Partner"
-msgstr "Partner"
-
-#. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Recipient"
 msgstr "Mottagare"
@@ -142,7 +116,7 @@ msgstr "Mottagare"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sent to Client"
-msgstr "Skicka till uppdragsgivare"
+msgstr "Skickas till klienten"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -157,7 +131,7 @@ msgstr "Skickade"
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
 msgid "Sumbitted (confirm)"
-msgstr "Skickad (confirm)"
+msgstr "Inlämnats, (bekräfta)"
 
 #. module: smart_dashboard
 #: view:website:smart_dashboard.dashboard
@@ -169,17 +143,3 @@ msgstr "Översättningsinnehållet uppdaterades: 2015-04-21"
 msgid "Translation files was last updated: 2015-01-01"
 msgstr "Filen uppdaterades: 2015-04-22"
 
-#. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_res_users
-msgid "Users"
-msgstr "Användare"
-
-#. module: smart_dashboard
-#: field:res.users,webterms_accepted:0
-msgid "Web Terms Accepted"
-msgstr "Webtermer accepterade"
-
-#. module: smart_dashboard
-#: model:ir.model,name:smart_dashboard.model_website
-msgid "Website"
-msgstr "Webbsida"
