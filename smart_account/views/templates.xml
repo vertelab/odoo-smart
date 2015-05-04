@@ -71,13 +71,28 @@
 							
 						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
 
+<!--                        	<div class="form-group">-->
+<!--	    				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="name">Your Name</label>-->
+<!--	                            <div class="input-group col-sm-9 col-md-4 col-lg-4">-->
+<!--	-->
+<!--	                            	<input class="form-control" type="text" id="name" name="name" placeholder="Alice Artist" t-attf-value="#{res_user.partner_id.name}"/>-->
+<!--	                            </div>-->
+<!--                            </div>-->
                         	<div class="form-group">
-	    				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="name">Your Name</label>
+	    				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="firstname">First Name</label>
 	                            <div class="input-group col-sm-9 col-md-4 col-lg-4">
 	
-	                            	<input class="form-control" type="text" id="name" name="name" placeholder="Alice Artist" t-attf-value="#{res_user.partner_id.name}"/>
+	                            	<input class="form-control" type="text" id="firstname" name="firstname" placeholder="Alice " t-attf-value="#{res_user.partner_id.firstname}"/>
 	                            </div>
                             </div>
+                        	<div class="form-group">
+	    				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="lastname">Last Name</label>
+	                            <div class="input-group col-sm-9 col-md-4 col-lg-4">
+	
+	                            	<input class="form-control" type="text" id="lastname" name="lastname" placeholder="Artist" t-attf-value="#{res_user.partner_id.lastname}"/>
+	                            </div>
+                            </div>
+
                             
                             <div class="form-group">
     				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="country">Your Preferred Language</label>

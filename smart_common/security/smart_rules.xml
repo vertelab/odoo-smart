@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+    
+    
+
+
+<!-- Smart User rules -->
+
+
+<!-- A smart-user can see other users in current activity 
+
+    res.users.current_activity 
+    res.users.current_activity_member_ids (users that are a member at current activity)
+
+-->
+
+        <record id="res_users_rule" model="ir.rule">
+            <field name="name">Smart res.users</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
+            <field name="domain_force">[('id','in',[user.id for user in user.current_activity_member_ids])]</field> 
+            <field name="perm_create" eval="False" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+        </record>
+        
+<!-- A smart-user can see and change "his" activity/company 
+     a smart-user are an activity-owner when he has a company_id
+    
+-->
+
+        <record id="activity_owner_rule" model="ir.rule">
+            <field name="name">Activity owner</field>
+            <field name="model_id" ref="base.model_res_company"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
+            <field name="domain_force">[('id','=',user.company_id.id)]</field> 
+            <field name="perm_create" eval="False" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="False" />
+        </record>
+
+<!-- A smart-user can see all customers in the system (but not change anything)
+    
+-->
+
+        <record id="global_partner_rule" model="ir.rule">
+            <field name="name">Global Partner rule</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
+            <field name="domain_force">[(True,'=',True]</field>
+            <field name="perm_create" eval="False" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />            
+        </record>
+        
+
+<!-- A smart-user can create, read, update, delete all customers connected to his activity
+    
+-->
+
+        <record id="global_partner_rule" model="ir.rule">
+            <field name="name">Global Partner rule</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field> 
+            <field name="perm_create" eval="False" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />            
+        </record>
+        
+
+
+
+<!-- SMart Advisor rules -->
+
+
+   
+<!-- A smart-advisor or smart-country_manager can see and change all users 
+
+-->
+
+        <record id="res_users_advisor_rule" model="ir.rule">
+            <field name="name">Smart Advisor res.users</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_advisor'),ref('group_smart_countrymanager'))]"/>
+            <field name="domain_force">[(True,'=',True)]</field> 
+            <field name="perm_create" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />            
+        </record>
+
+
+<!-- A smart-advisor or smart-country_manager can see and change all activities  
+
+-->
+
+        <record id="res_company_advisor_rule" model="ir.rule">
+            <field name="name">Smart advisor activities</field>
+            <field name="model_id" ref="base.model_res_company"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_advisor'),ref('group_smart_countrymanager'))]"/>
+            <field name="domain_force">[(True,'=',True)]</field> 
+            <field name="perm_create" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />            
+        </record>
+                
+
+<!-- A smart-advisor or smart-country_manager can create, read, update, delete all customers  
+
+-->
+
+        <record id="res_partner_advisor_rule" model="ir.rule">
+            <field name="name">Smart advisor partner</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field eval="True" name="global"/>
+            <field name="groups" eval="[(4, ref('group_smart_advisor'),ref('group_smart_countrymanager'))]"/>
+            <field name="domain_force">[(True,'=',True)]</field> 
+            <field name="perm_create" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />            
+        </record>
+ 
+
+</data>
+</openerp>

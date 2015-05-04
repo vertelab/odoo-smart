@@ -56,6 +56,8 @@ class website_account(http.Controller):
             
         partnerdata = dict((field_name, post[field_name])
             for field_name in [
+            'firstname',
+            'lastname',            
             'phone',
             'mobile',
             'email',

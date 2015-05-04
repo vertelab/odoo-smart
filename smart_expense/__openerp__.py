@@ -2,7 +2,7 @@
     'name': 'SMart Expense',
     'category': 'Website',
     'summary': 'Create your Expense notes on-line',
-    'version': '0.2',
+    'version': '0.3',
     'description': """
 SMart Expense
 ===========
@@ -10,7 +10,7 @@ SMart Expense
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website', 'hr_expense','account','project',],
+    'depends': ['smart_common', 'hr_expense','account','project',],
     'data': [
         'views/templates.xml',
         'views/product_view.xml',

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+<!--         res.users -->
+        
+        <record id="view_users_form_inherit" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+             <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <data>
+<!--
+                    <field name="active" position="after">
+                     <field name="webterms_accepted"/>
+                     <field name="approved"/>
+                     <field name="current_activity"/>
+                     <field name="activity_ids" widget="many2many_tags"/>
+                     </field>                
+-->
+                </data>
+
+            </field>
+        </record>
+
+ 
+        <record id="view_users_tree_inherit" model="ir.ui.view">
+            <field name="name">res.users.tree</field>
+            <field name="model">res.users</field>
+             <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="login_date" position="after">
+<!--
+                     <field name="state"/>
+                     <field name="webterms_accepted"/>
+-->
+                     </field>
+                </data>
+
+            </field>
+        </record>
+
+        
+
+    </data>
+</openerp>

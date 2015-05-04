@@ -13,7 +13,7 @@ http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-order
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website','smart_common'],
+    'depends': ['smart_common','hr_payroll'],
     'data': [
         'views/templates.xml',
     ],

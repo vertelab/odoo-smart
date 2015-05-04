@@ -2,7 +2,7 @@
     'name': 'SMart Account',
     'category': 'Website',
     'summary': 'Administer your account information on-line',
-    'version': '1.1',
+    'version': '1.2',
     'description': """
 SMart Account
 ===========
@@ -13,7 +13,7 @@ http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-order
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website','smart_common','hr'],
+    'depends': ['smart_common'],
     'data': [
         'views/templates.xml',
         'views/hr_view.xml',

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+
+    <record model="res.groups" id="group_smart_countrymanager">
+        <field name="name">SMart Advisor</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+    
+    <record model="res.groups" id="group_smart_advisor">
+        <field name="name">SMart Advisor</field>
+        <field name="implied_ids" eval="[(4, ref('group_smart_countrymanager'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_smart_user">
+        <field name="name">SMart User</field>
+        <field name="implied_ids" eval="[(4, ref('group_smart_advisor'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_smart_debug">
+        <field name="name">SMart debug</field>
+    </record>
+
+    <record model="ir.module.category" id="module_category_smart_management">
+        <field name="name">SMart</field>
+        <field name="description">SMart modules.</field>
+        <field name="sequence">99</field>
+    </record>
+    
+    
+    
+
+</data>
+</openerp>

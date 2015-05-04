@@ -2,7 +2,7 @@
     'name': 'SMart Client',
     'category': 'Website',
     'summary': 'Create your clients on-line',
-    'version': '1.0',
+    'version': '1.1',
     'description': """
 SMart Client
 ===========
@@ -11,7 +11,7 @@ Customers
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website'],
+    'depends': ['smart_common'],
     'data': [
         'views/templates.xml',
     ],

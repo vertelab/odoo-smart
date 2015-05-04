@@ -1,6 +1,0 @@
-<section class="jumbotron mt16 mb16"><div class="container"><h1>Welcome to SMart</h1><p/><p>We will set up your account and send you an email, usually within the day. </p><p>If you want you can test our tool with a demo-account: </p><p>Userid: demo@demo.demo, password: demo</p><p>While you wait. </p><p><span style="color: inherit;">Or give us a call: 0123-321 123 654</span> or <a class="btn btn-primary btn-lg" href="/page/website.contactus">Contact us </a></p><p/>
-
-<p>If you have a been confirmed by us - <a href="/dashboard">continue to the tool</a> <a class="btn btn-primary btn-lg" href="/dashboard">Continue to Dashboard us </a> </p>
-
-<p>Welcome again!</p>
-</div></section>

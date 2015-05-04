@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+<!--         res.company -->
+        
+        <record id="view_company_form_inherit" model="ir.ui.view">
+            <field name="name">res.company.form.inherit</field>
+            <field name="model">res.company</field>
+             <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="company_registry" position="after">
+<!--
+                     <field name="smart_owner"/>
+                     <field name="activity_members" widget="many2many_tags"/>
+-->
+                     </field>                
+                </data>
+
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -11,7 +11,7 @@ Customers
 
         """,
     'author': 'Vertel AB',
-    'depends': ['website'],
+    'depends': ['smart_common','project'],
     'data': [
         'views/templates.xml',
     ],
