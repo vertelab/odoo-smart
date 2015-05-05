@@ -23,8 +23,8 @@ _logger = logging.getLogger(__name__)
 
 class smart_common(http.Controller):
 
-    @http.route(['/dashboard'], type='http', auth="user", website=True)
-    def dashboard(self, search='', **post):
+    @http.route(['/dashboard','/dashboard/<model("res.users"):user>'], type='http', auth="user", website=True)
+    def dashboard(self, user=False,search='', **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         
         _logger.warning("Dashboard %s" % request.uid)
@@ -148,15 +148,14 @@ class smart_common(http.Controller):
 
 
 
-    @http.route('/add_activity', type='http', auth='user', website=True)
-    def smart_add_activity(self, **post):
+    @http.route('/dashboard/<model("res.users"):user>/add_activity', type='http', auth='user', website=True)
+    def smart_add_activity(self, user=False,**post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-        _logger.warning("smart_login add_activity %s " % (self))
-        res_user = pool.get('res.users').browse(cr,uid,uid,context)
-        res_user.sudo().add_activity()
-        res_user.sudo().add_hr_employee()
-        res_user.sudo().webterms_accepted = True
-        return werkzeug.utils.redirect('/dashboard')
+        _logger.warning("add_activity %s " % (user.id))
+        user.sudo().add_activity()
+        user.sudo().add_hr_employee()
+        user.sudo().webterms_accepted = True
+        return werkzeug.utils.redirect('/dashboard/%s' % user.id)
 
 
 

@@ -47,8 +47,8 @@ _logger = logging.getLogger(__name__)
 class res_company(models.Model):
     _inherit = 'res.company'
 
-    smart_owner = fields.One2many('res.users')
-    activity_members = fields.Many2many(comodel_name="res.users",relation="activity_users_rel",column1="uid",string="Activity members")
+    smart_owner = fields.Many2one('res.users')
+    activity_members = fields.Many2many(comodel_name="res.users",relation="activity_users_rel",string="Activity members")
 
     
     

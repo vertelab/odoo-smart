@@ -1128,7 +1128,7 @@ Translation files was last updated: 2015-01-01<BR/>
 	    		<BR/>
 	   			You have not yet accepted <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> <BR/>
 		
-				By clicking here, <a  t-att-href="'/add_activity/'" class="btn btn-small btn-success"> <strong>I Accept</strong></a> <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> 
+				By clicking here, <a  t-attf-href="'/dashboard/%s/add_activity/' % res_users.id" class="btn btn-small btn-success"> <strong>I Accept</strong></a> <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> 
 								<BR/>
 	    		<BR/>
 	    		<BR/>

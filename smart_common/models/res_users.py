@@ -19,7 +19,6 @@
 #
 ##############################################################################
 
-XXXX
 import itertools
 from lxml import etree
 
@@ -48,14 +47,14 @@ class res_users(models.Model):
     webterms_accepted = fields.Boolean('Web Terms Accepted',)
     current_activity = fields.Many2one('res.company')
 #    current_activity_members = fields.Many2many('res.users')
-    activity_ids = fields.Many2many(comodel_name='res.company',relation='activity_users_rel',column1="cid",string='Activities')
+    activity_ids = fields.Many2many(comodel_name='res.company',relation='activity_users_rel',string='Activities')
     
 
     @api.one
     def _get_state(self):
-        if user.approved:
+        if self.approved:
             self.state = 'approved'
-        elif user.login_date:
+        elif self.login_date:
             self.state = 'active'
         else:
             self.state = 'new'
@@ -116,28 +115,43 @@ class res_users(models.Model):
                 employee = user.employee_ids[0]
             return employee.id
 
-    @api.multi
+    @api.one
     def add_activity(self):
-        template_user = self.env['res.users'].browse(literal_eval(self.env['ir.config_parameter'].get_param('auth_signup.template_user_id', 'False')),)
+        template_user = self.env['res.partner'].browse(self.env['ir.config_parameter'].get_param('auth_signup.template_user_id', 0),)
         assert template_user and template_user.exists(), 'Signup: invalid template user'
-        for user in self:
-            if user.company_id.id == template_user.company_id.id:
-                company = self.env['res.company'].browse(self.env['res.company'].search([('name','=', _('%s Activity') % user.name)]))
-                if not company:
-                    company = self.env['res.company'].create({
-                        'name': _('%s Activity') % user.name,
-                        'currency_id':             template_user.company_id.currency_id.id,
-                        'country_id':              template_user.company_id.country_id.id,
-                        'smart_share':             template_user.company_id.smart_share,
-                        'parent_id':               template_user.company_id.parent_id.id,})
-                _logger.warning("res.user company %s" % (company))
-                if company and company.id <> user.company_id.id:    
-                    user.company_ids = [(6,0,[int(template_user.company_id.id),int(company.id)])]
-                    user.company_id = int(company.id)
-                    admin_user = self.env['res.users'].browse(1)
-                    admin_user.sudo().company_ids = [(4,company.id,0)]
-                    
+        
+        company = template_user.company_id.copy()
+        company.name = _('%s Activity') % self.name
+        self.company_ids = [(6,0,[int(template_user.company_id.id),int(company.id)])]
+        self.company_id = company
+        self.current_activity = company
 
+
+
+        #admin_user = self.env['res.users'].browse(1)
+        #admin_user.sudo().company_ids = [(4,company.id,0)]
+        
+
+        #~ 
+        #~ if user.company_id and template_user.company_id:
+            #~ if user.company_id.id == template_user.company_id.id:
+                #~ company = self.env['res.company'].browse(self.env['res.company'].search([('name','=', _('%s Activity') % user.name)]))
+                #~ if not company:
+                    #~ company = self.env['res.company'].create({
+                        #~ 'name': _('%s Activity') % user.name,
+                        #~ 'currency_id':             template_user.company_id.currency_id.id,
+                        #~ 'country_id':              template_user.company_id.country_id.id,
+                        #~ 'smart_share':             template_user.company_id.smart_share,
+                        #~ 'parent_id':               template_user.company_id.parent_id.id,})
+                #~ _logger.warning("res.user company %s" % (company))
+                #~ if company and company.id <> user.company_id.id:    
+                    #~ user.company_ids = [(6,0,[int(template_user.company_id.id),int(company.id)])]
+                    #~ user.company_id = int(company.id)
+                    #~ admin_user = self.env['res.users'].browse(1)
+                    #~ admin_user.sudo().company_ids = [(4,company.id,0)]
+        #~ else:
+            #~ _logger.warning("User missing company %s or %s" % (user.id,template_user.id))    
+#~ 
 
     def add_message(self):
         _logger.warning("server_action message %s " % ('Hello world'))
@@ -147,33 +161,33 @@ class res_users(models.Model):
                 
  
 
-    def check_activity(self,cr,uid,ids,context=None):
-        template_user = self.pool.get('res.users').browse(cr, uid, literal_eval(self.pool.get('ir.config_parameter').get_param(cr, uid, 'auth_signup.template_user_id', 'False')),)
-
-        assert template_user and self.exists(cr, uid, template_user.id,), 'Signup: invalid template user'
-
-        res = {}
-        for user in self.pool.get('res.users').browse(cr, uid,ids):
-            company_id = self.pool.get('res.company').search(cr,uid,[('name','=',user.name)],limit=1)
-            if not company_id:
-                if template_user.company_id:
-                 #   company = template_user.company_id.copy()
-#                    company.write({'name': user.name,'parent_id': template_user.company_id.parent_id.id})
-                    company = self.pool.get('res.company').browse(cr,uid,self.pool.get('res.company').create(cr,uid,{'name': _('%s activity') % user.name,'parent_id': template_user.company_id.parent_id.id,}))
-
-                else:
-                    company = self.pool.get('res.company').browse(cr,uid,self.pool.get('res.company').create(cr,uid,{'name': user.name,}))
-            else:
-                company = user.company_id
-            parent_id = 1
-            if company.parent_id:
-                parent_id = company.parent_id.id
-            
-            user.write({'company_ids': [(6,0,[company.id,parent_id])],'company_id': company.id})
-
-
-        if self.company_id.id == template_user.company_id.id:
-            return False
-        else:
-            return True
+    #~ def check_activity(self,cr,uid,ids,context=None):
+        #~ template_user = self.pool.get('res.users').browse(cr, uid, literal_eval(self.pool.get('ir.config_parameter').get_param(cr, uid, 'auth_signup.template_user_id', 'False')),)
+#~ 
+        #~ assert template_user and self.exists(cr, uid, template_user.id,), 'Signup: invalid template user'
+#~ 
+        #~ res = {}
+        #~ for user in self.pool.get('res.users').browse(cr, uid,ids):
+            #~ company_id = self.pool.get('res.company').search(cr,uid,[('name','=',user.name)],limit=1)
+            #~ if not company_id:
+                #~ if template_user.company_id:
+                 #~ #   company = template_user.company_id.copy()
+#~ #                    company.write({'name': user.name,'parent_id': template_user.company_id.parent_id.id})
+                    #~ company = self.pool.get('res.company').browse(cr,uid,self.pool.get('res.company').create(cr,uid,{'name': _('%s activity') % user.name,'parent_id': template_user.company_id.parent_id.id,}))
+#~ 
+                #~ else:
+                    #~ company = self.pool.get('res.company').browse(cr,uid,self.pool.get('res.company').create(cr,uid,{'name': user.name,}))
+            #~ else:
+                #~ company = user.company_id
+            #~ parent_id = 1
+            #~ if company.parent_id:
+                #~ parent_id = company.parent_id.id
+            #~ 
+            #~ user.write({'company_ids': [(6,0,[company.id,parent_id])],'company_id': company.id})
+#~ 
+#~ 
+        #~ if self.company_id.id == template_user.company_id.id:
+            #~ return False
+        #~ else:
+            #~ return True
             
