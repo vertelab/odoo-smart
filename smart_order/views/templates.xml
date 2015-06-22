@@ -2,22 +2,34 @@
 <openerp>
 <data>
 
+
+<template id="smartmenu" inherit_id="smart_common.smartmenu">
+    
+    <xpath expr="//ul[@id='nav_menu']" position="inside">
+<!--      <li t-attf-class="#{order_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/order/list/all"><i class="glyphicon glyphicon-briefcase"></i><i class="glyphicon glyphicon-briefcase"></i> <b>All Orders</b></a></li>-->
+<!--      <li t-attf-class="#{order_menu}" ><a t-attf-href="/order/list"><i class="glyphicon glyphicon-briefcase"></i> <b>Orders</b></a></li>-->
+    </xpath>
+    
+</template>
+
 <template name="order list" id="list">
     <t t-call="smart_common.layout">
 
 	    <div class="content span10">
-      
+    
     
         <!-- ** CURRENT VIEW CONTENT ** -->
         	      
 	          <div class="panelsheet">
             	<header class="panelsheet-header clearfix">
               <div class="title">
-                <h1>Orders fredrik</h1>
-                <div class="pull-right">
-                  <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
+                <h1>Orders</h1>
+	                <div groups="base.group_smart_user" class="pull-right"> 
+                 <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a> <div t-esc="smart_common.group_smart_advisor"/>
                 </div>
-			      <t groups="base.group_smart_debug"><span>template id="list"</span></t>
+
+
+			      <t groups="smart_common.group_smart_debug"><span>template id="list"</span></t>
               </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
@@ -84,7 +96,7 @@
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>			    			
 <!--debug-->
-<t groups="base.group_smart_debug"> <br/>(<t t-raw="o.state"/>)</t>
+<t groups="smart_common.group_smart_debug"> <br/>(<t t-raw="o.state"/>)</t>
                              </td>
 
                              <td t-if="o.state == 'draft'" class="cell-primary"><a  t-att-href="'/order/%s/cancel' % o.id" class="btn btn btn-danger" title="Remove Order" onclick='if(confirm("Are you sure you want to delete?")) $(this).closest("tr").remove(); $(".tooltip").hide(); return true;'><i class="icon-trash icon-red"></i></a></td>
@@ -153,7 +165,7 @@
                 <div class="pull-right">
                   <a href="/order/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New order</a>
                 </div>
-			      <t groups="base.group_smart_debug"><span>template id="list_all"</span></t>
+			      <t groups="smart_common.group_smart_debug"><span>template id="list_all"</span></t>
               </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
@@ -167,7 +179,7 @@
               <section class="panelsheet-section">
 
 
-<t groups="base.group_smart_debug"> 
+<t groups="smart_common.group_smart_debug"> 
 <!--              start search box-->
               <p>
 			   <form class="form-horizontal form-preview"   action="/order/list/all"  method="POST">   
@@ -277,7 +289,7 @@
                 <t t-if="not sale_order"> 
 			      <h1>New Order</h1>
                 </t>
-			      <t groups="base.group_smart_debug"><span>template id="edit_order_data"</span></t>
+			      <t groups="smart_common.group_smart_debug"><span>template id="edit_order_data"</span></t>
 
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
@@ -346,14 +358,14 @@
 				 </select> 
 				</t>
 <!--Case 2-->
-<!--               <t groups="base.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
-<!--               <t groups="base.group_smart_user" t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">-->
+<!--               <t groups="smart_common.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
+<!--               <t groups="smart_common.group_smart_user" t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">-->
 
 
 <!--Case 3: If the Order is in Submitted, then the client is only displayed -->
                <t t-if="(sale_order and sale_order.state not in ['draft'])" >
-                        <div groups="base.group_smart_user" t-esc="sale_order.partner_id.display_name"/>
-<!--               <t groups="base.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
+                        <div groups="smart_common.group_smart_user" t-esc="sale_order.partner_id.display_name"/>
+<!--               <t groups="smart_common.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
 <!--                        <div t-esc="sale_order.partner_id.display_name"/>-->
 					  </t>
 
@@ -362,7 +374,7 @@
 <!--If the Order is in Draft or it is an advisor and status sent, then it is possible to change client-->
 <!--               <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">-->
                <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
-<!--               <t groups="base.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
+<!--               <t groups="smart_common.group_smart_advisor"  t-if="(sale_order and sale_order.state in ['draft','sent']) or not sale_order">-->
 
 
 <!--Jag tror att vi måste låta den här sparas först, sedan över till Client, där vi har med oss Order-ID, eftersom annars vet inte databasen om att ordern har fått ett namn, och kanske ett projekt mm.-->
@@ -399,7 +411,7 @@
 
 <!--Case 3: Sale order is not i draft. Display project name for user.                -->
 			<t t-if="sale_order and sale_order.state not in ['draft']">
-                        <div groups="base.group_smart_user" t-esc="sale_order.project_id.display_name"/>
+                        <div groups="smart_common.group_smart_user" t-esc="sale_order.project_id.display_name"/>
 				 </t> 
                <t t-if="(sale_order and sale_order.state in ['draft']) or not sale_order">
 <!--                    <a t-att-href="'/project/new/?redirect=/order/%s/edit_order_data' % sale_order and sale_order.id or ''" class="btn btn-small"><i class="icon-plus"></i> <strong>New Project</strong></a>-->
@@ -504,7 +516,7 @@
 			      </small>
 			      </div>
 			    
-			      <t groups="base.group_smart_debug"><span>template id="edit_lines"</span></t>			    
+			      <t groups="smart_common.group_smart_debug"><span>template id="edit_lines"</span></t>			    
 			      
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
@@ -609,6 +621,7 @@
   				<table id="billed-items" class="table" style="margin: -0px 0;">
       	          <thead>
       	            <tr>
+     	              <td  class="order_nopadding"><span class="muted">Prod</span></td>
      	              <td colspan="2" class="order_nopadding"><span class="muted">Product/Service description</span></td>
       	              <th><span class="muted">VAT</span></th>
       	              <th><span class="muted">Price in <t t-esc="sale_order.company_id.currency_id.name"/></span></th>
@@ -622,19 +635,30 @@
                         <t t-set="line_index" t-value="0"/>
                       <t t-foreach="sale_order.order_line" t-as="o">
                             <tr>  
-                              
 
+                              <td>                                
+                                   <select t-att-name="'line_product_id_%s' % o_index" >
+                                    <t t-foreach="request.env['product.product'].search([('sale_ok','=',True)])" t-as="p">
+                                        <t t-set="product" t-value="o.product_id.id if o.product_id else None"/>
+                                        <option t-attf-value="#{p.id}" t-att-selected="p.id == product"><t t-esc="p.name"/></option>-->
+                                    </t>
+                                    
+                                   </select>
+                                                                
+                            </td>
                               <td colspan="2"><input type="text" size="30" t-att-name="'line_name_%s' % o_index" placeholder="Name" t-attf-value="#{o.name}"/><input type="hidden" t-att-name="'line_id_%s' % o_index" t-attf-value="#{o.id}"/></td>
 
                                 <td style="width: 20px;"> <!-- TAX -->
                                  <select t-att-name="'line_tax_%s' % o_index" >
+<!--
                                     <t t-if="sale_order and o and o.tax_id">
                                        <option t-attf-value="#{o.tax_id[0].id}" t-att-selected="o.tax_id[0].id == o.tax_id[0].id"><t t-esc="o.tax_id[0].name"/></option> 
                                        <option t-att-selected="o.tax_id[0]" t-att-value="o.tax_id[0].id"><t t-esc="o.tax_id[0].name"/></option>
                                     </t>
-<!--                                    <t t-foreach="account_tax" t-as="t">-->
-<!--                                        <option t-attf-value="#{t.id}" t-att-selected="o.tax_id[0].id == o.tax_id[0].id"><t t-esc="t.name"/></option>-->
-<!--                                    </t>-->
+-->
+                                    <t t-foreach="account_tax" t-as="t">
+                                        <option t-attf-value="#{t.id}" t-att-selected="t.id in [ot.id for ot in o.tax_id]"><t t-esc="t.name"/></option>
+                                    </t>
                                  </select> 
                                  </td>
 
@@ -648,7 +672,16 @@
                       </t>
 
                         <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
-			               <tr>
+			               <tr class="md-col-12">
+                                                             <td>                                
+                                   <select t-att-name="'line_product_id_new'" >
+                                    <t t-foreach="request.env['product.product'].search([('sale_ok','=',True)])" t-as="p">
+                                        <option t-attf-value="#{p.id}" ><t t-esc="p.name"/></option>
+                                    </t>
+                                   </select>
+                                                                
+                            </td>
+
                               <td colspan="2"><input type="text" size="30" id="name" name="line_name_new" placeholder="Name" /></td>
 <!--                              <td style="width: 65px;"><input type="text" id="qty" size="5" name="line_qty_new" align="right" placeholder="Qty" /></td>-->
                                 <td style="width: 20px;"> <!-- TAX -->
@@ -797,7 +830,7 @@
 			   	 <t t-if="sale_order.state == 'cancel'"><span class="sent">Cancelled</span></t>)
 			      </small>
 			      </div>
-			      <t groups="base.group_smart_debug"><span>template id="order"</span></t>
+			      <t groups="smart_common.group_smart_debug"><span>template id="order"</span></t>
 			      
 			       <!--				Breadcrumbs indicating state of the order-->
 <!--				<ul class="steps pull-right">-->
@@ -820,8 +853,8 @@
 	
 			<legend>
 	   	  	  <strong>Details </strong> 
-	   	  	  <a groups="base.group_smart_user" t-if="sale_order.state in ['draft']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>
-	   	  	  <a groups="base.group_smart_advisor" t-if="sale_order.state in ['draft','sent']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>	   	  	  
+	   	  	  <a groups="smart_common.group_smart_user" t-if="sale_order.state in ['draft']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>
+	   	  	  <a groups="smart_common.group_smart_advisor" t-if="sale_order.state in ['draft','sent']" t-att-href="'/order/%s/edit_order_data/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order information</strong></a>	   	  	  
 
 			</legend>  	
 	
@@ -993,8 +1026,8 @@
 <!--			    <a href="../../order/edit_lines" class="btn btn-small "><i class="icon-pencil"></i> <strong>Edit Order lines</strong></a> + -->
      	  	  <strong>Details</strong> 
 <!--     	  	  <a t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>-->
-     	  	  <a groups="base.group_smart_user" t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>
-     	  	  <a groups="base.group_smart_advisor" t-if="sale_order.state in ['draft','sent']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>
+     	  	  <a groups="smart_common.group_smart_user" t-if="sale_order.state in ['draft']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>
+     	  	  <a groups="smart_common.group_smart_advisor" t-if="sale_order.state in ['draft','sent']"  t-att-href="'/order/%s/edit_lines/' % sale_order.id" class="btn btn-small"><i class="icon-pencil"></i> <strong>Edit Order Lines</strong></a>
 
 
 			  </legend>
@@ -1078,7 +1111,7 @@
 
 <!--	    			  <button type="submit" t-if="sale_order.state in ['draft']" class="btn btn-success" name="order_confirm" value="True"><span class="glyphicon glyphicon-ok-sign"></span>   	  -->
 
-            <div groups="base.group_smart_advisor">
+            <div groups="smart_common.group_smart_advisor">
 	    			  <button type="submit" t-if="sale_order.state in ['sent']" class="btn btn-success" name="order_confirm" value="True"><span class="glyphicon glyphicon-ok-sign"></span> Approve</button>
 <!--	    			  <button type="submit" t-if="sale_order.state in ['manual']" class="btn btn-warning" name="manual_invoice" value="True"><span class="glyphicon glyphicon-print"></span> Create Invoice</button>-->
 <!-- 	    			  <button type="submit" t-if="sale_order.state in ['progress']"  class="btn btn-success" name="subflow.paid" value="True"><span class="glyphicon glyphicon-euro"></span> Mark as paid</button>-->
@@ -1130,7 +1163,7 @@
           
 	            <header class="panelsheet-header clearfix">
 			      <h1><t t-raw="sale_order.description"/> <small><t t-esc="sale_order.name"/>.</small>
-			      <t groups="base.group_smart_debug"><span>template id="order_print"</span></t>
+			      <t groups="smart_common.group_smart_debug"><span>template id="order_print"</span></t>
 			      </h1>
 	            </header>
 	             

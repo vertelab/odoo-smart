@@ -1,2 +1,4 @@
 import res_company
 import res_users
+import base_language_install
+import res_partner

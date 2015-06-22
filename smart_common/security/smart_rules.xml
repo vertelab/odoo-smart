@@ -12,7 +12,7 @@
 <!-- A smart-user can see other users in current activity 
 
     res.users.current_activity 
-    res.users.current_activity_member_ids (users that are a member at current activity)
+    res.users.current_activity.activity_members (users that are a member at current activity)
 
 -->
 
@@ -21,7 +21,7 @@
             <field name="model_id" ref="base.model_res_users"/>
             <field eval="True" name="global"/>
             <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
-            <field name="domain_force">[('id','in',[user.id for user in user.current_activity_member_ids])]</field> 
+            <field name="domain_force">[('id','in',user.current_activity.activity_members)]</field> 
             <field name="perm_create" eval="False" />
             <field name="perm_read" eval="True" />
             <field name="perm_write" eval="False" />
@@ -38,7 +38,7 @@
             <field name="model_id" ref="base.model_res_company"/>
             <field eval="True" name="global"/>
             <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
-            <field name="domain_force">[('id','=',user.company_id.id)]</field> 
+            <field name="domain_force">[('id','in',user.activity_ids)]</field> 
             <field name="perm_create" eval="False" />
             <field name="perm_read" eval="True" />
             <field name="perm_write" eval="True" />
@@ -63,7 +63,7 @@
         
 
 <!-- A smart-user can create, read, update, delete all customers connected to his activity
-    
+    or create new customers
 -->
 
         <record id="global_partner_rule" model="ir.rule">
@@ -71,8 +71,8 @@
             <field name="model_id" ref="base.model_res_partner"/>
             <field eval="True" name="global"/>
             <field name="groups" eval="[(4, ref('group_smart_user'))]"/>
-            <field name="domain_force">[('company_id','=',user.company_id.id)]</field> 
-            <field name="perm_create" eval="False" />
+            <field name="domain_force">['|',('company_id','=',False),('company_id','=',user.current_activity.id)]</field> 
+            <field name="perm_create" eval="True" />
             <field name="perm_read" eval="True" />
             <field name="perm_write" eval="False" />
             <field name="perm_unlink" eval="False" />            

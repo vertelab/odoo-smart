@@ -48,8 +48,8 @@ class res_company(models.Model):
     _inherit = 'res.company'
 
     smart_owner = fields.Many2one('res.users')
-    activity_members = fields.Many2many(comodel_name="res.users",relation="activity_users_rel",string="Activity members")
+    activity_members = fields.Many2many('res.users','res_company_activity_rel','cid','user_id','Users')
+    
 
-    
-    
-    
+
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
+#    OpenERP, Open Source Management Solution addon
 #    Copyright (C) 2004-2015 Vertel AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -45,10 +45,19 @@ class res_users(models.Model):
     state    = fields.Selection(compute="_get_state", string='Status',  selection=[('new', 'Never Connected'), ('active', 'WebUser'),('approved', 'SmartUser')],)
     approved = fields.Boolean('Approved',)
     webterms_accepted = fields.Boolean('Web Terms Accepted',)
-    current_activity = fields.Many2one('res.company')
-#    current_activity_members = fields.Many2many('res.users')
-    activity_ids = fields.Many2many(comodel_name='res.company',relation='activity_users_rel',string='Activities')
+    current_activity = fields.Many2one('res.company',) # domain="[('id','in',company_ids)]")
     
+#    current_activity_members = fields.Many2many('res.users')
+    activity_members = fields.Many2many(compute="_get_members",comodel_name="res.users",string='Users')
+    activity_ids = fields.Many2many('res.company','res_company_activity_rel','user_id','cid','Activity')
+    
+    @api.one
+    def _get_members(self,):
+        activities = [c for c in self.activity_ids]
+        #self.activity_members = [u.id for u in [c.activity_members for c in self.activity_ids]]
+        self.activity_members = self.current_activity.activity_members if self.current_activity else []
+    
+
 
     @api.one
     def _get_state(self):

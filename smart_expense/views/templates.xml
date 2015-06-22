@@ -14,9 +14,9 @@
             	<header class="panelsheet-header clearfix">
               <div class="title">
                 <h1>Expenses</h1>
-                <div class="pull-right">
+	                <div groups="smart_common.group_smart_user" class="pull-right">
                   <a href="/expense/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New expense note</a>
-                  <a href="http://stage.smart-eu.org/smart_expense/static/ui/Expenses_SMartSe/index.html" class="btn btn-large btn-primary" groups="base.group_smart_debug"><i class="icon-plus"></i> Excel form </a>
+                  <a href="http://stage.smart-eu.org/smart_expense/static/ui/Expenses_SMartSe/index.html" class="btn btn-large btn-primary" groups="smart_common.group_smart_debug"><i class="icon-plus"></i> Excel form </a>
                 </div>
               </div>
             </header>

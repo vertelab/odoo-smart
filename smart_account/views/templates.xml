@@ -307,19 +307,10 @@
     				      <div class="form-group">
     				        <label class="control-label col-sm-9 col-md-4 col-lg-4" for="country">Country</label>
     				        <div class="input-group col-sm-9 col-md-4 col-lg-4">
-				
-<!--kasta-->
-<!--							<t t-esc="res_user.employee_ids"/>-->
-<!--							<t t-esc="res_user.partner_id"/>-->
-<!--							<t t-esc="res_user.partner_id.country_id"/>-->
-<!--							<t t-esc="res_user.partner_id.country_id.id"/>-->
-<!--							<t t-esc="res_user.partner_id.country_id.name"/>-->
-
-
-				    
+								    
                                  <select class="form-control" name="country_id">
                                     <t t-foreach="res_country" t-as="c">
-                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.partner_id.country_id.id == c.id"><t t-esc="c.name"/></option> 
+                                        <option t-attf-value="#{c.id}" t-att-selected="res_user.partner_id.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
 <!--                                        <option t-attf-value="#{c.id}" ><t t-esc="c.name"/></option> -->
 	                                    </t>
 	                                </select>
@@ -561,7 +552,7 @@
 
 
 <div class="row">
-						<ul groups="base.group_smart_advisor">  		
+						<ul groups="smart_common.group_smart_advisor">  		
   				        <legend>System administration</legend>
 						</ul> 
 </div>
@@ -581,7 +572,7 @@
 
 
 <!--  				            <div class="control-group" >-->
-						<div class="row" groups="base.group_smart_advisor">
+						<div class="row" groups="smart_common.group_smart_advisor">
 						   <div class="form-group" t-if="res_company.country_id.code in ['AT','ES','DE','SE',]">
 	  				          <label class="control-label col-sm-9 col-md-4 col-lg-4" for="dropbox_link">Dropbox link </label>
   					          <div class="input-group col-sm-9 col-md-4 col-lg-4">
@@ -793,7 +784,7 @@
             <header class="panelsheet-header clearfix">
               <div class="title">
                 <h1>Users</h1>
-                <div class="pull-right">
+	                <div groups="smart_common.group_smart_user" class="pull-right">
                   <a href="/smart/signup" class="btn btn-large btn-primary"><i class="icon-plus"></i> New user</a>
                 </div>
               </div>

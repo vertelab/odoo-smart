@@ -6,7 +6,7 @@
         <xpath expr="//div[@id='cash']" position="inside">
 
 <!--               Start CashBudget Box-->
-					<div id="smartbudgetcashbox" groups="base.group_smart_user" >
+					<div id="smartbudgetcashbox" groups="smart_common.group_smart_user" >
 	                    <table id="table-widget-budget" style="width: 250px;" >
 					        <tr>
 					          <td style="text-align: right;">
@@ -163,7 +163,7 @@
    			     <t t-if="o.state == 'done'"><span class="paid">Paid</span></t>
 			   	 <t t-if="o.state == 'cancel'"><span class="sent">Cancelled</span></t>		
 <!-- Debug-->
-<t groups="base.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
+<t groups="smart_common.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
                              </td>
 
                             </tr>
@@ -276,7 +276,7 @@
    			    			<t t-if="e.state == 'accepted'"> <span class="approved">Approved</span> </t>
    			    			<t t-if="e.state == 'done'"> <span class="paid">Paid</span> </t>   			    			
 <!-- Debug-->
-<t groups="base.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
+<t groups="smart_common.group_smart_debug"><span><BR/>(<t t-raw="o.state"/>)</span></t>
 
 
                              </td>

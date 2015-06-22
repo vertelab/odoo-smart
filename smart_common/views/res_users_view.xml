@@ -11,14 +11,19 @@
              <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
                 <data>
-<!--
-                    <field name="active" position="after">
+                     <group string="Allowed Companies" position="after">
+                           <group string="Allowed Activities" col="4" groups="base.group_multi_company">
+                                    <field name="activity_ids" nolabel="1" widget="many2many_tags"/>
+                            </group>
+                            <group col="4">
                      <field name="webterms_accepted"/>
                      <field name="approved"/>
-                     <field name="current_activity"/>
-                     <field name="activity_ids" widget="many2many_tags"/>
-                     </field>                
--->
+                     <field name="current_activity"/>                            
+                     <field name="activity_members" widget="many2many_tags"/>                            
+                            </group>
+
+                     </group>
+
                 </data>
 
             </field>

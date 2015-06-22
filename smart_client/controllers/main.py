@@ -14,7 +14,7 @@ _logger = logging.getLogger(__name__)
 
 class website_client(http.Controller):
 
-    @http.route(['/client/list',], type='http', auth="user", website=True)
+    @http.route(['/client/list','/client/list/<string:search>'], type='http', auth="user", website=True)
     def client_list(self, client=0, search='', **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         res_user = pool.get('res.users').browse(cr,uid,uid,context)

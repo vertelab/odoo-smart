@@ -241,7 +241,13 @@ class website_order(http.Controller):
 
 ## Sale Order Lines
             if post.get('line_name_new'):
-                pool.get('sale.order.line').create(cr,uid,{'order_id': sale_order.id, 'name': post.get('line_name_new'), 'price_unit': float(post.get('line_price_new', 0)), 'product_uom_qty': 1.0, 'tax_id': [(6,0,[post.get('line_tax_new',1)])] })
+                order_line = {'order_id': sale_order.id,'name': post.get('line_name_new'), 'price_unit': float(post.get('line_price_new', 0)), 'product_uom_qty': 1.0,  }
+                if not post.get('line_tax_new',False):
+                    order_line['tax_id'] = [(6,0,[post.get('line_tax_new',1)])]
+                line = pool.get('sale.order.line').create(cr,uid,order_line)
+                if not post.get('line_product_id_new',False):
+                    line.write(cr,uid,line.id,{'product_id': post.get('line_product_id_new')})
+                
                 template='smart_order.edit_lines'
 #Anders: Här vill jag att Save-Order-Line landar på smart_order.edit_lines och att Next landar på smart_order.order
                 values['form_action'] = '/order/%s' % sale_order.id
@@ -251,7 +257,7 @@ class website_order(http.Controller):
                         r = re.match("line_id_(\d+)",line)
                         row = str(r.groups(1)[0])
                         order_line = pool.get('sale.order.line').browse(cr,uid,int(post.get('line_id_' + row)),context=context)
-                        order_line.write({'name': post.get('line_name_' + row), 'price_unit': float(post.get('line_price_' + row)), 'product_uom_qty': 1.0, 'tax_id': [(6,0,[post.get('line_tax_' + row,1)])]})
+                        order_line.write({'product_id': float(post.get('line_product_id_' + row,1)),'name': post.get('line_name_' + row), 'price_unit': float(post.get('line_price_' + row)), 'product_uom_qty': 1.0, 'tax_id': [(6,0,[post.get('line_tax_' + row,1)])]})
 #                        order_line.write({'name': post.get('line_name_' + row), 'price_unit': float(post.get('line_price_' + row)), 'product_uom_qty': float(post.get('line_qty_' + row)), 'vat': post.get('line_vat_' + row)})
 
             values['sale_order']= pool.get('sale.order').browse(cr,uid,sale_order.id)

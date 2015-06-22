@@ -11,12 +11,12 @@
              <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <data>
-                    <field name="company_registry" position="after">
-<!--
+                    <field name="website" position="after">
+
                      <field name="smart_owner"/>
                      <field name="activity_members" widget="many2many_tags"/>
--->
-                     </field>                
+
+                     </field>               
                 </data>
 
             </field>

@@ -35,7 +35,6 @@ class res_partner(models.Model):
     smart_bank_acc_iban     = fields.Char(string='IBAN',size=60,)
     smart_bank_acc_bic      = fields.Char(string='BIC / SWIFT',size=60,)
     smart_work_roles        = fields.Text(string='Your workroles',)
-    dropbox_link            = fields.Char(string='Your documents',size=100,)
     smart_place_of_birth    = fields.Char(string='Place of Birth',size=100,)
     
     

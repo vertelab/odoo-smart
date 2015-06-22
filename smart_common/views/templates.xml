@@ -14,9 +14,10 @@
 	    		<t t-if="res_user and res_user.webterms_accepted">
                     <div id="activityname"  style="position: absolute;top:70px;left: 30px; width: 500px;"/>
                     <div id="smart_role"  style="position: absolute;top:70px;left: 600px; width: 400px;">
-                          <div groups="base.group_smart_advisor">
-                          <h2>You are logged in as Advisor. <br/>
-                          <a href="/sudo_login" groups="base.group_smart_advisor">Login as an other user</a>
+                          <div groups="smart_common.group_smart_advisor">
+                          <h2>
+<!--                          You are logged in as Advisor. <br/>-->
+                          <a href="/sudo_login" groups="smart_common.group_smart_advisor">Login as an other user</a>
                           </h2>
                           </div>
 
@@ -71,7 +72,7 @@
     
 					<div>
 <!--	    		<t t-if="res_user.webterms_accepted>-->
-				    		<h1 groups="base.group_smart_user"><a class="activity-name" href="/dashboard"><t t-if="user_id and not user_id=1" t-raw="user_id.company_id.name"/></a></h1>
+				    		<h1 groups="smart_common.group_smart_user"><a class="activity-name" href="/dashboard"><t t-if="user_id and not user_id=1" t-raw="user_id.company_id.name"/></a></h1>
 <!--						</t>				    -->
 					</div>
 
@@ -92,10 +93,12 @@
 	          <div class="panelsheet">
             <header class="panelsheet-header clearfix">
               <div class="title">
-			<h1>My Dashboard!</h1><BR/>
+			<h1 groups="smart_common.group_smart_user">My Dashboard!</h1>
+			<h1 groups="smart_common.group_smart_advisor">Advisor Dashboard!</h1>
+			<BR/>
 <!--		If the user has more than one order: Display first line, if not, second line.-->
-<!--                <h1  t-if="groups=base.group_sale_salesman">Recent activity</h1>-->
-<!--                <h1 t-if="not group=base.group_sale_salesman"> Welcome to SMart</h1>-->
+<!--                <h1  t-if="groups=smart_common.group_sale_salesman">Recent activity</h1>-->
+<!--                <h1 t-if="not group=smart_common.group_sale_salesman"> Welcome to SMart</h1>-->
               </div>
             </header>
 
@@ -118,8 +121,8 @@
 
 											
 <!--            <div class="panelsheet-content">-->
-<!--            <div groups="base.group_sales_manager" class="panelsheet-content">-->
-            <div groups="base.group_erp_manager" class="panelsheet-content">
+<!--            <div groups="smart_common.group_sales_manager" class="panelsheet-content">-->
+            <div groups="smart_common.group_erp_manager" class="panelsheet-content">
 	         <ul>
 	         <table>
             <tr><th>My Users!</th>
@@ -311,8 +314,8 @@
       	          <thead>
       	            <tr>
       	              <th><span class="muted">Description</span></th>
-<!--      	              <th groups="base.group_sale_manager"><span class="muted">Activity *</span></th>-->
-<!--      	              <th groups="base.group_sale_manager"><span class="muted">User *</span></th>-->
+<!--      	              <th groups="smart_common.group_sale_manager"><span class="muted">Activity *</span></th>-->
+<!--      	              <th groups="smart_common.group_sale_manager"><span class="muted">User *</span></th>-->
       	              <th><span class="muted">Recipient </span></th>
 <!--       	              <th><span class="muted">Date</span></th>-->
       	              <th class="muted" style="text-align: right;">Amount</th>
@@ -328,8 +331,8 @@
                             <tr>  
                               <td><a  t-att-href="'/expense/%s' % e.id"><t t-raw="e.name"/> </a></td>
 <!--                            <a class="tip" data-toogle="tooltip" data-placement="bottom" title="No. "><t t-raw="e.id"/> </a>-->
-<!--                              <td groups="base.group_sale_manager"> *</td>-->
-<!--                              <td groups="base.group_sale_manager"><t t-raw="e.employee_id.name"/> *</td>-->
+<!--                              <td groups="smart_common.group_sale_manager"> *</td>-->
+<!--                              <td groups="smart_common.group_sale_manager"><t t-raw="e.employee_id.name"/> *</td>-->
                               <td><t t-raw="e.user_id.name"/></td>
 <!--                              <td><t t-raw="e.date"/></td>-->
 								<td class="cell" style="text-align: right;"><span t-field="e.amount" t-field-options='{"widget": "monetary", "display_currency": "e.company_id.currency_id"}'/></td>
@@ -370,7 +373,7 @@
             <div class="panelsheet-content">
 	         <ul>
 
-<t groups="base.group_smart_debug">
+<t groups="smart_common.group_smart_debug">
 <span> 
 Translation content was last updated: 2015-01-01<BR/>
 Translation files was last updated: 2015-01-01<BR/>
@@ -380,7 +383,7 @@ Translation files was last updated: 2015-01-01<BR/>
 			</div>		
 		
 		
-<!--		            <div groups="base.group_erp_manager" class="panelsheet-content">		-->
+<!--		            <div groups="smart_common.group_erp_manager" class="panelsheet-content">		-->
 <!--		            <div  class="panelsheet-content">		-->
 <!--Message Part 				-->
 
@@ -401,9 +404,9 @@ Translation files was last updated: 2015-01-01<BR/>
 
 <!--				   	  <tbody>-->
 <!--#	     	     		<t t-foreach="mail_message" t-as="m">  -->
-<!--	     	     		<t t-foreach="mail_message" groups="base.group_sale_salesman" t-as="m">  -->
-<!--#	     	     		<t t-foreach="mail_message" groups="base.group_hr_manager" t-as="m">-->
-<!--#	     	     		<t t-foreach="mail_message" groups="groups=base.group_erp_manager" t-as="m">-->
+<!--	     	     		<t t-foreach="mail_message" groups="smart_common.group_sale_salesman" t-as="m">  -->
+<!--#	     	     		<t t-foreach="mail_message" groups="smart_common.group_hr_manager" t-as="m">-->
+<!--#	     	     		<t t-foreach="mail_message" groups="groups=smart_common.group_erp_manager" t-as="m">-->
 <!--	                       <tr>-->
 <!--							<td><t t-esc="m.author_id.name"/></td>-->
 <!--			                <td><span t-field="m.date" t-field-options='{"format": "Y-M-d"}' /></td>-->
@@ -437,26 +440,27 @@ Translation files was last updated: 2015-01-01<BR/>
       
       <div class="column-nav">
         <nav id="app-nav">
-		  <ul id="nav_menu" class="nav nav-tabs nav-stacked">
-    	    <li  t-attf-class="#{dashboard_menu}"><a t-attf-href="/dashboard"><i class="glyphicon glyphicon-inbox"></i> <b>My Dashboard</b></a></li>
+		  <ul id="nav_menu" class="nav nav-tabs nav-stacked" >
+    	    <li  t-attf-class="#{dashboard_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/dashboard"><i class="glyphicon glyphicon-inbox"></i> <b>My Dashboard</b></a></li>
+    	    <li  t-attf-class="#{dashboard_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/dashboard"><i class="glyphicon glyphicon-inbox"></i> <b>Advisor Dashboard</b></a></li>
 			<hr/>
 
-            <li t-attf-class="#{project_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/project/list/all"><i class="glyphicon glyphicon-tag"></i><i class="glyphicon glyphicon-tag"></i> <b>All Projects</b></a></li>
-            <li t-attf-class="#{client_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/client/list/all"><i class="glyphicon glyphicon-book"></i><i class="glyphicon glyphicon-book"></i> <b>All Clients</b></a></li>
-            <li t-attf-class="#{order_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/order/list/all"><i class="glyphicon glyphicon-briefcase"></i><i class="glyphicon glyphicon-briefcase"></i> <b>All Orders</b></a></li>
-            <li t-attf-class="#{expense_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/expense/list/all"><i class="glyphicon glyphicon-euro"></i><i class="glyphicon glyphicon-euro"></i> <b>All Expenses</b></a></li>
-    	    <li t-attf-class="#{account_all_menu}" groups="base.group_smart_advisor"><a t-attf-href="/account/list"><i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-user"></i> <b>All Accounts</b></a></li>
+            <li t-attf-class="#{project_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/project/list/all"><i class="glyphicon glyphicon-tag"></i><i class="glyphicon glyphicon-tag"></i> <b>All Projects</b></a></li>
+            <li t-attf-class="#{client_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/client/list/all"><i class="glyphicon glyphicon-book"></i><i class="glyphicon glyphicon-book"></i> <b>All Clients</b></a></li>
+            <li t-attf-class="#{order_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/order/list/all"><i class="glyphicon glyphicon-briefcase"></i><i class="glyphicon glyphicon-briefcase"></i> <b>All Orders</b></a></li>
+            <li t-attf-class="#{expense_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/expense/list/all"><i class="glyphicon glyphicon-euro"></i><i class="glyphicon glyphicon-euro"></i> <b>All Expenses</b></a></li>
+    	    <li t-attf-class="#{account_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/account/list"><i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-user"></i> <b>All Accounts</b></a></li>
 
-            <li t-attf-class="#{project_menu}" groups="base.group_smart_user"><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b>Project</b></a></li>
-            <li t-attf-class="#{client_menu}" groups="base.group_smart_user"><a t-attf-href="/client/list"><i class="glyphicon glyphicon-book"></i> <b>Clients</b></a></li>
-            <li t-attf-class="#{order_menu}" groups="base.group_smart_user"><a t-attf-href="/order/list"><i class="glyphicon glyphicon-briefcase"></i> <b>Orders</b></a></li>
-            <li t-attf-class="#{expense_menu}" groups="base.group_smart_user"><a t-attf-href="/expense/list"><i class="glyphicon glyphicon-euro"></i> <b>Expenses</b></a></li>
+            <li t-attf-class="#{project_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b>Project</b></a></li>
+            <li t-attf-class="#{client_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/client/list"><i class="glyphicon glyphicon-book"></i> <b>Clients</b></a></li>
+            <li t-attf-class="#{order_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/order/list"><i class="glyphicon glyphicon-briefcase"></i> <b>Orders</b></a></li>
+            <li t-attf-class="#{expense_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/expense/list"><i class="glyphicon glyphicon-euro"></i> <b>Expenses</b></a></li>
             
-			<hr groups="base.group_smart_user" />
-	        <li t-attf-class="#{account_menu}" groups="base.group_smart_user"><a t-attf-href="/account"><i class="glyphicon glyphicon-user"></i> <b>My Account</b></a></li>
+			<hr groups="smart_common.group_smart_user" />
+	        <li t-attf-class="#{account_menu}" groups="smart_common.group_smart_user"><a t-attf-href="/account"><i class="glyphicon glyphicon-user"></i> <b>My Account</b></a></li>
 			<hr/>
 <!--	        <li t-attf-class="#{documents_menu}"><a t-attf-href="/documents/"><i class="glyphicon glyphicon-folder-open"></i> <b>Documents</b></a></li>-->
-			<t groups="base.group_smart_user">
+			<t groups="smart_common.group_smart_user">
 				        <li t-if="res_user and res_user.partner_id and res_user.partner_id.dropbox_link"><a t-attf-href="#{res_user.partner_id.dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>
 <!--				        <li t-if="res_user.employee_ids[0].dropbox_link"><a t-attf-href="#{res_user.employee_ids[0].dropbox_link}"><i class="glyphicon glyphicon-book"></i> <b>My Documents</b></a></li>-->
 				        </t>
@@ -816,7 +820,7 @@ Translation files was last updated: 2015-01-01<BR/>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-original-title=""><span t-esc="user_id.name"/><b class="caret"></b></a>
                       <ul class="dropdown-menu" id="smart_user_ddmenu">
                       <li><a href="/account" data-original-title="">Manage my account</a></li>
-                      <li><a href="/web/" groups="base.group_smart_advisor">Backoffice</a></li>
+                      <li><a href="/web/" groups="smart_common.group_smart_advisor">Backoffice</a></li>
                       <li><img src="/smart_common/static/ui/img/faux-column.png" width="75px"/></li>
                       <li class="divider"></li>
                       <li><a href="/web/session/logout?redirect=/" data-original-title="">Logout</a></li>
@@ -954,7 +958,7 @@ Translation files was last updated: 2015-01-01<BR/>
 
 <template id="odoomenu_hide" inherit_id="website.user_navbar" customize_show="True" name="Hide Odoo Menu">
  <xpath expr="//nav[@id='oe_main_menu_navbar']" position="replace">
-    <nav id="oe_main_menu_navbar" class="navbar navbar-inverse" role="navigation"  groups="base.group_website_publisher">
+    <nav id="oe_main_menu_navbar" class="navbar navbar-inverse" role="navigation"  groups="smart_common.group_website_publisher">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#oe_applications">
                 <span class="icon-bar"></span>
@@ -974,7 +978,7 @@ Translation files was last updated: 2015-01-01<BR/>
             </li>
         </ul>
 
-        <ul id="oe_editzone" class="nav navbar-nav hidden-xs" style="padding-left: 20px; display: none;" groups="base.group_website_publisher">
+        <ul id="oe_editzone" class="nav navbar-nav hidden-xs" style="padding-left: 20px; display: none;" groups="smart_common.group_website_publisher">
             <li><button type="button" data-action="edit" class="btn btn-primary btn-xs">Edit</button></li>
         </ul>
 
@@ -987,26 +991,26 @@ Translation files was last updated: 2015-01-01<BR/>
             </li>
 
             <!-- Promote -->
-            <li groups="base.group_website_designer">
+            <li groups="smart_common.group_website_designer">
                 <a data-action="promote-current-page" href="#">
                     <span title="Promote page on the web">Promote</span>
                 </a>
             </li>
 
             <!-- Content -->
-            <li class="dropdown" groups="base.group_website_publisher">
+            <li class="dropdown" groups="smart_common.group_website_publisher">
                 <a id="content-menu-button" class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Content <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu oe_content_menu" role="menu">
-                    <li groups="base.group_website_designer"><a data-action="edit_menu" href="#"><span title="Edit Top Menu">Edit Menu</span></a></li>
-                    <li class="divider" groups="base.group_website_designer"> </li>
-                    <li groups="base.group_website_designer"><a href="#" data-action="new_page">New Page</a></li>
+                    <li groups="smart_common.group_website_designer"><a data-action="edit_menu" href="#"><span title="Edit Top Menu">Edit Menu</span></a></li>
+                    <li class="divider" groups="smart_common.group_website_designer"> </li>
+                    <li groups="smart_common.group_website_designer"><a href="#" data-action="new_page">New Page</a></li>
                 </ul>
             </li>
 
             <!-- Customize -->
-            <li class="dropdown" id="customize-menu" groups="base.group_website_designer">
+            <li class="dropdown" id="customize-menu" groups="smart_common.group_website_designer">
                 <a id="customize-menu-button" class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Customize <span class="caret"></span>
                 </a>
@@ -1121,14 +1125,15 @@ Translation files was last updated: 2015-01-01<BR/>
 <template id="webterms_accepted" inherit_id="smart_common.dashboard" name="Web Terms Accepted" customize_show="True" >
 <!-- # This code is inserted into Dashboard to get users to confirm our webterms.-->
         <xpath expr="//div[@id='webterms_accepted']" position="replace">
-			<div>                        
+			<div>                 
+                
 	    		<t t-if="not res_user.webterms_accepted">
 
 	    		<BR/>
 	    		<BR/>
 	   			You have not yet accepted <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> <BR/>
 		
-				By clicking here, <a  t-attf-href="'/dashboard/%s/add_activity/' % res_users.id" class="btn btn-small btn-success"> <strong>I Accept</strong></a> <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> 
+				By clicking here, <a  t-att-href="'/dashboard/%s/add_activity/' % res_user.id" class="btn btn-small btn-success"> <strong>I Accept</strong></a> <a href="legal/webpolicy" target="_blank">SMart's Web Policy.</a> 
 								<BR/>
 	    		<BR/>
 	    		<BR/>
@@ -1143,7 +1148,7 @@ Translation files was last updated: 2015-01-01<BR/>
 
 	   			<t t-if="res_user.webterms_accepted">
 
-            <div class="panelsheet-content">
+            <div groups="smart_common.group_smart_user" class="panelsheet-content">
 <!--            <div class="panelsheet-content">-->
 
 <BR/>
@@ -1162,7 +1167,7 @@ Translation files was last updated: 2015-01-01<BR/>
 <!--                            <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])" t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None">-->
 <!--                             <t t-esc="lg[1].split('/').pop()"/></a>-->
 <!--                        </li>-->
-<!--                        <li groups="base.group_website_publisher">-->
+<!--                        <li groups="smart_common.group_website_publisher">-->
 <!--                            <t t-set="url_return" t-value="url_for('', '[lang]') + '?' + keep_query()"/>-->
 <!--                            <a t-attf-href="/web#action=base.action_view_base_language_install&amp;website_id=#{website.id}&amp;url_return=#{url_return}">-->
 <!--                            <i class="fa fa-plus-circle"/>-->

@@ -29,13 +29,15 @@ class smart_common(http.Controller):
         
         _logger.warning("Dashboard %s" % request.uid)
 
-        res_user = request.registry.get('res.users').browse(cr,uid,uid)
-        context['lang'] = res_user.lang
+        if not user:
+            user = request.registry.get('res.users').browse(cr,uid,uid)
+            
+        context['lang'] = user.lang
         
-        order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)],context=context)
+        order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',user.company_id.id)],context=context)
         
         clients = []
-        for c in request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context):
+        for c in request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,[('company_id','=',user.company_id.id)]),context=context):
 #        for c in request.registry['res.partner'].browse(cr,uid,companies,request.registry['res.partner'].search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)],context=context),context=context):
             if c.is_company:
                 clients += c
@@ -59,7 +61,7 @@ class smart_common(http.Controller):
             'mail_message': pool.get('mail.message').browse(cr,uid,pool.get('mail.message').search(cr,uid,[]),context),
 #            'mail_thread': pool.get('mail.thread').browse(cr,uid,pool.get('mail.thread').search(cr,uid,[]),context),
             'mail_mail': pool.get('mail.mail').browse(cr,uid,pool.get('mail.mail').search(cr,uid,[]),context),
-            'res_user': res_user,
+            'res_user': user,
             'res_users': pool.get('res.users').browse(cr, uid, uid,context), # users of company_ids
             'sale_orders': request.registry.get('sale.order').browse(cr,uid,order_ids,context=context), 
             'res_partners': clients,

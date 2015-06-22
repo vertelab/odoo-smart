@@ -34,7 +34,7 @@
 	              <section class="panelsheet-section">
 
 
-            <t groups="base.group_smart_debug">
+            <t groups="smart_common.group_smart_debug">
 <!--              start search box-->
               <p>
 			   <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   

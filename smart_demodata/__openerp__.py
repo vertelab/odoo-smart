@@ -13,10 +13,16 @@ Customers
     'author': 'Vertel AB',
     'depends': ['website'],
     'data': [
-#        'demo/odoo_partners_import.xml',
-#        'demo/odoo_product_import.xml',
-#        'demo/product.category.csv',
-#        'demo/product.template.csv',        
+#        'data/res.partner.csv',
+#        'data/res.company.csv',
+#        'data/res.users.csv',
+#        'data/hr.employee.csv',
+#        'data/product.category.csv',
+#        'data/product.template.csv',
+#        'data/website.menu.csv',
+
+
+        
         
     ],
     'demo': [ ],

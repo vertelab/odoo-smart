@@ -16,7 +16,7 @@
 	            <header class="panelsheet-header clearfix">
 			      <div class="page-header">
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/></small></t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2> 			      
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="smart_common.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2> 			      
 			      </div>
 	            </header>
    
@@ -102,8 +102,8 @@
     					  </div>
     					</div>
 
-				<button groups="base.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
-				<button groups="base.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
+				<button groups="smart_common.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
+				<button groups="smart_common.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
 				<a  t-att-href="'/expense/list/'" class="btn btn-large btn-danger"> <strong>Cancel</strong></a>
 				</form>
 
@@ -132,7 +132,7 @@
 			      <div class="page-header">
 <!--If it is a new expense-->
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>. </small></t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="smart_common.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 
 
@@ -226,8 +226,8 @@
 
 
     					  
-				<button groups="base.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
-				<button groups="base.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
+				<button groups="smart_common.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
+				<button groups="smart_common.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
 				<a  t-att-href="'/expense/list/'" class="btn btn-large btn-danger"> <strong>Cancel</strong></a>
 				</form>
 
@@ -256,7 +256,7 @@
 			      <div class="page-header">
 <!--If it is a new expense-->
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>.</small> </t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="smart_common.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 			      </div>
 	            </header>
@@ -326,8 +326,8 @@
     					</div>
     					  
     					  
-				<button groups="base.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
-				<button groups="base.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
+				<button groups="smart_common.group_smart_user,smart_common.group_smart_advisor" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
+				<button groups="smart_common.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
 				<a  t-att-href="'/expense/list/'" class="btn btn-large btn-danger"> <strong>Cancel</strong></a>
 				</form>
 
@@ -356,7 +356,7 @@
 			      <div class="page-header">
 <!--If it is a new expense-->
 			      <h1><t t-if="expense"><t t-raw="expense.name"/> <small><t t-esc="expense.id"/>.</small></t></h1><BR/>
-			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="base.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
+			      <h2><t t-esc="product.name"/> Expense line <small> <t groups="smart_common.group_smart_debug" t-esc="product.expense_template_id.xml_id"/></small></h2>
 
 			      </div>
 	            </header>
@@ -448,8 +448,8 @@
     					  </div>
     					</div>
     					  
-				<button groups="base.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
-				<button groups="base.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
+				<button groups="smart_common.group_smart_user" t-if="expense.state in ['draft']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save</button>			
+				<button groups="smart_common.group_smart_advisor" t-if="expense.state in ['draft','accepted']" type="submit" class="btn btn-success" t-attf-name="#{expense_line and 'save' or 'new_line'}" value="True">Save changes</button>			
 				<a  t-att-href="'/expense/list/'" class="btn btn-large btn-danger"> <strong>Cancel</strong></a>
 				</form>
 

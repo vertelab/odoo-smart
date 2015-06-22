@@ -27,8 +27,7 @@ se_demo
 - Install Project
 - Install Knowledge
 - Install SMart Common
-- Install SMart Dashboard (Before Login)
-- Install SMart Login
+- Auth_Sudo
 - Install SMart Activity
 - Install SMart Project
 - Install SMart Account
@@ -37,45 +36,23 @@ se_demo
 - Install SMart Expense
 - Install SMart SMart Budget and Cash
 - Install SMart Salary Simulator
-- Install SMart Multicompany Base
-- Install SMart Multicompany Account
-- Install SMart Multicompany HR 
-- Install SMart Multicompany HR Expense
-- Install SMart Multicompany products
-
-X - Install SMart Alias
+- Install SMart Sudo
+- Install smart demo data
 
 - Change name of Admin
-- add technical
-- Add multi company
-- analytical account
+- Technical Features 
+- Multi Companies 
+- Analytic Accounting 
+- Analytic Accounting for Sales 
 - Contact Creation
 
 - add email: fredrik.arvas@smart-eu.org
-- add homepage
+- (add homepage)
+- General website: re-link Template-user 
+- HR-user, link user
 
-
-Add products
-
-Create Template User
-- add home country
-	
-- Create Template Activity
-- re-link Template-user
-
-- Link home address (Employees -> Home address)
 - Add VAT-rates to website (Accounting -> Configuration -> Taxes -> Taxes -> Formview: "Active Web")
 
-Add products (Sales -> Configuration -> Product Categories 
-\odoo-smart\smart_expense\data\product.category_2014-12-09.csv
-:Windows
-:Semicolon
-
-
-
-- Change settings on Template Company: 
-  - add Parent company: "SMartAB"
-  - Add country Same as Company-country
 
 - Add Launchpad-page
 <t name="Homepage" priority="29" t-name="website.homepage">
@@ -93,14 +70,7 @@ Add products (Sales -> Configuration -> Product Categories
 </t>
 
 - Add custom menues
-Change Home -> Launchpad for Page /page/homepage/
-Projects -> URL: /project/list
-Clients -> URL: /client/list
-Order	/order/list
-Expnese 	/expense/list
-My Account	/account
-Budget -> /budget/list
-Cash	-> /cash/list
+- Reorder Website-order to: Dashboard, Launchpad, Dashboard
 
 
 Done.

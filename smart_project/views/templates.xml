@@ -3,6 +3,16 @@
 <data>
 
 
+<!--<template id="smartmenu" inherit_id="smart_common.smartmenu">-->
+    
+<!--    <xpath expr="//ul[@id='nav_menu']" position="inside">-->
+<!--            <li t-attf-class="#{project_all_menu}" groups="smart_common.group_smart_advisor"><a t-attf-href="/project/list/all"><i class="glyphicon glyphicon-tag"></i><i class="glyphicon glyphicon-tag"></i> <b>All Projects</b></a></li>-->
+<!--            <li t-attf-class="#{project_menu}" ><a t-attf-href="/project/list"><i class="glyphicon glyphicon-tag"></i> <b>Project</b></a></li>-->
+<!--    </xpath>-->
+    
+<!--</template>-->
+
+
 <template name="Project list" id="list">
     <t t-call="smart_common.layout">
 
@@ -79,7 +89,7 @@
 	            <header class="panelsheet-header clearfix">
 	             <div class="title">
 	                <h1>All Projects</h1>
-	                <div class="pull-right">
+	                <div groups="smart_common.group_smart_user" class="pull-right">
 	                  <a href="/project/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new project</a>
 	                </div>
 	              </div>
