@@ -38,8 +38,8 @@
 <!--              start search box-->
               <p>
 			   <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   
-                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
-				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search [not working yet] </button>
+                <input type="text" name="search" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
+				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search </button>
               </form>
               </p>
 <!--              end search box-->

@@ -20,18 +20,24 @@ class website_client(http.Controller):
         res_user = pool.get('res.users').browse(cr,uid,uid,context)
         context['lang'] = res_user.lang
 
-        clients = []
-        for c in request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context):
-#        for c in request.registry['res.partner'].browse(cr,uid,companies,request.registry['res.partner'].search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)],context=context),context=context):
-            if c.is_company:       # Companies
-                clients += c
-            elif not c.parent_id:  # Individuals
-                clients += c
-
+        clients = request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context).filtered(lambda r: r.is_company or not r.parent_id)
+                                                                                                                                                                                            # Companies or individuals
+            
+        if search:
+            clients = clients.filtered(lambda r: (
+                    search in (r.name or '') 
+                or  search in (r.comment or '') 
+                or  search in (r.email or '') 
+                or  search in (r.phone or '') 
+                or  search in (r.street or '') 
+                or  search in (r.country_id.name or '')
+                ))
+        _logger.info('Search %s %s' % (search,clients))
 
         values = {
             'client_menu': 'active',
             'context': context,
+            'search': search,
             'res_user': res_user,
             'res_partners': clients,
 #            'res_partners': request.registry.get('res.partner').browse(cr,uid,request.registry.get('res.partner').search(cr,uid,['&','|',('company_id','=',res_user.company_id.id)]),context=context),

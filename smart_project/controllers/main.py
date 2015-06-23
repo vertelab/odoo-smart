@@ -15,19 +15,36 @@ _logger = logging.getLogger(__name__)
                 
 class website_project(http.Controller):
 
-    @http.route(['/project/list'], type='http', auth="user", website=True)
+    @http.route(['/project/list','/project/list/<string:search>'], type='http', auth="user", website=True)
     def project_list(self, search='', **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 
         res_user = request.registry.get('res.users').browse(cr,uid,uid)
         context['lang'] = res_user.lang
                 
-        analytic_ids = pool.get('account.analytic.account').search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)])                
+        analytic_ids = pool.get('account.analytic.account').search(cr,uid,['|',('company_id','=',False),('company_id','=',res_user.company_id.id)])
+        projects = pool.get('project.project').browse(cr,uid,pool.get('project.project').search(cr,uid,[('analytic_account_id','in',analytic_ids)],context=context),context=context)
+        
+        
+        
+        if search:
+            projects = projects.filtered(lambda r: (
+                    search in (r.name or '') 
+                or  search in (r.state or '') 
+                or  search in (r.analytic_account_id.partner_id.name or '') 
+                or  search in (r.analytic_account_id.partner_id.email or '') 
+                or  search in (r.analytic_account_id.partner_id.phone or '') 
+                or  search in (r.analytic_account_id.partner_id.street or '') 
+                or  search in (r.analytic_account_id.partner_id.country_id.name or '')
+                ))
+        _logger.info('Search %s %s' % (search,projects))
+        
         values = {
             'context': context,
             'project_menu': 'active',
+            'search': search,
             'res_user': res_user,
-            'projects': pool.get('project.project').browse(cr,uid,pool.get('project.project').search(cr,uid,[('analytic_account_id','in',analytic_ids)],context=context),context=context),
+            'projects': projects,
         }
         return request.website.render("smart_project.list", values)       
 

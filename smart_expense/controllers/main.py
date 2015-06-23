@@ -18,18 +18,31 @@ _logger = logging.getLogger(__name__)
         
 class website_expense(http.Controller):
 
-    @http.route(['/expense/list','/expense'], type='http', auth="user", website=True)
-    def expense_list(self, **post):
+    @http.route(['/expense/list','/expense','/expense/list/<string:search>'], type='http', auth="user", website=True)
+    def expense_list(self, search='',**post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 
         res_user = request.registry.get('res.users').browse(cr,uid,uid)
         context['lang'] = res_user.lang
         
+        expenses = request.registry.get('hr.expense.expense').browse(cr,uid,request.registry.get('hr.expense.expense').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context)
+        
+        if search:
+            expenses = expenses.filtered(lambda r: (
+                    search in (r.name or '') 
+                or  search in (r.state or '') 
+                or  search in (r.note or '') 
+                or  search in (r.employee_id.name or '') 
+                or  search in (r.department_id.name or '') 
+                ))
+        _logger.info('Search %s %s' % (search,expenses))
+        
         values = {
             'context': context,
             'expense_menu': 'active',
             'res_user': res_user,
-            'expenses': request.registry.get('hr.expense.expense').browse(cr,uid,request.registry.get('hr.expense.expense').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context),
+            'search': search,
+            'expenses': expenses,
         }
         return request.website.render("smart_expense.list",values)
 
@@ -45,6 +58,7 @@ class website_expense(http.Controller):
             'context': context,
             'expense_menu': 'active',
             'res_user': res_user,
+            'search': search,
             'expenses': request.registry.get('hr.expense.expense').browse(cr,uid,request.registry.get('hr.expense.expense').search(cr,uid,[]),context=context),
         }
         return request.website.render("smart_expense.list",values)

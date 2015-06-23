@@ -46,7 +46,7 @@
                 
               <p>
 			   <form class="form-horizontal form-preview"   action="/order/list"  method="POST">   
-                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
+                <input type="text" name="search" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
 				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search</button>
               </form>
               </p>
@@ -183,7 +183,7 @@
 <!--              start search box-->
               <p>
 			   <form class="form-horizontal form-preview"   action="/order/list/all"  method="POST">   
-                <input type="text" name="search_phrase" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
+                <input type="text" name="search" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
 				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search [not working yet]</button>
               </form>
               </p>

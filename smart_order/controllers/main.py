@@ -24,9 +24,9 @@ _logger = logging.getLogger(__name__)
         
 class website_order(http.Controller):
 
-    @http.route(['/order/list',], type='http', auth="public", website=True)
+    @http.route(['/order/list','/order/list/<string:search>'], type='http', auth="public", website=True)
 #    @http.route(['/order/list',], type='http', auth="user", website=True)
-    def order_list(self, **post):
+    def order_list(self, search='',**post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 
         res_user = request.registry.get('res.users').browse(cr,uid,uid)
@@ -42,32 +42,30 @@ class website_order(http.Controller):
 #       origin note client_order_ref name
 #       origin note description name
         
-        if post.get('search_phrase'):
-            order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id),'|',
-                                                                                ('partner_id.name','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('partner_id.street','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('partner_id.city','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('project_id.name','ilike','%%%s%%' % post.get('search_phrase')),                                                            
-#                                                                                ('client_order_ref','ilike','%%%s%%' % post.get('search_phrase')),
-                                                                                ('description','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('origin','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('name','ilike','%%%s%%' % post.get('search_phrase')),
-#                                                                                ('note','ilike','%%%s%%' % post.get('search_phrase'))
-#            order_ids = request.registry.get('sale.order').search(cr,uid,[('partner_id.name','ilike','%%%s%%' % post.get('search_phrase')),
-                                                                                
-                                                                                
-                                                                                ],context=context)
-        else:
-            order_ids = request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)],context=context)
+        orders = request.registry.get('sale.order').browse(cr,uid,request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context)
+                                                                                                                                                                                                    # Companies or individuals
+        if search:
+            orders = orders.filtered(lambda r: (
+                    search in (r.name or '') 
+                or  search in (r.partner_id.city or '') 
+                or  search in (r.partner_id.street or '') 
+                or  search in (r.partner_id.name or '') 
+                or  search in (r.project_id.name or '') 
+                or  search in (r.client_order_ref or '') 
+                or  search in (r.description or '') 
+                or  search in (r.origin or '')
+                or  search in (r.state or '')
+                ))
+            _logger.info('Search %s %s' % (search,orders))
             
         values = {
             'context': context,
             'order_menu': 'active',
             'res_user': res_user,
             'form_action': '/order/list',
-            'search_phrase': post.get('search_phrase'),
+            'search': search,
 #            'sale_orders': request.registry.get('sale.order').browse(cr,uid,request.registry.get('sale.order').search(cr,uid,[('company_id','=',res_user.company_id.id)]),context=context),
-            'sale_orders': request.registry.get('sale.order').browse(cr,uid,order_ids,context=context),
+            'sale_orders': orders,
         }
         return request.website.render("smart_order.list",values)
         
@@ -125,12 +123,36 @@ class website_order(http.Controller):
 #        }
 #        return request.website.render("smart_order.list",values)
 
+    @http.route(['/order/<model("sale.order"):sale_order>/print',], type='http', auth="user", website=True)
+    def order_print(self, sale_order=False, **post):
+        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
+        
+        res_user = pool.get('res.users').browse(cr,uid,uid,context)
+        context['lang'] = res_user.lang
+
+
+        report = pool.get('report').browse(cr,uid,pool.get('report').search(cr,uid,[('name','=','invocie'),]))
+        
+        document = report.get_pdf('invoice',data=sale_order.id)
+
+        #return request.website.render(template, values)
+        
+        return request.make_response(
+            document,
+            headers=[
+                ('Content-Disposition', 'attachment; filename="%s.xml"'
+                 % sale_order.name),
+                ('Content-Type', 'application/pdf'),
+                ('Content-Length', len(document)),
+            ]
+        )
+
+
 
     @http.route(['/order/<model("sale.order"):sale_order>',
     '/order/new',
     '/order/<model("sale.order"):sale_order>/edit_lines',
     '/order/<model("sale.order"):sale_order>/edit_order_data',
-    '/order/<model("sale.order"):sale_order>/print',
     '/order/<model("sale.order"):sale_order>/cancel/',
     '/order/<model("sale.order"):sale_order>/line/<model("sale.order.line"):sale_order_line>/delete',
     ], type='http', auth="user", website=True)
