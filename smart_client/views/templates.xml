@@ -7,106 +7,106 @@
 <template name="Client list" id="list">
     <t t-call="smart_common.layout">
 
-	    
-	    <div class="content span10">
+        
+        <div class="content span10">
       
     
         <!-- ** CURRENT VIEW CONTENT ** -->
-        	      
-	          <div class="panelsheet">
-	            <header class="panelsheet-header clearfix">
-	             <div class="title">
-	                <h1>Clients</h1>
-	                <div class="pull-right">
-	                  <a href="/client/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new client</a>
-	                </div>
-	              </div>
+                  
+              <div class="panelsheet">
+                <header class="panelsheet-header clearfix">
+                 <div class="title">
+                    <h1>Clients</h1>
+                    <div class="pull-right">
+                      <a href="/client/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new client</a>
+                    </div>
+                  </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
               <BR/>
               <BR/>
               Here is an explanation text</p>
-<!--              </div>-->	              
-	            </header>
-		      
-	            <div class="panelsheet-content">
-	              
-	              <section class="panelsheet-section">
+<!--              </div>-->               
+                </header>
+              
+                <div class="panelsheet-content">
+                  
+                  <section class="panelsheet-section">
 
 
-            <t groups="smart_common.group_smart_debug">
+            
 <!--              start search box-->
               <p>
-			   <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   
+               <form class="form-horizontal form-preview"   action="/client/list"  method="POST">   
                 <input type="text" name="search" class="input-xlarge search-query" placeholder="Search for: Description, Client, date... Reset with empty search."/> 
-				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search </button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search </button>
               </form>
               </p>
 <!--              end search box-->
-			</t>
+            
 
-	                
-	                <table class="table table-striped" >
-		  	          <thead>
-		  	            <tr>
-		   	              <th></th>
+                    
+                    <table class="table table-striped" >
+                      <thead>
+                        <tr>
+                          <th></th>
 
-		   	              <th><span class="muted">Name (Number of contact persons) </span> </th>
-		  	              <th><span class="muted">Adress</span></th>
-		  	              <th><span class="muted">Country</span></th>
-<!--		  	              <th><span class="muted">VAT number</span></th>-->
-		  	              <th><span class="muted"> </span></th>  	              
-		  	            </tr>
-		  	          </thead>
-	
-	  	          <tbody>
-	     	     		<t t-foreach="res_partners" t-as="c">
-<!--						<t t-if="not c.name='Template User' ">-->
+                          <th><span class="muted">Name (Number of contact persons) </span> </th>
+                          <th><span class="muted">Adress</span></th>
+                          <th><span class="muted">Country</span></th>
+<!--                          <th><span class="muted">VAT number</span></th>-->
+                          <th><span class="muted"> </span></th>                   
+                        </tr>
+                      </thead>
+    
+                  <tbody>
+                        <t t-foreach="res_partners" t-as="c">
+<!--                        <t t-if="not c.name='Template User' ">-->
 
 
-	                       <tr>
+                           <tr>
 <!-- display an icon based on what type of client it is -->
-							<td>
-							<t t-if="not c.is_company and c.parent_id"> <i class="glyphicon glyphicon-user" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
+                            <td>
+                            <t t-if="not c.is_company and c.parent_id"> <i class="glyphicon glyphicon-user" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
                             <t t-if="not c.is_company and not c.parent_id"> <i class="glyphicon glyphicon-user" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
                             <t t-if="c.is_company and not c.parent_id"> <i class="glyphicon glyphicon-briefcase" style="opacity: 0.4; margin: 0px 0px;"></i> </t>
-                            							</td>
-							
+                                                        </td>
+                            
 <!--Display name of Company, Contact person or Individual-->
-							<td>
-						
-				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
-				                       		<t t-raw="c.parent_id.name"/>
-				                       </t>
-				                       <t t-if="c.is_company">
-				                       <a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> (<t t-raw="c.sudo().client_contact_counter"/>)
-				                       </t>
-	                       </td>
-	                       
-	                       <td><div t-raw="c.street"/></td>
-	                       
-	                       <td><div t-field="c.country_id.name"/></td>
+                            <td>
+                        
+                                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
+                                            <t t-raw="c.parent_id.name"/>
+                                       </t>
+                                       <t t-if="c.is_company">
+                                       <a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a> (<t t-raw="c.sudo().client_contact_counter"/>)
+                                       </t>
+                           </td>
+                           
+                           <td><div t-raw="c.street"/></td>
+                           
+                           <td><div t-field="c.country_id.name"/></td>
 
 
-<!--	                       <td><div t-field="c.vat" /></td>-->
-	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
-							</tr>
-						</t>      
-<!--						</t>      	  	            -->
-	  	          </tbody>
-	  	          
-	  	   	          
-	  	        </table>
-		          
-		          </section>
-		      
-	  	     
-	  	    </div> 
-			  
-		    </div>
-	        </div>
-<!--		</div>        -->
-	</t>        
+<!--                           <td><div t-field="c.vat" /></td>-->
+                           <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
+                            </tr>
+                        </t>      
+<!--                        </t>                        -->
+                  </tbody>
+                  
+                      
+                </table>
+                  
+                  </section>
+              
+             
+            </div> 
+              
+            </div>
+            </div>
+<!--        </div>        -->
+    </t>        
 </template>
 
 
@@ -114,88 +114,88 @@
 <template name="Client list" id="list_all">
     <t t-call="smart_common.layout">
 
-	    
-	    <div class="content span10">
+        
+        <div class="content span10">
       
     
         <!-- ** CURRENT VIEW CONTENT ** -->
-        	      
-	          <div class="panelsheet">
-	            <header class="panelsheet-header clearfix">
-	             <div class="title">
-	                <h1>All Clients</h1>
-	                <div class="pull-right">
-	                  <a href="/client/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new client</a>
-	                </div>
-	              </div>
+                  
+              <div class="panelsheet">
+                <header class="panelsheet-header clearfix">
+                 <div class="title">
+                    <h1>All Clients</h1>
+                    <div class="pull-right">
+                      <a href="/client/new" class="btn btn-large btn-primary"><i class="icon-plus"></i>Add a new client</a>
+                    </div>
+                  </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
               <BR/>
               <BR/>
               Here is an explanation text</p>
 <!--              </div>-->
-	            </header>
-		      
-	            <div class="panelsheet-content">
-	              
-	              <section class="panelsheet-section">
-	                
-	                <table class="table table-striped" >
-		  	          <thead>
-		  	            <tr>
-		   	              <th><span class="muted">Acitivity</span></th>
-		   	              <th><span class="muted">Name</span></th>
-		  	              <th><span class="muted">Adress</span></th>
-		  	              <th><span class="muted">Country</span></th>
-		  	              <th><span class="muted">Type</span></th>
-<!--		  	              <th><span class="muted">VAT number</span></th>-->
-		  	              <th><span class="muted"> </span></th>  	              
-		  	            </tr>
-		  	          </thead>
-	
-	  	          <tbody>
-	     	     		<t t-foreach="res_partners" t-as="c">
-	                       <tr>
-	                       <td><div t-raw="c.company_id.name"/></td>	                       
-							<td>
+                </header>
+              
+                <div class="panelsheet-content">
+                  
+                  <section class="panelsheet-section">
+                    
+                    <table class="table table-striped" >
+                      <thead>
+                        <tr>
+                          <th><span class="muted">Acitivity</span></th>
+                          <th><span class="muted">Name</span></th>
+                          <th><span class="muted">Adress</span></th>
+                          <th><span class="muted">Country</span></th>
+                          <th><span class="muted">Type</span></th>
+<!--                          <th><span class="muted">VAT number</span></th>-->
+                          <th><span class="muted"> </span></th>                   
+                        </tr>
+                      </thead>
+    
+                  <tbody>
+                        <t t-foreach="res_partners" t-as="c">
+                           <tr>
+                           <td><div t-raw="c.company_id.name"/></td>                           
+                            <td>
 <!--Display name of Company, Contact person or Individual-->
-				                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
-				                       		<t t-raw="c.parent_id.name"/>
-				                       </t>
-				                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a>
-				                       </t>
-	                       </td>
-	                       
-	                       <td><div t-raw="c.street"/></td>
-	                       
-	                       <td><div t-field="c.country_id.name"/></td>
+                                       <t t-if="not c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a><br/>
+                                            <t t-raw="c.parent_id.name"/>
+                                       </t>
+                                       <t t-if="c.is_company"><a t-att-href="'/client/%s' % c.id"><strong><t t-raw="c.name"/></strong></a>
+                                       </t>
+                           </td>
+                           
+                           <td><div t-raw="c.street"/></td>
+                           
+                           <td><div t-field="c.country_id.name"/></td>
 
 
-<!--Type	                       -->
-	                       <td>
+<!--Type                           -->
+                           <td>
                             <t t-if="not c.is_company and c.parent_id"> <span class="muted">Contact person</span> </t>
                             <t t-if="not c.is_company and not c.parent_id"> <span class="muted">Individual</span> </t>
                             <t t-if="c.is_company and not c.parent_id"> <span class="muted">Organisation</span> </t>
-	                       </td>
-<!--	                       <td><div t-field="c.vat" /></td>-->
-	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
-							</tr>
-						</t>      
-	  	            
-	  	          </tbody>
-	  	          
-	  	   	          
-	  	        </table>
-		          
-		          </section>
-		      
-	  	     
-	  	    </div> 
-			  
-		    </div>
-	        </div>
-<!--		</div>        -->
-	</t>        
+                           </td>
+<!--                           <td><div t-field="c.vat" /></td>-->
+                           <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       
+                            </tr>
+                        </t>      
+                    
+                  </tbody>
+                  
+                      
+                </table>
+                  
+                  </section>
+              
+             
+            </div> 
+              
+            </div>
+            </div>
+<!--        </div>        -->
+    </t>        
 </template>
 
 
@@ -207,7 +207,7 @@
     <t t-call="smart_common.layout">
         
 
-   	    <div class="content span10">
+        <div class="content span10">
       
         <!-- ** CURRENT VIEW CONTENT ** -->
         
@@ -215,7 +215,7 @@
           <div class="panelsheet">
             <header class="panelsheet-header clearfix">
               <div class="title">
-	        	<h1>
+                <h1>
 <!--                    <t t-if="not res_partner">New Client Organisation </t>-->
                     <t t-if="res_partner">Edit Client Organisation</t>
                 </h1>
@@ -233,8 +233,8 @@
               Here is an explanation text</p>
 <!--              </div>-->
             </header>
-            		
-		
+                    
+        
                     <p class="alert alert-danger" t-if="error">
                         <t t-esc="error"/>
                     </p>
@@ -246,300 +246,315 @@
               
               <section class="panelsheet-section">
                 
-			                          
-<!--			        <div style="max-width: 270px; margin: 30px auto 10px;">-->
-<!--			    	    <div class="btn-group btn-group-large">-->
-<!--						    <a href="/client/" class="btn btn-large active icon-briefcase">Organisation</a>-->
-<!--						    <a href="../client_individual/" class="btn btn-large icon-user">Individual</a>-->
+                                      
+<!--                    <div style="max-width: 270px; margin: 30px auto 10px;">-->
+<!--                        <div class="btn-group btn-group-large">-->
+<!--                            <a href="/client/" class="btn btn-large active icon-briefcase">Organisation</a>-->
+<!--                            <a href="../client_individual/" class="btn btn-large icon-user">Individual</a>-->
 
-<!--	                       <field name="is_company" on_change="onchange_type(is_company)" class="oe_inline"/> <label for="is_company" string="Is a Company?"/>-->
+<!--                           <field name="is_company" on_change="onchange_type(is_company)" class="oe_inline"/> <label for="is_company" string="Is a Company?"/>-->
 
-<!--			    	    </div>-->
-<!--			  	    </div>-->
-			  	    
+<!--                        </div>-->
+<!--                    </div>-->
+                    
 
 
   <!-- Import libs -->
 <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-<!--				        <div style="max-width: 270px; margin: 30px auto 10px;">-->
-<!--				    	    <div class="btn-group">-->
-<!--				    	      <button id="client-type-company" class="btn btn-large active"><i class="icon-briefcase"></i> Company</button>-->
-<!--				    	      <button id="client-type-individual" class="btn btn-large"><i class="icon-user"></i> Individual</button>-->
-<!--  				    	      <a t-att-href="'/client/7/'" class="btn btn-large icon-briefcase active"> <strong> Organisation</strong></a>-->
-<!--				    	      <a t-att-href="'/client/7/client_individual/'" class="btn btn-large icon-user"> <strong> Individual</strong></a>-->
-<!--				    	    </div>-->
-<!--				  	    </div>-->
+<!--                        <div style="max-width: 270px; margin: 30px auto 10px;">-->
+<!--                            <div class="btn-group">-->
+<!--                              <button id="client-type-company" class="btn btn-large active"><i class="icon-briefcase"></i> Company</button>-->
+<!--                              <button id="client-type-individual" class="btn btn-large"><i class="icon-user"></i> Individual</button>-->
+<!--                              <a t-att-href="'/client/7/'" class="btn btn-large icon-briefcase active"> <strong> Organisation</strong></a>-->
+<!--                              <a t-att-href="'/client/7/client_individual/'" class="btn btn-large icon-user"> <strong> Individual</strong></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-			  	    
-			  	    
-						<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+                    
+                    
+                        <form class="form-horizontal" t-attf-action="#{form_post}" method="post">
                     <t t-if="not res_partner"><input type="hidden" id="is_company" name="is_company" /></t>
                     <t t-if="res_partner"><input type="hidden" id="is_company" name="is_company" t-attf-value="#{res_partner.is_company}"/></t>
                     
-						                          			          
-						
-													                            			          
-			          <!-- COMPANY -->
-			          <div id="panel1" class="panel-company">
-			            <fieldset>
-			              <legend>Legal Information</legend>
+                                                                      
+                        
+                                                                                                      
+                      <!-- COMPANY -->
+                      <div id="panel1" class="panel-company">
+                        <fieldset>
+                          <legend>Legal Information</legend>
 
-			              <div class="control-group company name">
-			                <label class="control-label" for="input01"><strong>Company name</strong></label>
-			                <div class="controls">
-								<input type="text" size="30" class="input-xlarge inline" id="name" name="name" placeholder="Your clients name" t-attf-value="#{res_partner.name}"/>
-			                </div>
-			              </div>
+                          <div class="control-group company name">
+                            <label class="control-label" for="input01"><strong>Company name</strong></label>
+                            <div class="controls">
+                                <input type="text" size="30" class="input-xlarge inline" id="name" name="name" placeholder="Your clients name" t-attf-value="#{res_partner.name}"/>
+                            </div>
+                          </div>
 
-<!--			              <div class="control-group company name">-->
-<!--			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>-->
-<!--			                <div class="controls">-->
-<!--								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>-->
-<!--			                </div>-->
-<!--			              </div>-->
+<!--                          <div class="control-group company name">-->
+<!--                            <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>-->
+<!--                            <div class="controls">-->
+<!--                                <input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>-->
+<!--                            </div>-->
+<!--                          </div>-->
 
 
 
-           	            <t t-if="not res_partner.is_company">
-			              <div class="control-group is_company ">
-			                <label class="control-label" for="input01"><strong>Type</strong></label>
-			                <div class="controls">
-	             	            <input type="checkbox" id="is_company" name="is_company" t-attf-value="#{res_partner.is_company}"/> Organisation
-			                </div>
-			              </div>
-						</t>
+                        <t t-if="not res_partner.is_company">
+                          <div class="control-group is_company ">
+                            <label class="control-label" for="input01"><strong>Type</strong></label>
+                            <div class="controls">
+                                <input type="checkbox" id="is_company" name="is_company" t-attf-value="#{res_partner.is_company}"/> Organisation
+                            </div>
+                          </div>
+                        </t>
 
-			              
-<!--			              <div class="control-group businessID">-->
-<!--			                <label class="control-label" for="inputvat"><strong>Company registration number</strong></label>-->
-<!--			                <div class="controls inline">-->
-<!--								<input type="text" class="input-xlarge inline" id="company_registry" name="company_registry" placeholder="UnLinked Your organisations id nr" t-attf-value="#{res_partner.company_registry}"/>-->
-<!--			                </div>-->
-<!--			              </div>-->
+                          
+<!--                          <div class="control-group businessID">-->
+<!--                            <label class="control-label" for="inputvat"><strong>Company registration number</strong></label>-->
+<!--                            <div class="controls inline">-->
+<!--                                <input type="text" class="input-xlarge inline" id="company_registry" name="company_registry" placeholder="UnLinked Your organisations id nr" t-attf-value="#{res_partner.company_registry}"/>-->
+<!--                            </div>-->
+<!--                          </div>-->
 
-<!--			              <div class="control-group VAT">-->
-<!--			                <label class="control-label" for="inputvat"><strong>VAT registration number</strong></label>-->
-<!--			                <div class="controls">-->
-<!--								<input type="text" class="input-xlarge inline" id="vat_number" name="vat_number" placeholder="UnLinked Your VAT number" t-attf-value="#{res_partner.vat_number}"/>-->
-<!--			                </div>-->
-<!--			              </div>-->
+<!--                          <div class="control-group VAT">-->
+<!--                            <label class="control-label" for="inputvat"><strong>VAT registration number</strong></label>-->
+<!--                            <div class="controls">-->
+<!--                                <input type="text" class="input-xlarge inline" id="vat_number" name="vat_number" placeholder="UnLinked Your VAT number" t-attf-value="#{res_partner.vat_number}"/>-->
+<!--                            </div>-->
+<!--                          </div>-->
 
-			            </fieldset>
-			            
-			            <fieldset>
-			              <legend>Registered office address</legend>
-			              <div class="control-group address">
-			                <label class="control-label"><strong>Address</strong></label>
-			                <div class="controls">
-								<input type="text" size="30" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/>
-			                </div>
-			                <div class="controls" style="margin-top: 8px;">
-								<input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/>
-			                </div>
-			              </div>
-			              <div class="control-group postal code">
-			                <label class="control-label"><strong>Postal code</strong></label>
-			                <div class="controls">
-			                   	<input type="text" size="10" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/>
-			                </div>
-			              </div>
-			              <div class="control-group city">
-			                <label class="control-label" for="inputCity"><strong>City</strong></label>
-			                <div class="controls">
-				           	<input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/>
-			                </div>
-			              </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                          <legend>Registered office address</legend>
+                          <div class="control-group address">
+                            <label class="control-label"><strong>Address</strong></label>
+                            <div class="controls">
+                                <input type="text" size="30" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/>
+                            </div>
+                            <div class="controls" style="margin-top: 8px;">
+                                <input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/>
+                            </div>
+                          </div>
+                          <div class="control-group postal code">
+                            <label class="control-label"><strong>Postal code</strong></label>
+                            <div class="controls">
+                                <input type="text" size="10" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/>
+                            </div>
+                          </div>
+                          <div class="control-group city">
+                            <label class="control-label" for="inputCity"><strong>City</strong></label>
+                            <div class="controls">
+                            <input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/>
+                            </div>
+                          </div>
 
-			              
-			             <div class="control-group">
-    				        <label class="control-label" for="country"><strong>Country</strong></label>
-    				        <div class="controls">
+                          
+                         <div class="control-group">
+                            <label class="control-label" for="country"><strong>Country</strong></label>
+                            <div class="controls">
                                  <select name="country_id">
 <!--                                        <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> -->
                                     <t t-foreach="res_countrys" t-as="c">
                                         <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.sudo().code"/>, <t t-esc="c.name"/></option> 
                                     </t>
                                 </select>
-<!--								 <t t-esc="res_partner.country_id.name"/>-->
+<!--                                 <t t-esc="res_partner.country_id.name"/>-->
 
-    				        </div>
-    				      </div>
+                            </div>
+                          </div>
 
-			            
-				         </fieldset>
-
-
-			
-					<fieldset>
-		              <legend>Company registration and VAT-number </legend>
-
-    					   <div class="form-group" t-if="res_company.country_id.code in ['NL','DE']">
-<!--						   <div class="control-group company name">-->
-			                <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
-			                <div class="controls">
-								<input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>
-			                </div>
-			              </div>
+                        
+                         </fieldset>
 
 
+            
+                    <fieldset>
+                      <legend>Company registration and VAT-number </legend>
 
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>VAT-number</strong></label>  <a class="tip" data-toogle="tooltip" data-placement="top" title="Use full international VAT-format: SE012345678901."> <i class="glyphicon glyphicon-question-sign"></i></a>
-			                <div class="controls">
-				               	<input type="text" id="vat" name="vat" placeholder="SE012345678901" t-attf-value="#{res_partner.vat}" />
-			                </div>
-			              </div>
-			            </fieldset>
-
-			
-			
-						<fieldset>
-			              <legend>Company Phone and Email</legend>
-			                  <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Phone</strong></label>
-			                <div class="controls">
-				               	<input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.phone}"/>
-			                </div>
-			              </div>
-
-
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Email</strong></label>
-			                <div class="controls">
-				               	<input type="text" size="60" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}" />
-			                </div>
-			              </div>
-			            </fieldset>
-
-			
-						<fieldset>
-			              <legend>Notes</legend>
-			                  <p class="help-block">Use this field for comments or additional info to SMart.</p>
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Comments</strong></label>
-			                <div class="controls">
-<!--				               	<input type="text" id="comment" name="comment" t-attf-value="#{res_partner.comment}"/>-->
-                          <textarea name="comment" rows="4" cols="60" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
-			                </div>
-			              </div>
-			            </fieldset>
+                           <div class="form-group" t-if="res_company.country_id.code in ['NL','DE']">
+<!--                           <div class="control-group company name">-->
+                            <label class="control-label" for="input01"><strong>Company reference ID </strong></label> <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."> <i class="glyphicon glyphicon-question-sign"></i></a>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{res_partner.ref}"/>
+                            </div>
+                          </div>
 
 
 
-			            <fieldset>
-  							<div class="control-group">
-					  		  <div class="controls">
-					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
-						<a href="#" onclick="history.go(-1)" class="btn btn-large ">Back</a>
-					  		  </div>
-					    	</div>
-			            </fieldset>
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>VAT-number</strong></label>  <a class="tip" data-toogle="tooltip" data-placement="top" title="Use full international VAT-format: SE012345678901."> <i class="glyphicon glyphicon-question-sign"></i></a>
+                            <div class="controls">
+                                <input type="text" id="vat" name="vat" placeholder="SE012345678901" t-attf-value="#{res_partner.vat}" />
+                                 <span class="help-inline" t-if="vat_error"><t t-esc="vat_error"/></span>
+                            </div>
+                          </div>
+                        </fieldset>
 
-							<hr/>
-			
-			            
-<!--			            start Contact person -->
-			
+            
+            
+                        <fieldset>
+                          <legend>Company Phone and Email</legend>
+                              <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Phone</strong></label>
+                            <div class="controls">
+                                <input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.phone}"/>
+                            </div>
+                          </div>
 
-			            
-			            <fieldset>
-			              <legend>Contact persons</legend>
 
- 				 <div class="panelsheet-content">
-	              
-	              		<section class="panelsheet-section">
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Email</strong></label>
+                            <div class="controls">
+                                <input type="text" size="60" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}" />
+                            </div>
+                          </div>
+                        </fieldset>
+
+            
+                        <fieldset>
+                          <legend>Notes</legend>
+                              <p class="help-block">Use this field for comments or additional info to SMart.</p>
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Comments</strong></label>
+                            <div class="controls">
+                                <textarea name="comment" rows="4" cols="60" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
+                            </div>
+                          </div>
+                        </fieldset>
+
+
+
+                        <fieldset>
+                            <div class="control-group">
+                                 
+<!--
+                                <p class="alert alert-success" t-if="message"><t t-esc="message"/></p>
+                                <p class="alert alert-danger"  t-if="error"><t t-esc="error"/></p>
+-->
+                                
+                              <div class="controls">
+                                <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+                        <a href="#" onclick="history.go(-1)" class="btn btn-large ">Cancel</a>
+                              </div>
+                            </div>
+                        </fieldset>
+
+                            <hr/>
+            
+                        
+<!--                        start Contact person -->
+            
+
+                        
+                        <fieldset>
+                          <legend>Contact persons</legend>
+
+                 <div class="panelsheet-content">
+                  
+                        <section class="panelsheet-section">
 
                        <form class="form-horizontal form-preview"   t-attf-action="#{form_action}"  method="POST">
-	                
-			                <table class="table table-striped" >
-					  	          <thead>
-					  	            <tr>
-					   	              <th><span class="muted">Name</span></th>
-<!--					   	              <th><span class="muted">First Name</span></th>-->
-<!--					   	              <th><span class="muted">Last Name</span></th>-->
+                    
+                            <table class="table table-striped" >
+                                  <thead>
+                                    <tr>
+                                      <th><span class="muted">Name</span></th>
+<!--                                      <th><span class="muted">First Name</span></th>-->
+<!--                                      <th><span class="muted">Last Name</span></th>-->
 
-<!--					  	              <th><span class="muted">Office</span></th>-->
-					  	              <th><span class="muted">Mobile</span></th>
-					  	              <th><span class="muted">Email</span></th>
-			<!--		  	              <th><span class="muted"> </span></th>  	              -->
-					  	            </tr>
-					  	          </thead>
-			
-					  	          <tbody>
-							          	<t t-foreach="res_partner.child_ids" t-as="ccp">
-					                       <tr>
-					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.name"/></a></td>
-<!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.firstname"/></a></td>-->
-<!--					                       <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.lastname"/></a></td>-->
-<!--				                       <td><div t-field="ccp.phone" /></td>-->
-					                       <td><div t-raw="ccp.mobile" /></td>
-					                       <td><div t-field="ccp.email" /></td>
-			<!--	                       <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       -->
-											</tr>
-										</t>      
+<!--                                      <th><span class="muted">Office</span></th>-->
+                                      <th><span class="muted">Mobile</span></th>
+                                      <th><span class="muted">Email</span></th>
+            <!--                          <th><span class="muted"> </span></th>                   -->
+                                    </tr>
+                                  </thead>
+            
+                                  <tbody>
+                                        <t t-foreach="res_partner.child_ids" t-as="ccp">
+                                           <tr>
+                                           <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.name"/></a></td>
+<!--                                           <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.firstname"/></a></td>-->
+<!--                                           <td class="cell-primary"><a  t-att-href="'/client/%s' % ccp.id"><t t-raw="ccp.lastname"/></a></td>-->
+<!--                                       <td><div t-field="ccp.phone" /></td>-->
+                                           <td><div t-raw="ccp.mobile" /></td>
+                                           <td><div t-field="ccp.email" /></td>
+            <!--                           <td><a  t-att-href="'/client/%s/delete' % c.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a></td>                       -->
+                                            </tr>
+                                        </t>      
 
 
 
-			               <tr>
+                           <tr>
                               <td><input type="text" id="name" name="ccp_name" placeholder="Name"/></td>
 <!--                              <td><input type="text" id="firstname" name="ccp_firstname" placeholder="First Name"/></td>-->
 <!--                              <td><input type="text" id="lastname" name="ccp_lastname" placeholder="Last Name"/></td>-->
 <!--                              <td><input type="text" id="phone" size="10" name="res_partner.child_id.phone" align="right" placeholder="Phone" /></td>                              -->
                               <td><input type="text" id="mobile" size="10" name="ccp_mobile" align="right" placeholder="Mobile" /></td>
-				              <td><input type="text" id="email" size="20" name="ccp_email" placeholder="first.last@company.org" /></td>
+                              <td><input type="text" id="email" size="20" name="ccp_email" placeholder="first.last@company.org" /></td>
                             </tr>
 
 
 
-								 </tbody>
-							 </table>
+                                 </tbody>
+                             </table>
 
-  							<div class="control-group">
-					  		  <div class="controls">
-			                    <input type="hidden" name="redirect" t-att-value="'/client/%s' % res_partner.id"/>					  		  
-					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
-								<a href="#" onclick="history.go(-1)" class="btn btn-large ">Back</a>					  		    
-					  		  </div>
-					    	</div>
+                            <div class="control-group">
+                                
+                  
+
+                              <div class="controls">
+                                  
+                                  
+                                  
+                                  
+<!--
+                                <input type="hidden" name="redirect" t-att-value="'/client/%s' % res_partner.id"/>                            
+-->
+                                <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+                                <a href="#" onclick="history.go(-1)" class="btn btn-large ">Cancel</a>                              
+                              </div>
+                            </div>
 
                         </form>
 
 
-						 </section>
+                         </section>
 
-				 </div>
-<!--			              <div class="control-group">-->
-<!--			                <label class="control-label" for="contactName"><strong>Name</strong></label>-->
-<!--			                <div class="controls">-->
-<!--				           	<input type="text" id="city" name="contactName" placeholder="Your contacts name" t-attf-value="#{res_partner.child_ids.name}"/>-->
-<!--			                </div>-->
-<!--			              </div>-->
-<!--			              <div class="control-group">-->
-<!--			                <label class="control-label" for="contactName"><strong>Phone</strong></label>-->
-<!--			                <div class="controls">-->
-<!--				               	<input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.child_ids.phone[0]}"/>-->
-<!--			                  <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>-->
-<!--			                </div>-->
-<!--			              </div>-->
-<!--			              <div class="control-group">-->
-<!--			                <label class="control-label" for="contactName"><strong>Email</strong></label>-->
-<!--			                <div class="controls">-->
-<!--				               	<input type="text" id="email" name="email" placeholder=" unlinked first.last@company.org" />-->
-<!--			                </div>-->
-<!--			              </div>-->
-			            </fieldset>
+                 </div>
+<!--                          <div class="control-group">-->
+<!--                            <label class="control-label" for="contactName"><strong>Name</strong></label>-->
+<!--                            <div class="controls">-->
+<!--                            <input type="text" id="city" name="contactName" placeholder="Your contacts name" t-attf-value="#{res_partner.child_ids.name}"/>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="control-group">-->
+<!--                            <label class="control-label" for="contactName"><strong>Phone</strong></label>-->
+<!--                            <div class="controls">-->
+<!--                                <input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.child_ids.phone[0]}"/>-->
+<!--                              <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="control-group">-->
+<!--                            <label class="control-label" for="contactName"><strong>Email</strong></label>-->
+<!--                            <div class="controls">-->
+<!--                                <input type="text" id="email" name="email" placeholder=" unlinked first.last@company.org" />-->
+<!--                            </div>-->
+<!--                          </div>-->
+                        </fieldset>
 
-			            
-			<!--            End Contact person-->
-		            
-			          
-			          </div>
-			          
+                        
+            <!--            End Contact person-->
+                    
+                      
+                      </div>
+                      
 
-			        </form>
-			      
-			      
+                    </form>
+                  
+                  
               </section>
               
             </div><!--/panelsheet-content-->
@@ -560,7 +575,7 @@
     <t t-call="smart_common.layout">
         
 
-   	    <div class="content span10">
+        <div class="content span10">
       
         <!-- ** CURRENT VIEW CONTENT ** -->
         
@@ -568,16 +583,16 @@
           <div class="panelsheet">
             <header class="panelsheet-header clearfix">
               <div class="title">
-			                    <t t-if="not res_partner"><h1>Add a new Client</h1></t>
+                                <t t-if="not res_partner"><h1>Add a new Client</h1></t>
 
-            			        <t t-if="res_partner">
-									<!--Edit Organisational client-->
-            			        	<t t-if="res_partner.parent_id"><h1>Contact person</h1></t>
-									<!--Edit Individual client-->
-<!--            			        	<t t-if="not res_partner.parent_id"><h1>An Individual client</h1></t>-->
-            			        	<t t-if="not res_partner.parent_id"><h1>Edit client</h1></t>
-            			        </t>
-	        	
+                                <t t-if="res_partner">
+                                    <!--Edit Organisational client-->
+                                    <t t-if="res_partner.parent_id"><h1>Contact person</h1></t>
+                                    <!--Edit Individual client-->
+<!--                                    <t t-if="not res_partner.parent_id"><h1>An Individual client</h1></t>-->
+                                    <t t-if="not res_partner.parent_id"><h1>Edit client</h1></t>
+                                </t>
+                
 <!--                <div class="pull-right">-->
 <!--                  <a href="/client_individual/new" class="btn btn-large btn-primary"><i class="icon-plus"></i> New Individual Client</a>-->
 <!--                </div>-->
@@ -598,14 +613,14 @@
 
 
 <!--                 <div style="max-width: 270px; margin: 30px auto 10px;">-->
-<!--			      <div class="btn-group">-->
-<!--			    	      <button id="client-type-company" class="btn btn-large "><i class="icon-briefcase"></i> Company</button>-->
-<!--			    	      <button id="client-type-individual" class="btn btn-large active"><i class="icon-user"></i> Individual</button>-->
-<!--			    	    </div>-->
-<!--			  	    </div>-->
-			  	    
-<!--			  	 Individual-->
-					<form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+<!--                  <div class="btn-group">-->
+<!--                          <button id="client-type-company" class="btn btn-large "><i class="icon-briefcase"></i> Company</button>-->
+<!--                          <button id="client-type-individual" class="btn btn-large active"><i class="icon-user"></i> Individual</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    
+<!--                 Individual-->
+                    <form class="form-horizontal" t-attf-action="#{form_post}" method="post">
 
 
                     <p class="alert alert-danger" t-if="error">
@@ -614,209 +629,211 @@
                     <p class="alert alert-success" t-if="message">
                         <t t-esc="message"/>
                     </p>
-	
-			          <div id="panel1" class="panel-company">
-			            <fieldset>
-<!--			              <legend>Legal Information</legend>-->
+    
+                      <div id="panel1" class="panel-company">
+                        <fieldset>
+<!--                          <legend>Legal Information</legend>-->
 
 
 
-			              <div class="control-group company name">
-			                <label class="control-label" for="input01"><strong>Name</strong></label>
-			                <div class="controls">
+                          <div class="control-group company name">
+                            <label class="control-label" for="input01"><strong>Name</strong></label>
+                            <div class="controls">
 <!--New Client Name-->
-<!--			                    <t t-if="not res_partner"><input type="text" id="name" name="name" placeholder="Your Clients name" /></t>-->
-			                    <t t-if="not res_partner">
-			                    	<input type="text" id="name" name="name" value="Your clients name"/>
-			                    </t>
+<!--                                <t t-if="not res_partner"><input type="text" id="name" name="name" placeholder="Your Clients name" /></t>-->
+                                <t t-if="not res_partner">
+                                    <input type="text" id="name" name="name" value="Your clients name"/>
+                                </t>
 
-            			        <t t-if="res_partner">
+                                <t t-if="res_partner">
 <!--Edit Organisational client-->
-            			        	<t t-if="res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.parent_id.name}"/></t>
+                                    <t t-if="res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.parent_id.name}"/></t>
 <!--Edit Individual client-->
-            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.name}"/></t>
-<!--            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="firstname" t-attf-value="#{res_partner.firstname}"/></t> -->
-<!--            			        	<t t-if="not res_partner.is_company"><input type="text" id="name" name="lastname" t-attf-value="#{res_partner.lastname}"/></t>-->
-								</t>
-			                </div>
-			              </div>
+                                    <t t-if="not res_partner.is_company"><input type="text" id="name" name="name" t-attf-value="#{res_partner.name}"/></t>
+<!--                                    <t t-if="not res_partner.is_company"><input type="text" id="name" name="firstname" t-attf-value="#{res_partner.firstname}"/></t> -->
+<!--                                    <t t-if="not res_partner.is_company"><input type="text" id="name" name="lastname" t-attf-value="#{res_partner.lastname}"/></t>-->
+                                </t>
+                            </div>
+                          </div>
 
-           			        <t t-if="res_partner">
-            			        <t t-if="res_partner.parent_id">
-					              <div class="control-group company name">
-					                <label class="control-label" for="input01"><strong>Organisation</strong></label>
-					                <div class="controls">
-<!--										<input type="text" id="name" name="name" t-attf-value="#{res_partner.parent_id.name}"/>-->
-										<t t-esc="res_partner.parent_id.name"/>
-					                </div>
-					              </div>
-								 </t>
-							</t>
+                            <t t-if="res_partner">
+                                <t t-if="res_partner.parent_id">
+                                  <div class="control-group company name">
+                                    <label class="control-label" for="input01"><strong>Organisation</strong></label>
+                                    <div class="controls">
+<!--                                        <input type="text" id="name" name="name" t-attf-value="#{res_partner.parent_id.name}"/>-->
+                                        <t t-esc="res_partner.parent_id.name"/>
+                                    </div>
+                                  </div>
+                                 </t>
+                            </t>
 
 
 <!--Start If new client: -->
-						<t t-if="not res_partner">
-			              <div class="control-group is_company ">
-			                <label class="control-label" for="input01"><strong>Type</strong></label>
-			                <div class="controls">
-<!--			                    <input type="checkbox" id="is_company" name="is_company"/> Organisation-->
-			                    <input type="checkbox" id="is_company" name="is_company" t-attf-value="TRUE"/> Organisation
-			                </div>
-			              </div>
-						</t>
+                        <t t-if="not res_partner">
+                          <div class="control-group is_company ">
+                            <label class="control-label" for="input01"><strong>Type</strong></label>
+                            <div class="controls">
+<!--                                <input type="checkbox" id="is_company" name="is_company"/> Organisation-->
+                                <input type="checkbox" id="is_company" name="is_company" t-attf-value="TRUE"/> Organisation
+                            </div>
+                          </div>
+                        </t>
 <!--End  If new client: -->
 
 <!--Start Individual client-->
 
-						<t t-if="res_partner">	
-            			        <t t-if="not res_partner.parent_id">
-			              <div class="control-group is_company ">
-			                <label class="control-label" for="input01"><strong>Type</strong></label>
-			                <div class="controls">
-								<input type="checkbox" id="is_company" name="is_company" t-attf-value="#{res_partner.is_company}"/> Organisation
-			                </div>
-			              </div>
-							</t>
-						</t>
+                        <t t-if="res_partner">  
+                                <t t-if="not res_partner.parent_id">
+                          <div class="control-group is_company ">
+                            <label class="control-label" for="input01"><strong>Type</strong></label>
+                            <div class="controls">
+                                <input type="checkbox" id="is_company" name="is_company" t-attf-value="#{res_partner.is_company}"/> Organisation
+                            </div>
+                          </div>
+                            </t>
+                        </t>
 <!--End individual client -->
 
-        	            
+                        
 
-			              
-			            </fieldset>
-			            
-			            <fieldset>
-			              <legend>Address</legend>
-			              <div class="control-group address">
-			                <label class="control-label"><strong>Address</strong></label>
-			                <div class="controls">
-			                    <t t-if="not res_partner"><input type="text" id="street" name="street" placeholder="Your street and number"/>  </t>
-            			        <t t-if="res_partner"><input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/> </t>
-			                </div>
-			                <div class="controls" style="margin-top: 8px;">
-								<t t-if="not res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info"/></t>
-								<t t-if="res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/></t>
-			                </div>
-			              </div>
-			              <div class="control-group postal code">
-			                <label class="control-label"><strong>Postal code</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" /></t>
-								<t t-if="res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/></t>
-			                </div>
-			              </div>
-			              <div class="control-group city">
-			                <label class="control-label" for="inputCity"><strong>City</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="city" name="city" placeholder="Your town" /></t>
-								<t t-if="res_partner"><input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/></t>
-			                </div>
-			              </div>
-			              
+                          
+                        </fieldset>
+                        
+                        <fieldset>
+                          <legend>Address</legend>
+                          <div class="control-group address">
+                            <label class="control-label"><strong>Address</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="street" name="street" placeholder="Your street and number"/>  </t>
+                                <t t-if="res_partner"><input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{res_partner.street}"/> </t>
+                            </div>
+                            <div class="controls" style="margin-top: 8px;">
+                                <t t-if="not res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info"/></t>
+                                <t t-if="res_partner"><input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{res_partner.street2}"/></t>
+                            </div>
+                          </div>
+                          <div class="control-group postal code">
+                            <label class="control-label"><strong>Postal code</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" /></t>
+                                <t t-if="res_partner"><input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{res_partner.zip}"/></t>
+                            </div>
+                          </div>
+                          <div class="control-group city">
+                            <label class="control-label" for="inputCity"><strong>City</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="city" name="city" placeholder="Your town" /></t>
+                                <t t-if="res_partner"><input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{res_partner.city}"/></t>
+                            </div>
+                          </div>
+                          
 
 
-						<t t-if="res_partner and not res_partner.parent_id">			              
-			              <div class="control-group country">
-			                <label class="control-label" for="select-country"><strong>Country</strong></label>
-			                <div class="controls">
-			                    <t t-if="not res_partner">
+                        <t t-if="res_partner and not res_partner.parent_id">                          
+                          <div class="control-group country">
+                            <label class="control-label" for="select-country"><strong>Country</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner">
                                  <select name="country_id">
                                     <t t-foreach="res_countrys" t-as="c">
-				                       <t t-if="not user_id.partner_id.country_id.id">
+                                       <t t-if="not user_id.partner_id.country_id.id">
                                         <option t-attf-value="#{c.id}" t-att-selected="c.id == user_id.partner_id.country_id.id"><t t-esc="user_id.partner_id.country_id.id.name"/></option> 
-										</t>
+                                        </t>
 
-				                       <t t-if="user_id.partner_id.country_id.id">
+                                       <t t-if="user_id.partner_id.country_id.id">
                                         <option t-attf-value="#{c.id}" t-att-selected="c.id == user_id.partner_id.country_id.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
-										</t>
+                                        </t>
                                     </t>
                                 </select>
                                 </t>
 
 
-			                    <t t-if="res_partner">
+                                <t t-if="res_partner">
                                  <select name="country_id">
                                     <t t-foreach="res_countrys" t-as="c">
                                         <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
                                     </t>
                                 </select>
-			                    </t>
+                                </t>
 
-<!--			                <div t-raw="res_partner.country_id.name"/>-->
-			                </div>
-			              </div>
-			            </t>
+<!--                            <div t-raw="res_partner.country_id.name"/>-->
+                            </div>
+                          </div>
+                        </t>
 
-			              
-				         </fieldset>
-
-
-			            <fieldset>
-			              <legend>Phone and Email</legend>
-			                  <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Phone</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="phone" name="phone" placeholder="+32 123..." /></t>
-								<t t-if="res_partner"><input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.phone}"/></t>
-			                </div>
-			              </div>
-
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Mobile</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="mobile" name="mobile" placeholder="+32 123..." /></t>
-								<t t-if="res_partner"><input type="text" id="mobile" name="mobile" placeholder="+32 123..." t-attf-value="#{res_partner.mobile}"/></t>
-			                </div>
-			              </div>
+                          
+                         </fieldset>
 
 
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Email</strong></label>
-			                <div class="controls">
-								<t t-if="not res_partner"><input type="text" id="email" name="email" placeholder="first.last@company.org" /></t>
-								<t t-if="res_partner"><input type="text" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}"/></t>
-			                </div>
-			              </div>
-			            </fieldset>
+                        <fieldset>
+                          <legend>Phone and Email</legend>
+                              <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Phone</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="phone" name="phone" placeholder="+32 123..." /></t>
+                                <t t-if="res_partner"><input type="text" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{res_partner.phone}"/></t>
+                            </div>
+                          </div>
 
-			            
-			<!--            End Contact person-->
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Mobile</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="mobile" name="mobile" placeholder="+32 123..." /></t>
+                                <t t-if="res_partner"><input type="text" id="mobile" name="mobile" placeholder="+32 123..." t-attf-value="#{res_partner.mobile}"/></t>
+                            </div>
+                          </div>
 
-				    </div>
-				
-						<fieldset>
-			              <legend>Notes</legend>
-			                  <p class="help-block">Use this field for comments or additional info to SMart.</p>
-			              <div class="control-group">
-			                <label class="control-label" for="contactName"><strong>Comments</strong></label>
-			                <div class="controls">
-<!--				               	<input type="text" id="comment" name="comment" t-attf-value="#{res_partner.comment}"/>-->
+
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Email</strong></label>
+                            <div class="controls">
+                                <t t-if="not res_partner"><input type="text" id="email" name="email" placeholder="first.last@company.org" /></t>
+                                <t t-if="res_partner"><input type="text" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{res_partner.email}"/></t>
+                            </div>
+                          </div>
+                        </fieldset>
+
+                        
+            <!--            End Contact person-->
+
+                    </div>
+                
+                        <fieldset>
+                          <legend>Notes</legend>
+                              <p class="help-block">Use this field for comments or additional info to SMart.</p>
+                          <div class="control-group">
+                            <label class="control-label" for="contactName"><strong>Comments</strong></label>
+                            <div class="controls">
+<!--                                <input type="text" id="comment" name="comment" t-attf-value="#{res_partner.comment}"/>-->
                           <textarea name="comment" rows="4" cols="60" placeholder="Use this field for comments or additional info to SMart." ><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
-			                </div>
-			              </div>
-			            </fieldset>				
+                            </div>
+                          </div>
+                        </fieldset>             
 
 
-							<hr/>
-			   
-  							<div class="control-group">
+                            <hr/>
+               
+                            <div class="control-group">
 
-					  		  <div class="controls">
-			                    <input type="hidden" name="redirect" t-att-value="'/client/%s' % res_partner.id"/>					  		  
-					  		    <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
-								<a href="#" onclick="history.go(-1)" class="btn btn-large ">Back</a>					  		    
-					  		  </div>
+                              <div class="controls">
+<!--
+                                <input type="hidden" name="redirect" t-att-value="'/client/%s' % res_partner.id"/>                            
+-->
+                                <button type="submit" class="btn btn-primary"><strong>Save changes</strong></button>
+                                <a href="#" onclick="history.go(-1)" class="btn btn-large ">Cancel</a>                              
+                              </div>
 
-					    	</div>
-			        </form>
-				          
-				      
-<!--				      </div>-->
-		      </section>
-		      
-		      
-		      
+                            </div>
+                    </form>
+                          
+                      
+<!--                      </div>-->
+              </section>
+              
+              
+              
               
             </div><!--/panelsheet-content-->
 
@@ -826,15 +843,330 @@
         
         <!-- ** / CURRENT VIEW CONTENT ** -->
         </div>
-	</t>        
+    </t>        
 </template>
 
+<template inherit_id="website.layout" id="custom_css_and_javascript" name="Custom CSS and JavaScript">
+    <xpath expr="//head" position="inside">
+        <!-- Custom CSS -->
+        <link href="/smart_common/static/src/css/bootstrap-switch.css" rel="stylesheet"/>
+    </xpath>
+    <xpath expr="//body" position="inside">
+        <!-- Custom JavaScript -->
+        <script src="/smart_common/static/src/js/bootstrap-switch.js"></script>
+        <script src="/smart_client/static/src/js/toggle_form.js"></script>
+        <!-- <script>$("[name='is_company']").bootstrapSwitch();</script> -->
+    </xpath>
+</template>
+
+<template name="field_text" id="field_text">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="vat">
+            <strong>VAT-number</strong>
+        </label>
+        <a class="tip col-sm-1" data-toogle="tooltip" data-placement="top" title="Use full international VAT-format: SE012345678901."><i class="glyphicon glyphicon-question-sign"></i>
+        </a>
+        <div t-attf-class="#{'col-sm-9 controls %s ' % 'has_error' if vat_error else ''}">
+            <input type="text" id="vat" name="vat" placeholder="SE012345678901" t-attf-value="#{'' if not res_partner else res_partner.vat}" />
+            <span class="help-inline" t-if="vat_error"><t t-esc="vat_error"/></span>
+        </div>
+    </div>
+</template>
+
+<template name="Client" id="client_client">
+    <t t-call="smart_common.layout">
+        <div class="content span10">
+            <div id="purchase-orders-list">
+                <div class="panelsheet">
+                    <header class="panelsheet-header clearfix">
+                        <!-- title for organisation -->
+                        <div class="org">
+                            <h1>Edit Client Organisation</h1>
+                        </div>
+                        <!-- title for individual -->
+                        <div class="ind">
+                            <h1>Add a new Client</h1>
+                        </div>
+                        <p><br/><br/>Here is an explanation text</p>
+                    </header>
+
+                    <!-- warning massage -->
+                    <p class="alert alert-danger" t-if="error"><t t-esc="error"/></p>
+                    <p class="alert alert-success" t-if="message"><t t-esc="message"/></p>
+
+                    <div class="panelsheet-content">
+                        <section class="panelsheet-section">
+                            <form class="form-horizontal" t-attf-action="#{form_post}" method="post">
+                                <!-- form body -->
+                                <div id="panel" class="panel-company">
+                                    <fieldset>
+                                        <legend>Legal Information</legend>
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-3 control-label">
+                                                <strong class="org">Company name</strong>
+                                                <strong class="ind">Name</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="text" id="name" name="name" value="Your clients name" required="true"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="text" id="name" name="name" t-attf-value="#{'' if not res_partner else res_partner.name}" required="true"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3"></label>
+                                            <div class="col-sm-9">
+                                                <!-- check box -->
+                                                <!-- <input type="checkbox" id="is_company" name="is_company" t-attf-value="#{'False' if not res_partner else res_partner.is_company}" onclick="form_check()" t-attf-checked="#{'on' if res_partner and res_partner.is_company else ''}"/> Organization -->
+
+                                                <!-- radio box -->
+                                                <input type="radio" id="is_company" name="is_company" value="True" onclick="form_check()" t-attf-checked="#{'on' if res_partner and res_partner.is_company else ''}"/> Organization
+                                                <input type="radio" id="is_company" name="is_company" value="False" onclick="form_check()" t-attf-checked="#{'on' if res_partner and not res_partner.is_company else ''}"/> Individual Person
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="org">
+                                        <legend>Company registration and VAT-number</legend>
+                                        <div class="form-group" t-if="res_company.country_id.code in ['NL','DE']">
+                                            <label class="control-label" for="ref">
+                                                <strong>Company reference ID</strong>
+                                            </label>
+                                            <a class="tip" data-toogle="tooltip" data-placement="top" title="This is the chamber of commerce or government identity number."><i class="glyphicon glyphicon-question-sign"></i>
+                                            </a>
+                                            <div class="controls">
+                                                <input type="text" class="input-xlarge inline" id="ref" name="ref" placeholder="" t-attf-value="#{'' if not res_partner else res_partner.ref}"/>
+                                            </div>
+                                        </div>
+                                        <!-- <t t-call="smart_client.field_text"/> -->
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="vat">
+                                                <strong>VAT-number</strong>
+                                            </label>
+                                            <a class="tip col-sm-1" data-toogle="tooltip" data-placement="top" title="Use full international VAT-format: SE012345678901."><i class="glyphicon glyphicon-question-sign"></i>
+                                            </a>
+                                            <div t-attf-class="#{'col-sm-9 controls %s ' % 'has_error' if vat_error else ''}">
+                                                <input type="text" id="vat" name="vat" placeholder="SE012345678901" t-attf-value="#{'' if not res_partner else res_partner.vat}" />
+                                                <span class="help-block" t-if="vat_error"><t t-esc="vat_error"/></span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <legend class="org">Registered office address</legend>
+                                        <legend class="ind">Address</legend>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="street">
+                                                <strong>Address</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="text" id="street" name="street" placeholder="Your street and number"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="text" id="street" name="street" placeholder="Your street and number" t-attf-value="#{'' if not res_partner else res_partner.street}"/>
+                                                </t>
+                                            </div>
+                                            <label class="col-sm-3"></label>
+                                            <div class="col-sm-9" style="margin-top: 8px;">
+                                                <t t-if="not res_partner">
+                                                    <input type="text" id="street2" name="street2" placeholder="Optional street info"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="text" id="street2" name="street2" placeholder="Optional street info" t-attf-value="#{'' if not res_partner else res_partner.street2}"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="zip">
+                                                <strong>Postal code</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="text" id="zip" name="zip" placeholder="123 45"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="text" id="zip" name="zip" placeholder="123 45" t-attf-value="#{'' if not res_partner else res_partner.zip}"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="city">
+                                                <strong>City</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="text" id="city" name="city" placeholder="Your town"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="text" id="city" name="city" placeholder="Your town" t-attf-value="#{'' if not res_partner else res_partner.city}"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <t t-if="res_partner and not res_partner.parent_id">                          
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" for="country_id">
+                                                    <strong>Country</strong>
+                                                </label>
+                                                <div class="col-sm-9">
+                                                    <t t-if="not res_partner">
+                                                        <select name="country_id" id="country_id">
+                                                            <t t-foreach="res_countrys" t-as="c">
+                                                                <t t-if="not user_id.partner_id.country_id.id">
+                                                                    <option t-attf-value="#{c.id}" t-att-selected="c.id == user_id.partner_id.country_id.id"><t t-esc="user_id.partner_id.country_id.id.name"/></option> 
+                                                                </t>
+                                                                <t t-if="user_id.partner_id.country_id.id">
+                                                                    <option t-attf-value="#{c.id}" t-att-selected="c.id == user_id.partner_id.country_id.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
+                                                                </t>
+                                                            </t>
+                                                        </select>
+                                                    </t>
+                                                    <t t-if="res_partner">
+                                                        <select name="country_id">
+                                                            <t t-foreach="res_countrys" t-as="c">
+                                                                <option t-attf-value="#{c.id}" t-att-selected="res_partner.country_id.id == c.id"><t t-esc="c.code"/>, <t t-esc="c.name"/></option> 
+                                                            </t>
+                                                        </select>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <legend class="org">Company Phone and Email</legend>
+                                        <legend class="ind">Phone and Email</legend>
+                                        <p class="help-block">Use international format, starting with country and city codes: +32 2 123 45 67</p>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="phone">
+                                                <strong>Phone</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+32 123..."/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+32 123..." t-attf-value="#{'' if not res_partner else res_partner.phone}"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="ind">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" for="mobile">
+                                                    <strong>Mobile</strong>
+                                                </label>
+                                                <div class="col-sm-9">
+                                                    <t t-if="not res_partner">
+                                                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="+32 123..." />
+                                                    </t>
+                                                    <t t-if="res_partner">
+                                                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="+32 123..." t-attf-value="#{'' if not res_partner else res_partner.mobile}"/>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="email">
+                                                <strong>Email</strong>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <t t-if="not res_partner">
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="first.last@company.org" required="true"/>
+                                                </t>
+                                                <t t-if="res_partner">
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="first.last@company.org" t-attf-value="#{'' if not res_partner else res_partner.email}" required="true"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <legend>Notes</legend>
+                                        <p class="help-block">Use this field for comments or additional info to SMart.</p>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-1" for="comment">
+                                                <strong>Comments</strong>
+                                            </label>
+                                            <div class="col-sm-11"></div>
+                                            <div class="col-sm-12">
+                                                <textarea class="col-sm-12" name="comment" id="comment" rows="4" placeholder="Use this field for comments or additional info to SMart."><t t-esc="res_partner and res_partner.comment or '' "/></textarea>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <button type="submit" class="btn btn-large btn-danger">Save changes</button>
+                                                <button onclick="history.go(-1)" class="btn btn-large ">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <hr/>
+                                </div>
+                            </form> <!-- form-horizontal -->
+
+                            <!-- start Contact person -->
+                            <fieldset class="org">
+                                <legend>Contact persons</legend>
+                                <div class="panelsheet-content">
+                                    <section class="panelsheet-section">
+                                        <form class="form-horizontal form-preview" t-attf-action="#{form_action}" method="POST">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th><span class="muted">Name</span></th>
+                                                        <th><span class="muted">Mobile</span></th>
+                                                        <th><span class="muted">Email</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody t-if="res_partner">
+                                                    <t t-foreach="res_partner.child_ids" t-as="ccp">
+                                                        <tr>
+                                                            <td class="cell-primary">
+                                                                <a t-att-href="'/client/%s' % ccp.id">
+                                                                    <t t-raw="ccp.name"/>
+                                                                </a>
+                                                            </td>
+                                                            <td><div t-raw="ccp.mobile" /></td>
+                                                            <td><div t-field="ccp.email" /></td>
+                                                            <td>
+                                                                <a  t-att-href="'/client/%s/delete' % ccp.id" valign="top" border="1" class="btn btn btn-danger"><i class="icon-trash icon-red"></i></a>
+                                                            </td> 
+                                                        </tr>
+                                                    </t>      
+                                                    <tr>
+                                                        <td><input type="text" id="name" name="ccp_name" placeholder="Name"/></td>
+                                                        <td><input type="tel" class="form-control" id="mobile" size="10" name="ccp_mobile" align="right" placeholder="Mobile"/></td>
+                                                        <td><input type="email" class="form-control" id="email" size="20" name="ccp_email" placeholder="first.last@company.org"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <button type="submit" class="btn btn-large btn-danger">Save changes</button>
+                                                    <button onclick="history.go(-1)" class="btn btn-large ">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </form><!-- form-horizontal form-preview -->
+                                    </section><!-- panelsheet-section -->
+                                </div><!-- panelsheet-content -->
+                            </fieldset>                            
+                        </section><!-- panelsheet-section -->
+                    </div><!-- panelsheet-content -->
+                </div><!-- panelsheet -->
+            </div><!-- purchase-orders-list -->
+        </div><!-- content span10 -->
+    </t>
+</template>
 
 <template name="Client Overview" id="client_overview">
       <t t-call="smart_common.layout">
         
 
-   	    <div class="content span10">
+        <div class="content span10">
       
         <!-- ** CURRENT VIEW CONTENT ** -->
         
@@ -842,7 +1174,7 @@
           <div class="panelsheet">
             <header class="panelsheet-header clearfix">
               <div class="title">
-	        	<h1>Clients name...</h1>
+                <h1>Clients name...</h1>
               </div>
 <!--              <div class="panelsheet-header.document">-->
               <p>
@@ -856,8 +1188,8 @@
               <section class="panelsheet-section">
 
 Hello world
-			    
-		     </section>
+                
+             </section>
               
               
             </div><!--/panelsheet-content-->
@@ -868,7 +1200,7 @@ Hello world
         
         <!-- ** / CURRENT VIEW CONTENT ** -->
         </div>
-	</t>        
+    </t>        
 </template>
 
 

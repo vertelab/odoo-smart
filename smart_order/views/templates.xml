@@ -640,7 +640,7 @@
                                    <select t-att-name="'line_product_id_%s' % o_index" >
                                     <t t-foreach="request.env['product.product'].search([('sale_ok','=',True)])" t-as="p">
                                         <t t-set="product" t-value="o.product_id.id if o.product_id else None"/>
-                                        <option t-attf-value="#{p.id}" t-att-selected="p.id == product"><t t-esc="p.name"/></option>-->
+                                        <option t-attf-value="#{p.id}" t-attf-selected="#{true if p.id == product else false}"><t t-esc="p.name"/></option>-->
                                     </t>
                                     
                                    </select>

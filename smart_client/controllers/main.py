@@ -32,7 +32,7 @@ class website_client(http.Controller):
                 or  search in (r.street or '') 
                 or  search in (r.country_id.name or '')
                 ))
-        _logger.info('Search %s %s' % (search,clients))
+            _logger.info('Search %s %s' % (search,clients))
 
         values = {
             'client_menu': 'active',
@@ -79,38 +79,65 @@ class website_client(http.Controller):
                 clients += c
         
 
-        if not partner:
-            partner_id = pool.get('res.partner').create(cr,uid,{
-                'name': _('My first client'),
-                'is_company': True,
-                'country_id': request.env.ref('base.main_company').sudo().country_id.id,
-            })
-            partner = pool.get('res.partner').browse(cr,uid,partner_id)
-
-        else:
-            if re.search("delete",request.httprequest.url) is not None:
-                partner.unlink()
-                return werkzeug.utils.redirect('/client/list')
+        if partner and re.search("delete",request.httprequest.url) is not None:
+            partner.unlink()
+            return werkzeug.utils.redirect('/client/list')
                 
+        if post.get('redirect'):
+            form_post = "/client/%s?redirect=%s" % ('new' if not partner else partner.id, post.get('redirect'))
+        else:
+            form_post = "/client/%s" % ('new' if not partner else partner.id)
+            
         values = {
                     'context': context,
                     'client_menu': 'active',
                     'res_user': res_user,
-                    'res_partner': partner,
+                    'res_partner': partner or [],
                     'res_countrys': pool.get('res.country').browse(cr,uid,pool.get('res.country').search(cr,uid,[],order="code",context=context),context=context),
                     'res_partners':  clients,
-                    'form_post': '/client/%s?redirect=%s' % (partner.id,post.get('redirect')),
+                    'form_post': form_post,
+                    'vat_error': '',
+                    'error': '',
+                    'message': '',
                 }
  
         if request.httprequest.method == 'POST':
-
-    
+            #_logger.info('fields get %s' % partner.fields_get().keys())
             partner_data = dict((field_name.replace('hr_',''), post[field_name])
 #                for field_name in ['name','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
-                for field_name in ['name', 'firstname','lastname','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
-            if partner_data:
-                partner.write(partner_data)
+                #for field_name in ['name', 'firstname','lastname','is_company','country_id','commercial_partner_id','street','street2','zip','city','phone','mobile','email','active','vat','company_registry','ref','comment'] if post.get(field_name))
+                for field_name in partner.fields_get().keys() if post.get(field_name))
+            
+            if partner_data.get('is_company', False):
+                partner_data['is_company'] = (partner_data['is_company'] == 'True')
+            if not partner and partner_data:
+                partner_id = pool.get('res.partner').create(cr,uid,{
+                    'name': _('My first client'),
+                    'is_company': True,
+                    'country_id': request.env.ref('base.main_company').sudo().country_id.id,
+                })
+                partner = pool.get('res.partner').browse(cr,uid,partner_id)
+                if post.get('redirect'):
+                    values['form_post'] = "/client/%s?redirect=%s" % (partner.id or 'new', post.get('redirect'))
+                else:
+                    values['form_post'] = "/client/%s" % (partner.id or 'new')
 
+                
+            if partner_data:
+                if partner_data.get('vat'):
+                    vat_country, vat_number = partner._split_vat(partner_data['vat'])
+                    _logger.info('VAT %s %s' % (vat_country, vat_number))
+                    if not partner.simple_vat_check(vat_country,vat_number):
+                        values['vat_error'] = _("Importing VAT Number [%s%s] is not valid !" % (vat_country, vat_number))
+                        values['error'] = _("Form is not complete !")
+                        partner_data['vat'] = ''  # Save all other data                
+                    # full check partner.vies_vat_check
+                        return request.website.render("smart_client.client_client", values)
+                _logger.info('is company partner data %s' % partner_data.get('is_company', 'none'))              
+                partner.write(partner_data)
+                if not values.get('error'):
+                    values['message'] = _("Client is saved")  
+                    
             contact_person = dict((field_name.replace('ccp_',''), post[field_name])
                 for field_name in ['ccp_name','ccp_mobile','ccp_email',] if post.get(field_name))
             if contact_person:
@@ -128,16 +155,16 @@ class website_client(http.Controller):
             values['res_partner']= pool.get('res.partner').browse(cr,uid,partner.id)
             
 
-## Return to the form
+# Return to the form
             if post.get('redirect'):
+                _logger.info('Redirect %s' % (post.get('redirect')))
                 return werkzeug.utils.redirect(post.get('redirect'))
             else:
                 return werkzeug.utils.redirect('/client/list')
-        if partner.is_company:
-            return request.website.render("smart_client.client_organisation", values)
-        else:
-            return request.website.render("smart_client.client_individual", values)
-
-
+        # if partner.is_company:
+        #     return request.website.render("smart_client.client_organisation", values)
+        # else:
+        #     return request.website.render("smart_client.client_individual", values)
+        return request.website.render("smart_client.client_client", values)
 
 # vim:expandtab:tabstop=4:softtabstop=4:shiftwidth=4:
