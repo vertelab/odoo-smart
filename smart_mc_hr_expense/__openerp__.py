@@ -4,7 +4,7 @@
     'summary': 'Accessright multicomany for expenses',
     'version': '1.0',
     'description': '',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['hr_expense'],
     'data': [
         'multicompany.xml',

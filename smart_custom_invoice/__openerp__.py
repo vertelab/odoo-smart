@@ -22,7 +22,7 @@
 
 {
     'name': 'SMart Custom Invoice',
-    'author': 'Acespritech Solutions Pvt. Ltd. + Vertel AB',
+    'author': 'Acespritech Solutions Pvt. Ltd. + Vertel Sverige AB',
     'website': 'http://www.acespritech.com',
     'version': '1.2',
     'description': """

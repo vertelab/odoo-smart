@@ -9,7 +9,7 @@ SMart Account
 
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['smart_common','hr_payroll'],
     'data': [
         'views/templates.xml',

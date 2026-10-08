@@ -12,7 +12,7 @@ Documents
 http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-orders/
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['smart_common','document'],
     'data': [
         'views/templates.xml',

@@ -4,7 +4,7 @@
     'summary': 'Accessright multicomany',
     'version': '1.0',
     'description': '',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['account','smart_mc'],
     'data': [
         'multicompany.xml',

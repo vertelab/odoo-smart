@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2014 Vertel AB (<http://vertel.se>).
+#    Copyright (C) 2004-2014 Vertel Sverige AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,7 +22,7 @@
 {
     'name': 'SMart All Step 2',
     'version': '1.4',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'category': 'Base',
     'website': 'http://www.vertel.se',
 

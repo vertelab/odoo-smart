@@ -10,7 +10,7 @@ SMart Project
 Customers
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['smart_common','project'],
     'data': [
         'views/templates.xml',

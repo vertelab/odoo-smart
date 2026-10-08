@@ -10,7 +10,7 @@ SMart Order
 http://design.desk.smart.centralprojects.be/activity/desktop/v0.1/purchase-orders/
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['website', 'web','hr','hr_expense','sale'],
     'data': [
         'views/templates.xml',

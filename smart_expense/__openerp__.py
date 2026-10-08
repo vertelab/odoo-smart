@@ -9,7 +9,7 @@ SMart Expense
 
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['smart_common', 'hr_expense','account','project',],
     'data': [
         'views/templates.xml',

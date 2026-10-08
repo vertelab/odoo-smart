@@ -10,7 +10,7 @@ SMart Client
 Customers
 
         """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['website'],
     'data': [
 #        'data/res.partner.csv',

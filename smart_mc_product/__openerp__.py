@@ -4,7 +4,7 @@
     'summary': 'Accessright multicomany for Products',
     'version': '1.0',
     'description': '',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'depends': ['product'],
     'data': [
         'multicompany.xml',
